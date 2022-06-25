@@ -34,7 +34,7 @@ class LoginController extends Controller
         // Admin Login
         if(Auth::user()->role == 'admin')
         {
-            return '/admin/index_admin';
+            return '/admin/dashboard';
         }
         // Vendor Login
         if(Auth::user()->role == 'seller')

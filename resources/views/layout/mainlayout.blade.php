@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 @include('layout.partials.head')
+@include('sweetalert::alert')
 </head>
 @if(Route::is(['pagee']))
 <body class="home-page">
@@ -21,5 +22,6 @@
 @include('layout.partials.footer')
 @endif
 @include('layout.partials.footer-scripts')
+
   </body>
 </html>

@@ -5,6 +5,14 @@
     <div class="content">
         <div class="container">
             <div class="row">
+
+                @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
+
+
                 <div class="col-md-6 offset-md-3">
 
                     <!-- Login Content -->

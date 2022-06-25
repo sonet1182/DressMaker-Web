@@ -148,7 +148,7 @@
                         <li class="nav-item main-drop account-item">
 							<a href="{{ url('/admin/index_admin') }}" class=" nav-link">
 								<span class="user-img">
-									<img src="{{ asset('assets/img/img-04.jpg') }}" alt="">
+									<img src="{{ Auth::user()->profile_photo ? asset(Auth::user()->profile_photo) : asset('assets/img/img-04.jpg') }}" alt="">
 								</span>
 								<span>{{ Auth::user()->name }}</span>
 							</a>
@@ -157,7 +157,10 @@
                         @endif
 
 
-
+                        @if(Auth::user()->role == 'buyer')
+						<!-- /User Menu -->
+						<li><a href="{{ route('post-project') }}" class="login-btn">Post a Project </a></li>
+                        @endif
 
 
                         @if(Auth::user()->role == 'buyer')
@@ -165,19 +168,20 @@
                         <li class="nav-item dropdown has-arrow main-drop account-item">
 							<a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
 								<span class="user-img">
-									<img src="{{ asset('assets/img/img-04.jpg')}}" alt="">
+									<img src="{{ Auth::user()->profile_photo ? asset(Auth::user()->profile_photo) : asset('assets/img/img-04.jpg') }}" alt="">
 								</span>
 								<span>{{ Auth::user()->name }}</span>
 							</a>
 							<div class="dropdown-menu emp">
 								<div class="drop-head">Account Details</div>
+                                <a class="dropdown-item" href="{{ url('employer/dashboard') }}"><i class="fas fa-dashboard"></i>Dashboard</a>
 								<a class="dropdown-item" href="user-account-details"><i class="material-icons">verified_user</i> View profile</a>
 								<div class="drop-head">Projects Settings</div>
 								<a class="dropdown-item" href="manage-projects"><i class="material-icons">business_center</i> Projects</a>
 								<a class="dropdown-item" href="favourites"><i class="material-icons">local_play</i> Favourites</a>
 								<a class="dropdown-item" href="review"><i class="material-icons">pie_chart</i> Reviews</a>
 								<div class="drop-head">Account Details</div>
-								<a class="dropdown-item" href="profile-settings"> <i class="material-icons">settings</i> Profile Settings</a>
+								<a class="dropdown-item" href="{{ route('employer.profile-settings')}}"> <i class="material-icons">settings</i> Profile Settings</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -193,14 +197,18 @@
                         @endif
 
 
-						@if(Auth::user('role') == 'seller')
+						@if(Auth::user()->role == 'seller')
 						<li class="nav-item dropdown account-item">
 							<a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
-								MY ACCOUNT
+								<span class="user-img">
+									<img src="{{ Auth::user()->profile_photo ? asset(Auth::user()->profile_photo) : asset('assets/img/img-04.jpg') }}" alt="">
+								</span>
+								<span>{{ Auth::user()->name }}</span>
 							</a>
 							<div class="dropdown-menu emp">
 								<div class="drop-head">Account Details</div>
-								<a class="dropdown-item" href="freelancer-profile"><i class="material-icons">verified_user</i> View profile</a>
+								<a class="dropdown-item" href="{{ url('designer/dashboard') }}"><i class="material-icons">wifi_tethering</i> Dashboard</a>
+								<a class="dropdown-item" href="{{ url('designer/profile') }}"><i class="material-icons">verified_user</i> View profile</a>
 								<div class="drop-head">Projects Settings</div>
 								<a class="dropdown-item" href="freelancer-project-proposals"><i class="material-icons">business_center</i> Projects</a>
 								<a class="dropdown-item" href="freelancer-bookmarks"><i class="material-icons">local_play</i> Bookmarks</a>
@@ -210,15 +218,20 @@
 								<a class="dropdown-item" href="freelancer-withdraw-money"><i class="material-icons">wifi_tethering</i> Withdraw funds</a>
 								<div class="drop-head">Account Details</div>
 								<a class="dropdown-item" href="freelancer-profile-settings"> <i class="material-icons">settings</i> Profile Settings</a>
-								<a class="dropdown-item" href="index"><i class="material-icons">power_settings_new</i> Logout</a>
+								<a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        <i class="material-icons">power_settings_new</i> Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                     @csrf
+                                </form>
 							</div>
 						</li>
 						@endif
 
-                        @if(Auth::user()->role == 'buyer')
-						<!-- /User Menu -->
-						<li><a href="{{ route('post-project') }}" class="login-btn">Post a Project </a></li>
-                        @endif
+
 
 					</ul>
 				</nav>

@@ -21,7 +21,7 @@
                                             <a href="#developer" data-bs-toggle="tab" class="nav-link active">Designer</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#company" data-bs-toggle="tab" class="nav-link">Buyer</a>
+                                            <a href="#company" data-bs-toggle="tab" class="nav-link">Employer</a>
                                         </li>
                                     </ul>
                                 </nav>

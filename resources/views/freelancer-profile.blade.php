@@ -16,13 +16,13 @@
 								<div class="profile-box">
 									<div class="provider-widget">
 										<div class="pro-info-left">
-											<div class="provider-img"><img src="assets/img/img-01.png" alt="User"></div>
+											<div class="provider-img"><img src="/assets/img/img-01.png" alt="User"></div>
 											<div class="profile-info">
 												<h2 class="profile-title">David Peterson</h2>
 												<p class="profile-position">iOS Expert</p>
 												<div><a href="#" class="btn full-btn">Full time</a></div>
 												<ul class="profile-preword">
-													<li><img src="assets/img/flags/pl.png" alt="" height="16"> Poland</li>
+													<li><img src="/assets/img/flags/pl.png" alt="" height="16"> Poland</li>
 													<li>
 														<div class="rating">
 															<span class="average-rating">4.6</span>
@@ -37,7 +37,7 @@
 											</div>
 										</div>
 										<div class="pro-info-right profile-inf">
-											<a class="btn profile-edit-btn" href="freelancer-profile-settings">Edit Profile</a>
+											<a class="btn profile-edit-btn" href="{{ route('designer.profile-settings') }}">Edit Profile</a>
 										</div>
 									</div>
 								</div>
@@ -82,37 +82,37 @@
 									<ul class="nav nav-tabs nav-tabs-solid nav-justified">
 										<li class="nav-item">
 											<a class="nav-link" href="#overview">
-												<img src="assets/img/icon/tab-icon-01.png" height="25" alt="User Image">
+												<img src="/assets/img/icon/tab-icon-01.png" height="25" alt="User Image">
 												<p class="bg-red">Overview</p>
 											</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="#project">
-												<img src="assets/img/icon/tab-icon-02.png" height="25" alt="User Image">
+												<img src="/assets/img/icon/tab-icon-02.png" height="25" alt="User Image">
 												<p class="bg-blue">Projects</p>
 											</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="#experience">
-												<img src="assets/img/icon/tab-icon-03.png" height="25" alt="User Image">
+												<img src="/assets/img/icon/tab-icon-03.png" height="25" alt="User Image">
 												<p class="bg-violet">Experience</p>
 											</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="#education">
-												<img src="assets/img/icon/tab-icon-04.png" height="25" alt="User Image">
+												<img src="/assets/img/icon/tab-icon-04.png" height="25" alt="User Image">
 												<p class="bg-yellow">Education</p>
 											</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="#skill">
-												<img src="assets/img/icon/tab-icon-05.png" height="25" alt="User Image">
+												<img src="/assets/img/icon/tab-icon-05.png" height="25" alt="User Image">
 												<p class="bg-pink">Skills</p>
 											</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="#feedback">
-												<img src="assets/img/icon/tab-icon-06.png" height="25" alt="User Image">
+												<img src="/assets/img/icon/tab-icon-06.png" height="25" alt="User Image">
 												<p class="bg-green">Feedbacks</p>
 											</a>
 										</li>

@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\buyerController;
 use App\Http\Controllers\Admin\categoryController;
 use App\Http\Controllers\Admin\sellerController;
+use App\Http\Controllers\Buyer\AccountController as BuyerAccountController;
+use App\Http\Controllers\Seller\AccountController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -16,11 +18,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
-return view('index');
+    return view('index');
 })->name('home');
 Route::get('/home', function () {
-return view('index');
+    return view('index');
 })->name('pagee');
 Route::get('/index', function () {
     return view('index');
@@ -128,12 +131,8 @@ Route::get('/freelancer-payment', function () {
 Route::get('/freelancer-portfolio', function () {
     return view('freelancer-portfolio');
 })->name('freelancer-portfolio');
-Route::get('/freelancer-profile-settings', function () {
-    return view('freelancer-profile-settings');
-})->name('freelancer-profile-settings');
-Route::get('/freelancer-profile', function () {
-    return view('freelancer-profile');
-})->name('freelancer-profile');
+
+
 Route::get('/freelancer-project-proposals', function () {
     return view('freelancer-project-proposals');
 })->name('freelancer-project-proposals');
@@ -183,9 +182,7 @@ Route::get('/post-job', function () {
 Route::get('/privacy-policy', function () {
     return view('privacy-policy');
 })->name('privacy-policy');
-Route::get('/profile-settings', function () {
-    return view('profile-settings');
-})->name('profile-settings');
+
 Route::get('/project-details', function () {
     return view('project-details');
 })->name('project-details');
@@ -237,132 +234,130 @@ Route::get('/withdraw-money', function () {
 
 /*****************ADMIN ROUTES*******************/
 Route::Group(['prefix' => 'admin'], function () {
-Route::get('/bid-fees', function () {
-    return view('admin.bid-fees');
-})->name('bid-fees');
+    Route::get('/bid-fees', function () {
+        return view('admin.bid-fees');
+    })->name('bid-fees');
 
-Route::get('/change-password', function () {
-    return view('admin.change-password');
-})->name('change-password');
-Route::get('/components', function () {
-    return view('admin.components');
-})->name('components');
-Route::get('/contest-entry-fees', function () {
-    return view('admin.contest-entry-fees');
-})->name('contest-entry-fees');
-Route::get('/contests-fees', function () {
-    return view('admin.contests-fees');
-})->name('contests-fees');
-Route::get('/data-tables', function () {
-    return view('admin.data-tables');
-})->name('data-tables');
-Route::get('/delete-account', function () {
-    return view('admin.delete-account');
-})->name('delete-account');
-Route::get('/email-settings', function () {
-    return view('admin.email-settings');
-})->name('email-settings');
-Route::get('/fees', function () {
-    return view('admin.fees');
-})->name('fees');
-Route::get('/forgot-password', function () {
-    return view('admin.forgot-password');
-})->name('forgot-password');
-Route::get('/form-basic-inputs', function () {
-    return view('admin.form-basic-inputs');
-})->name('form-basic-inputs');
-Route::get('/form-horizontal', function () {
-    return view('admin.form-horizontal');
-})->name('form-horizontal');
-Route::get('/form-input-groups', function () {
-    return view('admin.form-input-groups');
-})->name('form-input-groups');
-Route::get('/form-mask', function () {
-    return view('admin.form-mask');
-})->name('form-mask');
-Route::get('/form-validation', function () {
-    return view('admin.form-validation');
-})->name('form-validation');
-Route::get('/form-vertical', function () {
-    return view('admin.form-vertical');
-})->name('form-vertical');
-Route::get('/index_admin', function () {
-    return view('admin.index_admin');
-})->name('index_admin');
-Route::get('/localization-details', function () {
-    return view('admin.localization-details');
-})->name('localization-details');
-Route::get('/login', function () {
-    return view('admin.login');
-})->name('login');
-Route::get('/others-settings', function () {
-    return view('admin.others-settings');
-})->name('others-settings');
-Route::get('/payment-settings', function () {
-    return view('admin.payment-settings');
-})->name('payment-settings');
-Route::get('/payment-settings', function () {
-    return view('admin.payment-settings');
-})->name('payment-settings');
-Route::get('/profile', function () {
-    return view('admin.profile');
-})->name('profile');
-Route::get('/projects', function () {
-    return view('admin.projects');
-})->name('projects');
-Route::get('/projects-fees', function () {
-    return view('admin.projects-fees');
-})->name('projects-fees');
+    Route::get('/change-password', function () {
+        return view('admin.change-password');
+    })->name('change-password');
+    Route::get('/components', function () {
+        return view('admin.components');
+    })->name('components');
+    Route::get('/contest-entry-fees', function () {
+        return view('admin.contest-entry-fees');
+    })->name('contest-entry-fees');
+    Route::get('/contests-fees', function () {
+        return view('admin.contests-fees');
+    })->name('contests-fees');
+    Route::get('/data-tables', function () {
+        return view('admin.data-tables');
+    })->name('data-tables');
+    Route::get('/delete-account', function () {
+        return view('admin.delete-account');
+    })->name('delete-account');
+    Route::get('/email-settings', function () {
+        return view('admin.email-settings');
+    })->name('email-settings');
+    Route::get('/fees', function () {
+        return view('admin.fees');
+    })->name('fees');
+    Route::get('/forgot-password', function () {
+        return view('admin.forgot-password');
+    })->name('forgot-password');
+    Route::get('/form-basic-inputs', function () {
+        return view('admin.form-basic-inputs');
+    })->name('form-basic-inputs');
+    Route::get('/form-horizontal', function () {
+        return view('admin.form-horizontal');
+    })->name('form-horizontal');
+    Route::get('/form-input-groups', function () {
+        return view('admin.form-input-groups');
+    })->name('form-input-groups');
+    Route::get('/form-mask', function () {
+        return view('admin.form-mask');
+    })->name('form-mask');
+    Route::get('/form-validation', function () {
+        return view('admin.form-validation');
+    })->name('form-validation');
+    Route::get('/form-vertical', function () {
+        return view('admin.form-vertical');
+    })->name('form-vertical');
 
-Route::get('/register', function () {
-    return view('admin.register');
-})->name('register');
-Route::get('/reports', function () {
-    return view('admin.reports');
-})->name('reports');
-Route::get('/roles', function () {
-    return view('admin.roles');
-})->name('roles');
-Route::get('/roles-permission', function () {
-    return view('admin.roles-permission');
-})->name('roles-permission');
-Route::get('/seo-settings', function () {
-    return view('admin.seo-settings');
-})->name('seo-settings');
-Route::get('/settings', function () {
-    return view('admin.settings');
-})->name('settings');
-Route::get('/skills', function () {
-    return view('admin.skills');
-})->name('skills');
-Route::get('/social-links', function () {
-    return view('admin.social-links');
-})->name('social-links');
-Route::get('/social-settings', function () {
-    return view('admin.social-settings');
-})->name('social-settings');
-Route::get('/sub-category', function () {
-    return view('admin.sub-category');
-})->name('sub-category');
-Route::get('/tables-basic', function () {
-    return view('admin.tables-basic');
-})->name('tables-basic');
-Route::get('/taxs', function () {
-    return view('admin.taxs');
-})->name('taxs');
-Route::get('/tax-types', function () {
-    return view('admin.tax-types');
-})->name('tax-types');
+    Route::get('/localization-details', function () {
+        return view('admin.localization-details');
+    })->name('localization-details');
+    Route::get('/login', function () {
+        return view('admin.login');
+    })->name('login');
+    Route::get('/others-settings', function () {
+        return view('admin.others-settings');
+    })->name('others-settings');
+    Route::get('/payment-settings', function () {
+        return view('admin.payment-settings');
+    })->name('payment-settings');
+    Route::get('/payment-settings', function () {
+        return view('admin.payment-settings');
+    })->name('payment-settings');
+    Route::get('/profile', function () {
+        return view('admin.profile');
+    })->name('profile');
+    Route::get('/projects', function () {
+        return view('admin.projects');
+    })->name('projects');
+    Route::get('/projects-fees', function () {
+        return view('admin.projects-fees');
+    })->name('projects-fees');
 
-Route::get('/verify-identity', function () {
-    return view('admin.verify-identity');
-})->name('verify-identity');
-Route::get('/view-estimate', function () {
-    return view('admin.view-estimate');
-})->name('view-estimate');
-Route::get('/view-invoice', function () {
-    return view('admin.view-invoice');
-})->name('view-invoice');
+    Route::get('/register', function () {
+        return view('admin.register');
+    })->name('register');
+    Route::get('/reports', function () {
+        return view('admin.reports');
+    })->name('reports');
+    Route::get('/roles', function () {
+        return view('admin.roles');
+    })->name('roles');
+    Route::get('/roles-permission', function () {
+        return view('admin.roles-permission');
+    })->name('roles-permission');
+    Route::get('/seo-settings', function () {
+        return view('admin.seo-settings');
+    })->name('seo-settings');
+    Route::get('/settings', function () {
+        return view('admin.settings');
+    })->name('settings');
+    Route::get('/skills', function () {
+        return view('admin.skills');
+    })->name('skills');
+    Route::get('/social-links', function () {
+        return view('admin.social-links');
+    })->name('social-links');
+    Route::get('/social-settings', function () {
+        return view('admin.social-settings');
+    })->name('social-settings');
+    Route::get('/sub-category', function () {
+        return view('admin.sub-category');
+    })->name('sub-category');
+    Route::get('/tables-basic', function () {
+        return view('admin.tables-basic');
+    })->name('tables-basic');
+    Route::get('/taxs', function () {
+        return view('admin.taxs');
+    })->name('taxs');
+    Route::get('/tax-types', function () {
+        return view('admin.tax-types');
+    })->name('tax-types');
+
+    Route::get('/verify-identity', function () {
+        return view('admin.verify-identity');
+    })->name('verify-identity');
+    Route::get('/view-estimate', function () {
+        return view('admin.view-estimate');
+    })->name('view-estimate');
+    Route::get('/view-invoice', function () {
+        return view('admin.view-invoice');
+    })->name('view-invoice');
 });
 
 
@@ -371,29 +366,57 @@ Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //admin Route
-Route::get('admin/designers',[sellerController::class,'index']);
-Route::get('admin/buyers',[buyerController::class,'index']);
+Route::get('admin/designers', [sellerController::class, 'index']);
+Route::get('admin/buyers', [buyerController::class, 'index']);
 
 //Category Managing
-Route::get('admin/categories',[categoryController::class,'list'])->name('category.list');
-Route::post('admin/add_category',[categoryController::class,'add'])->name('category.add');
-Route::post('admin/update_category/{id}',[categoryController::class,'update'])->name('category.update');
-
-//Seller
-Route::get('/designer/dashboard', function () {
-    return view('freelancer-dashboard');
-})->name('designer-dashboard');
-
-
-//employer
-Route::get('/employer/dashboard', function () {
-    return view('freelancer-dashboard');
-})->name('designer-dashboard');
-
-Route::get('/employer/post-project', function () {
-    return view('post-project');
-})->name('post-project');
+Route::get('admin/categories', [categoryController::class, 'list'])->name('category.list');
+Route::post('admin/add_category', [categoryController::class, 'add'])->name('category.add');
+Route::post('admin/update_category/{id}', [categoryController::class, 'update'])->name('category.update');
 
 
 
 
+//admin  Middleware
+Route::group(['middleware' => ['auth', 'isAdmin'], 'prefix' => 'admin/'], function () {
+    Route::get('dashboard', function () {
+        return view('admin.index_admin');
+    })->name('index_admin');
+});
+
+//Employer  Middleware
+Route::group(['middleware' => ['auth', 'isBuyer'], 'prefix' => 'employer/'], function () {
+
+    Route::get('dashboard', function () {
+        return view('freelancer-dashboard');
+    })->name('designer-dashboard');
+
+    Route::get('profile-settings', function () {
+        return view('profile-settings');
+    })->name('employer.profile-settings');
+
+    Route::get('post-project', function () {
+        return view('post-project');
+    })->name('post-project');
+
+    Route::post('profile-update', [BuyerAccountController::class, 'update'])->name('employer.profile-update');
+});
+
+
+//seller  Middleware
+Route::group(['middleware' => ['auth', 'isSeller'],  'prefix' => 'designer/'], function () {
+
+    Route::get('dashboard', function () {
+        return view('freelancer-dashboard');
+    })->name('designer.dashboard');
+
+    Route::get('profile', function () {
+        return view('freelancer-profile');
+    })->name('designer.profile');
+
+    Route::get('profile-settings', function () {
+        return view('freelancer-profile-settings');
+    })->name('designer.profile-settings');
+
+    Route::post('profile-update', [AccountController::class, 'update'])->name('designer.profile-update');
+});
