@@ -89,7 +89,7 @@
 										<h3>Manage Projects</h3>
 									</div>
 									<div class="col-md-6 text-end">
-										<a href="{{ route('post-project') }}" class="btn btn-primary back-btn mb-4">Post a Project</a>
+										<a href="{{ route('employer.post-project') }}" class="btn btn-primary back-btn mb-4">Post a Project</a>
 									</div>
 								</div>
 							</div>

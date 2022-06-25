@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\buyerController;
 use App\Http\Controllers\Admin\categoryController;
 use App\Http\Controllers\Admin\sellerController;
 use App\Http\Controllers\Buyer\AccountController as BuyerAccountController;
+use App\Http\Controllers\Buyer\ProjectController;
 use App\Http\Controllers\Seller\AccountController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -385,7 +386,7 @@ Route::group(['middleware' => ['auth', 'isAdmin'], 'prefix' => 'admin/'], functi
 });
 
 //Employer  Middleware
-Route::group(['middleware' => ['auth', 'isBuyer'], 'prefix' => 'employer/'], function () {
+Route::group(['middleware' => ['auth', 'isBuyer'], 'prefix' => 'employer/', 'as'=>'employer.'], function () {
 
     Route::get('dashboard', function () {
         return view('freelancer-dashboard');
@@ -393,30 +394,29 @@ Route::group(['middleware' => ['auth', 'isBuyer'], 'prefix' => 'employer/'], fun
 
     Route::get('profile-settings', function () {
         return view('profile-settings');
-    })->name('employer.profile-settings');
+    })->name('profile-settings');
 
-    Route::get('post-project', function () {
-        return view('post-project');
-    })->name('post-project');
+    Route::get('post-project', [ProjectController::class, 'project_page'])->name('post-project');
+    Route::post('post-project', [ProjectController::class, 'add'])->name('add-post-project');
 
     Route::post('profile-update', [BuyerAccountController::class, 'update'])->name('employer.profile-update');
 });
 
 
 //seller  Middleware
-Route::group(['middleware' => ['auth', 'isSeller'],  'prefix' => 'designer/'], function () {
+Route::group(['middleware' => ['auth', 'isSeller'],  'prefix' => 'designer/', 'as' => 'designer.'], function () {
 
     Route::get('dashboard', function () {
         return view('freelancer-dashboard');
-    })->name('designer.dashboard');
+    })->name('dashboard');
 
     Route::get('profile', function () {
         return view('freelancer-profile');
-    })->name('designer.profile');
+    })->name('profile');
 
     Route::get('profile-settings', function () {
         return view('freelancer-profile-settings');
-    })->name('designer.profile-settings');
+    })->name('profile-settings');
 
-    Route::post('profile-update', [AccountController::class, 'update'])->name('designer.profile-update');
+    Route::post('profile-update', [AccountController::class, 'update'])->name('profile-update');
 });

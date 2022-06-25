@@ -51,7 +51,7 @@
 										<li><a href="freelancer-portfolio">Freelancer Details</a></li>
 										<li><a href="project">Project</a></li>
 										<li><a href="project-details">Project Details</a></li>
-										<li><a href="{{ route('post-project') }}">Post Project</a></li>
+										<li><a href="{{ route('employer.post-project') }}">Post Project</a></li>
 									</ul>
 								</div>
 							</div>

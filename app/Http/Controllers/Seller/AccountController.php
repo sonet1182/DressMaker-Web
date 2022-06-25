@@ -31,7 +31,7 @@ class AccountController extends Controller
 
         if($req->hasfile('profile_photo'))
         {
-            $destination = $user->photo;
+            $destination = $user->profile_photo;
             if(File::exists($destination))
             {
                 File::delete($destination);
@@ -46,7 +46,7 @@ class AccountController extends Controller
 
         if($req->hasfile('cover_photo'))
         {
-            $destination = $user->photo;
+            $destination = $user->cover_photo;
             if(File::exists($destination))
             {
                 File::delete($destination);
@@ -54,9 +54,9 @@ class AccountController extends Controller
             $file = $req->file('cover_photo');
             $extension = $file->getClientOriginalExtension();
             $filename = time(). '.' . $extension;
-            $file->move('uploads/images/user/', $filename);
+            $file->move('uploads/images/user/cover_photo/', $filename);
 
-            $user->cover_photo = 'uploads/images/user/'.$filename;
+            $user->cover_photo = 'uploads/images/user/cover_photo/'.$filename;
         }
 
 

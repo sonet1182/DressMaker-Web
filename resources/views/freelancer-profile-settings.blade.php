@@ -131,7 +131,12 @@
 													</div>
 													<div class="form-group col-md-6">
 														<label>Language </label>
-														<input type="text" class="form-control">
+														<select name="language" class="form-control select">
+															<option value="English" {{ Auth::user()->gender == 'English' ? 'Selected' : '' }}>English</option>
+															<option value="French" {{ Auth::user()->gender == 'French' ? 'Selected' : '' }}>French</option>
+															<option value="Latin" {{ Auth::user()->gender == 'Latin' ? 'Selected' : '' }}>Latin</option>
+															<option value="Russian" {{ Auth::user()->gender == 'Russian' ? 'Selected' : '' }}>Russian</option>
+														</select>
 													</div>
 												</div>
 												<div class="form-row pro-pad pt-0">

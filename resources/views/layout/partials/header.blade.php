@@ -159,7 +159,7 @@
 
                         @if(Auth::user()->role == 'buyer')
 						<!-- /User Menu -->
-						<li><a href="{{ route('post-project') }}" class="login-btn">Post a Project </a></li>
+						<li><a href="{{ route('employer.post-project') }}" class="login-btn">Post a Project </a></li>
                         @endif
 
 
