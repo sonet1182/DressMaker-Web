@@ -19,7 +19,7 @@ class ProjectController extends Controller
 
 
 
-    public function update(Request $req)
+    public function add(Request $req)
     {
         // $validatedData = $req->validate([
         //     'profile_photo' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
@@ -33,22 +33,22 @@ class ProjectController extends Controller
         $project->pricing_type_id = $req->input('pricing_type_id');
         $project->area = $req->input('area');
         $project->start_date = $req->input('start_date');
-        $project->links = $req->input('links');
+        $project->link = $req->input('links');
         $project->description = $req->input('description');
 
         if($req->hasfile('document'))
         {
-            $file = $req->file('profile_photo');
+            $file = $req->file('document');
             $extension = $file->getClientOriginalExtension();
             $filename = time(). '.' . $extension;
             $file->move('uploads/project/document/', $filename);
 
-            $project->profile_photo = 'uploads/images/user/'.$filename;
+            $project->document = 'uploads/project/document/'.$filename;
         }
 
         $project->save();
 
 
-        return redirect()->back()->with('status','Profile Updated Successfully!');
+        return redirect()->back()->with('status','PProject Added Successfully!');
     }
 }

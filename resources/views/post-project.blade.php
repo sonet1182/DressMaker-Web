@@ -35,7 +35,7 @@
                                     <div class="title-detail">
                                         <h3>Project Name</h3>
                                         <div class="form-group mb-0">
-                                            <input type="text" class="form-control"  placeholder="Enter Project title">
+                                            <input type="text" name="title" class="form-control"  placeholder="Enter Project title">
                                         </div>
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@
                                     <div class="title-detail">
                                         <h3>Category Type</h3>
                                         <div class="form-group mb-0">
-                                            <select class="form-control select">
+                                            <select class="form-control select" name="category_id">
                                                 <option value="">Select One</option>
                                                 @foreach ($categories as $category)
                                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -62,7 +62,7 @@
                                     <div class="title-detail">
                                         <h3>Pricing Type</h3>
                                         <div class="form-group price-cont mb-0" id="price_type">
-                                            <select name="price" class="form-control select">
+                                            <select name="pricing_type_id" class="form-control select">
                                                 <option value="">Select One</option>
                                                 @foreach ($pricing_types as $type)
                                                     <option value="{{ $type->id }}">{{ $type->name }}</option>
@@ -96,7 +96,7 @@
                                                                 <a class="dropdown-item" href="#">Bitcoin</a>
                                                             </div>
                                                         </div>
-                                                        <input type="text" class="form-control mr-2" placeholder="20.00">
+                                                        <input type="text" name="price" class="form-control mr-2" placeholder="20.00">
                                                         <label> / hr</label>
                                                     </div>
                                                 </div>
@@ -117,7 +117,7 @@
                                     <div class="title-detail">
                                         <h3>Desired areas of expertise </h3>
                                         <div class="form-group mb-0">
-                                            <input type="text" data-role="tagsinput" class="input-tags form-control"
+                                            <input type="text" name="area" data-role="tagsinput" class="input-tags form-control"
                                                 name="services" value="Web Design" id="services"
                                                 placeholder="UX, UI, App Design, Wireframing, Branding">
                                             <p class="text-muted mb-0">Enter skills for needed for project</p>
@@ -147,12 +147,8 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <div class="filter-widget mb-0" id="period_date">
-                                                    <div class="cal-icon">
-                                                        <input type="text" class="form-control datetimepicker"
+                                                <input type="date" class="form-control" name="start_date"
                                                             placeholder="Select Date">
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -164,7 +160,7 @@
                                     <div class="title-detail">
                                         <h3>Add Documents</h3>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input">
+                                            <input type="file" class="custom-file-input" name="document">
                                             <label class="custom-file-label"></label>
                                         </div>
                                         <p class="mb-0">Size of the Document should be Below 2MB</p>
@@ -180,7 +176,7 @@
                                             <div class="row form-row links-cont">
                                                 <div class="col-12 col-md-11">
                                                     <div class="form-group mb-0">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" name="links">
                                                         <p class="mb-0">Add Reference links if any</p>
                                                     </div>
                                                 </div>
@@ -199,7 +195,7 @@
                                     <div class="title-detail">
                                         <h3>Write Description of Projects </h3>
                                         <div class="form-group mb-0">
-                                            <textarea class="form-control summernote" rows="5"></textarea>
+                                            <textarea class="form-control summernote" rows="5" name="description"></textarea>
                                         </div>
                                     </div>
                                 </div>
