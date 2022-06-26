@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Seller;
 
 use App\Http\Controllers\Controller;
+use App\Models\SellerInfo;
+use App\Models\SocialLink;
 use App\Models\User;
+use App\Models\UserAddress;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,6 +19,7 @@ class AccountController extends Controller
     //update
     public function update(Request $req)
     {
+        // return $req->all();
 
         $user = User::find(Auth::user()->id);
 
@@ -27,6 +31,8 @@ class AccountController extends Controller
         $user->phone = $req->input('phone');
         $user->gender = $req->input('gender');
         $user->hourly_rate = $req->input('hourly_rate');
+        $user->language = $req->input('language');
+        $user->overview = $req->input('overview');
 
 
         if($req->hasfile('profile_photo'))
@@ -59,8 +65,64 @@ class AccountController extends Controller
             $user->cover_photo = 'uploads/images/user/cover_photo/'.$filename;
         }
 
-
         $user->save();
+
+        $seller = SellerInfo::where('user_id',Auth::user()->id)->first();
+
+        if(!isset($seller))
+        {
+            $seller = new SellerInfo();
+
+        }
+
+        $seller->user_id = Auth::user()->id;
+        $seller->type = $req->input('type');
+        $seller->skills = $req->input('skills');
+
+
+        $seller->save();
+
+        $address = UserAddress::where('user_id',Auth::user()->id)->first();
+
+        if(!isset($address))
+        {
+            $address = new UserAddress();
+
+        }
+
+        $address->user_id = Auth::user()->id;
+        $address->address = $req->input('address');
+        $address->state = $req->input('state');
+        $address->zip_code = $req->input('zip_code');
+        $address->state = $req->input('state');
+        $address->country = $req->input('country');
+
+        $address->save();
+
+
+
+        $social_link = SocialLink::where('user_id',Auth::user()->id)->first();
+
+        if(!isset($social_link))
+        {
+            $social_link = new SocialLink();
+        }
+
+        $social_link->user_id = Auth::user()->id;
+        $social_link->facebook = $req->input('facebook');
+        $social_link->dribble = $req->input('dribble');
+        $social_link->twitter = $req->input('twitter');
+        $social_link->linkedin = $req->input('linkedin');
+        $social_link->behance = $req->input('behance');
+        $social_link->instragram = $req->input('instragram');
+
+        $social_link->save();
+
+
+
+
+
+
 
         return redirect()->back()->with('status','Profile Updated Successfully!');
     }

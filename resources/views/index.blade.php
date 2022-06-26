@@ -34,8 +34,9 @@
                                 <div class="input-group">
                                     <span class="drop-detail">
                                         <select class="form-control select" name="storeID">
-                                            <option value="project">Projects</option>
-                                            <option value="developer">Designers</option>
+                                            @foreach ($categories as $category)
+                                                <option value="{{ $category->name }}">{{ $category->name }}</option>
+                                            @endforeach
                                         </select>
                                     </span>
                                     <input type="email" class="form-control" placeholder="Search here">
@@ -393,27 +394,29 @@
                 <div class="col-md-7 col-sm-12 col-12 mx-auto">
                     <div class="section-header text-center">
                         <div class="section-line"></div>
-                        <h2 class="header-title">Most Hired Developers</h2>
+                        <h2 class="header-title">Most Hired Dewsigners</h2>
                         <p>Work with talented people at the most affordable price</p>
                     </div>
                 </div>
             </div>
 
             <div id="developers-slider" class="owl-carousel owl-theme developers-slider">
+                @foreach ($designers as $designer)
                 <div class="freelance-widget">
                     <div class="freelance-content">
                         <a data-toggle="modal" href="#rating" class="favourite"><i class="fas fa-star"></i></a>
                         <div class="freelance-img">
                             <a href="#">
-                                <img src="assets/img/user/avatar-1.jpg" alt="User Image">
+                                <img src="{{ $designer->profile_photo ? asset($designer->profile_photo) : asset('assets/img/img-04.jpg') }}" alt="Profile Photo">
                                 <span class="verified"><i class="fas fa-check-circle"></i></span>
                             </a>
                         </div>
                         <div class="freelance-info">
-                            <h3><a href="#">George Wells</a></h3>
+                            <h3><a href="#">{{ $designer->name }}</a></h3>
                             <div class="freelance-specific">UI/UX Designer</div>
                             <div class="freelance-location"><i class="fas fa-map-marker-alt me-1"></i>Alabama, USA</div>
                             <div class="rating">
+
                                 <i class="fas fa-star filled"></i>
                                 <i class="fas fa-star filled"></i>
                                 <i class="fas fa-star filled"></i>
@@ -429,338 +432,14 @@
                                 <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Node
                                         Js</span></a>
                             </div>
-                            <div class="freelancers-price">$25 Hourly</div>
+                            <div class="freelancers-price">${{ $designer->hourly_rate }} Hourly</div>
                         </div>
                     </div>
                     <div class="cart-hover">
-                        <a href="developer-details" class="btn-cart" tabindex="-1">View Profile</a>
+                        <a href="{{ url('designer-details/'.$designer->name) }}" class="btn-cart" tabindex="-1">View Profile</a>
                     </div>
                 </div>
-                <div class="freelance-widget">
-                    <div class="freelance-content">
-                        <a data-toggle="modal" href="#rating" class="favourite"><i class="fas fa-star"></i></a>
-                        <div class="freelance-img">
-                            <a href="#">
-                                <img src="assets/img/user/avatar-2.jpg" alt="User Image">
-                                <span class="verified"><i class="fas fa-check-circle"></i></span>
-                            </a>
-                        </div>
-                        <div class="freelance-info">
-                            <h3><a href="#">Timothy Smith</a></h3>
-                            <div class="freelance-specific">PHP Developer</div>
-                            <div class="freelance-location"><i class="fas fa-map-marker-alt me-1"></i>Illinois, USA</div>
-                            <div class="rating">
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="average-rating">3.5 (25)</span>
-                            </div>
-                            <div class="freelance-tags">
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Web
-                                        Design</span></a>
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">UI
-                                        Design</span></a>
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Node
-                                        Js</span></a>
-                            </div>
-                            <div class="freelancers-price">Free</div>
-                        </div>
-                    </div>
-                    <div class="cart-hover">
-                        <a href="developer-details" class="btn-cart" tabindex="-1">View Profile</a>
-                    </div>
-                </div>
-                <div class="freelance-widget">
-                    <div class="freelance-content">
-                        <a data-toggle="modal" href="#rating" class="favourite"><i class="fas fa-star"></i></a>
-                        <div class="freelance-img">
-                            <a href="#">
-                                <img src="assets/img/user/avatar-3.jpg" alt="User Image">
-                                <span class="verified"><i class="fas fa-check-circle"></i></span>
-                            </a>
-                        </div>
-                        <div class="freelance-info">
-                            <h3><a href="#">Janet Paden</a></h3>
-                            <div class="freelance-specific">Graphic Designer</div>
-                            <div class="freelance-location"><i class="fas fa-map-marker-alt me-1"></i>New York, USA</div>
-                            <div class="rating">
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="average-rating">4.1 (30)</span>
-                            </div>
-                            <div class="freelance-tags">
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Web
-                                        Design</span></a>
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">UI
-                                        Design</span></a>
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Node
-                                        Js</span></a>
-                            </div>
-                            <div class="freelancers-price">$27 Hourly</div>
-                        </div>
-                    </div>
-                    <div class="cart-hover">
-                        <a href="developer-details" class="btn-cart" tabindex="-1">View Profile</a>
-                    </div>
-                </div>
-                <div class="freelance-widget">
-                    <div class="freelance-content">
-                        <a data-toggle="modal" href="#rating" class="favourite"><i class="fas fa-star"></i></a>
-                        <div class="freelance-img">
-                            <a href="#">
-                                <img src="assets/img/img-03.jpg" alt="User Image">
-                                <span class="verified"><i class="fas fa-check-circle"></i></span>
-                            </a>
-                        </div>
-                        <div class="freelance-info">
-                            <h3><a href="#">James Douglas</a></h3>
-                            <div class="freelance-specific">iOS Developer</div>
-                            <div class="freelance-location"><i class="fas fa-map-marker-alt me-1"></i>Florida, USA</div>
-                            <div class="rating">
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="average-rating">4.3 (31)</span>
-                            </div>
-                            <div class="freelance-tags">
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Web
-                                        Design</span></a>
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">UI
-                                        Design</span></a>
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Node
-                                        Js</span></a>
-                            </div>
-                            <div class="freelancers-price">$23 Hourly</div>
-                        </div>
-                    </div>
-                    <div class="cart-hover">
-                        <a href="developer-details" class="btn-cart" tabindex="-1">View Profile</a>
-                    </div>
-                </div>
-                <div class="freelance-widget">
-                    <div class="freelance-content">
-                        <a data-toggle="modal" href="#rating" class="favourite"><i class="fas fa-star"></i></a>
-                        <div class="freelance-img">
-                            <a href="#">
-                                <img src="assets/img/img-03.jpg" alt="User Image">
-                                <span class="verified"><i class="fas fa-check-circle"></i></span>
-                            </a>
-                        </div>
-                        <div class="freelance-info">
-                            <h3><a href="#">Richard Wilson</a></h3>
-                            <div class="freelance-specific">UI/UX Designer</div>
-                            <div class="freelance-location"><i class="fas fa-map-marker-alt me-1"></i>Alabama, USA</div>
-                            <div class="rating">
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="average-rating">4.7 (32)</span>
-                            </div>
-                            <div class="freelance-tags">
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Web
-                                        Design</span></a>
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">UI
-                                        Design</span></a>
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Node
-                                        Js</span></a>
-                            </div>
-                            <div class="freelancers-price">$25 Hourly</div>
-                        </div>
-                    </div>
-                    <div class="cart-hover">
-                        <a href="developer-details" class="btn-cart" tabindex="-1">View Profile</a>
-                    </div>
-                </div>
-                <div class="freelance-widget">
-                    <div class="freelance-content">
-                        <a data-toggle="modal" href="#rating" class="favourite"><i class="fas fa-star"></i></a>
-                        <div class="freelance-img">
-                            <a href="#">
-                                <img src="assets/img/img-03.jpg" alt="User Image">
-                                <span class="verified"><i class="fas fa-check-circle"></i></span>
-                            </a>
-                        </div>
-                        <div class="freelance-info">
-                            <h3><a href="#">Richard Wilson</a></h3>
-                            <div class="freelance-specific">UI/UX Designer</div>
-                            <div class="freelance-location"><i class="fas fa-map-marker-alt me-1"></i>Alabama, USA</div>
-                            <div class="rating">
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="average-rating">4.7 (32)</span>
-                            </div>
-                            <div class="freelance-tags">
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Web
-                                        Design</span></a>
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">UI
-                                        Design</span></a>
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Node
-                                        Js</span></a>
-                            </div>
-                            <div class="freelancers-price">$25 Hourly</div>
-                        </div>
-                    </div>
-                    <div class="cart-hover">
-                        <a href="developer-details" class="btn-cart" tabindex="-1">View Profile</a>
-                    </div>
-                </div>
-                <div class="freelance-widget">
-                    <div class="freelance-content">
-                        <a data-toggle="modal" href="#rating" class="favourite"><i class="fas fa-star"></i></a>
-                        <div class="freelance-img">
-                            <a href="#">
-                                <img src="assets/img/img-03.jpg" alt="User Image">
-                                <span class="verified"><i class="fas fa-check-circle"></i></span>
-                            </a>
-                        </div>
-                        <div class="freelance-info">
-                            <h3><a href="#">Richard Wilson</a></h3>
-                            <div class="freelance-specific">UI/UX Designer</div>
-                            <div class="freelance-location"><i class="fas fa-map-marker-alt me-1"></i>Alabama, USA</div>
-                            <div class="rating">
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="average-rating">4.7 (32)</span>
-                            </div>
-                            <div class="freelance-tags">
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Web
-                                        Design</span></a>
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">UI
-                                        Design</span></a>
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Node
-                                        Js</span></a>
-                            </div>
-                            <div class="freelancers-price">$25 Hourly</div>
-                        </div>
-                    </div>
-                    <div class="cart-hover">
-                        <a href="developer-details" class="btn-cart" tabindex="-1">View Profile</a>
-                    </div>
-                </div>
-                <div class="freelance-widget">
-                    <div class="freelance-content">
-                        <a data-toggle="modal" href="#rating" class="favourite"><i class="fas fa-star"></i></a>
-                        <div class="freelance-img">
-                            <a href="#">
-                                <img src="assets/img/img-03.jpg" alt="User Image">
-                                <span class="verified"><i class="fas fa-check-circle"></i></span>
-                            </a>
-                        </div>
-                        <div class="freelance-info">
-                            <h3><a href="#">Richard Wilson</a></h3>
-                            <div class="freelance-specific">UI/UX Designer</div>
-                            <div class="freelance-location"><i class="fas fa-map-marker-alt me-1"></i>Alabama, USA</div>
-                            <div class="rating">
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="average-rating">4.7 (32)</span>
-                            </div>
-                            <div class="freelance-tags">
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Web
-                                        Design</span></a>
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">UI
-                                        Design</span></a>
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Node
-                                        Js</span></a>
-                            </div>
-                            <div class="freelancers-price">$25 Hourly</div>
-                        </div>
-                    </div>
-                    <div class="cart-hover">
-                        <a href="developer-details" class="btn-cart" tabindex="-1">View Profile</a>
-                    </div>
-                </div>
-                <div class="freelance-widget">
-                    <div class="freelance-content">
-                        <a data-toggle="modal" href="#rating" class="favourite favourited"><i
-                                class="fas fa-star"></i></a>
-                        <div class="freelance-img">
-                            <a href="#">
-                                <img src="assets/img/img-04.jpg" alt="User Image">
-                                <span class="verified"><i class="fas fa-check-circle"></i></span>
-                            </a>
-                        </div>
-                        <div class="freelance-info">
-                            <h3><a href="#">Richard Wilson</a></h3>
-                            <div class="freelance-specific">UI/UX Designer</div>
-                            <div class="freelance-location"><i class="fas fa-map-marker-alt me-1"></i>Alabama, USA</div>
-                            <div class="rating">
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="average-rating">4.8 (55)</span>
-                            </div>
-                            <div class="freelance-tags">
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Web
-                                        Design</span></a>
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">UI
-                                        Design</span></a>
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Node
-                                        Js</span></a>
-                            </div>
-                            <div class="freelancers-price">$25 Hourly</div>
-                        </div>
-                    </div>
-                    <div class="cart-hover">
-                        <a href="developer-details" class="btn-cart" tabindex="-1">View Profile</a>
-                    </div>
-                </div>
-                <div class="freelance-widget">
-                    <div class="freelance-content">
-                        <a data-toggle="modal" href="#rating" class="favourite"><i class="fas fa-star"></i></a>
-                        <div class="freelance-img">
-                            <a href="#">
-                                <img src="assets/img/img-03.jpg" alt="User Image">
-                                <span class="verified"><i class="fas fa-check-circle"></i></span>
-                            </a>
-                        </div>
-                        <div class="freelance-info">
-                            <h3><a href="#">Richard Wilson</a></h3>
-                            <div class="freelance-specific">UI/UX Designer</div>
-                            <div class="freelance-location"><i class="fas fa-map-marker-alt me-1"></i>Alabama, USA</div>
-                            <div class="rating">
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="average-rating">5.0 (4)</span>
-                            </div>
-                            <div class="freelance-tags">
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Web
-                                        Design</span></a>
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">UI
-                                        Design</span></a>
-                                <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Node
-                                        Js</span></a>
-                            </div>
-                            <div class="freelancers-price">Free</div>
-                        </div>
-                    </div>
-                    <div class="cart-hover">
-                        <a href="developer-details" class="btn-cart" tabindex="-1">View Profile</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
         </div>

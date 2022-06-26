@@ -6,77 +6,9 @@
 <!-- Page Content -->
 			<div class="content">
 				<div class="container-fluid">
-					<div class="row">
+					<div class="row" style="margin-top: 60px">
 						<div class="col-xl-3 col-md-4 theiaStickySidebar">
-							<div class="settings-widget">
-								<div class="settings-header d-sm-flex flex-row flex-wrap text-center text-sm-start align-items-center">
-									<a href="freelancer-profile"><img alt="profile image" src="assets/img/img-04.jpg" class="avatar-lg rounded-circle"></a>
-									<div class="ms-sm-3 ms-md-0 ms-lg-3 mt-2 mt-sm-0 mt-md-2 mt-lg-0">
-										<p class="mb-2">Welcome,</p>
-										<h3 class="mb-0"><a href="freelancer-profile">John Danie S.</a></h3>
-										<p class="mb-0">@johndaniee</p>
-									</div>
-								</div>
-								<div class="settings-menu">
-									<ul>
-										<li class="nav-item">
-											<a href="freelancer-dashboard" class="nav-link">
-												<i class="material-icons">verified_user</i> Dashboard
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="freelancer-project-proposals" class="nav-link active">
-												<i class="material-icons">business_center</i> Projects
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="freelancer-favourites" class="nav-link">
-												<i class="material-icons">local_play</i> Favourites
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="freelancer-review" class="nav-link">
-												<i class="material-icons">record_voice_over</i> Reviews
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="freelancer-portfolio" class="nav-link">
-												<i class="material-icons">pie_chart</i> Portfolio
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="freelancer-chats" class="nav-link">
-												<i class="material-icons">chat</i> Messages
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="freelancer-membership" class="nav-link">
-												<i class="material-icons">person_add</i> Membership
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="freelancer-verify-identity" class="nav-link">
-												<i class="material-icons">person_pin</i> Verify Identity
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="freelancer-withdraw-money" class="nav-link">
-												<i class="material-icons">wifi_tethering</i> Payments
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="freelancer-profile-settings" class="nav-link">
-												<i class="material-icons">settings</i>  Settings
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="{{ route('home') }}" class="nav-link">
-												<i class="material-icons">power_settings_new</i> Logout
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
+							@include('seller.layout.sidenav')
 						</div>
 						<div class="col-xl-9 col-md-8">
 							<div class="page-title">
@@ -85,7 +17,7 @@
 							<nav class="user-tabs mb-4">
 								<ul class="nav nav-tabs nav-tabs-bottom nav-justified">
 									<li class="nav-item">
-										<a class="nav-link active" href="freelancer-project-proposals">My Proposals</a>
+										<a class="nav-link active" href="{{ route('designer.projects') }}">My Proposals</a>
 									</li>
 									<li class="nav-item">
 										<a class="nav-link" href="freelancer-ongoing-projects">Ongoing Projects</a>
@@ -103,149 +35,58 @@
 							<div class="proposals-section">
 								<h3 class="page-subtitle">My Proposals</h3>
 
-								<!-- Proposals -->
-								<div class="freelancer-proposals">
-									<div class="project-proposals align-items-center freelancer">
-										<div class="proposals-info">
-											<div class="proposals-detail">
-												<h3 class="proposals-title">3D Renders and Amazon Product Store images/Video</h3>
-												<div class="proposals-content">
-													<div class="proposal-img">
-														<div class="text-md-center">
-															<img src="assets/img/developer/developer-01.jpg" alt="" class="img-fluid">
-															<h4>John Doe</h4>
-															<span class="info-btn">client</span>
-														</div>
-													</div>
-													<div class="proposal-client">
-														<h4 class="title-info">Client Price</h4>
-														<h2 class="client-price">$599.00</h2>
-														<span class="price-type">( FIXED )</span>
-													</div>
-													<div class="proposal-type">
-														<h4 class="title-info">Job Type</h4>
-														<h3>Hourly</h3>
-													</div>
-												</div>
-											</div>
-											<div class="project-hire-info">
-												<div class="content-divider-1"></div>
-												<div class="projects-amount">
-													<p>Your Price</p>
-													<h3>$500.00</h3>
-													<h5>in 12 Days</h5>
-												</div>
-												<div class="content-divider-1"></div>
-												<div class="projects-action text-center">
-													<a data-bs-toggle="modal" href="#file" class="projects-btn">Edit Proposals </a>
-													<a href="freelancer-view-project-detail" class="projects-btn">View Project</a>
-													<a href="#" class="proposal-delete">Delete Proposal</a>
-												</div>
-											</div>
-										</div>
-										<div class="description-proposal">
-											<h5 class="desc-title">Description</h5>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. At diam sit erat et eros. Et cursus tellus viverra adipiscing suspendisse. Semper arcu est eget eleifend. Faucibus elit massa sollicitudin elementum ut feugiat nunc ac. Turpis quam sed in sed curabitur netus laoreet. In tortor neque sapien praesent porttitor cursus sed cum....<a href="#" class="text-primary font-bold">Readmore</a></p>
-										</div>
-									</div>
-								</div>
-								<!-- Proposals -->
+                                @foreach ($projects as $project)
 
-								<!-- Proposals -->
-								<div class="freelancer-proposals">
-									<div class="project-proposals align-items-center freelancer">
-										<div class="proposals-info">
-											<div class="proposals-detail">
-												<h3 class="proposals-title">Landing Page Redesign / Sales Page Redesign (Not Entire Web)</h3>
-												<div class="proposals-content">
-													<div class="proposal-img">
-														<div class="text-md-center">
-															<img src="assets/img/developer/developer-01.jpg" alt="" class="img-fluid">
-															<h4>John Doe</h4>
-															<span class="info-btn">client</span>
+                                <!-- project list -->
+							<div class="my-projects-list">
+								<div class="row">
+									<div class="col-lg-12 flex-wrap">
+										<div class="projects-card flex-fill">
+											<div class="card-body">
+												<div class="projects-details align-items-center">
+													<div class="project-info project">
+														<span>{{ $project->category ? $project->category->name : '' }}</span>
+														<h2>W{{ $project->title }}</h2>
+														<div class="proposal-client">
+															<h4 class="title-info">Client Price</h4>
+															<div class="d-flex">
+																<h3 class="client-price me-2">$599.00</h3>
+																<p class="amnt-type">( FIXED )</p>
+															</div>
 														</div>
 													</div>
-													<div class="proposal-client">
-														<h4 class="title-info">Client Price</h4>
-														<h2 class="client-price">$320.00</h2>
-														<span class="price-type">( FIXED )</span>
-													</div>
-													<div class="proposal-type">
-														<h4 class="title-info">Job Type</h4>
-														<h3>Hourly</h3>
+													<div class="project-hire-info project">
+														<div class="content-divider"></div>
+														<div class="proposer-info project">
+															<div class="proposer-img">
+																<img src="assets/img/developer/developer-01.jpg" alt="" class="img-fluid">
+															</div>
+															<div class="proposer-detail">
+																<h4>Hannah Finn</h4>
+																<ul class="proposal-details">
+																	<li> October 10, 2021</li>
+																	<li><i class="fas fa-star text-primary"></i> 4 Reviews</li>
+																</ul>
+															</div>
+														</div>
+														<div class="content-divider"></div>
+														<div class="projects-action text-start project">
+															<a href="freelancer-view-project-detail" class="projects-btn project">View Details </a>
+															<p class="hired-detail">Project taken on</p>
+															<p class="hired-date">28 October 2021</p>
+														</div>
 													</div>
 												</div>
 											</div>
-											<div class="project-hire-info">
-												<div class="content-divider-1"></div>
-												<div class="projects-amount">
-													<p>Your Price</p>
-													<h3>$300.00</h3>
-													<h5>in 15 Days</h5>
-												</div>
-												<div class="content-divider-1"></div>
-												<div class="projects-action text-center">
-													<a data-bs-toggle="modal" href="#file" class="projects-btn">Edit Proposals </a>
-													<a href="freelancer-view-project-detail" class="projects-btn">View Project</a>
-													<a href="#" class="proposal-delete">Delete Proposal</a>
-												</div>
-											</div>
-										</div>
-										<div class="description-proposal">
-											<h5 class="desc-title">Description</h5>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. At diam sit erat et eros. Et cursus tellus viverra adipiscing suspendisse. Semper arcu est eget eleifend. Faucibus elit massa sollicitudin elementum ut feugiat nunc ac. Turpis quam sed in sed curabitur netus laoreet. In tortor neque sapien praesent porttitor cursus sed cum....<a href="#" class="text-primary font-bold">Readmore</a></p>
 										</div>
 									</div>
 								</div>
-								<!-- Proposals -->
+							</div>
+							<!-- /project list -->
 
-								<!-- Proposals -->
-								<div class="freelancer-proposals">
-									<div class="project-proposals align-items-center freelancer">
-										<div class="proposals-info">
-											<div class="proposals-detail">
-												<h3 class="proposals-title">WooCommerce Product Page Back Up Restoration</h3>
-												<div class="proposals-content">
-													<div class="proposal-img">
-														<div class="text-md-center">
-															<img src="assets/img/developer/developer-01.jpg" alt="" class="img-fluid">
-															<h4>John Doe</h4>
-															<span class="info-btn">client</span>
-														</div>
-													</div>
-													<div class="proposal-client">
-														<h4 class="title-info">Client Price</h4>
-														<h2 class="client-price">$500.00</h2>
-														<span class="price-type">( FIXED )</span>
-													</div>
-													<div class="proposal-type">
-														<h4 class="title-info">Job Type</h4>
-														<h3>Hourly</h3>
-													</div>
-												</div>
-											</div>
-											<div class="project-hire-info">
-												<div class="content-divider-1"></div>
-												<div class="projects-amount">
-													<p>Your Price</p>
-													<h3>$450.00</h3>
-													<h5>in 18 Days</h5>
-												</div>
-												<div class="content-divider-1"></div>
-												<div class="projects-action text-center">
-													<a data-bs-toggle="modal" href="#file" class="projects-btn">Edit Proposals </a>
-													<a href="freelancer-view-project-detail" class="projects-btn">View Project</a>
-													<a href="#" class="proposal-delete">Delete Proposal</a>
-												</div>
-											</div>
-										</div>
-										<div class="description-proposal">
-											<h5 class="desc-title">Description</h5>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. At diam sit erat et eros. Et cursus tellus viverra adipiscing suspendisse. Semper arcu est eget eleifend. Faucibus elit massa sollicitudin elementum ut feugiat nunc ac. Turpis quam sed in sed curabitur netus laoreet. In tortor neque sapien praesent porttitor cursus sed cum....<a href="#" class="text-primary font-bold">Readmore</a></p>
-										</div>
-									</div>
-								</div>
-								<!-- Proposals -->
+                                @endforeach
+
+
 
 							</div>
 							<!-- /Proposals list -->

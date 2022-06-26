@@ -29,7 +29,7 @@
 
 						<ul class="main-nav">
 							<li class="{{ Request::is('index') ? 'active' : '' }}">
-								<a href="index">Home</a>
+								<a href="{{ route('home') }}">Home</a>
 							</li>
 							<li class="has-submenu <?php if($page=="dashboard" || $page=="manage-projects"  || $page=="developer"  || $page=="developer-details" || $page=="favourites" || $page=="membership-plans" || $page=="milestones" || $page=="chats" || $page=="review" || $page=="deposit-funds" || $page=="verify-identity" || $page=="profile-settings") { echo 'active'; } ?>">
 								<a href="">For Employers<i class="fas fa-chevron-down"></i></a>
@@ -65,7 +65,7 @@
 										</ul>
 									</li>
 									<li class="<?php if($page=="freelancer-dashboard") { echo 'active'; } ?>"><a href="freelancer-dashboard">Dashboard</a></li>
-									<li class="<?php if($page=="freelancer-project-proposals") { echo 'active'; } ?>"><a href="freelancer-project-proposals">Projects</a></li>
+									<li class="<?php if($page=="freelancer-project-proposals") { echo 'active'; } ?>"><a href="{{ route('designer.projects') }}">Projects</a></li>
 									<li class="<?php if($page=="freelancer-favourites") { echo 'active'; } ?>"><a href="freelancer-favourites">Favourites</a></li>
 									<li class="<?php if($page=="freelancer-membership") { echo 'active'; } ?>"><a href="freelancer-membership">Membership</a></li>
 									<li class="<?php if($page=="freelancer-change-password") { echo 'active'; } ?>"><a href="freelancer-change-password">Change Password</a></li>
@@ -73,7 +73,7 @@
 									<li class="<?php if($page=="freelancer-review") { echo 'active'; } ?>"><a href="freelancer-review">Review</a></li>
 									<li class="<?php if($page=="freelancer-withdraw-money") { echo 'active'; } ?>"><a href="freelancer-withdraw-money">Payments</a></li>
 									<li class="<?php if($page=="freelancer-verify-identity") { echo 'active'; } ?>"><a href="freelancer-verify-identity">Verify Identity</a></li>
-									<li class="<?php if($page=="freelancer-profile-settings") { echo 'active'; } ?>"><a href="freelancer-profile-settings">Settings</a></li>
+									<li class="<?php if($page=="freelancer-profile-settings") { echo 'active'; } ?>"><a href="{{ route('designer.profile-settings') }}">Settings</a></li>
 								</ul>
 							</li>
 							@endif
@@ -89,7 +89,7 @@
 										</ul>
 									</li>
 									<li class="<?php if($page=="freelancer-dashboard") { echo 'active'; } ?>"><a href="freelancer-dashboard">Dashboard</a></li>
-									<li class="<?php if($page=="freelancer-project-proposals") { echo 'active'; } ?>"><a href="freelancer-project-proposals">Projects</a></li>
+									<li class="<?php if($page=="freelancer-project-proposals") { echo 'active'; } ?>"><a href="{{ route('designer.projects') }}">Projects</a></li>
 									<li class="<?php if($page=="freelancer-favourites") { echo 'active'; } ?>"><a href="freelancer-favourites">Favourites</a></li>
 									<li class="<?php if($page=="freelancer-membership") { echo 'active'; } ?>"><a href="freelancer-membership">Membership</a></li>
 									<li class="<?php if($page=="freelancer-change-password") { echo 'active'; } ?>"><a href="freelancer-change-password">Change Password</a></li>
@@ -98,7 +98,7 @@
 									<li class="<?php if($page=="freelancer-portfolio") { echo 'active'; } ?>"><a href="freelancer-portfolio">Portfolio</a></li>
 									<li class="<?php if($page=="freelancer-withdraw-money") { echo 'active'; } ?>"><a href="freelancer-withdraw-money">Payments</a></li>
 									<li class="<?php if($page=="freelancer-verify-identity") { echo 'active'; } ?>"><a href="freelancer-verify-identity">Verify Identity</a></li>
-									<li class="<?php if($page=="freelancer-profile-settings") { echo 'active'; } ?>"><a href="freelancer-profile-settings">Settings</a></li>
+									<li class="<?php if($page=="freelancer-profile-settings") { echo 'active'; } ?>"><a href="{{ route('designer.profile-settings') }}">Settings</a></li>
 								</ul>
 							</li>
 							@endif
@@ -210,14 +210,14 @@
 								<a class="dropdown-item" href="{{ url('designer/dashboard') }}"><i class="material-icons">wifi_tethering</i> Dashboard</a>
 								<a class="dropdown-item" href="{{ url('designer/profile') }}"><i class="material-icons">verified_user</i> View profile</a>
 								<div class="drop-head">Projects Settings</div>
-								<a class="dropdown-item" href="freelancer-project-proposals"><i class="material-icons">business_center</i> Projects</a>
+								<a class="dropdown-item" href="{{ route('designer.projects') }}"><i class="material-icons">business_center</i> Projects</a>
 								<a class="dropdown-item" href="freelancer-bookmarks"><i class="material-icons">local_play</i> Bookmarks</a>
 								<a class="dropdown-item" href="freelancer-review"><i class="material-icons">pie_chart</i> Reviews</a>
 								<div class="drop-head">Financial Settings</div>
 								<a class="dropdown-item bal" href="#">Balance <span class="amt">₹0.00 INR</span></a>
 								<a class="dropdown-item" href="freelancer-withdraw-money"><i class="material-icons">wifi_tethering</i> Withdraw funds</a>
 								<div class="drop-head">Account Details</div>
-								<a class="dropdown-item" href="freelancer-profile-settings"> <i class="material-icons">settings</i> Profile Settings</a>
+								<a class="dropdown-item" href="{{ route('designer.profile-settings') }}"> <i class="material-icons">settings</i> Profile Settings</a>
 								<a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

@@ -47,5 +47,16 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+
     ];
+
+    public function links()
+    {
+        return $this->hasOne(SocialLink::class, 'user_id');
+    }
+
+    public function address()
+    {
+        return $this->hasOne(UserAddress::class, 'user_id');
+    }
 }

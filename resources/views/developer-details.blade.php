@@ -30,13 +30,13 @@
 								<div class="profile-box">
 									<div class="provider-widget">
 										<div class="pro-info-left">
-											<div class="provider-img"><img src="assets/img/img-01.png" alt="User"></div>
+											<div class="provider-img"><img src="{{ asset($user->profile_photo) }}" alt="User" height="154"></div>
 											<div class="profile-info">
-												<h2 class="profile-title">David Peterson</h2>
+												<h2 class="profile-title">{{ $user->name }}</h2>
 												<p class="profile-position">iOS Expert</p>
 												<div><a href="#" class="btn full-btn">Full time</a></div>
 												<ul class="profile-preword">
-													<li><img src="assets/img/flags/pl.png" alt="" height="16"> Poland</li>
+													<li><img src="/assets/img/flags/pl.png" alt="" height="16"> {{ $user->address->country }}</li>
 													<li><div class="rating">
 														<span class="average-rating">4.6</span>
 														<i class="fas fa-star filled"></i>
@@ -50,7 +50,7 @@
 										</div>
 										<div class="pro-info-right profile-inf r-0">
 											<ul class="profile-right">
-												<li><div><h3 class="amt-hr">$20.00</h3> <p>( Per Hour )</p></div></li>
+												<li><div><h3 class="amt-hr">${{ $user->hourly_rate }}.00</h3> <p>( Per Hour )</p></div></li>
 											</ul>
 											<div class="d-flex align-items-center justify-content-md-end justify-content-center">
 												<a href="javascript:void(0)"><i class="fas fa-heart heart fa-2x me-2 orange-text"></i></a>
@@ -101,37 +101,37 @@
 									<ul class="nav nav-tabs nav-tabs-solid nav-justified">
 										<li class="nav-item">
 											<a class="nav-link" href="#overview">
-												<img src="assets/img/icon/tab-icon-01.png" height="25" alt="User Image">
+												<img src="/assets/img/icon/tab-icon-01.png" height="25" alt="User Image">
 												<p class="bg-red">Overview</p>
 											</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="#project">
-												<img src="assets/img/icon/tab-icon-02.png" height="25" alt="User Image">
+												<img src="/assets/img/icon/tab-icon-02.png" height="25" alt="User Image">
 												<p class="bg-blue">Projects</p>
 											</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="#experience">
-												<img src="assets/img/icon/tab-icon-03.png" height="25" alt="User Image">
+												<img src="/assets/img/icon/tab-icon-03.png" height="25" alt="User Image">
 												<p class="bg-violet">Experience</p>
 											</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="#education">
-												<img src="assets/img/icon/tab-icon-04.png" height="25" alt="User Image">
+												<img src="/assets/img/icon/tab-icon-04.png" height="25" alt="User Image">
 												<p class="bg-yellow">Education</p>
 											</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="#skill">
-												<img src="assets/img/icon/tab-icon-05.png" height="25" alt="User Image">
+												<img src="/assets/img/icon/tab-icon-05.png" height="25" alt="User Image">
 												<p class="bg-pink">Skills</p>
 											</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="#feedback">
-												<img src="assets/img/icon/tab-icon-06.png" height="25" alt="User Image">
+												<img src="/assets/img/icon/tab-icon-06.png" height="25" alt="User Image">
 												<p class="bg-green">Feedbacks</p>
 											</a>
 										</li>
@@ -170,8 +170,8 @@
 											<div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
 												<div class="project-widget">
 													<div class="pro-image">
-														<a href="assets/img/project.jpg" data-fancybox="gallery2">
-															<img class="img-fluid" alt="User Image" src="assets/img/project.jpg">
+														<a href="/assets/img/project.jpg" data-fancybox="gallery2">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -185,8 +185,8 @@
 											<div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
 												<div class="project-widget">
 													<div class="pro-image">
-														<a href="assets/img/project-1.jpg" data-fancybox="gallery2">
-															<img class="img-fluid" alt="User Image" src="assets/img/project-1.jpg">
+														<a href="/assets/img/project-1.jpg" data-fancybox="gallery2">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project-1.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -200,8 +200,8 @@
 											<div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
 												<div class="project-widget">
 													<div class="pro-image">
-														<a href="assets/img/project-2.jpg" data-fancybox="gallery2">
-															<img class="img-fluid" alt="User Image" src="assets/img/project-2.jpg">
+														<a href="/assets/img/project-2.jpg" data-fancybox="gallery2">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project-2.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -215,8 +215,8 @@
 											<div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
 												<div class="project-widget">
 													<div class="pro-image">
-														<a href="assets/img/project-3.jpg" data-fancybox="gallery2">
-															<img class="img-fluid" alt="User Image" src="assets/img/project-3.jpg">
+														<a href="/assets/img/project-3.jpg" data-fancybox="gallery2">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project-3.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -230,8 +230,8 @@
 											<div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
 												<div class="project-widget">
 													<div class="pro-image">
-														<a href="assets/img/project-4.jpg" data-fancybox="gallery2">
-															<img class="img-fluid" alt="User Image" src="assets/img/project-4.jpg">
+														<a href="/assets/img/project-4.jpg" data-fancybox="gallery2">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project-4.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -245,8 +245,8 @@
 											<div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
 												<div class="project-widget">
 													<div class="pro-image">
-														<a href="assets/img/project-5.jpg" data-fancybox="gallery2">
-															<img class="img-fluid" alt="User Image" src="assets/img/project-5.jpg">
+														<a href="/assets/img/project-5.jpg" data-fancybox="gallery2">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project-5.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -260,8 +260,8 @@
 											<div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
 												<div class="project-widget">
 													<div class="pro-image">
-														<a href="assets/img/project-6.jpg" data-fancybox="gallery2">
-															<img class="img-fluid" alt="User Image" src="assets/img/project-6.jpg">
+														<a href="/assets/img/project-6.jpg" data-fancybox="gallery2">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project-6.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -275,8 +275,8 @@
 											<div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
 												<div class="project-widget">
 													<div class="pro-image">
-														<a href="assets/img/project-7.jpg" data-fancybox="gallery2">
-															<img class="img-fluid" alt="User Image" src="assets/img/project-7.jpg">
+														<a href="/assets/img/project-7.jpg" data-fancybox="gallery2">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project-7.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -366,7 +366,7 @@
 									<div class="about-author">
 										<div class="about-author-img">
 											<div class="author-img-wrap">
-												<img class="img-fluid" alt="" src="assets/img/img-03.jpg">
+												<img class="img-fluid" alt="" src="/assets/img/img-03.jpg">
 											</div>
 										</div>
 										<div class="author-details">
@@ -385,7 +385,7 @@
 									<div class="about-author">
 										<div class="about-author-img">
 											<div class="author-img-wrap">
-												<img class="img-fluid" alt="" src="assets/img/img-02.jpg">
+												<img class="img-fluid" alt="" src="/assets/img/img-02.jpg">
 											</div>
 										</div>
 										<div class="author-details">
@@ -516,7 +516,7 @@
 					</div>
 					<div class="modal-body">
 						<div class="text-center pt-0 mb-4">
-							<img src="assets/img/logo-01.png" alt="logo" class="img-fluid mb-1">
+							<img src="/assets/img/logo-01.png" alt="logo" class="img-fluid mb-1">
 							<h5 class="modal-title">Discuss your project with David</h5>
 						</div>
 						<form action="dashboard">

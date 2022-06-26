@@ -5,7 +5,9 @@ use App\Http\Controllers\Admin\categoryController;
 use App\Http\Controllers\Admin\sellerController;
 use App\Http\Controllers\Buyer\AccountController as BuyerAccountController;
 use App\Http\Controllers\Buyer\ProjectController;
+use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\Seller\AccountController;
+use App\Http\Controllers\Seller\ProjectController as SellerProjectController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,9 +22,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
+
 Route::get('/home', function () {
     return view('index');
 })->name('pagee');
@@ -68,9 +68,7 @@ Route::get('/delete-account', function () {
 Route::get('/deposit-funds', function () {
     return view('deposit-funds');
 })->name('deposit-funds');
-Route::get('/developer-details', function () {
-    return view('developer-details');
-})->name('developer-details');
+
 Route::get('/developer', function () {
     return view('developer');
 })->name('developer');
@@ -92,9 +90,7 @@ Route::get('/forgot-password', function () {
 Route::get('/freelancer-cancelled-projects', function () {
     return view('freelancer-cancelled-projects');
 })->name('freelancer-cancelled-projects');
-Route::get('/freelancer-change-password', function () {
-    return view('freelancer-change-password');
-})->name('freelancer-change-password');
+
 Route::get('/freelancer-chats', function () {
     return view('freelancer-chats');
 })->name('freelancer-chats');
@@ -134,9 +130,7 @@ Route::get('/freelancer-portfolio', function () {
 })->name('freelancer-portfolio');
 
 
-Route::get('/freelancer-project-proposals', function () {
-    return view('freelancer-project-proposals');
-})->name('freelancer-project-proposals');
+
 Route::get('/freelancer-review', function () {
     return view('freelancer-review');
 })->name('freelancer-review');
@@ -366,6 +360,8 @@ Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/', [HomePageController::class, 'index'])->name('home');
+
 //admin Route
 Route::get('admin/designers', [sellerController::class, 'index']);
 Route::get('admin/buyers', [buyerController::class, 'index']);
@@ -375,6 +371,7 @@ Route::get('admin/categories', [categoryController::class, 'list'])->name('categ
 Route::post('admin/add_category', [categoryController::class, 'add'])->name('category.add');
 Route::post('admin/update_category/{id}', [categoryController::class, 'update'])->name('category.update');
 
+Route::get('/designer-details/{slug}', [HomePageController::class, 'seller_details'])->name('developer-details');
 
 
 
@@ -418,5 +415,11 @@ Route::group(['middleware' => ['auth', 'isSeller'],  'prefix' => 'designer/', 'a
         return view('freelancer-profile-settings');
     })->name('profile-settings');
 
+    Route::get('freelancer-change-password', function () {
+        return view('freelancer-change-password');
+    })->name('freelancer-change-password');
+
     Route::post('profile-update', [AccountController::class, 'update'])->name('profile-update');
+    Route::get('projects', [SellerProjectController::class, 'index'])->name('projects');
+
 });

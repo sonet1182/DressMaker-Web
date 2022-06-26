@@ -10,7 +10,7 @@
 						<div class="col-xl-3 col-md-4 theiaStickySidebar">
 							<div class="settings-widget">
 								<div class="settings-header d-sm-flex flex-row flex-wrap text-center text-sm-start align-items-center">
-									<a href="freelancer-profile"><img alt="profile image" src="{{ asset('assets/img/img-04.jpg')}}" class="avatar-lg rounded-circle"></a>
+									<a href="{{ route('designer.profile') }}"><img alt="profile image" src="{{ asset('assets/img/img-04.jpg')}}" class="avatar-lg rounded-circle"></a>
 									<div class="ms-sm-3 ms-md-0 ms-lg-3 mt-2 mt-sm-0 mt-md-2 mt-lg-0">
 										<p class="mb-2">Welcome, </p>
 										<h3 class="mb-0">{{ Auth::user() ? Auth::user()->name : ''  }}</h3>
@@ -25,7 +25,7 @@
 											</a>
 										</li>
 										<li class="nav-item">
-											<a href="freelancer-project-proposals" class="nav-link">
+											<a href="{{ route('designer.projects') }}" class="nav-link">
 												<i class="material-icons">business_center</i> Projects
 											</a>
 										</li>
@@ -65,7 +65,7 @@
 											</a>
 										</li>
 										<li class="nav-item">
-											<a href="freelancer-profile-settings" class="nav-link">
+											<a href="{{ route('designer.profile-settings') }}" class="nav-link">
 												<i class="material-icons">settings</i>  Settings
 											</a>
 										</li>

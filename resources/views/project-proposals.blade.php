@@ -196,7 +196,7 @@
 													<ul class="proposal-details">
 														<li> February 26, 2021</li>
 														<li><i class="fas fa-star text-primary"></i> 4 Reviews</li>
-														<li> <a href="freelancer-profile" class="font-semibold text-primary">View Profile</a></li>
+														<li> <a href="{{ route('designer.profile') }}" class="font-semibold text-primary">View Profile</a></li>
 													</ul>
 												</div>
 											</div>
@@ -235,7 +235,7 @@
 													<ul class="proposal-details">
 														<li> October 26, 2021</li>
 														<li><i class="fas fa-star text-primary"></i> 4 Reviews</li>
-														<li> <a href="freelancer-profile" class="font-semibold text-primary">View Profile</a></li>
+														<li> <a href="{{ route('designer.profile') }}" class="font-semibold text-primary">View Profile</a></li>
 													</ul>
 												</div>
 											</div>
@@ -273,7 +273,7 @@
 													<ul class="proposal-details">
 														<li> October 28, 2021</li>
 														<li><i class="fas fa-star text-primary"></i> 4 Reviews</li>
-														<li> <a href="freelancer-profile" class="font-semibold text-primary">View Profile</a></li>
+														<li> <a href="{{ route('designer.profile') }}" class="font-semibold text-primary">View Profile</a></li>
 													</ul>
 												</div>
 											</div>

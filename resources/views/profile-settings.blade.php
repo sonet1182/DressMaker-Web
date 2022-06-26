@@ -17,7 +17,7 @@
                                     </a>
 									<div class="ms-sm-3 ms-md-0 ms-lg-3 mt-2 mt-sm-0 mt-md-2 mt-lg-0">
 										<p class="mb-2">Welcome,</p>
-										<h3 class="mb-0"><a href="freelancer-profile">{{ Auth::user()->name }}</a></h3>
+										<h3 class="mb-0"><a href="{{ route('designer.profile') }}">{{ Auth::user()->name }}</a></h3>
 										<p class="mb-0">@employer{{ Auth::user()->id }}</p>
 									</div>
 								</div>

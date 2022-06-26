@@ -16,9 +16,11 @@
 								<div class="profile-box">
 									<div class="provider-widget">
 										<div class="pro-info-left">
-											<div class="provider-img"><img src="/assets/img/img-01.png" alt="User"></div>
+											<div class="provider-img">
+                                                <img src="{{ Auth::user()->profile_photo ? asset(Auth::user()->profile_photo) : asset('assets/img/img-04.jpg') }}" alt="Profile Photo" height="154">
+                                            </div>
 											<div class="profile-info">
-												<h2 class="profile-title">David Peterson</h2>
+												<h2 class="profile-title">{{ Auth::user()->name }}</h2>
 												<p class="profile-position">iOS Expert</p>
 												<div><a href="#" class="btn full-btn">Full time</a></div>
 												<ul class="profile-preword">

@@ -2616,7 +2616,7 @@
 							<div class="pro-post">
 								<div class="follow-widget">
 									<div class="text-end custom-edit-btn">
-										<a href="freelancer-profile-settings" class="sub-title"><i class="fa fa-pencil-alt me-1"></i></a>
+										<a href="{{ route('designer.profile-settings') }}" class="sub-title"><i class="fa fa-pencil-alt me-1"></i></a>
 									</div>
 									<a href="#" class="btn follow-btn">+ Follow</a>
 									<ul class="follow-posts pro-post">
@@ -2634,7 +2634,7 @@
 										<h4 class="pro-title mb-0">Language Skills</h4>
 									</div>
 									<div class="col-2 text-end">
-										<a href="freelancer-profile-settings" class="sub-title"><i class="fa fa-pencil-alt me-1"></i></a>
+										<a href="{{ route('designer.profile-settings') }}" class="sub-title"><i class="fa fa-pencil-alt me-1"></i></a>
 									</div>
 								</div>
 								<ul class="latest-posts pro-content">
@@ -2663,7 +2663,7 @@
 										<h4 class="pro-title mb-0">ABOUT ME</h4>
 									</div>
 									<div class="col-2 text-end">
-										<a href="freelancer-profile-settings" class="sub-title"><i class="fa fa-pencil-alt me-1"></i></a>
+										<a href="{{ route('designer.profile-settings') }}" class="sub-title"><i class="fa fa-pencil-alt me-1"></i></a>
 									</div>
 								</div>
 								<ul class="latest-posts pro-content pt-0">
@@ -2682,7 +2682,7 @@
 											<h3 class="pro-title">SOCIAL LINKS</h3>
 										</div>
 										<div class="col-2 text-end">
-											<a href="freelancer-profile-settings" class="sub-title"><i class="fa fa-pencil-alt me-1"></i></a>
+											<a href="{{ route('designer.profile-settings') }}" class="sub-title"><i class="fa fa-pencil-alt me-1"></i></a>
 										</div>
 									</div>
 								</div>
@@ -2703,7 +2703,7 @@
 										<h3 class="pro-title">Profile Link</h3>
 									</div>
 									<div class="col-2 text-end">
-										<a href="freelancer-profile-settings" class="sub-title"><i class="fa fa-pencil-alt me-1"></i></a>
+										<a href="{{ route('designer.profile-settings') }}" class="sub-title"><i class="fa fa-pencil-alt me-1"></i></a>
 									</div>
 								</div>
 								<div class="pro-content">

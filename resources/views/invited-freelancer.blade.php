@@ -117,10 +117,10 @@
 															<tr>
 																<td>
 																	<h2 class="table-avatar">
-																		<a href="freelancer-profile" class="avatar avatar-md tab-imgcircle me-2">
+																		<a href="{{ route('designer.profile') }}" class="avatar avatar-md tab-imgcircle me-2">
 																			<img class="avatar-img rounded-circle" src="assets/img/img-02.jpg" alt="User Image">
 																		</a>
-																		<a href="freelancer-profile"><span class="profile-name">Andrew Glover </span><span>UI/UX Designer</span>
+																		<a href="{{ route('designer.profile') }}"><span class="profile-name">Andrew Glover </span><span>UI/UX Designer</span>
 																		<span class="rating mt-2">
 																			<i class="fas fa-star filled"></i>
 																			<i class="fas fa-star filled"></i>
@@ -144,10 +144,10 @@
 															<tr>
 																<td>
 																	<h2 class="table-avatar">
-																		<a href="freelancer-profile" class="avatar avatar-md tab-imgcircle me-2">
+																		<a href="{{ route('designer.profile') }}" class="avatar avatar-md tab-imgcircle me-2">
 																			<img class="avatar-img rounded-circle" src="assets/img/img-03.jpg" alt="User Image">
 																		</a>
-																		<a href="freelancer-profile"><span class="profile-name">Mickey Bernier </span><span>UI/UX Designer</span>
+																		<a href="{{ route('designer.profile') }}"><span class="profile-name">Mickey Bernier </span><span>UI/UX Designer</span>
 																		<span class="rating mt-2">
 																			<i class="fas fa-star filled"></i>
 																			<i class="fas fa-star filled"></i>
@@ -171,10 +171,10 @@
 															<tr>
 																<td>
 																	<h2 class="table-avatar">
-																		<a href="freelancer-profile" class="avatar avatar-md tab-imgcircle me-2">
+																		<a href="{{ route('designer.profile') }}" class="avatar avatar-md tab-imgcircle me-2">
 																			<img class="avatar-img rounded-circle" src="assets/img/img-04.jpg" alt="User Image">
 																		</a>
-																		<a href="freelancer-profile"><span class="profile-name">Tony Ingle </span><span>UI/UX Designer</span>
+																		<a href="{{ route('designer.profile') }}"><span class="profile-name">Tony Ingle </span><span>UI/UX Designer</span>
 																		<span class="rating mt-2">
 																			<i class="fas fa-star filled"></i>
 																			<i class="fas fa-star filled"></i>
@@ -198,10 +198,10 @@
 															<tr>
 																<td>
 																	<h2 class="table-avatar">
-																		<a href="freelancer-profile" class="avatar avatar-md tab-imgcircle me-2">
+																		<a href="{{ route('designer.profile') }}" class="avatar avatar-md tab-imgcircle me-2">
 																			<img class="avatar-img rounded-circle" src="assets/img/img-05.jpg" alt="User Image">
 																		</a>
-																		<a href="freelancer-profile"><span class="profile-name">Timothy Smith </span><span>UI/UX Designer</span>
+																		<a href="{{ route('designer.profile') }}"><span class="profile-name">Timothy Smith </span><span>UI/UX Designer</span>
 																		<span class="rating mt-2">
 																			<i class="fas fa-star filled"></i>
 																			<i class="fas fa-star filled"></i>
@@ -225,10 +225,10 @@
 															<tr>
 																<td>
 																	<h2 class="table-avatar">
-																		<a href="freelancer-profile" class="avatar avatar-md tab-imgcircle me-2">
+																		<a href="{{ route('designer.profile') }}" class="avatar avatar-md tab-imgcircle me-2">
 																			<img class="avatar-img rounded-circle" src="assets/img/img-01.png" alt="User Image">
 																		</a>
-																		<a href="freelancer-profile"><span class="profile-name">David Peterson </span><span>UI/UX Designer</span>
+																		<a href="{{ route('designer.profile') }}"><span class="profile-name">David Peterson </span><span>UI/UX Designer</span>
 																		<span class="rating mt-2">
 																			<i class="fas fa-star filled"></i>
 																			<i class="fas fa-star filled"></i>
