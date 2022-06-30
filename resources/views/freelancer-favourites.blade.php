@@ -10,7 +10,7 @@
 						<div class="col-xl-3 col-md-4 theiaStickySidebar">
 							<div class="settings-widget">
 								<div class="settings-header d-sm-flex flex-row flex-wrap text-center text-sm-start align-items-center">
-									<a href="{{ route('designer.profile') }}"><img alt="profile image" src="assets/img/img-04.jpg" class="avatar-lg rounded-circle"></a>
+									<a href="{{ route('designer.profile') }}"><img alt="profile image" src="/assets/img/img-04.jpg" class="avatar-lg rounded-circle"></a>
 									<div class="ms-sm-3 ms-md-0 ms-lg-3 mt-2 mt-sm-0 mt-md-2 mt-lg-0">
 										<p class="mb-2">Welcome,</p>
 										<h3 class="mb-0"><a href="{{ route('designer.profile') }}">John Danie S.</a></h3>
@@ -112,7 +112,7 @@
 																<td>
 																	<h2 class="table-avatar">
 																		<a href="project-details" class="avatar avatar-md tab-imgcircle me-2">
-																			<img class="avatar-img rounded-circle" src="assets/img/company/img-1.png" alt="User Image">
+																			<img class="avatar-img rounded-circle" src="/assets/img/company/img-1.png" alt="User Image">
 																		</a>
 																		<a href="project-details"><span class="profile-name">Amaze Tech</span><span>UI/UX Designer</span>
 																		<span class="rating mt-2">
@@ -125,7 +125,7 @@
 																		</a>
 																	</h2>
 																</td>
-																<td><h2 class="table-avatar"><img src="assets/img/flags/de.png" class="me-2" alt="" height="16"> GERMANY</h2></td>
+																<td><h2 class="table-avatar"><img src="/assets/img/flags/de.png" class="me-2" alt="" height="16"> GERMANY</h2></td>
 																<td><a href="javascript:void(0);" class="fav"><i class="fas fa-heart filled"></i></a></td>
 															</tr>
 															<tr>
@@ -133,7 +133,7 @@
 																<td>
 																	<h2 class="table-avatar">
 																		<a href="project-details" class="avatar avatar-md tab-imgcircle me-2">
-																			<img class="avatar-img rounded-circle" src="assets/img/company/img-2.png" alt="User Image">
+																			<img class="avatar-img rounded-circle" src="/assets/img/company/img-2.png" alt="User Image">
 																		</a>
 																		<a href="project-details"><span class="profile-name">Park Inc </span><span>PHP Developer</span>
 																		<span class="rating mt-2">
@@ -146,7 +146,7 @@
 																		</a>
 																	</h2>
 																</td>
-																<td><h2 class="table-avatar"><img src="assets/img/flags/us.png" class="me-2" alt="" height="16"> USA</h2></td>
+																<td><h2 class="table-avatar"><img src="/assets/img/flags/us.png" class="me-2" alt="" height="16"> USA</h2></td>
 																<td><a href="javascript:void(0);" class="fav"><i class="fas fa-heart filled"></i></a></td>
 															</tr>
 															<tr>
@@ -154,7 +154,7 @@
 																<td>
 																	<h2 class="table-avatar">
 																		<a href="project-details" class="avatar avatar-md tab-imgcircle me-2">
-																			<img class="avatar-img rounded-circle" src="assets/img/company/img-3.png" alt="User Image">
+																			<img class="avatar-img rounded-circle" src="/assets/img/company/img-3.png" alt="User Image">
 																		</a>
 																		<a href="project-details"><span class="profile-name">Tech Zone </span><span>Graphic Designer</span>
 																		<span class="rating mt-2">
@@ -167,7 +167,7 @@
 																		</a>
 																	</h2>
 																</td>
-																<td><h2 class="table-avatar"><img src="assets/img/flags/de.png" class="me-2" alt="" height="16"> GERMANY</h2></td>
+																<td><h2 class="table-avatar"><img src="/assets/img/flags/de.png" class="me-2" alt="" height="16"> GERMANY</h2></td>
 																<td><a href="javascript:void(0);" class="fav"><i class="fas fa-heart filled"></i></a></td>
 															</tr>
 															<tr>
@@ -175,7 +175,7 @@
 																<td>
 																	<h2 class="table-avatar">
 																		<a href="project-details" class="avatar avatar-md tab-imgcircle me-2">
-																			<img class="avatar-img rounded-circle" src="assets/img/company/img-4.png" alt="User Image">
+																			<img class="avatar-img rounded-circle" src="/assets/img/company/img-4.png" alt="User Image">
 																		</a>
 																		<a href="project-details"><span class="profile-name">Abc Software</span><span>iOS Developer</span>
 																		<span class="rating mt-2">
@@ -188,7 +188,7 @@
 																		</a>
 																	</h2>
 																</td>
-																<td><h2 class="table-avatar"><img src="assets/img/flags/us.png" class="me-2" alt="" height="16"> USA</h2></td>
+																<td><h2 class="table-avatar"><img src="/assets/img/flags/us.png" class="me-2" alt="" height="16"> USA</h2></td>
 																<td><a href="javascript:void(0);" class="fav"><i class="fas fa-heart filled"></i></a></td>
 															</tr>
 															<tr>
@@ -196,7 +196,7 @@
 																<td>
 																	<h2 class="table-avatar">
 																		<a href="project-details" class="avatar avatar-md tab-imgcircle me-2">
-																			<img class="avatar-img rounded-circle" src="assets/img/company/img-9.png"alt="User Image">
+																			<img class="avatar-img rounded-circle" src="/assets/img/company/img-9.png"alt="User Image">
 																		</a>
 																		<a href="project-details"><span class="profile-name">Soft Technologies </span><span>UI/UX Designer</span>
 																		<span class="rating mt-2">
@@ -210,7 +210,7 @@
 																	</h2>
 																</td>
 																<td>39 Oct 2021</td>
-																<td><h2 class="table-avatar"><img src="assets/img/flags/us.png" class="me-2" alt="" height="16"> USA</h2></td>
+																<td><h2 class="table-avatar"><img src="/assets/img/flags/us.png" class="me-2" alt="" height="16"> USA</h2></td>
 															</tr>
 														</tbody>
 													</table>

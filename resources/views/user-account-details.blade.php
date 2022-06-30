@@ -8,11 +8,11 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 text-end">
-							<div class="inner-content">
+							{{-- <div class="inner-content">
 								<label class="file-upload image-btn">
 									Change Image <input type="file">
 								</label>
-							</div>
+							</div> --}}
 						</div>
 					</div>
 				</div>
@@ -30,16 +30,16 @@
 									<div class="provider-widget">
 										<div class="pro-info-left">
 											<div class="provider-img">
-												<img src="assets/img/img-04.jpg" alt="User">
+												<img src="{{ Auth::user()->profile_photo ? asset(Auth::user()->profile_photo) : asset('assets/img/img-04.jpg') }}" alt="User" width="154px" height="150x">
 												<div class="camera-bg"><i class="fa fa-camera"></i></div>
 											</div>
 											<div class="profile-info profile-edit-form">
-												<h2 class="profile-title">John Danie</h2>
+												<h2 class="profile-title">{{ Auth::user()->name }}</h2>
 												<div class="pro-text3">
-													<p class="profile-position">iOS Expert + Node Dev</p>
-													<div><a href="#" class="btn full-btn">Full time</a></div>
+													<p class="profile-position">Employer</p>
+
 													<ul class="profile-preword">
-														<li><img src="assets/img/flags/pl.png" alt="" height="16"> Poland</li>
+														<li><img src="/assets/img/flags/pl.png" alt="" height="16"> {{ Auth::user()->country }}</li>
 														<li><div class="rating">
 															<span class="average-rating">4.6</span>
 															<i class="fas fa-star filled"></i>
@@ -104,7 +104,7 @@
 											</div>
 										</div>
 										<div class="pro-info-right profile-inf">
-											<a href="javascript:void(0);" id="edit_name" class="sub-title edit-sub-title"><i class="fa fa-pencil-alt me-1"></i></a>
+											<a href="{{ route('employer.profile-settings') }}" id="edit_name" class="sub-title edit-sub-title"><i class="fa fa-pencil-alt me-1"></i></a>
 										</div>
 									</div>
 								</div>
@@ -150,37 +150,37 @@
 									<ul class="nav nav-tabs nav-tabs-solid nav-justified">
 										<li class="nav-item">
 											<a class="nav-link active" href="#overview" data-bs-toggle="tab">
-												<img class="img-fluid" alt="User Image" src="assets/img/icon/tab-icon-01.png">
+												<img class="img-fluid" alt="User Image" src="/assets/img/icon/tab-icon-01.png">
 												<p class="bg-red">Overview</p>
 											</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="#bids" data-bs-toggle="tab">
-												<img class="img-fluid" alt="User Image" src="assets/img/icon/tab-icon-02.png">
+												<img class="img-fluid" alt="User Image" src="/assets/img/icon/tab-icon-02.png">
 												<p class="bg-blue">Bids</p>
 											</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="#jobs" data-bs-toggle="tab">
-												<img class="img-fluid" alt="User Image" src="assets/img/icon/tab-icon-05.png">
+												<img class="img-fluid" alt="User Image" src="/assets/img/icon/tab-icon-05.png">
 												<p class="bg-pink">Jobs</p>
 											</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="#portfolio" data-bs-toggle="tab">
-												<img class="img-fluid" alt="User Image" src="assets/img/icon/tab-icon-07.png">
+												<img class="img-fluid" alt="User Image" src="/assets/img/icon/tab-icon-07.png">
 												<p class="bg-yellow">Portfolio</p>
 											</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="#feedbacks" data-bs-toggle="tab">
-												<img alt="User Image" height="28" src="assets/img/icon/tab-icon-06.png">
+												<img alt="User Image" height="28" src="/assets/img/icon/tab-icon-06.png">
 												<p class="bg-green">Feedbacks</p>
 											</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="#payments" data-bs-toggle="tab">
-												<img class="img-fluid" alt="User Image" src="assets/img/icon/tab-icon-08.png">
+												<img class="img-fluid" alt="User Image" src="/assets/img/icon/tab-icon-08.png">
 												<p class="bg-violet">Payments</p>
 											</a>
 										</li>
@@ -203,55 +203,12 @@
 										</div>
 									</div>
 									<div class="pro-overview">
-										<div class="pro-content">
-											<div class="pro-text1">
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget vestibulum lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempor aliquam felis, nec condimentum ipsum commodo id. Vivamus sit amet augue nec urna efficitur tincidunt. Vivamus consectetur aliquam lectus commodo viverra. Nunc eu augue nec arcu efficitur faucibus.</p>
-
-												<h4 class="widget-title">My services include:</h4>
-												<ul class="pro-list">
-													<li>Cross-platform games</li>
-													<li>Game concept and level designing</li>
-													<li>Multiplayer integration</li>
-													<li>Re-skin</li>
-													<li>Ads and in-app purchase (Maximize your Revenue)</li>
-													<li>Game Optimisations</li>
-													<li>2D/3D Animation</li>
-												</ul>
-
-												<p>Graphic DesigningSocial Network IntegrationVirtual Reality (VR)Augmented Reality (AR)Game con promotional graphics and video app store and Playstore publishing </p>
-											</div>
-											<div class="pro-new1">
-												<div class="pro-edit scrollable" contentEditable="true">
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget vestibulum lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempor aliquam felis, nec condimentum ipsum commodo id. Vivamus sit amet augue nec urna efficitur tincidunt. Vivamus consectetur aliquam lectus commodo viverra. Nunc eu augue nec arcu efficitur faucibus.</p>
-
-													<h4 class="widget-title">My services include:</h4>
-													<ul class="pro-list">
-														<li>Cross-platform games</li>
-														<li>Game concept and level designing</li>
-														<li>Multiplayer integration</li>
-														<li>Re-skin</li>
-														<li>Ads and in-app purchase (Maximize your Revenue)</li>
-														<li>Game Optimisations</li>
-														<li>2D/3D Animation</li>
-													</ul>
-
-													<p>Graphic DesigningSocial Network IntegrationVirtual Reality (VR)Augmented Reality (AR)Game con promotional graphics and video app store and Playstore publishing </p>
-													<div class="row">
-														<div class="col-lg-12 text-end">
-															<a href="#" class="btn btn-primary profile-update-btn">Update</a>
-															<a href="#" class="btn btn-light profile-cancel-btn">Cancel</a>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+                                        {!! Auth::user()->overview !!}
+                                    </div>
 								</div>
 
 								<!-- Experience -->
-								<div class="pro-post project-widget widget-box">
+								{{-- <div class="pro-post project-widget widget-box">
 									<div class="row">
 										<div class="col-md-6">
 											<h3 class="pro-title">Experience</h3>
@@ -345,11 +302,11 @@
 											</div>
 										</div>
 									</div>
-								</div>
+								</div> --}}
 								<!-- /Experience -->
 
 								<!-- Educational -->
-								<div class="pro-post project-widget widget-box">
+								{{-- <div class="pro-post project-widget widget-box">
 									<div class="row">
 										<div class="col-lg-6">
 											<h3 class="pro-title">Educational Details</h3>
@@ -426,11 +383,11 @@
 											</div>
 										</div>
 									</div>
-								</div>
+								</div> --}}
 								<!-- /Educational -->
 
 								<!-- Skills -->
-								<div class="pro-post project-widget widget-box">
+								{{-- <div class="pro-post project-widget widget-box">
 									<div class="row">
 										<div class="col-lg-6">
 											<h3 class="pro-title">Technical Skills</h3>
@@ -447,7 +404,7 @@
 										<span class="badge badge-pill badge-skills">+ Javascript</span>
 										</div>
 									</div>
-								</div>
+								</div> --}}
 								<!-- /Skills -->
 
 							</div>
@@ -483,7 +440,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-1.png" alt="author">
+					                                            <img src="/assets/img/company/img-1.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -531,7 +488,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-2.png" alt="author">
+					                                            <img src="/assets/img/company/img-2.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -579,7 +536,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-3.png" alt="author">
+					                                            <img src="/assets/img/company/img-3.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -627,7 +584,7 @@
 													<div class="author-heading">
 														<div class="profile-img">
 															<a href="#">
-																<img src="assets/img/company/img-4.png" alt="author">
+																<img src="/assets/img/company/img-4.png" alt="author">
 															</a>
 														</div>
 														<div class="profile-name">
@@ -675,7 +632,7 @@
 													<div class="author-heading">
 														<div class="profile-img">
 															<a href="#">
-																<img src="assets/img/company/img-5.png" alt="author">
+																<img src="/assets/img/company/img-5.png" alt="author">
 															</a>
 														</div>
 														<div class="profile-name">
@@ -729,7 +686,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-1.png" alt="author">
+					                                            <img src="/assets/img/company/img-1.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -777,7 +734,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-2.png" alt="author">
+					                                            <img src="/assets/img/company/img-2.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -825,7 +782,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-3.png" alt="author">
+					                                            <img src="/assets/img/company/img-3.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -873,7 +830,7 @@
 													<div class="author-heading">
 														<div class="profile-img">
 															<a href="#">
-																<img src="assets/img/company/img-4.png" alt="author">
+																<img src="/assets/img/company/img-4.png" alt="author">
 															</a>
 														</div>
 														<div class="profile-name">
@@ -921,7 +878,7 @@
 													<div class="author-heading">
 														<div class="profile-img">
 															<a href="#">
-																<img src="assets/img/company/img-5.png" alt="author">
+																<img src="/assets/img/company/img-5.png" alt="author">
 															</a>
 														</div>
 														<div class="profile-name">
@@ -975,7 +932,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-1.png" alt="author">
+					                                            <img src="/assets/img/company/img-1.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -1023,7 +980,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-2.png" alt="author">
+					                                            <img src="/assets/img/company/img-2.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -1071,7 +1028,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-3.png" alt="author">
+					                                            <img src="/assets/img/company/img-3.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -1119,7 +1076,7 @@
 													<div class="author-heading">
 														<div class="profile-img">
 															<a href="#">
-																<img src="assets/img/company/img-4.png" alt="author">
+																<img src="/assets/img/company/img-4.png" alt="author">
 															</a>
 														</div>
 														<div class="profile-name">
@@ -1167,7 +1124,7 @@
 													<div class="author-heading">
 														<div class="profile-img">
 															<a href="#">
-																<img src="assets/img/company/img-5.png" alt="author">
+																<img src="/assets/img/company/img-5.png" alt="author">
 															</a>
 														</div>
 														<div class="profile-name">
@@ -1246,7 +1203,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-1.png" alt="author">
+					                                            <img src="/assets/img/company/img-1.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -1294,7 +1251,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-2.png" alt="author">
+					                                            <img src="/assets/img/company/img-2.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -1342,7 +1299,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-3.png" alt="author">
+					                                            <img src="/assets/img/company/img-3.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -1390,7 +1347,7 @@
 													<div class="author-heading">
 														<div class="profile-img">
 															<a href="#">
-																<img src="assets/img/company/img-4.png" alt="author">
+																<img src="/assets/img/company/img-4.png" alt="author">
 															</a>
 														</div>
 														<div class="profile-name">
@@ -1438,7 +1395,7 @@
 													<div class="author-heading">
 														<div class="profile-img">
 															<a href="#">
-																<img src="assets/img/company/img-5.png" alt="author">
+																<img src="/assets/img/company/img-5.png" alt="author">
 															</a>
 														</div>
 														<div class="profile-name">
@@ -1492,7 +1449,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-1.png" alt="author">
+					                                            <img src="/assets/img/company/img-1.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -1540,7 +1497,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-2.png" alt="author">
+					                                            <img src="/assets/img/company/img-2.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -1588,7 +1545,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-3.png" alt="author">
+					                                            <img src="/assets/img/company/img-3.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -1636,7 +1593,7 @@
 													<div class="author-heading">
 														<div class="profile-img">
 															<a href="#">
-																<img src="assets/img/company/img-4.png" alt="author">
+																<img src="/assets/img/company/img-4.png" alt="author">
 															</a>
 														</div>
 														<div class="profile-name">
@@ -1684,7 +1641,7 @@
 													<div class="author-heading">
 														<div class="profile-img">
 															<a href="#">
-																<img src="assets/img/company/img-5.png" alt="author">
+																<img src="/assets/img/company/img-5.png" alt="author">
 															</a>
 														</div>
 														<div class="profile-name">
@@ -1738,7 +1695,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-1.png" alt="author">
+					                                            <img src="/assets/img/company/img-1.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -1786,7 +1743,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-2.png" alt="author">
+					                                            <img src="/assets/img/company/img-2.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -1834,7 +1791,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-3.png" alt="author">
+					                                            <img src="/assets/img/company/img-3.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -1882,7 +1839,7 @@
 													<div class="author-heading">
 														<div class="profile-img">
 															<a href="#">
-																<img src="assets/img/company/img-4.png" alt="author">
+																<img src="/assets/img/company/img-4.png" alt="author">
 															</a>
 														</div>
 														<div class="profile-name">
@@ -1930,7 +1887,7 @@
 													<div class="author-heading">
 														<div class="profile-img">
 															<a href="#">
-																<img src="assets/img/company/img-5.png" alt="author">
+																<img src="/assets/img/company/img-5.png" alt="author">
 															</a>
 														</div>
 														<div class="profile-name">
@@ -1984,7 +1941,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-1.png" alt="author">
+					                                            <img src="/assets/img/company/img-1.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -2032,7 +1989,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-2.png" alt="author">
+					                                            <img src="/assets/img/company/img-2.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -2080,7 +2037,7 @@
 					                                <div class="author-heading">
 					                                    <div class="profile-img">
 					                                        <a href="#">
-					                                            <img src="assets/img/company/img-3.png" alt="author">
+					                                            <img src="/assets/img/company/img-3.png" alt="author">
 					                                        </a>
 					                                    </div>
 					                                    <div class="profile-name">
@@ -2128,7 +2085,7 @@
 													<div class="author-heading">
 														<div class="profile-img">
 															<a href="#">
-																<img src="assets/img/company/img-4.png" alt="author">
+																<img src="/assets/img/company/img-4.png" alt="author">
 															</a>
 														</div>
 														<div class="profile-name">
@@ -2176,7 +2133,7 @@
 													<div class="author-heading">
 														<div class="profile-img">
 															<a href="#">
-																<img src="assets/img/company/img-5.png" alt="author">
+																<img src="/assets/img/company/img-5.png" alt="author">
 															</a>
 														</div>
 														<div class="profile-name">
@@ -2236,7 +2193,7 @@
 												<div class="project-widget">
 													<div class="pro-image">
 														<a href="project-details">
-															<img class="img-fluid" alt="User Image" src="assets/img/project.jpg">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -2251,7 +2208,7 @@
 												<div class="project-widget">
 													<div class="pro-image">
 														<a href="project-details">
-															<img class="img-fluid" alt="User Image" src="assets/img/project-1.jpg">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project-1.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -2266,7 +2223,7 @@
 												<div class="project-widget">
 													<div class="pro-image">
 														<a href="project-details">
-															<img class="img-fluid" alt="User Image" src="assets/img/project-2.jpg">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project-2.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -2281,7 +2238,7 @@
 												<div class="project-widget">
 													<div class="pro-image">
 														<a href="project-details">
-															<img class="img-fluid" alt="User Image" src="assets/img/project-3.jpg">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project-3.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -2296,7 +2253,7 @@
 												<div class="project-widget">
 													<div class="pro-image">
 														<a href="project-details">
-															<img class="img-fluid" alt="User Image" src="assets/img/project-4.jpg">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project-4.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -2311,7 +2268,7 @@
 												<div class="project-widget">
 													<div class="pro-image">
 														<a href="project-details">
-															<img class="img-fluid" alt="User Image" src="assets/img/project-5.jpg">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project-5.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -2326,7 +2283,7 @@
 												<div class="project-widget">
 													<div class="pro-image">
 														<a href="project-details">
-															<img class="img-fluid" alt="User Image" src="assets/img/project-6.jpg">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project-6.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -2341,7 +2298,7 @@
 												<div class="project-widget">
 													<div class="pro-image">
 														<a href="project-details">
-															<img class="img-fluid" alt="User Image" src="assets/img/project-7.jpg">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project-7.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -2356,7 +2313,7 @@
 												<div class="project-widget">
 													<div class="pro-image">
 														<a href="project-details">
-															<img class="img-fluid" alt="User Image" src="assets/img/project-2.jpg">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project-2.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -2371,7 +2328,7 @@
 												<div class="project-widget">
 													<div class="pro-image">
 														<a href="project-details">
-															<img class="img-fluid" alt="User Image" src="assets/img/project-3.jpg">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project-3.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -2386,7 +2343,7 @@
 												<div class="project-widget">
 													<div class="pro-image">
 														<a href="project-details">
-															<img class="img-fluid" alt="User Image" src="assets/img/project-5.jpg">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project-5.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -2401,7 +2358,7 @@
 												<div class="project-widget">
 													<div class="pro-image">
 														<a href="project-details">
-															<img class="img-fluid" alt="User Image" src="assets/img/project-6.jpg">
+															<img class="img-fluid" alt="User Image" src="/assets/img/project-6.jpg">
 														</a>
 													</div>
 													<div class="pro-detail">
@@ -2427,7 +2384,7 @@
 									<div class="about-author">
 										<div class="about-author-img">
 											<div class="author-img-wrap">
-												<a href="review"><img class="img-fluid" alt="" src="assets/img/img-01.png"></a>
+												<a href="review"><img class="img-fluid" alt="" src="/assets/img/img-01.png"></a>
 											</div>
 										</div>
 										<div class="author-details">
@@ -2439,7 +2396,7 @@
 									<div class="about-author">
 										<div class="about-author-img">
 											<div class="author-img-wrap">
-												<a href="review"><img class="img-fluid" alt="" src="assets/img/img-02.jpg"></a>
+												<a href="review"><img class="img-fluid" alt="" src="/assets/img/img-02.jpg"></a>
 											</div>
 										</div>
 										<div class="author-details">
@@ -2451,7 +2408,7 @@
 									<div class="about-author">
 										<div class="about-author-img">
 											<div class="author-img-wrap">
-												<a href="review"><img class="img-fluid" alt="" src="assets/img/img-03.jpg"></a>
+												<a href="review"><img class="img-fluid" alt="" src="/assets/img/img-03.jpg"></a>
 											</div>
 										</div>
 										<div class="author-details">
@@ -2487,21 +2444,21 @@
 									<div class="row">
 										<div class="col-12 col-sm-4">
 											<div class="pro-post payment-detail">
-												<img class="img-fluid" alt="" src="assets/img/icon/pay-icon-01.png">
+												<img class="img-fluid" alt="" src="/assets/img/icon/pay-icon-01.png">
 												<h2 class="bg-blue">$4,745</h2>
 												<p>Total Income</p>
 											</div>
 										</div>
 										<div class="col-12 col-sm-4">
 											<div class="pro-post payment-detail">
-												<img class="img-fluid" alt="" src="assets/img/icon/pay-icon-02.png">
+												<img class="img-fluid" alt="" src="/assets/img/icon/pay-icon-02.png">
 												<h2 class="bg-pink">$4,450</h2>
 												<p>Withdrawn</p>
 											</div>
 										</div>
 										<div class="col-12 col-sm-4">
 											<div class="pro-post payment-detail">
-												<img class="img-fluid" alt="" src="assets/img/icon/pay-icon-03.png">
+												<img class="img-fluid" alt="" src="/assets/img/icon/pay-icon-03.png">
 												<h2 class="bg-yellow">$1,145</h2>
 												<p>Sent</p>
 											</div>
@@ -2509,7 +2466,7 @@
 									</div>
 									</div>
 									<div class="transaction">
-										<img class="img-fluid" alt="" src="assets/img/icon/redeem-icon.png">
+										<img class="img-fluid" alt="" src="/assets/img/icon/redeem-icon.png">
 										<h5>All your transactions are saved here.</h5>
 										<a href="#" class="btn-primary click-btn">Click Here </a>
 									</div>
@@ -2628,7 +2585,7 @@
 							<!-- /Follow Widget -->
 
 							<!-- Language Widget -->
-							<div class="pro-post widget-box language-widget">
+							{{-- <div class="pro-post widget-box language-widget">
 								<div class="row">
 									<div class="col-10">
 										<h4 class="pro-title mb-0">Language Skills</h4>
@@ -2653,11 +2610,11 @@
 										</div>
 									</li>
 								</ul>
-							</div>
+							</div> --}}
 							<!-- /Language Widget -->
 
 							<!-- About Widget -->
-							<div class="pro-post widget-box about-widget">
+							{{-- <div class="pro-post widget-box about-widget">
 								<div class="row">
 									<div class="col-10">
 										<h4 class="pro-title mb-0">ABOUT ME</h4>
@@ -2671,11 +2628,11 @@
 									<li><p>Experience</p><h6>5 Years</h6></li>
 									<li><p>Location</p><h6>Istanbul/Turkey</h6></li>
 								</ul>
-							</div>
+							</div> --}}
 							<!-- /About Widget -->
 
 							<!-- Categories -->
-							<div class="pro-post category-widget">
+							{{-- <div class="pro-post category-widget">
 								<div class="widget-title-box">
 									<div class="row">
 										<div class="col-10">
@@ -2693,11 +2650,11 @@
 									<li><a href="#"> Http://www.behance.com/john...</a></li>
 									<li><a href="#"> Http://www.pinterest.com/john...</a></li>
 								</ul>
-							</div>
+							</div> --}}
 							<!-- /Categories -->
 
 							<!-- LInk Widget -->
-							<div class="pro-post widget-box post-widget">
+							{{-- <div class="pro-post widget-box post-widget">
 								<div class="row">
 									<div class="col-10">
 										<h3 class="pro-title">Profile Link</h3>
@@ -2716,7 +2673,7 @@
 									</div>
 									</div>
 								</div>
-							</div>
+							</div> --}}
 							<!-- /Link Widget -->
 
 							<!-- Share Widget -->
@@ -2747,7 +2704,7 @@
 						<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 						</button>
-						<img src="assets/img/logo-01.png" alt="" class="img-fluid mb-3">
+						<img src="/assets/img/logo-01.png" alt="" class="img-fluid mb-3">
 						<h3 class="modal-title text-center">Select your skills and expertise</h3>
 					</div>
 					<div class="modal-body profile-edit-form">

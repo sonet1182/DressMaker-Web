@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\PricingType;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
@@ -16,6 +17,14 @@ class ProjectController extends Controller
         $pricing_types = PricingType::all();
         return view('post-project',compact('categories','pricing_types'));
     }
+
+    public function index()
+    {
+        $projects = Project::where('created_by',Auth::user()->id)->get();
+        return view('manage-projects',compact('projects'));
+    }
+
+
 
 
 
@@ -29,8 +38,10 @@ class ProjectController extends Controller
         $project = new Project();
 
         $project->title = $req->input('title');
+        $project->created_by = Auth::user()->id;
         $project->category_id = $req->input('category_id');
         $project->pricing_type_id = $req->input('pricing_type_id');
+        $project->price = $req->input('price');
         $project->area = $req->input('area');
         $project->start_date = $req->input('start_date');
         $project->link = $req->input('links');

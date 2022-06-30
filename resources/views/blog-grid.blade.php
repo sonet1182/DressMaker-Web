@@ -34,13 +34,13 @@
 									<!-- Blog Post -->
 									<div class="blog grid-blog">
 										<div class="blog-image">
-											<a href="blog-details"><img class="img-fluid" src="assets/img/blog/blog-01.jpg" alt="Post Image"></a>
+											<a href="blog-details"><img class="img-fluid" src="/assets/img/blog/blog-01.jpg" alt="Post Image"></a>
 										</div>
 										<div class="blog-content">
 											<ul class="entry-meta meta-item">
 												<li>
 													<div class="post-author">
-														<a href="developer-details"><img src="assets/img/img-02.jpg" alt="Post Author"> <span> David Lee</span></a>
+														<a href="developer-details"><img src="/assets/img/img-02.jpg" alt="Post Author"> <span> David Lee</span></a>
 													</div>
 												</li>
 												<li><i class="far fa-clock"></i> 4 Apr 2021</li>
@@ -57,13 +57,13 @@
 									<!-- Blog Post -->
 									<div class="blog grid-blog">
 										<div class="blog-image">
-											<a href="blog-details"><img class="img-fluid" src="assets/img/blog/blog-02.jpg" alt="Post Image"></a>
+											<a href="blog-details"><img class="img-fluid" src="/assets/img/blog/blog-02.jpg" alt="Post Image"></a>
 										</div>
 										<div class="blog-content">
 											<ul class="entry-meta meta-item">
 												<li>
 													<div class="post-author">
-														<a href="developer-details"><img src="assets/img/img-03.jpg" alt="Post Author"> <span> Deborah Angel</span></a>
+														<a href="developer-details"><img src="/assets/img/img-03.jpg" alt="Post Author"> <span> Deborah Angel</span></a>
 													</div>
 												</li>
 												<li><i class="far fa-clock"></i> 3 Mar 2021</li>
@@ -80,13 +80,13 @@
 									<!-- Blog Post -->
 									<div class="blog grid-blog">
 										<div class="blog-image">
-											<a href="blog-details"><img class="img-fluid" src="assets/img/blog/blog-03.jpg" alt="Post Image"></a>
+											<a href="blog-details"><img class="img-fluid" src="/assets/img/blog/blog-03.jpg" alt="Post Image"></a>
 										</div>
 										<div class="blog-content">
 											<ul class="entry-meta meta-item">
 												<li>
 													<div class="post-author">
-														<a href="developer-details"><img src="assets/img/img-04.jpg" alt="Post Author"> <span>Darren Elder</span></a>
+														<a href="developer-details"><img src="/assets/img/img-04.jpg" alt="Post Author"> <span>Darren Elder</span></a>
 													</div>
 												</li>
 												<li><i class="far fa-clock"></i> 3 Dec 2021</li>
@@ -103,13 +103,13 @@
 									<!-- Blog Post -->
 									<div class="blog grid-blog">
 										<div class="blog-image">
-											<a href="blog-details"><img class="img-fluid" src="assets/img/blog/blog-04.jpg" alt="Post Image"></a>
+											<a href="blog-details"><img class="img-fluid" src="/assets/img/blog/blog-04.jpg" alt="Post Image"></a>
 										</div>
 										<div class="blog-content">
 											<ul class="entry-meta meta-item">
 												<li>
 													<div class="post-author">
-														<a href="developer-details"><img src="assets/img/img-05.jpg" alt="Post Author"> <span>Sofia Brient</span></a>
+														<a href="developer-details"><img src="/assets/img/img-05.jpg" alt="Post Author"> <span>Sofia Brient</span></a>
 													</div>
 												</li>
 												<li><i class="far fa-clock"></i> 2 Dec 2021</li>
@@ -126,13 +126,13 @@
 									<!-- Blog Post -->
 									<div class="blog grid-blog">
 										<div class="blog-image">
-											<a href="blog-details"><img class="img-fluid" src="assets/img/blog/blog-05.jpg" alt="Post Image"></a>
+											<a href="blog-details"><img class="img-fluid" src="/assets/img/blog/blog-05.jpg" alt="Post Image"></a>
 										</div>
 										<div class="blog-content">
 											<ul class="entry-meta meta-item">
 												<li>
 													<div class="post-author">
-														<a href="developer-details"><img src="assets/img/img-02.jpg" alt="Post Author"> <span>Marvin Campbell</span></a>
+														<a href="developer-details"><img src="/assets/img/img-02.jpg" alt="Post Author"> <span>Marvin Campbell</span></a>
 													</div>
 												</li>
 												<li><i class="far fa-clock"></i> 1 Dec 2021</li>
@@ -149,13 +149,13 @@
 									<!-- Blog Post -->
 									<div class="blog grid-blog">
 										<div class="blog-image">
-											<a href="blog-details"><img class="img-fluid" src="assets/img/blog/blog-06.jpg" alt="Post Image"></a>
+											<a href="blog-details"><img class="img-fluid" src="/assets/img/blog/blog-06.jpg" alt="Post Image"></a>
 										</div>
 										<div class="blog-content">
 											<ul class="entry-meta meta-item">
 												<li>
 													<div class="post-author">
-														<a href="developer-details"><img src="assets/img/img-03.jpg" alt="Post Author"> <span> Paul Berthold</span></a>
+														<a href="developer-details"><img src="/assets/img/img-03.jpg" alt="Post Author"> <span> Paul Berthold</span></a>
 													</div>
 												</li>
 												<li><i class="far fa-clock"></i> 3 Nov 2021</li>
@@ -199,7 +199,7 @@
 										<li>
 											<div class="post-thumb">
 												<a href="blog-details">
-													<img class="img-fluid" src="assets/img/blog/blog-thumb-03.jpg" alt="">
+													<img class="img-fluid" src="/assets/img/blog/blog-thumb-03.jpg" alt="">
 												</a>
 											</div>
 											<div class="post-info">
@@ -212,7 +212,7 @@
 										<li>
 											<div class="post-thumb">
 												<a href="blog-details">
-													<img class="img-fluid" src="assets/img/blog/blog-thumb-02.jpg" alt="">
+													<img class="img-fluid" src="/assets/img/blog/blog-thumb-02.jpg" alt="">
 												</a>
 											</div>
 											<div class="post-info">
@@ -225,7 +225,7 @@
 										<li>
 											<div class="post-thumb">
 												<a href="blog-details">
-													<img class="img-fluid" src="assets/img/blog/blog-thumb-01.jpg" alt="">
+													<img class="img-fluid" src="/assets/img/blog/blog-thumb-01.jpg" alt="">
 												</a>
 											</div>
 											<div class="post-info">

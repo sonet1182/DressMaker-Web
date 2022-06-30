@@ -31,7 +31,7 @@
 								<!-- Blog Post -->
 								<div class="blog-single-post pro-post widget-box">
 									<div class="blog-image">
-										<a href="blog-details"><img alt="" src="assets/img/blog/blog-01.jpg" class="img-fluid"></a>
+										<a href="blog-details"><img alt="" src="/assets/img/blog/blog-01.jpg" class="img-fluid"></a>
 									</div>
 									<h3 class="blog-title">Your next job starts right here</h3>
 									<div class="blog-info clearfix">
@@ -39,7 +39,7 @@
 											<ul>
 												<li>
 													<div class="post-author">
-														<a href="developer-details"><img src="assets/img/img-02.jpg" alt="Post Author"> <span>John Doe</span></a>
+														<a href="developer-details"><img src="/assets/img/img-02.jpg" alt="Post Author"> <span>John Doe</span></a>
 													</div>
 												</li>
 												<li><i class="far fa-calendar"></i>4 May 2021</li>
@@ -58,7 +58,7 @@
 								<!-- Blog Post -->
 								<div class="blog-single-post pro-post widget-box">
 									<div class="blog-image">
-										<a href="blog-details"><img alt="" src="assets/img/blog/blog-02.jpg" class="img-fluid"></a>
+										<a href="blog-details"><img alt="" src="/assets/img/blog/blog-02.jpg" class="img-fluid"></a>
 									</div>
 									<h3 class="blog-title">What are the benefits of applying job Online?</h3>
 									<div class="blog-info clearfix">
@@ -66,7 +66,7 @@
 											<ul>
 												<li>
 													<div class="post-author">
-														<a href="developer-details"><img src="assets/img/img-03.jpg" alt="Post Author"> <span>Nick Joe</span></a>
+														<a href="developer-details"><img src="/assets/img/img-03.jpg" alt="Post Author"> <span>Nick Joe</span></a>
 													</div>
 												</li>
 												<li><i class="far fa-calendar"></i>4 May 2021</li>
@@ -95,7 +95,7 @@
 											<ul>
 												<li>
 													<div class="post-author">
-														<a href="developer-details"><img src="assets/img/img-03.jpg" alt="Post Author"> <span>Nick Joe</span></a>
+														<a href="developer-details"><img src="/assets/img/img-03.jpg" alt="Post Author"> <span>Nick Joe</span></a>
 													</div>
 												</li>
 												<li><i class="far fa-calendar"></i>4 May 2021</li>
@@ -142,7 +142,7 @@
 										<li>
 											<div class="post-thumb">
 												<a href="blog-details">
-													<img class="img-fluid" src="assets/img/blog/blog-thumb-03.jpg" alt="">
+													<img class="img-fluid" src="/assets/img/blog/blog-thumb-03.jpg" alt="">
 												</a>
 											</div>
 											<div class="post-info">
@@ -155,7 +155,7 @@
 										<li>
 											<div class="post-thumb">
 												<a href="blog-details">
-													<img class="img-fluid" src="assets/img/blog/blog-thumb-02.jpg" alt="">
+													<img class="img-fluid" src="/assets/img/blog/blog-thumb-02.jpg" alt="">
 												</a>
 											</div>
 											<div class="post-info">
@@ -168,7 +168,7 @@
 										<li>
 											<div class="post-thumb">
 												<a href="blog-details">
-													<img class="img-fluid" src="assets/img/blog/blog-thumb-01.jpg" alt="">
+													<img class="img-fluid" src="/assets/img/blog/blog-thumb-01.jpg" alt="">
 												</a>
 											</div>
 											<div class="post-info">

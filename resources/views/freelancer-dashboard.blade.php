@@ -10,7 +10,7 @@
 						<div class="col-xl-3 col-md-4 theiaStickySidebar">
 							<div class="settings-widget">
 								<div class="settings-header d-sm-flex flex-row flex-wrap text-center text-sm-start align-items-center">
-									<a href="{{ route('designer.profile') }}"><img alt="profile image" src="{{ asset('assets/img/img-04.jpg')}}" class="avatar-lg rounded-circle"></a>
+									<a href="{{ route('designer.profile') }}"><img alt="profile image" src="{{ Auth::user()->profile_photo ? asset(Auth::user()->profile_photo) : asset('assets/img/img-04.jpg') }}" class="avatar-lg rounded-circle"></a>
 									<div class="ms-sm-3 ms-md-0 ms-lg-3 mt-2 mt-sm-0 mt-md-2 mt-lg-0">
 										<p class="mb-2">Welcome, </p>
 										<h3 class="mb-0">{{ Auth::user() ? Auth::user()->name : ''  }}</h3>
@@ -323,7 +323,7 @@
 														</div>
 														<div class="col-lg-5 col-md-6">
 															<div class="earn-img">
-																<span><img src="assets/img/user/avatar-1.jpg" alt="logo" class="img-fluid avatar-md rounded-circle"> George Wells</span>
+																<span><img src="/assets/img/user/avatar-1.jpg" alt="logo" class="img-fluid avatar-md rounded-circle"> George Wells</span>
 																<div class="price">$90</div>
 															</div>
 														</div>
@@ -339,7 +339,7 @@
 														</div>
 														<div class="col-lg-5 col-md-6">
 															<div class="earn-img">
-																<span><img src="assets/img/user/avatar-2.jpg" alt="logo" class="img-fluid avatar-md rounded-circle"> Timothy Smith</span>
+																<span><img src="/assets/img/user/avatar-2.jpg" alt="logo" class="img-fluid avatar-md rounded-circle"> Timothy Smith</span>
 																<div class="price">$150</div>
 															</div>
 														</div>
@@ -355,7 +355,7 @@
 														</div>
 														<div class="col-lg-5 col-md-6">
 															<div class="earn-img">
-																<span><img src="assets/img/user/avatar-3.jpg" alt="logo" class="img-fluid avatar-md rounded-circle"> Janet Paden</span>
+																<span><img src="/assets/img/user/avatar-3.jpg" alt="logo" class="img-fluid avatar-md rounded-circle"> Janet Paden</span>
 																<div class="price">$70</div>
 															</div>
 														</div>
@@ -371,7 +371,7 @@
 														</div>
 														<div class="col-lg-5 col-md-6">
 															<div class="earn-img">
-																<span><img src="assets/img/user/avatar-4.jpg" alt="logo" class="img-fluid avatar-md rounded-circle"> James Douglas</span>
+																<span><img src="/assets/img/user/avatar-4.jpg" alt="logo" class="img-fluid avatar-md rounded-circle"> James Douglas</span>
 																<div class="price">$120</div>
 															</div>
 														</div>

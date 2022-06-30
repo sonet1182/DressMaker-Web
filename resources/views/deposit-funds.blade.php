@@ -12,10 +12,10 @@
 						<div class="col-xl-3 col-md-4 theiaStickySidebar">
 							<div class="settings-widget">
 								<div class="settings-header d-sm-flex flex-row flex-wrap text-center text-sm-start align-items-center">
-									<a href="user-account-details"><img alt="profile image" src="assets/img/img-04.jpg" class="avatar-lg rounded-circle"></a>
+									<a href="{{ route('employer.profile') }}"><img alt="profile image" src="/assets/img/img-04.jpg" class="avatar-lg rounded-circle"></a>
 									<div class="ms-sm-3 ms-md-0 ms-lg-3 mt-2 mt-sm-0 mt-md-2 mt-lg-0">
 										<p class="mb-2">Welcome,</p>
-										<a href="user-account-details"><h3 class="mb-0">John Danie S.</h3></a>
+										<a href="{{ route('employer.profile') }}"><h3 class="mb-0">John Danie S.</h3></a>
 										<p class="mb-0">@johndaniee</p>
 									</div>
 								</div>
@@ -27,7 +27,7 @@
 											</a>
 										</li>
 										<li class="nav-item">
-											<a href="manage-projects" class="nav-link">
+											<a href={{ route('employer.manage-projects') }} class="nav-link">
 												<i class="material-icons">business_center</i> Projects
 											</a>
 										</li>
@@ -146,7 +146,7 @@
 													</div>
 												</div>
 												<div class="col-md-12 mb-5">
-													<img src="assets/img/card.png" alt="" width="200">
+													<img src="/assets/img/card.png" alt="" width="200">
 												</div>
 												<div class="col-md-12">
 													<ul class="card-list">

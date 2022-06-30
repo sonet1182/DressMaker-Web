@@ -28,10 +28,10 @@
 						<div class="col-xl-3 col-md-4 theiaStickySidebar">
 							<div class="settings-widget">
 								<div class="settings-header d-sm-flex flex-row flex-wrap text-center text-sm-start align-items-center">
-									<a href="user-account-details"><img alt="profile image" src="assets/img/img-04.jpg" class="avatar-lg rounded-circle"></a>
+									<a href="{{ route('employer.profile') }}"><img alt="profile image" src="/assets/img/img-04.jpg" class="avatar-lg rounded-circle"></a>
 									<div class="ms-sm-3 ms-md-0 ms-lg-3 mt-2 mt-sm-0 mt-md-2 mt-lg-0">
 										<p class="mb-2">Welcome,</p>
-										<a href="user-account-details"><h3 class="mb-0">John Danie S.</h3></a>
+										<a href="{{ route('employer.profile') }}"><h3 class="mb-0">John Danie S.</h3></a>
 										<p class="mb-0">@johndaniee</p>
 									</div>
 								</div>
@@ -43,7 +43,7 @@
 											</a>
 										</li>
 										<li class="nav-item">
-											<a href="manage-projects" class="nav-link active">
+											<a href={{ route('employer.manage-projects') }} class="nav-link active">
 												<i class="material-icons">business_center</i> Projects
 											</a>
 										</li>
@@ -105,7 +105,7 @@
 							<nav class="user-tabs mb-4">
 								<ul class="nav nav-tabs nav-tabs-bottom nav-justified">
 									<li class="nav-item">
-										<a class="nav-link" href="manage-projects">All Projects</a>
+										<a class="nav-link" href={{ route('employer.manage-projects') }}>All Projects</a>
 									</li>
 									<li class="nav-item">
 										<a class="nav-link" href="pending-projects">Pending Projects</a>
@@ -143,7 +143,7 @@
 																<li>
 																	<div class="slot">
 																		<p>Location</p>
-																		<h5><img src="assets/img/en.png" height="13" alt="Lang"> UK</h5>
+																		<h5><img src="/assets/img/en.png" height="13" alt="Lang"> UK</h5>
 																	</div>
 																</li>
 																<li>
@@ -189,7 +189,7 @@
 										<div class="proposals-info">
 											<div class="proposer-info">
 												<div class="proposer-img">
-													<img src="assets/img/user/avatar-1.jpg" alt="" class="img-fluid">
+													<img src="/assets/img/user/avatar-1.jpg" alt="" class="img-fluid">
 												</div>
 												<div class="proposer-detail">
 													<h4>George Wells</h4>
@@ -228,7 +228,7 @@
 										<div class="proposals-info">
 											<div class="proposer-info">
 												<div class="proposer-img">
-													<img src="assets/img/user/avatar-2.jpg" alt="" class="img-fluid">
+													<img src="/assets/img/user/avatar-2.jpg" alt="" class="img-fluid">
 												</div>
 												<div class="proposer-detail">
 													<h4>Hannah Finn</h4>
@@ -266,7 +266,7 @@
 										<div class="proposals-info">
 											<div class="proposer-info">
 												<div class="proposer-img">
-													<img src="assets/img/user/avatar-3.jpg" alt="" class="img-fluid">
+													<img src="/assets/img/user/avatar-3.jpg" alt="" class="img-fluid">
 												</div>
 												<div class="proposer-detail">
 													<h4>Timothy Smith</h4>
@@ -338,7 +338,7 @@
 					</div>
 					<div class="modal-body">
 						<div class="text-center pt-0 mb-4">
-							<img src="assets/img/logo-01.png" alt="logo" class="img-fluid mb-1">
+							<img src="/assets/img/logo-01.png" alt="logo" class="img-fluid mb-1">
 							<h5 class="modal-title">Discuss your project with David</h5>
 						</div>
 						<form action="view-project-detail">

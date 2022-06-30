@@ -10,7 +10,7 @@
 						<div class="col-xl-3 col-md-4 theiaStickySidebar">
 							<div class="settings-widget">
 								<div class="settings-header d-sm-flex flex-row flex-wrap text-center text-sm-start align-items-center">
-									<a href="{{ route('designer.profile') }}"><img alt="profile image" src="assets/img/img-04.jpg" class="avatar-lg rounded-circle"></a>
+									<a href="{{ route('designer.profile') }}"><img alt="profile image" src="/assets/img/img-04.jpg" class="avatar-lg rounded-circle"></a>
 									<div class="ms-sm-3 ms-md-0 ms-lg-3 mt-2 mt-sm-0 mt-md-2 mt-lg-0">
 										<p class="mb-2">Welcome,</p>
 										<h3 class="mb-0"><a href="{{ route('designer.profile') }}">John Danie S.</a></h3>
@@ -125,25 +125,25 @@
 															</thead>
 															<tbody>
 																<tr>
-																	<td><img src="assets/img/file-logo.png" class="img-fluid" alt="Logo"></td>
+																	<td><img src="/assets/img/file-logo.png" class="img-fluid" alt="Logo"></td>
 																	<td> Image for Section background  </td>
 																	<td><p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 																		<a href="#" class="read-text">Readmore</a>
 																	</td>
 																	<td>Png</td>
 																	<td>20KB</td>
-																	<td><a href="#"><img src="assets/img/icon/cloud.png" class="img-fluid" alt="Logo"></a>
+																	<td><a href="#"><img src="/assets/img/icon/cloud.png" class="img-fluid" alt="Logo"></a>
 																	</td>
 																</tr>
 																<tr>
-																	<td><img src="assets/img/file-logo.png" class="img-fluid" alt="Logo"></td>
+																	<td><img src="/assets/img/file-logo.png" class="img-fluid" alt="Logo"></td>
 																	<td> Image for Section background  </td>
 																	<td><p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 																		<a href="#" class="read-text">Readmore</a>
 																	</td>
 																	<td>Png</td>
 																	<td>20KB</td>
-																	<td><a href="#"><img src="assets/img/icon/cloud.png" class="img-fluid" alt="Logo"></a>
+																	<td><a href="#"><img src="/assets/img/icon/cloud.png" class="img-fluid" alt="Logo"></a>
 																	</td>
 																</tr>
 															</tbody>

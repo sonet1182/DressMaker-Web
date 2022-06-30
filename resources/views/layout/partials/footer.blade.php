@@ -61,10 +61,10 @@
 									<p>Download our App and get the latest Breaking News Alerts and latest headlines and daily articles near you.</p>
 									<div class="row g-2">
 										<div class="col">
-											<a href="#"><img class="img-fluid" src="assets/img/app-store.svg" alt="app-store"></a>
+											<a href="#"><img class="img-fluid" src="/assets/img/app-store.svg" alt="app-store"></a>
 										</div>
 										<div class="col">
-											<a href="#"><img class="img-fluid" src="assets/img/google-play.svg" alt="google-play"></a>
+											<a href="#"><img class="img-fluid" src="/assets/img/google-play.svg" alt="google-play"></a>
 										</div>
 									</div>
 								</div>

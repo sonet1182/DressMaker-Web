@@ -35,7 +35,7 @@
 						</div>
 						<div class="offset-lg-1 col-lg-5">
 							<div class="about-img">
-								<img class="img-fluid" src="assets/img/about.png" alt="Post Image">
+								<img class="img-fluid" src="/assets/img/about.png" alt="Post Image">
 							</div>
 						</div>
 					</div>
@@ -93,7 +93,7 @@
 					<div class="review-blog">
 						<div class="review-top d-flex align-items-center">
 							<div class="review-img">
-								<a href="review"><img class="img-fluid" src="assets/img/review/review-01.jpg" alt="Post Image"></a>
+								<a href="review"><img class="img-fluid" src="/assets/img/review/review-01.jpg" alt="Post Image"></a>
 							</div>
 							<div class="review-info">
 								<h3>Davis Payerf</h3>
@@ -118,7 +118,7 @@
 					<div class="review-blog">
 						<div class="review-top d-flex align-items-center">
 							<div class="review-img">
-								<a href="review"><img class="img-fluid" src="assets/img/review/review-02.jpg" alt="Post Image"></a>
+								<a href="review"><img class="img-fluid" src="/assets/img/review/review-02.jpg" alt="Post Image"></a>
 							</div>
 							<div class="review-info">
 								<h3>Davis Payerf</h3>
@@ -143,7 +143,7 @@
 					<div class="review-blog">
 						<div class="review-top d-flex align-items-center">
 							<div class="review-img">
-								<a href="review"><img class="img-fluid" src="assets/img/review/review-03.jpg" alt="Post Image"></a>
+								<a href="review"><img class="img-fluid" src="/assets/img/review/review-03.jpg" alt="Post Image"></a>
 							</div>
 							<div class="review-info">
 								<h3>Davis Payerf</h3>
@@ -168,7 +168,7 @@
 					<div class="review-blog">
 						<div class="review-top d-flex align-items-center">
 							<div class="review-img">
-								<a href="review"><img class="img-fluid" src="assets/img/review/review-02.jpg" alt="Post Image"></a>
+								<a href="review"><img class="img-fluid" src="/assets/img/review/review-02.jpg" alt="Post Image"></a>
 							</div>
 							<div class="review-info">
 								<h3>Davis Payerf</h3>
@@ -199,7 +199,7 @@
 				<div class="container-fluid">
 					<div class="row align-items-center black-bg">
 						<div class="col-md-6 agency-box">
-							<img src="assets/img/about-01.jpg" alt="" class="img-fluid">
+							<img src="/assets/img/about-01.jpg" alt="" class="img-fluid">
 						</div>
 						<div class="col-md-6 agency-box black-bg">
 							<div class="agency-content">

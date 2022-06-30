@@ -10,7 +10,7 @@
 
 							<!-- Page Not Found -->
 							<div class="empty-content text-center">
-								<img src="assets/img/404.png" alt="logo" class="img-fluid">
+								<img src="/assets/img/404.png" alt="logo" class="img-fluid">
 								<h2>Page not <span class="orange-text">found</span></h2>
 								<p>Oops! Looks like you followed a bad link.</p>
 								<p>If you think this is a problem with us, please tell us.</p>

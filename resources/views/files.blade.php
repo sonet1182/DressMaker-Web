@@ -12,10 +12,10 @@
 						<div class="col-xl-3 col-md-4 theiaStickySidebar">
 							<div class="settings-widget">
 								<div class="settings-header d-sm-flex flex-row flex-wrap text-center text-sm-start align-items-center">
-									<a href="user-account-details"><img alt="profile image" src="assets/img/img-04.jpg" class="avatar-lg rounded-circle"></a>
+									<a href="{{ route('employer.profile') }}"><img alt="profile image" src="/assets/img/img-04.jpg" class="avatar-lg rounded-circle"></a>
 									<div class="ms-sm-3 ms-md-0 ms-lg-3 mt-2 mt-sm-0 mt-md-2 mt-lg-0">
 										<p class="mb-2">Welcome,</p>
-										<a href="user-account-details"><h3 class="mb-0">John Danie S.</h3></a>
+										<a href="{{ route('employer.profile') }}"><h3 class="mb-0">John Danie S.</h3></a>
 										<p class="mb-0">@johndaniee</p>
 									</div>
 								</div>
@@ -27,7 +27,7 @@
 											</a>
 										</li>
 										<li class="nav-item">
-											<a href="manage-projects" class="nav-link active">
+											<a href={{ route('employer.manage-projects') }} class="nav-link active">
 												<i class="material-icons">business_center</i> Projects
 											</a>
 										</li>
@@ -134,7 +134,7 @@
 															</thead>
 															<tbody>
 																<tr>
-																	<td><img src="assets/img/file-logo.png" class="img-fluid" alt="Logo"></td>
+																	<td><img src="/assets/img/file-logo.png" class="img-fluid" alt="Logo"></td>
 																	<td> Image for Section background  </td>
 																	<td><p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 																		<a href="#" class="read-text">Readmore</a>
@@ -150,7 +150,7 @@
 																	</td>
 																</tr>
 																<tr>
-																	<td><img src="assets/img/file-logo.png" class="img-fluid" alt="Logo"></td>
+																	<td><img src="/assets/img/file-logo.png" class="img-fluid" alt="Logo"></td>
 																	<td> Image for Footer </td>
 																	<td><p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 																		<a href="#" class="read-text">Readmore</a>
@@ -166,7 +166,7 @@
 																	</td>
 																</tr>
 																<tr>
-																	<td><img src="assets/img/file-logo.png" class="img-fluid" alt="Logo"></td>
+																	<td><img src="/assets/img/file-logo.png" class="img-fluid" alt="Logo"></td>
 																	<td> Image for Login</td>
 																	<td><p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 																		<a href="#" class="read-text">Readmore</a>
@@ -269,7 +269,7 @@
 											<input type="text" class="form-control" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
 										</div>
 										<div class="d-flex align-items-center">
-											<img src="assets/img/file-logo.png" class="img-fluid me-2" alt="Logo">
+											<img src="/assets/img/file-logo.png" class="img-fluid me-2" alt="Logo">
 											<label class="br-0 file-upload image-upbtn">
 												upload Files <input type="file">
 											</label>

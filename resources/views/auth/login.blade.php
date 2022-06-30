@@ -20,7 +20,7 @@
                         <div class="align-items-center justify-content-center">
                             <div class="login-right">
                                 <div class="login-header text-center">
-                                    <a href="{{ route('home') }}"><img src="assets/img/logo-01.png" alt="logo" class="img-fluid"></a>
+                                    <a href="{{ route('home') }}"><img src="/assets/img/logo.png" alt="logo" class="img-fluid"></a>
                                     <h3>Welcome Back</h3>
                                     <p>Don't miss your next opportunity. Sign in to stay updated on your professional world.
                                     </p>
@@ -58,7 +58,7 @@
                                         </label>
                                     </div>
                                     <button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Login</button>
-                                    <div class="login-or">
+                                    {{-- <div class="login-or">
                                         <p>Or login with</p>
                                     </div>
                                     <div class="row social-login">
@@ -71,7 +71,7 @@
                                         <div class="col-4">
                                             <a href="#" class="btn btn-google btn-block"> Google</a>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="row">
                                         <div class="col-6 text-start">
                                             <a class="forgot-link" href="forgot-password">Forgot Password ?</a>

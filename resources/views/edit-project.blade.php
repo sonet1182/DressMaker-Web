@@ -27,7 +27,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="text-end mb-4">
-								<a href="manage-projects" class="btn btn-primary back-btn br-0"><i class="fas fa-long-arrow-alt-left"></i> Back to Project </a>
+								<a href={{ route('employer.manage-projects') }} class="btn btn-primary back-btn br-0"><i class="fas fa-long-arrow-alt-left"></i> Back to Project </a>
 							</div>
 							<div class="select-project mb-4">
 							<form action="dashboard">
@@ -161,11 +161,11 @@
 											<p>Size of the Document should be Below 2MB</p>
 											<div class="upload-wrap">
 												<div class="upload-document">
-													<img src="assets/img/document.jpg" alt="Image">
+													<img src="/assets/img/document.jpg" alt="Image">
 													<a href="javascript:void(0);" class="btn btn-icon btn-danger btn-sm"><i class="material-icons">delete_sweep</i></a>
 												</div>
 												<div class="upload-document">
-													<img src="assets/img/document.jpg" alt="Image">
+													<img src="/assets/img/document.jpg" alt="Image">
 													<a href="javascript:void(0);" class="btn btn-icon btn-danger btn-sm"><i class="material-icons">delete_sweep</i></a>
 												</div>
 											</div>

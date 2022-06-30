@@ -59,7 +59,7 @@
 														<div class="content-divider"></div>
 														<div class="proposer-info project">
 															<div class="proposer-img">
-																<img src="assets/img/developer/developer-01.jpg" alt="" class="img-fluid">
+																<img src="/assets/img/developer/developer-01.jpg" alt="" class="img-fluid">
 															</div>
 															<div class="proposer-detail">
 																<h4>Hannah Finn</h4>

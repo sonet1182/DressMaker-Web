@@ -15,7 +15,7 @@
 								<div class="align-items-center justify-content-center">
 									<div class="login-right">
 										<div class="login-header text-center">
-											<a href="{{ route('home') }}"><img src="assets/img/logo-01.png" alt="logo" class="img-fluid"></a>
+											<a href="{{ route('home') }}"><img src="/assets/img/logo-01.png" alt="logo" class="img-fluid"></a>
 											<h3>First, let's find your account</h3>
 											<p>Please enter your email or phone Number</p>
 										</div>

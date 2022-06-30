@@ -12,10 +12,10 @@
 						<div class="col-xl-3 col-md-4 theiaStickySidebar">
 							<div class="settings-widget">
 								<div class="settings-header d-sm-flex flex-row flex-wrap text-center text-sm-start align-items-center">
-									<a href="user-account-details"><img alt="profile image" src="assets/img/img-04.jpg" class="avatar-lg rounded-circle"></a>
+									<a href="{{ route('employer.profile') }}"><img alt="profile image" src="/assets/img/img-04.jpg" class="avatar-lg rounded-circle"></a>
 									<div class="ms-sm-3 ms-md-0 ms-lg-3 mt-2 mt-sm-0 mt-md-2 mt-lg-0">
 										<p class="mb-2">Welcome,</p>
-										<a href="user-account-details"><h3 class="mb-0">John Danie S.</h3></a>
+										<a href="{{ route('employer.profile') }}"><h3 class="mb-0">John Danie S.</h3></a>
 										<p class="mb-0">@johndaniee</p>
 									</div>
 								</div>
@@ -27,7 +27,7 @@
 											</a>
 										</li>
 										<li class="nav-item">
-											<a href="manage-projects" class="nav-link active">
+											<a href={{ route('employer.manage-projects') }} class="nav-link active">
 												<i class="material-icons">business_center</i> Projects
 											</a>
 										</li>
@@ -129,7 +129,7 @@
 															<tbody>
 																<tr>
 																	<td>
-																	<div class="d-flex align-items-center"><span><img src="assets/img/company/img-1.png" class="img-fluid avatar-md rounded-circle me-2" alt="Logo"></span> <span>Amaze Tech</span></div></td>
+																	<div class="d-flex align-items-center"><span><img src="/assets/img/company/img-1.png" class="img-fluid avatar-md rounded-circle me-2" alt="Logo"></span> <span>Amaze Tech</span></div></td>
 																	<td>Research</td>
 																	<td><span class="badge badge-pill bg-outline-red">Milestone</span></td>
 																	<td>$54</td>
@@ -140,7 +140,7 @@
 																</tr>
 																<tr>
 																	<td>
-																	<div class="d-flex align-items-center"><span><img src="assets/img/company/img-2.png" class="img-fluid avatar-md rounded-circle me-2" alt="Logo"></span> <span>Park Inc</span></div></td>
+																	<div class="d-flex align-items-center"><span><img src="/assets/img/company/img-2.png" class="img-fluid avatar-md rounded-circle me-2" alt="Logo"></span> <span>Park Inc</span></div></td>
 																	<td>Design</td>
 																	<td><span class="badge badge-pill bg-outline-red">Milestone</span></td>
 																	<td>$52</td>
@@ -151,7 +151,7 @@
 																</tr>
 																<tr>
 																	<td>
-																	<div class="d-flex align-items-center"><span><img src="assets/img/company/img-3.png" class="img-fluid avatar-md rounded-circle me-2" alt="Logo"></span> <span>Tech Zone</span></div></td>
+																	<div class="d-flex align-items-center"><span><img src="/assets/img/company/img-3.png" class="img-fluid avatar-md rounded-circle me-2" alt="Logo"></span> <span>Tech Zone</span></div></td>
 																	<td>Development</td>
 																	<td><span class="badge badge-pill bg-outline-red">Milestone</span></td>
 																	<td>$40</td>
@@ -162,7 +162,7 @@
 																</tr>
 																<tr>
 																	<td>
-																	<div class="d-flex align-items-center"><span><img src="assets/img/company/img-4.png" class="img-fluid avatar-md rounded-circle me-2" alt="Logo"></span> <span>Abc Software</span></div></td>
+																	<div class="d-flex align-items-center"><span><img src="/assets/img/company/img-4.png" class="img-fluid avatar-md rounded-circle me-2" alt="Logo"></span> <span>Abc Software</span></div></td>
 																	<td>Research</td>
 																	<td><span class="badge badge-pill bg-outline-red">Milestone</span></td>
 																	<td>$25</td>
@@ -173,7 +173,7 @@
 																</tr>
 																<tr>
 																	<td>
-																	<div class="d-flex align-items-center"><span><img src="assets/img/company/img-5.png" class="img-fluid avatar-md rounded-circle me-2" alt="Logo"></span> <span>Host Technologies</span></div></td>
+																	<div class="d-flex align-items-center"><span><img src="/assets/img/company/img-5.png" class="img-fluid avatar-md rounded-circle me-2" alt="Logo"></span> <span>Host Technologies</span></div></td>
 																	<td>Development</td>
 																	<td><span class="badge badge-pill bg-outline-red">Milestone</span></td>
 																	<td>$32</td>

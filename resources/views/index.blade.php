@@ -48,7 +48,7 @@
                 </div>
                 <div class="col-md-4 col-lg-5">
                     <div class="banner-img">
-                        <img src="assets/img/banner-img.png" class="img-fluid" alt="banner">
+                        <img src="/assets/img/banner-img.png" class="img-fluid" alt="banner">
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                 <div class="col-md-4">
                     <div class="feature-item freelance-count">
                         <div class="feature-icon">
-                            <img src="assets/img/icon/icon-01.png" class="img-fluid" alt="">
+                            <img src="/assets/img/icon/icon-01.png" class="img-fluid" alt="">
                         </div>
                         <div class="feature-content">
                             <h3>919,207</h3>
@@ -79,7 +79,7 @@
                 <div class="col-md-4">
                     <div class="feature-item">
                         <div class="feature-icon">
-                            <img src="assets/img/icon/icon-02.png" class="img-fluid" alt="">
+                            <img src="/assets/img/icon/icon-02.png" class="img-fluid" alt="">
                         </div>
                         <div class="feature-content">
                             <h3>25 - 100+</h3>
@@ -93,7 +93,7 @@
                 <div class="col-md-4">
                     <div class="feature-item comp-project">
                         <div class="feature-icon">
-                            <img src="assets/img/icon/icon-03.png" class="img-fluid" alt="">
+                            <img src="/assets/img/icon/icon-03.png" class="img-fluid" alt="">
                         </div>
                         <div class="feature-content">
                             <h3>388,615</h3>
@@ -127,7 +127,7 @@
                     <div class="work-content">
                         <h2>I want to <span>work</span></h2>
                         <p>Do you want to earn money, find unlimited clients and build your freelance career?</p>
-                        <a href="developer"><i class="fas fa-long-arrow-alt-right long-arrow"></i></a>
+                        <a href="{{ route('designer') }}"><i class="fas fa-long-arrow-alt-right long-arrow"></i></a>
                     </div>
                 </div>
             </div>
@@ -136,231 +136,231 @@
     <!--- /Developed Project  -->
 
     <!-- Projects -->
-    <section class="section projects">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-12 mx-auto">
-                    <div class="section-header text-center">
-                        <div class="section-line"></div>
-                        <h2 class="header-title">Get Inspired<br> By Design Projects</h2>
-                        <p>High Performing Solutions To Your</p>
-                    </div>
-                </div>
-            </div>
+    <!--<section class="section projects">-->
+    <!--    <div class="container">-->
+    <!--        <div class="row">-->
+    <!--            <div class="col-12 col-md-12 mx-auto">-->
+    <!--                <div class="section-header text-center">-->
+    <!--                    <div class="section-line"></div>-->
+    <!--                    <h2 class="header-title">Get Inspired<br> By Design Projects</h2>-->
+    <!--                    <p>High Performing Solutions To Your</p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
 
-            <div class="row">
+    <!--        <div class="row">-->
 
                 <!--- Project Item  -->
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="project-item">
-                        <div class="project-img">
-                            <a href="project"><img src="assets/img/project/project-01.jpg" alt=""
-                                    class="img-fluid"></a>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="project-content">
-                                <h4>45</h4>
-                                <h5>ANDROID APPS</h5>
-                            </div>
-                            <div class="pro-icon">
-                                <div class="project-icon">
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h4>20</h4>
-                                <h5>Developers</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!--            <div class="col-lg-3 col-md-6 col-sm-6">-->
+    <!--                <div class="project-item">-->
+    <!--                    <div class="project-img">-->
+    <!--                        <a href="project"><img src="/assets/img/project/project-01.jpg" alt=""-->
+    <!--                                class="img-fluid"></a>-->
+    <!--                    </div>-->
+    <!--                    <div class="d-flex justify-content-between align-items-center">-->
+    <!--                        <div class="project-content">-->
+    <!--                            <h4>45</h4>-->
+    <!--                            <h5>ANDROID APPS</h5>-->
+    <!--                        </div>-->
+    <!--                        <div class="pro-icon">-->
+    <!--                            <div class="project-icon">-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="project-content">-->
+    <!--                            <h4>20</h4>-->
+    <!--                            <h5>Developers</h5>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
                 <!--- /Project Item  -->
 
                 <!--- Project Item  -->
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="project-item">
-                        <div class="project-img">
-                            <a href="project"><img src="assets/img/project/project-02.jpg" alt=""
-                                    class="img-fluid"></a>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="project-content">
-                                <h4>45</h4>
-                                <h5>LARAVEL</h5>
-                            </div>
-                            <div class="pro-icon">
-                                <div class="project-icon">
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h4>20</h4>
-                                <h5>Developers</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!--            <div class="col-lg-3 col-md-6 col-sm-6">-->
+    <!--                <div class="project-item">-->
+    <!--                    <div class="project-img">-->
+    <!--                        <a href="project"><img src="/assets/img/project/project-02.jpg" alt=""-->
+    <!--                                class="img-fluid"></a>-->
+    <!--                    </div>-->
+    <!--                    <div class="d-flex justify-content-between align-items-center">-->
+    <!--                        <div class="project-content">-->
+    <!--                            <h4>45</h4>-->
+    <!--                            <h5>LARAVEL</h5>-->
+    <!--                        </div>-->
+    <!--                        <div class="pro-icon">-->
+    <!--                            <div class="project-icon">-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="project-content">-->
+    <!--                            <h4>20</h4>-->
+    <!--                            <h5>Developers</h5>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
                 <!--- /Project Item  -->
 
                 <!--- Project-Item  -->
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="project-item">
-                        <div class="project-img">
-                            <a href="project"><img src="assets/img/project/project-03.jpg" alt=""
-                                    class="img-fluid"></a>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="project-content">
-                                <h4>45</h4>
-                                <h5>React</h5>
-                            </div>
-                            <div class="pro-icon">
-                                <div class="project-icon">
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h4>20</h4>
-                                <h5>Developers</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!--            <div class="col-lg-3 col-md-6 col-sm-6">-->
+    <!--                <div class="project-item">-->
+    <!--                    <div class="project-img">-->
+    <!--                        <a href="project"><img src="/assets/img/project/project-03.jpg" alt=""-->
+    <!--                                class="img-fluid"></a>-->
+    <!--                    </div>-->
+    <!--                    <div class="d-flex justify-content-between align-items-center">-->
+    <!--                        <div class="project-content">-->
+    <!--                            <h4>45</h4>-->
+    <!--                            <h5>React</h5>-->
+    <!--                        </div>-->
+    <!--                        <div class="pro-icon">-->
+    <!--                            <div class="project-icon">-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="project-content">-->
+    <!--                            <h4>20</h4>-->
+    <!--                            <h5>Developers</h5>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
                 <!--- /Project Item  -->
 
                 <!--- Project Item  -->
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="project-item">
-                        <div class="project-img">
-                            <a href="project"><img src="assets/img/project/project-04.jpg" alt=""
-                                    class="img-fluid"></a>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="project-content">
-                                <h4>45</h4>
-                                <h5>GOLANG</h5>
-                            </div>
-                            <div class="pro-icon">
-                                <div class="project-icon">
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h4>20</h4>
-                                <h5>Developers</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!--            <div class="col-lg-3 col-md-6 col-sm-6">-->
+    <!--                <div class="project-item">-->
+    <!--                    <div class="project-img">-->
+    <!--                        <a href="project"><img src="/assets/img/project/project-04.jpg" alt=""-->
+    <!--                                class="img-fluid"></a>-->
+    <!--                    </div>-->
+    <!--                    <div class="d-flex justify-content-between align-items-center">-->
+    <!--                        <div class="project-content">-->
+    <!--                            <h4>45</h4>-->
+    <!--                            <h5>GOLANG</h5>-->
+    <!--                        </div>-->
+    <!--                        <div class="pro-icon">-->
+    <!--                            <div class="project-icon">-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="project-content">-->
+    <!--                            <h4>20</h4>-->
+    <!--                            <h5>Developers</h5>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
                 <!--- /Project Item  -->
 
                 <!--- Project Item  -->
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="project-item">
-                        <div class="project-img">
-                            <a href="project"><img src="assets/img/project/project-01.jpg" alt=""
-                                    class="img-fluid"></a>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="project-content">
-                                <h4>45</h4>
-                                <h5>.NET</h5>
-                            </div>
-                            <div class="pro-icon">
-                                <div class="project-icon">
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h4>20</h4>
-                                <h5>Developers</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!--            <div class="col-lg-3 col-md-6 col-sm-6">-->
+    <!--                <div class="project-item">-->
+    <!--                    <div class="project-img">-->
+    <!--                        <a href="project"><img src="/assets/img/project/project-01.jpg" alt=""-->
+    <!--                                class="img-fluid"></a>-->
+    <!--                    </div>-->
+    <!--                    <div class="d-flex justify-content-between align-items-center">-->
+    <!--                        <div class="project-content">-->
+    <!--                            <h4>45</h4>-->
+    <!--                            <h5>.NET</h5>-->
+    <!--                        </div>-->
+    <!--                        <div class="pro-icon">-->
+    <!--                            <div class="project-icon">-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="project-content">-->
+    <!--                            <h4>20</h4>-->
+    <!--                            <h5>Developers</h5>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
                 <!--- /Project Item  -->
 
                 <!--- Project Item  -->
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="project-item">
-                        <div class="project-img">
-                            <a href="project"><img src="assets/img/project/project-04.jpg" alt=""
-                                    class="img-fluid"></a>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="project-content">
-                                <h4>45</h4>
-                                <h5>JAVA</h5>
-                            </div>
-                            <div class="pro-icon">
-                                <div class="project-icon">
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h4>20</h4>
-                                <h5>Developers</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!--            <div class="col-lg-3 col-md-6 col-sm-6">-->
+    <!--                <div class="project-item">-->
+    <!--                    <div class="project-img">-->
+    <!--                        <a href="project"><img src="/assets/img/project/project-04.jpg" alt=""-->
+    <!--                                class="img-fluid"></a>-->
+    <!--                    </div>-->
+    <!--                    <div class="d-flex justify-content-between align-items-center">-->
+    <!--                        <div class="project-content">-->
+    <!--                            <h4>45</h4>-->
+    <!--                            <h5>JAVA</h5>-->
+    <!--                        </div>-->
+    <!--                        <div class="pro-icon">-->
+    <!--                            <div class="project-icon">-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="project-content">-->
+    <!--                            <h4>20</h4>-->
+    <!--                            <h5>Developers</h5>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
                 <!--- /Project Item  -->
 
                 <!--- Project Item  -->
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="project-item">
-                        <div class="project-img">
-                            <a href="project"><img src="assets/img/project/project-03.jpg" alt=""
-                                    class="img-fluid"></a>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="project-content">
-                                <h4>45</h4>
-                                <h5>PYTHON</h5>
-                            </div>
-                            <div class="pro-icon">
-                                <div class="project-icon">
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h4>20</h4>
-                                <h5>Developers</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!--            <div class="col-lg-3 col-md-6 col-sm-6">-->
+    <!--                <div class="project-item">-->
+    <!--                    <div class="project-img">-->
+    <!--                        <a href="project"><img src="/assets/img/project/project-03.jpg" alt=""-->
+    <!--                                class="img-fluid"></a>-->
+    <!--                    </div>-->
+    <!--                    <div class="d-flex justify-content-between align-items-center">-->
+    <!--                        <div class="project-content">-->
+    <!--                            <h4>45</h4>-->
+    <!--                            <h5>PYTHON</h5>-->
+    <!--                        </div>-->
+    <!--                        <div class="pro-icon">-->
+    <!--                            <div class="project-icon">-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="project-content">-->
+    <!--                            <h4>20</h4>-->
+    <!--                            <h5>Developers</h5>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
                 <!--- /Project Item  -->
 
                 <!--- Project-Item  -->
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="project-item">
-                        <div class="project-img">
-                            <a href="project"><img src="assets/img/project/project-01.jpg" alt=""
-                                    class="img-fluid"></a>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="project-content">
-                                <h4>45</h4>
-                                <h5>ANGULAR</h5>
-                            </div>
-                            <div class="pro-icon">
-                                <div class="project-icon">
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h4>20</h4>
-                                <h5>Developers</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!--            <div class="col-lg-3 col-md-6 col-sm-6">-->
+    <!--                <div class="project-item">-->
+    <!--                    <div class="project-img">-->
+    <!--                        <a href="project"><img src="/assets/img/project/project-01.jpg" alt=""-->
+    <!--                                class="img-fluid"></a>-->
+    <!--                    </div>-->
+    <!--                    <div class="d-flex justify-content-between align-items-center">-->
+    <!--                        <div class="project-content">-->
+    <!--                            <h4>45</h4>-->
+    <!--                            <h5>ANGULAR</h5>-->
+    <!--                        </div>-->
+    <!--                        <div class="pro-icon">-->
+    <!--                            <div class="project-icon">-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="project-content">-->
+    <!--                            <h4>20</h4>-->
+    <!--                            <h5>Developers</h5>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
                 <!--- /Project Item  -->
 
-            </div>
+    <!--        </div>-->
 
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="see-all">
-                        <a href="project" class="btn all-btn">SEE ALL PROJECT</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!--        <div class="row">-->
+    <!--            <div class="col-md-12 text-center">-->
+    <!--                <div class="see-all">-->
+    <!--                    <a href="project" class="btn all-btn">SEE ALL PROJECT</a>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</section>-->
     <!-- /Projects -->
 
     <!-- Subscribe -->
@@ -368,7 +368,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-4">
-                    <img src="assets/img/subscribe.png" class="img-fluid" alt="subscribe">
+                    <img src="/assets/img/subscribe.png" class="img-fluid" alt="subscribe">
                 </div>
                 <div class="col-md-6">
                     <h3>Subscribe To Get Discounts, Updates & More</h3>
@@ -413,8 +413,8 @@
                         </div>
                         <div class="freelance-info">
                             <h3><a href="#">{{ $designer->name }}</a></h3>
-                            <div class="freelance-specific">UI/UX Designer</div>
-                            <div class="freelance-location"><i class="fas fa-map-marker-alt me-1"></i>Alabama, USA</div>
+                            <div class="freelance-specific">Fashion Designer</div>
+                            <div class="freelance-location"><i class="fas fa-map-marker-alt me-1"></i>{{ $designer->address ? $designer->address->state .','. $designer->address->country : '' }}</div>
                             <div class="rating">
 
                                 <i class="fas fa-star filled"></i>
@@ -464,7 +464,7 @@
                 <div class="review-blog">
                     <div class="review-top d-flex align-items-center">
                         <div class="review-img">
-                            <a href="review"><img class="img-fluid" src="assets/img/review/review-01.jpg"
+                            <a href="review"><img class="img-fluid" src="/assets/img/review/review-01.jpg"
                                     alt="Post Image"></a>
                         </div>
                         <div class="review-info">
@@ -491,7 +491,7 @@
                 <div class="review-blog">
                     <div class="review-top d-flex align-items-center">
                         <div class="review-img">
-                            <a href="review"><img class="img-fluid" src="assets/img/review/review-02.jpg"
+                            <a href="review"><img class="img-fluid" src="/assets/img/review/review-02.jpg"
                                     alt="Post Image"></a>
                         </div>
                         <div class="review-info">
@@ -518,7 +518,7 @@
                 <div class="review-blog">
                     <div class="review-top d-flex align-items-center">
                         <div class="review-img">
-                            <a href="review"><img class="img-fluid" src="assets/img/review/review-03.jpg"
+                            <a href="review"><img class="img-fluid" src="/assets/img/review/review-03.jpg"
                                     alt="Post Image"></a>
                         </div>
                         <div class="review-info">
@@ -545,7 +545,7 @@
                 <div class="review-blog">
                     <div class="review-top d-flex align-items-center">
                         <div class="review-img">
-                            <a href="review"><img class="img-fluid" src="assets/img/review/review-02.jpg"
+                            <a href="review"><img class="img-fluid" src="/assets/img/review/review-02.jpg"
                                     alt="Post Image"></a>
                         </div>
                         <div class="review-info">
@@ -574,7 +574,7 @@
     <!-- / Review -->
 
     <!-- News -->
-    <section class="section news">
+    {{-- <section class="section news">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -593,14 +593,14 @@
                         <!-- Blog Post -->
                         <div class="blog grid-blog">
                             <div class="blog-image">
-                                <a href="blog-details"><img class="img-fluid" src="assets/img/blog/blog-01.jpg"
+                                <a href="blog-details"><img class="img-fluid" src="/assets/img/blog/blog-01.jpg"
                                         alt="Post Image"></a>
                             </div>
                             <div class="blog-content">
                                 <ul class="entry-meta meta-item">
                                     <li>
                                         <div class="post-author">
-                                            <a href="developer-details"><img src="assets/img/img-02.jpg" alt="Post Author">
+                                            <a href="developer-details"><img src="/assets/img/img-02.jpg" alt="Post Author">
                                                 <span> David Lee</span></a>
                                         </div>
                                     </li>
@@ -619,14 +619,14 @@
                         <!-- Blog Post -->
                         <div class="blog grid-blog">
                             <div class="blog-image">
-                                <a href="blog-details"><img class="img-fluid" src="assets/img/blog/blog-02.jpg"
+                                <a href="blog-details"><img class="img-fluid" src="/assets/img/blog/blog-02.jpg"
                                         alt="Post Image"></a>
                             </div>
                             <div class="blog-content">
                                 <ul class="entry-meta meta-item">
                                     <li>
                                         <div class="post-author">
-                                            <a href="developer-details"><img src="assets/img/img-03.jpg" alt="Post Author">
+                                            <a href="developer-details"><img src="/assets/img/img-03.jpg" alt="Post Author">
                                                 <span> Deborah Angel</span></a>
                                         </div>
                                     </li>
@@ -645,14 +645,14 @@
                         <!-- Blog Post -->
                         <div class="blog grid-blog">
                             <div class="blog-image">
-                                <a href="blog-details"><img class="img-fluid" src="assets/img/blog/blog-03.jpg"
+                                <a href="blog-details"><img class="img-fluid" src="/assets/img/blog/blog-03.jpg"
                                         alt="Post Image"></a>
                             </div>
                             <div class="blog-content">
                                 <ul class="entry-meta meta-item">
                                     <li>
                                         <div class="post-author">
-                                            <a href="developer-details"><img src="assets/img/img-04.jpg" alt="Post Author">
+                                            <a href="developer-details"><img src="/assets/img/img-04.jpg" alt="Post Author">
                                                 <span>Darren Elder</span></a>
                                         </div>
                                     </li>
@@ -670,7 +670,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- / News -->
 
 

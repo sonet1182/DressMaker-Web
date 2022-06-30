@@ -11,7 +11,7 @@
                         <div class="align-items-center justify-content-center">
                             <div class="login-right">
                                 <div class="login-header text-center">
-                                    <a href="{{ route('home') }}"><img src="assets/img/logo-01.png" alt="logo" class="img-fluid"></a>
+                                    <a href="{{ route('home') }}"><img src="/assets/img/logo-01.png" alt="logo" class="img-fluid"></a>
                                     <h3>Join DressMaker</h3>
                                     <p>Make the most of your professional life</p>
                                 </div>

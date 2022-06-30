@@ -57,7 +57,7 @@
 											<div class="col-12 col-sm-6 col-md-3">
 												<div class="pro-post job-type">
 													<p>Location</p>
-													<h6><img src="assets/img/flags/de.png" height="16" alt="Lang"> Germany</h6>
+													<h6><img src="/assets/img/flags/de.png" height="16" alt="Lang"> Germany</h6>
 												</div>
 											</div>
 											<div class="col-12 col-sm-6 col-md-3">
@@ -82,7 +82,7 @@
 										<div class="row">
 											<div class="col-md-4">
 												<div class="exp-detail">
-													<img class="img-fluid" alt="" src="assets/img/icon/exp-icon-01.png">
+													<img class="img-fluid" alt="" src="/assets/img/icon/exp-icon-01.png">
 												<div class="exp-info">
 													<p>Developer Type</p>
 													<h5>Individual</h5>
@@ -91,7 +91,7 @@
 											</div>
 											<div class="col-md-4">
 												<div class="exp-detail">
-													<img class="img-fluid" alt="" src="assets/img/icon/exp-icon-02.png">
+													<img class="img-fluid" alt="" src="/assets/img/icon/exp-icon-02.png">
 												<div class="exp-info">
 													<p>Project Duration</p>
 													<h5>Less than a month</h5>
@@ -100,7 +100,7 @@
 											</div>
 											<div class="col-md-4">
 												<div class="exp-detail">
-													<img class="img-fluid" alt="" src="assets/img/icon/exp-icon-03.png">
+													<img class="img-fluid" alt="" src="/assets/img/icon/exp-icon-03.png">
 												<div class="exp-info">
 													<p>Level </p>
 													<h5>Intermediate</h5>
@@ -109,7 +109,7 @@
 											</div>
 											<div class="col-md-4">
 												<div class="exp-detail">
-													<img class="img-fluid" alt="" src="assets/img/icon/exp-icon-04.png">
+													<img class="img-fluid" alt="" src="/assets/img/icon/exp-icon-04.png">
 												<div class="exp-info">
 													<p>Job Type</p>
 													<h5>Remote Job</h5>
@@ -118,7 +118,7 @@
 											</div>
 											<div class="col-md-4">
 												<div class="exp-detail">
-													<img class="img-fluid" alt="" src="assets/img/icon/exp-icon-05.png">
+													<img class="img-fluid" alt="" src="/assets/img/icon/exp-icon-05.png">
 												<div class="exp-info">
 													<p>Experience</p>
 													<h5>+5 years</h5>
@@ -127,7 +127,7 @@
 											</div>
 											<div class="col-md-4">
 												<div class="exp-detail">
-													<img class="img-fluid" alt="" src="assets/img/icon/exp-icon-06.png">
+													<img class="img-fluid" alt="" src="/assets/img/icon/exp-icon-06.png">
 												<div class="exp-info">
 													<p>Qualifications</p>
 													<h5>Under Garduate</h5>
@@ -193,12 +193,12 @@
 											<div class="row align-items-center">
 												<div class="col-lg-2">
 													<div class="author-img-wrap">
-														<a href="#"><img class="img-fluid" alt="" src="assets/img/img-01.png"></a>
+														<a href="#"><img class="img-fluid" alt="" src="/assets/img/img-01.png"></a>
 													</div>
 												</div>
 												<div class="col-lg-8">
 													<div class="author-detail">
-														<h4><a href="#">George Wells</a> <img src="assets/img/flags/us.png" height="16" alt="Lang"></h4>
+														<h4><a href="#">George Wells</a> <img src="/assets/img/flags/us.png" height="16" alt="Lang"></h4>
 														<div class="rating">
 															<span class="average-rating">4.3</span>
 															<i class="fas fa-star filled"></i>
@@ -225,12 +225,12 @@
 											<div class="row align-items-center">
 												<div class="col-lg-2">
 													<div class="author-img-wrap">
-														<a href="#"><img class="img-fluid" alt="" src="assets/img/img-02.jpg"></a>
+														<a href="#"><img class="img-fluid" alt="" src="/assets/img/img-02.jpg"></a>
 													</div>
 												</div>
 												<div class="col-lg-8">
 													<div class="author-detail">
-														<h4><a href="#">Tony Ingle</a> <img src="assets/img/flags/es.png" height="16" alt="Lang"></h4>
+														<h4><a href="#">Tony Ingle</a> <img src="/assets/img/flags/es.png" height="16" alt="Lang"></h4>
 														<div class="rating">
 															<span class="average-rating">4.6</span>
 															<i class="fas fa-star filled"></i>
@@ -257,12 +257,12 @@
 											<div class="row align-items-center">
 												<div class="col-lg-2">
 													<div class="author-img-wrap">
-														<a href="#"><img class="img-fluid" alt="" src="assets/img/img-03.jpg"></a>
+														<a href="#"><img class="img-fluid" alt="" src="/assets/img/img-03.jpg"></a>
 													</div>
 												</div>
 												<div class="col-lg-8">
 													<div class="author-detail">
-														<h4><a href="#">James Douglas</a> <img src="assets/img/flags/de.png" height="16" alt="Lang"></h4>
+														<h4><a href="#">James Douglas</a> <img src="/assets/img/flags/de.png" height="16" alt="Lang"></h4>
 														<div class="rating">
 															<span class="average-rating">3.8</span>
 															<i class="fas fa-star filled"></i>
@@ -302,7 +302,7 @@
                                 <div class="author-heading">
                                     <div class="profile-img">
                                         <a href="#">
-                                            <img src="assets/img/company/img-1.png" alt="author">
+                                            <img src="/assets/img/company/img-1.png" alt="author">
                                         </a>
                                     </div>
                                     <div class="profile-name">

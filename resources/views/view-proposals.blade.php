@@ -62,12 +62,12 @@
 										<div class="row align-items-center">
 											<div class="col-lg-2">
 												<div class="author-img-wrap">
-													<a href="#"><img class="img-fluid" alt="" src="assets/img/user/avatar-1.jpg"></a>
+													<a href="#"><img class="img-fluid" alt="" src="/assets/img/user/avatar-1.jpg"></a>
 												</div>
 											</div>
 											<div class="col-lg-8">
 												<div class="author-detail">
-													<h4><a href="#">George Wells</a> <img src="assets/img/flags/de.png" height="16" alt="Lang"></h4>
+													<h4><a href="#">George Wells</a> <img src="/assets/img/flags/de.png" height="16" alt="Lang"></h4>
 													<div class="rating">
 														<span class="average-rating">4.1</span>
 														<i class="fas fa-star filled"></i>
@@ -94,12 +94,12 @@
 										<div class="row align-items-center">
 											<div class="col-lg-2">
 												<div class="author-img-wrap">
-													<a href="#"><img class="img-fluid" alt="" src="assets/img/user/avatar-2.jpg"></a>
+													<a href="#"><img class="img-fluid" alt="" src="/assets/img/user/avatar-2.jpg"></a>
 												</div>
 											</div>
 											<div class="col-lg-8">
 												<div class="author-detail">
-													<h4><a href="#">Timothy Smith</a> <img src="assets/img/flags/fr.png" height="16" alt="Lang"></h4>
+													<h4><a href="#">Timothy Smith</a> <img src="/assets/img/flags/fr.png" height="16" alt="Lang"></h4>
 													<div class="rating">
 														<span class="average-rating">4.9</span>
 														<i class="fas fa-star filled"></i>
@@ -126,12 +126,12 @@
 										<div class="row align-items-center">
 											<div class="col-lg-2">
 												<div class="author-img-wrap">
-													<a href="#"><img class="img-fluid" alt="" src="assets/img/user/avatar-3.jpg"></a>
+													<a href="#"><img class="img-fluid" alt="" src="/assets/img/user/avatar-3.jpg"></a>
 												</div>
 											</div>
 											<div class="col-lg-8">
 												<div class="author-detail">
-													<h4><a href="#">Janet Paden</a> <img src="assets/img/flags/us.png" height="16" alt="Lang"></h4>
+													<h4><a href="#">Janet Paden</a> <img src="/assets/img/flags/us.png" height="16" alt="Lang"></h4>
 													<div class="rating">
 														<span class="average-rating">4.2</span>
 														<i class="fas fa-star filled"></i>
@@ -158,12 +158,12 @@
 										<div class="row align-items-center">
 											<div class="col-lg-2">
 												<div class="author-img-wrap">
-													<a href="#"><img class="img-fluid" alt="" src="assets/img/user/avatar-4.jpg"></a>
+													<a href="#"><img class="img-fluid" alt="" src="/assets/img/user/avatar-4.jpg"></a>
 												</div>
 											</div>
 											<div class="col-lg-8">
 												<div class="author-detail">
-													<h4><a href="#">James Douglas</a> <img src="assets/img/flags/es.png" height="16" alt="Lang"></h4>
+													<h4><a href="#">James Douglas</a> <img src="/assets/img/flags/es.png" height="16" alt="Lang"></h4>
 													<div class="rating">
 														<span class="average-rating">3.9</span>
 														<i class="fas fa-star filled"></i>
@@ -190,12 +190,12 @@
 										<div class="row align-items-center">
 											<div class="col-lg-2">
 												<div class="author-img-wrap">
-													<a href="#"><img class="img-fluid" alt="" src="assets/img/user/avatar-5.jpg"></a>
+													<a href="#"><img class="img-fluid" alt="" src="/assets/img/user/avatar-5.jpg"></a>
 												</div>
 											</div>
 											<div class="col-lg-8">
 												<div class="author-detail">
-													<h4><a href="#">Floyd Lewis</a> <img src="assets/img/flags/de.png" height="16" alt="Lang"></h4>
+													<h4><a href="#">Floyd Lewis</a> <img src="/assets/img/flags/de.png" height="16" alt="Lang"></h4>
 													<div class="rating">
 														<span class="average-rating">3.5</span>
 														<i class="fas fa-star filled"></i>

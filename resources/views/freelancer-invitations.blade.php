@@ -10,7 +10,7 @@
 						<div class="col-xl-3 col-md-4 theiaStickySidebar">
 							<div class="settings-widget">
 								<div class="settings-header d-sm-flex flex-row flex-wrap text-center text-sm-start align-items-center">
-									<a href="{{ route('designer.profile') }}"><img alt="profile image" src="assets/img/img-04.jpg" class="avatar-lg rounded-circle"></a>
+									<a href="{{ route('designer.profile') }}"><img alt="profile image" src="/assets/img/img-04.jpg" class="avatar-lg rounded-circle"></a>
 									<div class="ms-sm-3 ms-md-0 ms-lg-3 mt-2 mt-sm-0 mt-md-2 mt-lg-0">
 										<p class="mb-2">Welcome,</p>
 										<h3 class="mb-0"><a href="{{ route('designer.profile') }}">John Danie S.</a></h3>
@@ -113,7 +113,7 @@
 																<td>
 																	<h2 class="table-avatar">
 																		<a href="project-details" class="avatar avatar-md tab-imgcircle me-2">
-																			<img class="avatar-img rounded-circle" src="assets/img/company/img-5.png" alt="User Image">
+																			<img class="avatar-img rounded-circle" src="/assets/img/company/img-5.png" alt="User Image">
 																		</a>
 																		<a href="project-details"><span class="profile-name">Host Technologies </span><span>UI/UX Designer</span>
 																		<span class="rating mt-2">
@@ -127,7 +127,7 @@
 																	</h2>
 																</td>
 																<td>18 Oct 2021</td>
-																<td><h2 class="table-avatar"><img src="assets/img/flags/us.png" class="me-2" alt="" height="16"> USA</h2></td>
+																<td><h2 class="table-avatar"><img src="/assets/img/flags/us.png" class="me-2" alt="" height="16"> USA</h2></td>
 																<td>
 																	<div class="table-action">
 																		<a href="javascript:void(0);" class="me-2"><i class="fab fa-rocketchat"></i></a>
@@ -140,7 +140,7 @@
 																<td>
 																	<h2 class="table-avatar">
 																		<a href="project-details" class="avatar avatar-md tab-imgcircle me-2">
-																			<img class="avatar-img rounded-circle" src="assets/img/company/img-6.png" alt="User Image">
+																			<img class="avatar-img rounded-circle" src="/assets/img/company/img-6.png" alt="User Image">
 																		</a>
 																		<a href="project-details"><span class="profile-name">Alfred Tech </span><span>PHP Developer</span>
 																		<span class="rating mt-2">
@@ -154,7 +154,7 @@
 																	</h2>
 																</td>
 																<td>19 Oct 2021</td>
-																<td><h2 class="table-avatar"><img src="assets/img/flags/de.png" class="me-2" alt="" height="16"> GERMANY</h2></td>
+																<td><h2 class="table-avatar"><img src="/assets/img/flags/de.png" class="me-2" alt="" height="16"> GERMANY</h2></td>
 																<td>
 																	<div class="table-action">
 																		<a href="javascript:void(0);" class="me-2"><i class="fab fa-rocketchat"></i></a>
@@ -167,7 +167,7 @@
 																<td>
 																	<h2 class="table-avatar">
 																		<a href="project-details" class="avatar avatar-md tab-imgcircle me-2">
-																			<img class="avatar-img rounded-circle" src="assets/img/company/img-7.png"alt="User Image">
+																			<img class="avatar-img rounded-circle" src="/assets/img/company/img-7.png"alt="User Image">
 																		</a>
 																		<a href="project-details"><span class="profile-name">Kind Softwares </span><span>Graphic Designer</span>
 																		<span class="rating mt-2">
@@ -181,7 +181,7 @@
 																	</h2>
 																</td>
 																<td>20 Oct 2021</td>
-																<td><h2 class="table-avatar"><img src="assets/img/flags/de.png" class="me-2" alt="" height="16"> GERMANY</h2></td>
+																<td><h2 class="table-avatar"><img src="/assets/img/flags/de.png" class="me-2" alt="" height="16"> GERMANY</h2></td>
 																<td>
 																	<div class="table-action">
 																		<a href="javascript:void(0);" class="me-2"><i class="fab fa-rocketchat"></i></a>
@@ -194,7 +194,7 @@
 																<td>
 																	<h2 class="table-avatar">
 																		<a href="project-details" class="avatar avatar-md tab-imgcircle me-2">
-																			<img class="avatar-img rounded-circle" src="assets/img/company/img-8.png" alt="User Image">
+																			<img class="avatar-img rounded-circle" src="/assets/img/company/img-8.png" alt="User Image">
 																		</a>
 																		<a href="project-details"><span class="profile-name">Particles Inc </span><span>iOS Developer</span>
 																		<span class="rating mt-2">
@@ -208,7 +208,7 @@
 																	</h2>
 																</td>
 																<td>22 Oct 2021</td>
-																<td><h2 class="table-avatar"><img src="assets/img/flags/us.png" class="me-2" alt="" height="16"> USA</h2></td>
+																<td><h2 class="table-avatar"><img src="/assets/img/flags/us.png" class="me-2" alt="" height="16"> USA</h2></td>
 																<td>
 																	<div class="table-action">
 																		<a href="javascript:void(0);" class="me-2"><i class="fab fa-rocketchat"></i></a>
@@ -221,7 +221,7 @@
 																<td>
 																	<h2 class="table-avatar">
 																		<a href="project-details" class="avatar avatar-md tab-imgcircle me-2">
-																			<img class="avatar-img rounded-circle" src="assets/img/company/img-9.png"alt="User Image">
+																			<img class="avatar-img rounded-circle" src="/assets/img/company/img-9.png"alt="User Image">
 																		</a>
 																		<a href="project-details"><span class="profile-name">Soft Technologies </span><span>UI/UX Designer</span>
 																		<span class="rating mt-2">
@@ -235,7 +235,7 @@
 																	</h2>
 																</td>
 																<td>39 Oct 2021</td>
-																<td><h2 class="table-avatar"><img src="assets/img/flags/us.png" class="me-2" alt="" height="16"> USA</h2></td>
+																<td><h2 class="table-avatar"><img src="/assets/img/flags/us.png" class="me-2" alt="" height="16"> USA</h2></td>
 																<td>
 																	<div class="table-action">
 																		<a href="javascript:void(0);" class="me-2"><i class="fab fa-rocketchat"></i></a>

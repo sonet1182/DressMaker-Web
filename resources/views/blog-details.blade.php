@@ -29,7 +29,7 @@
 							<div class="blog-view">
 								<div class="blog-single-post pro-post widget-box">
 									<div class="blog-image">
-										<a href="javascript:void(0);"><img alt="" src="assets/img/blog/blog-01.jpg" class="img-fluid"></a>
+										<a href="javascript:void(0);"><img alt="" src="/assets/img/blog/blog-01.jpg" class="img-fluid"></a>
 									</div>
 									<h3 class="blog-title">Your next job starts right here</h3>
 									<div class="blog-info clearfix">
@@ -37,7 +37,7 @@
 											<ul>
 												<li>
 													<div class="post-author">
-														<a href="developer-details"><img src="assets/img/img-02.jpg" alt="Post Author"><span>John Doe</span></a>
+														<a href="developer-details"><img src="/assets/img/img-02.jpg" alt="Post Author"><span>John Doe</span></a>
 													</div>
 												</li>
 												<li><a href="#"><i class="far fa-calendar"></i>4 May 2021</a></li>
@@ -60,7 +60,7 @@
 									<div class="about-author">
 										<div class="about-author-img">
 											<div class="author-img-wrap">
-												<a href="developer-details"><img class="img-fluid" alt="" src="assets/img/img-02.jpg"></a>
+												<a href="developer-details"><img class="img-fluid" alt="" src="/assets/img/img-02.jpg"></a>
 											</div>
 										</div>
 										<div class="author-details">
@@ -86,7 +86,7 @@
 										<li>
 											<div class="comment">
 												<div class="comment-author">
-													<img class="avatar" alt="" src="assets/img/img-02.jpg">
+													<img class="avatar" alt="" src="/assets/img/img-02.jpg">
 												</div>
 												<div class="comment-block">
 													<span class="comment-by">
@@ -102,7 +102,7 @@
 												<li>
 													<div class="comment">
 														<div class="comment-author">
-															<img class="avatar" alt="" src="assets/img/img-03.jpg">
+															<img class="avatar" alt="" src="/assets/img/img-03.jpg">
 														</div>
 														<div class="comment-block">
 															<span class="comment-by">
@@ -118,7 +118,7 @@
 												<li>
 													<div class="comment">
 														<div class="comment-author">
-															<img class="avatar" alt="" src="assets/img/img-04.jpg">
+															<img class="avatar" alt="" src="/assets/img/img-04.jpg">
 														</div>
 														<div class="comment-block">
 															<span class="comment-by">
@@ -136,7 +136,7 @@
 										<li>
 											<div class="comment">
 												<div class="comment-author">
-													<img class="avatar" alt="" src="assets/img/img-05.jpg">
+													<img class="avatar" alt="" src="/assets/img/img-05.jpg">
 												</div>
 												<div class="comment-block">
 													<span class="comment-by">
@@ -187,7 +187,7 @@
 										<li>
 											<div class="post-thumb">
 												<a href="blog-details">
-													<img class="img-fluid" src="assets/img/blog/blog-thumb-03.jpg" alt="">
+													<img class="img-fluid" src="/assets/img/blog/blog-thumb-03.jpg" alt="">
 												</a>
 											</div>
 											<div class="post-info">
@@ -200,7 +200,7 @@
 										<li>
 											<div class="post-thumb">
 												<a href="blog-details">
-													<img class="img-fluid" src="assets/img/blog/blog-thumb-02.jpg" alt="">
+													<img class="img-fluid" src="/assets/img/blog/blog-thumb-02.jpg" alt="">
 												</a>
 											</div>
 											<div class="post-info">
@@ -213,7 +213,7 @@
 										<li>
 											<div class="post-thumb">
 												<a href="blog-details">
-													<img class="img-fluid" src="assets/img/blog/blog-thumb-01.jpg" alt="">
+													<img class="img-fluid" src="/assets/img/blog/blog-thumb-01.jpg" alt="">
 												</a>
 											</div>
 											<div class="post-info">

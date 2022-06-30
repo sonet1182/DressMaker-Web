@@ -11,7 +11,7 @@
                         <div class="align-items-center justify-content-center">
                             <div class="login-right">
                                 <div class="login-header text-center">
-                                    <a href="{{ route('home') }}"><img src="assets/img/logo-01.png" alt="logo" class="img-fluid"></a>
+                                    <a href="{{ route('home') }}"><img src="/assets/img/logo-01.png" alt="logo" class="img-fluid"></a>
                                     <h3>Join DressMaker</h3>
                                     <p>Make the most of your professional life</p>
                                 </div>
@@ -82,7 +82,7 @@
                                             </div>
                                             <button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Agree
                                                 TO JOIN</button>
-                                            <div class="login-or">
+                                            {{-- <div class="login-or">
                                                 <p>Or login with</p>
                                             </div>
                                             <div class="row social-login">
@@ -95,7 +95,7 @@
                                                 <div class="col-4">
                                                     <a href="#" class="btn btn-google btn-block"> Google</a>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                             <div class="row">
                                                 <div class="col-6 text-start">
                                                     <a class="forgot-link" href="forgot-password">Forgot Password ?</a>

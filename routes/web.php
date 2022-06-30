@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\buyerController;
 use App\Http\Controllers\Admin\categoryController;
+use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\sellerController;
 use App\Http\Controllers\Buyer\AccountController as BuyerAccountController;
 use App\Http\Controllers\Buyer\ProjectController;
@@ -23,9 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/home', function () {
-    return view('index');
-})->name('pagee');
+
 Route::get('/index', function () {
     return view('index');
 })->name('pagee');
@@ -47,40 +46,30 @@ Route::get('/blog-grid', function () {
 Route::get('/blog-list', function () {
     return view('blog-list');
 })->name('blog-list');
-Route::get('/cancelled-projects', function () {
+Route::get('/employer/cancelled-projects', function () {
     return view('cancelled-projects');
 })->name('cancelled-projects');
-Route::get('/change-password', function () {
-    return view('change-password');
-})->name('change-password');
-Route::get('/chats', function () {
-    return view('chats');
-})->name('chats');
-Route::get('/completed-projects', function () {
+
+
+Route::get('/employer/completed-projects', function () {
     return view('completed-projects');
-})->name('completed-projects');
+})->name('/employer/completed-projects');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-Route::get('/delete-account', function () {
-    return view('delete-account');
-})->name('delete-account');
+
 Route::get('/deposit-funds', function () {
     return view('deposit-funds');
 })->name('deposit-funds');
 
-Route::get('/developer', function () {
-    return view('developer');
-})->name('developer');
+
 Route::get('/edit-project', function () {
     return view('edit-project');
 })->name('edit-project');
 Route::get('/faq', function () {
     return view('faq');
 })->name('faq');
-Route::get('/favourites', function () {
-    return view('favourites');
-})->name('favourites');
+
 Route::get('/files', function () {
     return view('files');
 })->name('files');
@@ -149,25 +138,21 @@ Route::get('/freelancer-view-project-detail', function () {
 Route::get('/freelancer-withdraw-money', function () {
     return view('freelancer-withdraw-money');
 })->name('freelancer-withdraw-money');
-Route::get('/invited-freelancer', function () {
-    return view('invited-freelancer');
-})->name('invited-freelancer');
+
 // Route::get('/login', function () {
 //     return view('login');
 // })->name('login');
-Route::get('/manage-projects', function () {
-    return view('manage-projects');
-})->name('manage-projects');
+
 Route::get('/membership-plans', function () {
     return view('membership-plans');
 })->name('membership-plans');
 Route::get('/milestones', function () {
     return view('milestones');
 })->name('milestones');
-Route::get('/ongoing-projects', function () {
+Route::get('/employer/ongoing-projects', function () {
     return view('ongoing-projects');
 })->name('ongoing-projects');
-Route::get('/pending-projects', function () {
+Route::get('/employer/pending-projects', function () {
     return view('pending-projects');
 })->name('pending-projects');
 Route::get('/post-job', function () {
@@ -187,15 +172,11 @@ Route::get('/project-payment', function () {
 Route::get('/project-proposals', function () {
     return view('project-proposals');
 })->name('project-proposals');
-Route::get('/project', function () {
-    return view('project');
-})->name('project');
+
 // Route::get('/register', function () {
 //     return view('register');
 // })->name('register');
-Route::get('/review', function () {
-    return view('review');
-})->name('review');
+
 Route::get('/tasks', function () {
     return view('tasks');
 })->name('tasks');
@@ -205,9 +186,7 @@ Route::get('/term-condition', function () {
 Route::get('/transaction-history', function () {
     return view('transaction-history');
 })->name('transaction-history');
-Route::get('/user-account-details', function () {
-    return view('user-account-details');
-})->name('user-account-details');
+
 Route::get('/verify-identity', function () {
     return view('verify-identity');
 })->name('verify-identity');
@@ -217,9 +196,7 @@ Route::get('/view-invoice', function () {
 Route::get('/view-profile', function () {
     return view('view-profile');
 })->name('view-profile');
-Route::get('/view-project-detail', function () {
-    return view('view-project-detail');
-})->name('view-project-detail');
+
 Route::get('/view-proposals', function () {
     return view('view-proposals');
 })->name('view-proposals');
@@ -344,9 +321,7 @@ Route::Group(['prefix' => 'admin'], function () {
         return view('admin.tax-types');
     })->name('tax-types');
 
-    Route::get('/verify-identity', function () {
-        return view('admin.verify-identity');
-    })->name('verify-identity');
+
     Route::get('/view-estimate', function () {
         return view('admin.view-estimate');
     })->name('view-estimate');
@@ -358,9 +333,17 @@ Route::Group(['prefix' => 'admin'], function () {
 
 Auth::routes();
 
+Route::get('/admin', [LoginController::class, 'index'])->name('admin.login');
+
+
+
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/', [HomePageController::class, 'index'])->name('home');
+Route::get('/designer', [HomePageController::class, 'designer'])->name('designer');
+Route::get('/project', [HomePageController::class, 'project'])->name('project');
+
+
 
 //admin Route
 Route::get('admin/designers', [sellerController::class, 'index']);
@@ -372,6 +355,11 @@ Route::post('admin/add_category', [categoryController::class, 'add'])->name('cat
 Route::post('admin/update_category/{id}', [categoryController::class, 'update'])->name('category.update');
 
 Route::get('/designer-details/{slug}', [HomePageController::class, 'seller_details'])->name('developer-details');
+Route::get('project-details/{id}', [HomePageController::class, 'project_details'])->name('project-details');
+
+Route::get('/view-project-detail', function () {
+    return view('view-project-detail');
+})->name('view-project-detail');
 
 
 
@@ -393,10 +381,44 @@ Route::group(['middleware' => ['auth', 'isBuyer'], 'prefix' => 'employer/', 'as'
         return view('profile-settings');
     })->name('profile-settings');
 
+
+    Route::get('user-account-details', [BuyerAccountController::class, 'profile'])->name('profile');
+
+
     Route::get('post-project', [ProjectController::class, 'project_page'])->name('post-project');
     Route::post('post-project', [ProjectController::class, 'add'])->name('add-post-project');
+    Route::get('manage-projects', [ProjectController::class, 'index'])->name('manage-projects');
 
-    Route::post('profile-update', [BuyerAccountController::class, 'update'])->name('employer.profile-update');
+    Route::post('profile-update', [BuyerAccountController::class, 'update'])->name('profile-update');
+
+    Route::get('favourites', function () {
+        return view('favourites');
+    })->name('favourites');
+
+    Route::get('invited-freelancer', function () {
+        return view('invited-freelancer');
+    })->name('invited-freelancer');
+
+    Route::get('change-password', function () {
+        return view('change-password');
+    })->name('change-password');
+
+    Route::get('delete-account', function () {
+        return view('delete-account');
+    })->name('delete-account');
+
+    Route::get('review', function () {
+        return view('review');
+    })->name('review');
+
+    Route::get('chats', function () {
+        return view('chats');
+    })->name('chats');
+
+    Route::get('verify-identity', function () {
+        return view('admin.verify-identity');
+    })->name('verify-identity');
+
 });
 
 

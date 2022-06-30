@@ -80,34 +80,10 @@
                                                         <a class="dropdown-item" href="#">Bitcoin</a>
                                                     </div>
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="20.00">
+                                                <input type="text" name="price" class="form-control" placeholder="20.00">
                                             </div>
                                         </div>
-                                        <div class="form-group mt-3" id="hour_id" style="display: none;">
-                                            <div class="row">
-                                                <div class="col-md-6 mb-2">
-                                                    <div class="input-group form-inline">
-                                                        <div class="input-group-prepend">
-                                                            <button type="button" class="btn btn-white dropdown-toggle"
-                                                                data-bs-toggle="dropdown">$</button>
-                                                            <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Dollars</a>
-                                                                <a class="dropdown-item" href="#">Euro</a>
-                                                                <a class="dropdown-item" href="#">Bitcoin</a>
-                                                            </div>
-                                                        </div>
-                                                        <input type="text" name="price" class="form-control mr-2" placeholder="20.00">
-                                                        <label> / hr</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="input-group form-inline">
-                                                        <label>For </label> <input type="text" class="form-control ml-2"
-                                                            placeholder=" ( eg: 2 Weeks)">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </div>
                                 <!-- /Price Content -->

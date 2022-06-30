@@ -7,10 +7,10 @@
 				<!-- Logo -->
 				<div class="header-left">
 					<a href="{{ route('home') }}" class="logo">
-						<img src="{{ asset("assets/img/logo.png") }}" alt="Logo">
+						<img src="{{ asset("/assets/img/logo.png") }}" alt="Logo">
 					</a>
 					<a href="{{ route('home') }}" class="logo logo-small">
-						<img src="{{ asset("assets/img/logo.png") }}" alt="Logo" width="30" height="30">
+						<img src="{{ asset("/assets/img/logo.png") }}" alt="Logo" width="30" height="30">
 					</a>
 					<!-- Sidebar Toggle -->
 					<a href="javascript:void(0);" id="toggle_btn">

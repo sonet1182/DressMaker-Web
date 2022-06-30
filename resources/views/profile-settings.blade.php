@@ -8,81 +8,7 @@
 				<div class="container-fluid" style="margin-top: 60px">
 					<div class="row">
 
-						<!-- sidebar -->
-						<div class="col-xl-3 col-md-4 theiaStickySidebar">
-							<div class="settings-widget">
-								<div class="settings-header d-sm-flex flex-row flex-wrap text-center text-sm-start align-items-center">
-									<a href="user-account-details">
-                                        <img src="{{ Auth::user()->profile_photo ? asset(Auth::user()->profile_photo) : asset('assets/img/img-04.jpg') }}" alt="" class="avatar-lg rounded-circle">
-                                    </a>
-									<div class="ms-sm-3 ms-md-0 ms-lg-3 mt-2 mt-sm-0 mt-md-2 mt-lg-0">
-										<p class="mb-2">Welcome,</p>
-										<h3 class="mb-0"><a href="{{ route('designer.profile') }}">{{ Auth::user()->name }}</a></h3>
-										<p class="mb-0">@employer{{ Auth::user()->id }}</p>
-									</div>
-								</div>
-								<div class="settings-menu">
-									<ul>
-										<li class="nav-item">
-											<a href="dashboard" class="nav-link">
-												<i class="material-icons">verified_user</i> Dashboard
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="manage-projects" class="nav-link">
-												<i class="material-icons">business_center</i> Projects
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="favourites" class="nav-link">
-												<i class="material-icons">local_play</i> Favourites
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="review" class="nav-link">
-												<i class="material-icons">record_voice_over</i> Reviews
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="chats" class="nav-link">
-												<i class="material-icons">chat</i> Messages
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="membership-plans" class="nav-link">
-												<i class="material-icons">person_add</i> Membership
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="milestones" class="nav-link">
-												<i class="material-icons">pie_chart</i> Milestones
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="verify-identity" class="nav-link">
-												<i class="material-icons">person_pin</i> Verify Identity
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="deposit-funds" class="nav-link">
-												<i class="material-icons">wifi_tethering</i> Payments
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="profile-settings" class="nav-link active">
-												<i class="material-icons">settings</i> Settings
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="{{ route('home') }}" class="nav-link">
-												<i class="material-icons">power_settings_new</i> Logout
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- /sidebar -->
+						@include('buyer.sidebar')
 
 						<div class="col-xl-9 col-md-8">
 							<div class="pro-pos">
@@ -99,13 +25,16 @@
 										</li>
 									</ul>
 								</nav>
+
+                                <form action="{{ route('employer.profile-update') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+
 								<div class="setting-content">
 									<div class="card">
 										<div class="pro-head">
 											<h3 class="pro-title without-border mb-0">Profile Basics </h3>
 										</div>
-										<form action="{{ route('employer.profile-update') }}" method="POST" enctype="multipart/form-data">
-                                            @csrf
+
 											<div class="pro-body p-0">
 												<div class="form-row pro-pad">
 
@@ -149,38 +78,43 @@
 													</div>
 												</div>
 											</div>
-										</form>
+
 									</div>
 
 									<div class="card">
-										<div class="pro-head">
-											<h3 class="pro-title without-border mb-0">Location</h3>
-										</div>
-										<div class="pro-body">
-											<div class="row">
-												<div class="form-group col-md-12">
-													<label>Address</label>
-													<input type="text" class="form-control">
-												</div>
-												<div class="form-group col-md-6">
-													<label>State</label>
-													<input type="text" class="form-control">
-												</div>
-												<div class="form-group col-md-6">
-													<label>Zipcode</label>
-													<input type="text" class="form-control">
-												</div>
-												<div class="form-group col-md-6">
-													<label>Country</label>
-													<select class="form-control select">
-														<option value="0">India</option>
-														<option value="1" >China</option>
-														<option value="2">Japan</option>
-													</select>
-												</div>
-											</div>
-										</div>
-									</div>
+                                        <div class="pro-head">
+                                            <h3 class="pro-title without-border mb-0">Location</h3>
+                                        </div>
+                                        <div class="pro-body">
+                                            <div class="row">
+                                                <div class="form-group col-md-12">
+                                                    <label>Address</label>
+                                                    <input type="text" name="address" value="{{ Auth::user()->address ? Auth::user()->address->address : '' }}" class="form-control">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label>State</label>
+                                                    <input type="text" name="state" value="{{ Auth::user()->address ? Auth::user()->address->state : '' }}" class="form-control">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label>Zipcode</label>
+                                                    <input type="text" name="zip_code" value="{{ Auth::user()->address ? Auth::user()->address->zip_code : '' }}" class="form-control">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label>Country</label>
+                                                    <select name="country" class="form-control select">
+                                                        <option value="Canada" {{ Auth::user()->address && Auth::user()->address->country =='Canada' ? 'selected' : '' }}>Canada</option>
+                                                        <option value="China"  {{ Auth::user()->address && Auth::user()->address->country =='Chine' ? 'selected' : '' }}>China</option>
+                                                        <option value="India" {{ Auth::user()->address && Auth::user()->address->country =='India' ? 'selected' : '' }}>India</option>
+                                                        <option value="Japan" {{ Auth::user()->address && Auth::user()->address->country =='Japan' ? 'selected' : '' }}>Japan</option>
+                                                        <option value="Pakistan" {{ Auth::user()->address && Auth::user()->address->country =='Pakistan' ? 'selected' : '' }}>Pakistan</option>
+                                                        <option value="Russia" {{ Auth::user()->address && Auth::user()->address->country =='Russia' ? 'selected' : '' }}>Russia</option>
+                                                        <option value="USA" {{ Auth::user()->address && Auth::user()->address->country =='USA' ? 'selected' : '' }}>USA</option>
+                                                        <option value="UK" {{ Auth::user()->address && Auth::user()->address->country =='UK' ? 'selected' : '' }}>UK</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
 									<div class="card">
 										<div class="pro-head">
@@ -189,45 +123,45 @@
 										<div class="pro-body">
 											<div class="row">
 												<div class="form-group col-md-12">
-													<textarea class="form-control" rows="5"></textarea>
+													<textarea class="form-control" rows="5" name="overview">{!! Auth::user()->overview !!}</textarea>
 												</div>
 											</div>
 										</div>
 									</div>
 
 									<div class="card">
-										<div class="pro-head">
-											<h3 class="pro-title without-border mb-0">Social Links</h3>
-										</div>
-										<div class="pro-body">
-											<div class="row">
-												<div class="form-group col-md-6">
-													<label>Facebook</label>
-													<input type="text" class="form-control">
-												</div>
-												<div class="form-group col-md-6">
-													<label>Dribble</label>
-													<input type="text" class="form-control">
-												</div>
-												<div class="form-group col-md-6">
-													<label>Twitter</label>
-													<input type="text" class="form-control">
-												</div>
-												<div class="form-group col-md-6">
-													<label>LinkedIn</label>
-													<input type="text" class="form-control">
-												</div>
-												<div class="form-group col-md-6">
-													<label>Behance</label>
-													<input type="text" class="form-control">
-												</div>
-												<div class="form-group col-md-6">
-													<label>Behance</label>
-													<input type="text" class="form-control">
-												</div>
-											</div>
-										</div>
-									</div>
+                                        <div class="pro-head">
+                                            <h3 class="pro-title without-border mb-0">Social Links</h3>
+                                        </div>
+                                        <div class="pro-body">
+                                            <div class="row">
+                                                <div class="form-group col-md-6">
+                                                    <label>Facebook</label>
+                                                    <input type="text" name="facebook" value="{{ Auth::user()->links ? Auth::user()->links->facebook : '' }}" class="form-control">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label>Dribble</label>
+                                                    <input type="text" name="dribble" value="{{ Auth::user()->links ? Auth::user()->links->facebook : '' }}" class="form-control">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label>Twitter</label>
+                                                    <input type="text" name="twitter" value="{{ Auth::user()->links ? Auth::user()->links->facebook : '' }}" class="form-control">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label>LinkedIn</label>
+                                                    <input type="text" name="linkedin" value="{{ Auth::user()->links ? Auth::user()->links->facebook : '' }}" class="form-control">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label>Behance</label>
+                                                    <input type="text" name="behance" value="{{ Auth::user()->links ? Auth::user()->links->facebook : '' }}" class="form-control">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label>Instragram</label>
+                                                    <input type="text" name="instragram" value="{{ Auth::user()->links ? Auth::user()->links->facebook : '' }}" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
 									<div class="card">
 										<div class="text-end">
@@ -237,7 +171,11 @@
 											</div>
 										</div>
 									</div>
+
+
 								</div>
+
+                            </form>
 							</div>
 						</div>
 					</div>

@@ -10,7 +10,7 @@
 						<div class="col-xl-3 col-md-4 theiaStickySidebar">
 							<div class="settings-widget">
 								<div class="settings-header d-sm-flex flex-row flex-wrap text-center text-sm-start align-items-center">
-									<a href="{{ route('designer.profile') }}"><img alt="profile image" src="assets/img/img-04.jpg" class="avatar-lg rounded-circle"></a>
+									<a href="{{ route('designer.profile') }}"><img alt="profile image" src="/assets/img/img-04.jpg" class="avatar-lg rounded-circle"></a>
 									<div class="ms-sm-3 ms-md-0 ms-lg-3 mt-2 mt-sm-0 mt-md-2 mt-lg-0">
 										<p class="mb-2">Welcome,</p>
 										<h3 class="mb-0"><a href="{{ route('designer.profile') }}">John Danie S.</a></h3>
@@ -128,7 +128,7 @@
 														<li>
 															<div class="list-slot">
 																<h5>Location</h5>
-																<p><img src="assets/img/en.png" height="13" alt="Lang"> Germany</p>
+																<p><img src="/assets/img/en.png" height="13" alt="Lang"> Germany</p>
 															</div>
 														</li>
 													</ul>
@@ -141,7 +141,7 @@
 											<div class="card-body">
 												<div class="hire-box text-center">
 													<h6>Hired</h6>
-													<img alt="profile image" src="assets/img/img-04.jpg" class="avatar-lg rounded-circle">
+													<img alt="profile image" src="/assets/img/img-04.jpg" class="avatar-lg rounded-circle">
 													<p>Hannah Finn -  Client</p>
 													<a href="freelancer-chats" class="btn btn-chat">Chat Now</a>
 												</div>

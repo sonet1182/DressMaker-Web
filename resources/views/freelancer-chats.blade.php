@@ -31,7 +31,7 @@
 											<a href="javascript:void(0);" class="media d-flex">
 												<div class="media-img-wrap flex-shrink-0">
 													<div class="avatar avatar-away">
-														<img src="assets/img/img-02.jpg" alt="User Image" class="avatar-img rounded-circle">
+														<img src="/assets/img/img-02.jpg" alt="User Image" class="avatar-img rounded-circle">
 													</div>
 												</div>
 												<div class="media-body flex-grow-1">
@@ -48,7 +48,7 @@
 											<a href="javascript:void(0);" class="media read-chat active d-flex">
 												<div class="media-img-wrap flex-shrink-0">
 													<div class="avatar avatar-online">
-														<img src="assets/img/img-03.jpg" alt="User Image" class="avatar-img rounded-circle">
+														<img src="/assets/img/img-03.jpg" alt="User Image" class="avatar-img rounded-circle">
 													</div>
 												</div>
 												<div class="media-body flex-grow-1">
@@ -76,7 +76,7 @@
 										<div class="media d-flex">
 											<div class="media-img-wrap flex-shrink-0">
 												<div class="avatar avatar-online">
-													<img src="assets/img/img-05.jpg" alt="User Image" class="avatar-img rounded-circle">
+													<img src="/assets/img/img-05.jpg" alt="User Image" class="avatar-img rounded-circle">
 												</div>
 											</div>
 											<div class="media-body flex-grow-1">
@@ -101,7 +101,7 @@
 											<ul class="list-unstyled">
 												<li class="media received d-flex">
 													<div class="avatar flex-shrink-0">
-														<img src="assets/img/img-02.jpg" alt="User Image" class="avatar-img rounded-circle">
+														<img src="/assets/img/img-02.jpg" alt="User Image" class="avatar-img rounded-circle">
 													</div>
 													<div class="media-body flex-grow-1">
 														<div class="msg-box">
@@ -120,7 +120,7 @@
 												</li>
 												<li class="media sent d-flex">
 													<div class="avatar flex-shrink-0">
-														<img src="assets/img/img-05.jpg" alt="User Image" class="avatar-img rounded-circle">
+														<img src="/assets/img/img-05.jpg" alt="User Image" class="avatar-img rounded-circle">
 													</div>
 													<div class="media-body flex-grow-1">
 														<div class="msg-box">
@@ -139,7 +139,7 @@
 												</li>
 												<li class="media received d-flex">
 													<div class="avatar flex-shrink-0">
-														<img src="assets/img/img-02.jpg" alt="User Image" class="avatar-img rounded-circle">
+														<img src="/assets/img/img-02.jpg" alt="User Image" class="avatar-img rounded-circle">
 													</div>
 													<div class="media-body flex-grow-1">
 														<div class="msg-box">
@@ -162,7 +162,7 @@
 									<div class="chat-footer">
 										<div class="input-group">
 											<div class="avatar">
-												<img src="assets/img/img-05.jpg" alt="User Image" class="avatar-img rounded-circle">
+												<img src="/assets/img/img-05.jpg" alt="User Image" class="avatar-img rounded-circle">
 											</div>
 											<input type="text" class="input-msg-send form-control" placeholder="Reply...">
 											<div class="btn-file btn">
@@ -198,7 +198,7 @@
 							<div class="call-wrapper">
 								<div class="call-inner">
 									<div class="call-user">
-										<img alt="User Image" src="assets/img/img-05.jpg" class="call-avatar">
+										<img alt="User Image" src="/assets/img/img-05.jpg" class="call-avatar">
 										<h4>Darren Elder</h4>
 										<span>Connecting...</span>
 									</div>
@@ -227,7 +227,7 @@
 							<div class="call-wrapper">
 								<div class="call-inner">
 									<div class="call-user">
-										<img class="call-avatar" src="assets/img/img-05.jpg" alt="User Image">
+										<img class="call-avatar" src="/assets/img/img-05.jpg" alt="User Image">
 										<h4>Darren Elder</h4>
 										<span>Calling ...</span>
 									</div>
