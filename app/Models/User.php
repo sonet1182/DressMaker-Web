@@ -64,4 +64,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(SellerInfo::class, 'user_id');
     }
+
+    public function post()
+    {
+        return $this->hasMany(Project::class, 'created_by');
+    }
 }

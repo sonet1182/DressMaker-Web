@@ -4,7 +4,7 @@
 	<!-- Page Wrapper -->
             <div class="page-wrapper">
                 <div class="content container-fluid">
-				
+
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row align-items-center">
@@ -69,7 +69,7 @@
 							</div>
 							<div class="reviews-menu-links">
 								<ul role="tablist" class="nav nav-pills card-header-pills nav-justified">
-									<li class="nav-item">
+									{{-- <li class="nav-item">
 										<a href="#tab-4" data-bs-toggle="tab" class="nav-link active">All (272)</a>
 									</li>
 									<li class="nav-item">
@@ -81,7 +81,7 @@
 									</li>
 									<li class="nav-item">
 										<a href="#tab-7" data-bs-toggle="tab" class="nav-link">Trash (0)</a>
-									</li>
+									</li> --}}
 								</ul>
 							</div>
 							<div class="tab-content pt-0">
@@ -90,349 +90,63 @@
 										<table class="table table-center table-hover mb-0 datatable">
 											<thead>
 												<tr>
-													<th></th>
-													<th>Logo</th>
-													<th>Title</th>	
-													<th>Budget</th>	
-													<th>Progress</th>	
-													<th>Technology</th>	
-													<th>Company</th>	
-													<th>Start date</th>	
-													<th>Due date</th>	
+													<th>Serial</th>
+													<th>Image</th>
+                                                    <th>Employer</th>
+													<th>Title</th>
+													<th>Budget</th>
+													<th>Status</th>
+													<th>Start date</th>
+													<th>End date</th>
 													<th class="text-end">Actions</th>
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td>
+                                                @foreach ($projects as $project)
+                                                <tr>
+													{{-- <td>
 														<div class="form-check form-checkbox">
 														  <input type="checkbox" class="form-check-input" id="customCheck1">
 														  <label class="form-check-label" for="customCheck1"></label>
 														</div>
-													</td>
+													</td> --}}
+                                                    <td>
+                                                        {{ $loop->iteration }}
+                                                    </td>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-1.png" alt="User Image"></a>
+															<a href="profile"><img class="me-2" src="{{ $project->user ? asset($project->user->profile_photo) : '' }}" alt="User Image"></a>
 														</h2>
 													</td>
-													
-													<td>Website Designer Required For Directory Theme</td>
+
+                                                    <td>{{ $project->user ? $project->user->name : '' }}</td>
+
+													<td>{{ $project->title }}</td>
 													<td>
-														$2222
+														${{ number_format($project->price, 2) }}
 													</td>
 													<td>
-														<div class="progress rounded-pill">
+														{{-- <div class="progress rounded-pill">
 														  <div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-														</div>
+														</div> --}}
+                                                        @if(empty($project->hired_user))
+                                                        <span class="badge badge-pill badge-danger">Pending</span>
+                                                        @elseif($project->hired_user)
+                                                        <span class="badge badge-pill badge-warning">Ongoing</span>
+                                                        @endif
 													</td>
-													<td>
-														Angular
-													</td>
-													<td>AMAZE TECH</td>
-													<td>22-05-2022</td>
-													<td>22-05-2022</td>
+
+
+													<td>{{ $project->start_date }}</td>
+													<td>{{ $project->end_date }}</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
-												<tr>
-													<td>
-														<div class="form-check form-checkbox">
-														  <input type="checkbox" class="form-check-input" id="customCheck2">
-														  <label class="form-check-label" for="customCheck2"></label>
-														</div>
-													</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-2.png" alt="User Image"></a>
-														</h2>
-													</td>
-													
-													<td>Lorem Ipsum is simply dummy text of</td>
-													<td>
-														$5755
-													</td>
-													<td>
-														<div class="progress rounded-pill">
-														  <div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-														</div>
-													</td>
-													<td>
-														Laravel
-													</td>
-													<td>Park INC </td>
-													<td>22-05-2022</td>
-													<td>22-05-2022</td>
-													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
-														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check form-checkbox">
-														  <input type="checkbox" class="form-check-input" id="customCheck3">
-														  <label class="form-check-label" for="customCheck3"></label>
-														</div>
-													</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-3.png" alt="User Image"></a>
-														</h2>
-													</td>
-													
-													<td>It is a long established fact that a reader</td>
-													<td>
-														$5755
-													</td>
-													<td>
-														<div class="progress rounded-pill">
-														  <div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: 30%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-														</div>
-													</td>
-													<td>
-														Vue
-													</td>
-													<td>Tsch Zone</td>
-													<td>22-05-2022</td>
-													<td>22-05-2022</td>
-													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
-														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check form-checkbox">
-														  <input type="checkbox" class="form-check-input" id="customCheck4">
-														  <label class="form-check-label" for="customCheck4"></label>
-														</div>
-													</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-4.png" alt="User Image"></a>
-														</h2>
-													</td>
-													
-													<td>There are many variations of passages of Lorem</td>
-													<td>
-														$2333
-													</td>
-													<td>
-														<div class="progress rounded-pill">
-														  <div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-														</div>
-													</td>
-													<td>
-														Golang
-													</td>
-													<td>ABC Software</td>
-													<td>22-05-2022</td>
-													<td>22-05-2022</td>
-													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
-														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check form-checkbox">
-														  <input type="checkbox" class="form-check-input" id="customCheck5">
-														  <label class="form-check-label" for="customCheck5"></label>
-														</div>
-													</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-5.png" alt="User Image"></a>
-														</h2>
-													</td>
-													
-													<td>Website Designer Required For Directory Theme</td>
-													<td>
-														$2222
-													</td>
-													<td>
-														<div class="progress rounded-pill">
-														  <div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-														</div>
-													</td>
-													<td>
-														Node js
-													</td>
-													<td>Host Technologies</td>
-													<td>22-05-2022</td>
-													<td>22-05-2022</td>
-													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2"><i class="far fa-edit"></i></a> 
-														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check form-checkbox">
-														  <input type="checkbox" class="form-check-input" id="customCheck6">
-														  <label class="form-check-label" for="customCheck6"></label>
-														</div>
-													</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-6.png" alt="User Image"></a>
-														</h2>
-													</td>
-													
-													<td>combined with a handful of model sentence structures</td>
-													<td>
-														$1500
-													</td>
-													<td>
-														<div class="progress rounded-pill">
-														  <div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: 45%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-														</div>
-													</td>
-													<td>
-														.Net
-													</td>
-													<td>SM Developer</td>
-													<td>22-05-2022</td>
-													<td>22-05-2022</td>
-													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2"><i class="far fa-edit"></i></a> 
-														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check form-checkbox">
-														  <input type="checkbox" class="form-check-input" id="customCheck7">
-														  <label class="form-check-label" for="customCheck7"></label>
-														</div>
-													</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-7.png" alt="User Image"></a>
-														</h2>
-													</td>
-													
-													<td>Designer Required For Directory</td>
-													<td>
-														$2222
-													</td>
-													<td>
-														<div class="progress rounded-pill">
-														  <div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-														</div>
-													</td>
-													<td>
-														Java
-													</td>
-													<td>Kind Software</td>
-													<td>22-05-2022</td>
-													<td>22-05-2022</td>
-													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
-														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check form-checkbox">
-														  <input type="checkbox" class="form-check-input" id="customCheck8">
-														  <label class="form-check-label" for="customCheck8"></label>
-														</div>
-													</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-8.png" alt="User Image"></a>
-														</h2>
-													</td>
-													
-													<td>Lorem Ipsum is therefore always free content</td>
-													<td>
-														$7789
-													</td>
-													<td>
-														<div class="progress rounded-pill">
-														  <div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: 56%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-														</div>
-													</td>
-													<td>
-														Python
-													</td>
-													<td>Particles INC</td>
-													<td>22-05-2022</td>
-													<td>22-05-2022</td>
-													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
-														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check form-checkbox">
-														  <input type="checkbox" class="form-check-input" id="customCheck9">
-														  <label class="form-check-label" for="customCheck9"></label>
-														</div>
-													</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-9.png" alt="User Image"></a>
-														</h2>
-													</td>
-													
-													<td>Required For Website Developer</td>
-													<td>
-														$2222
-													</td>
-													<td>
-														<div class="progress rounded-pill">
-														  <div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-														</div>
-													</td>
-													<td>
-														Codingnator
-													</td>
-													<td>Kind Software</td>
-													<td>22-05-2022</td>
-													<td>22-05-2022</td>
-													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
-														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check form-checkbox">
-														  <input type="checkbox" class="form-check-input" id="customCheck10">
-														  <label class="form-check-label" for="customCheck10"></label>
-														</div>
-													</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-10.png" alt="User Image"></a>
-														</h2>
-													</td>
-													
-													<td>Lorem Ipsum is therefore always free</td>
-													<td>
-														$7789
-													</td>
-													<td>
-														<div class="progress rounded-pill">
-														  <div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: 56%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-														</div>
-													</td>
-													<td>
-														React
-													</td>
-													<td>Particles INC</td>
-													<td>22-05-2022</td>
-													<td>22-05-2022</td>
-													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
-														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
-													</td>
-												</tr>
+                                                @endforeach
+
+
 											</tbody>
 										</table>
 									</div>
@@ -444,13 +158,13 @@
 												<tr>
 													<th></th>
 													<th>Logo</th>
-													<th>Title</th>	
-													<th>Budget</th>	
-													<th>Progress</th>	
-													<th>Technology</th>	
-													<th>Company</th>	
-													<th>Start date</th>	
-													<th>Due date</th>	
+													<th>Title</th>
+													<th>Budget</th>
+													<th>Progress</th>
+													<th>Technology</th>
+													<th>Company</th>
+													<th>Start date</th>
+													<th>Due date</th>
 													<th class="text-end">Actions</th>
 												</tr>
 											</thead>
@@ -466,7 +180,7 @@
 														<h2 class="table-avatar">
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-5.png" alt="User Image"></a>
 														</h2>
-													</td>													
+													</td>
 													<td>Website Designer Required For Directory Theme</td>
 													<td>
 														$2222
@@ -483,7 +197,7 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -499,7 +213,7 @@
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-7.png" alt="User Image"></a>
 														</h2>
 													</td>
-													
+
 													<td>Designer Required For Directory</td>
 													<td>
 														$2222
@@ -516,7 +230,7 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -532,7 +246,7 @@
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-8.png" alt="User Image"></a>
 														</h2>
 													</td>
-													
+
 													<td>Lorem Ipsum is therefore always free content</td>
 													<td>
 														$7789
@@ -549,7 +263,7 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -565,7 +279,7 @@
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-9.png" alt="User Image"></a>
 														</h2>
 													</td>
-													
+
 													<td>Required For Website Developer</td>
 													<td>
 														$2222
@@ -582,7 +296,7 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -598,7 +312,7 @@
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-10.png" alt="User Image"></a>
 														</h2>
 													</td>
-													
+
 													<td>Lorem Ipsum is therefore always free</td>
 													<td>
 														$7789
@@ -615,7 +329,7 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -631,7 +345,7 @@
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-6.png" alt="User Image"></a>
 														</h2>
 													</td>
-													
+
 													<td>combined with a handful of model sentence structures</td>
 													<td>
 														$1500
@@ -648,7 +362,7 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -664,7 +378,7 @@
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-1.png" alt="User Image"></a>
 														</h2>
 													</td>
-													
+
 													<td>Website Designer Required For Directory Theme</td>
 													<td>
 														$2222
@@ -681,7 +395,7 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -697,7 +411,7 @@
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-2.png" alt="User Image"></a>
 														</h2>
 													</td>
-													
+
 													<td>Lorem Ipsum is simply dummy text of</td>
 													<td>
 														$5755
@@ -714,7 +428,7 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -730,7 +444,7 @@
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-3.png" alt="User Image"></a>
 														</h2>
 													</td>
-													
+
 													<td>It is a long established fact that a reader</td>
 													<td>
 														$5755
@@ -747,7 +461,7 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -763,7 +477,7 @@
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-4.png" alt="User Image"></a>
 														</h2>
 													</td>
-													
+
 													<td>There are many variations of passages of Lorem</td>
 													<td>
 														$2333
@@ -780,7 +494,7 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -795,13 +509,13 @@
 												<tr>
 													<th></th>
 													<th>Logo</th>
-													<th>Title</th>	
-													<th>Budget</th>	
-													<th>Progress</th>	
-													<th>Technology</th>	
-													<th>Company</th>	
-													<th>Start date</th>	
-													<th>Due date</th>	
+													<th>Title</th>
+													<th>Budget</th>
+													<th>Progress</th>
+													<th>Technology</th>
+													<th>Company</th>
+													<th>Start date</th>
+													<th>Due date</th>
 													<th class="text-end">Actions</th>
 												</tr>
 											</thead>
@@ -818,7 +532,7 @@
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-7.png" alt="User Image"></a>
 														</h2>
 													</td>
-													
+
 													<td>Designer Required For Directory</td>
 													<td>
 														$2222
@@ -835,7 +549,7 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -851,7 +565,7 @@
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-8.png" alt="User Image"></a>
 														</h2>
 													</td>
-													
+
 													<td>Lorem Ipsum is therefore always free content</td>
 													<td>
 														$7789
@@ -868,7 +582,7 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -884,7 +598,7 @@
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-9.png" alt="User Image"></a>
 														</h2>
 													</td>
-													
+
 													<td>Required For Website Developer</td>
 													<td>
 														$2222
@@ -901,7 +615,7 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -917,7 +631,7 @@
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-10.png" alt="User Image"></a>
 														</h2>
 													</td>
-													
+
 													<td>Lorem Ipsum is therefore always free</td>
 													<td>
 														$7789
@@ -934,7 +648,7 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -950,7 +664,7 @@
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-7.png" alt="User Image"></a>
 														</h2>
 													</td>
-													
+
 													<td>Website Designer Required For Directory Theme</td>
 													<td>
 														$2222
@@ -967,7 +681,7 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -983,7 +697,7 @@
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-1.png" alt="User Image"></a>
 														</h2>
 													</td>
-													
+
 													<td>Website Designer Required For Directory Theme</td>
 													<td>
 														$2222
@@ -1000,7 +714,7 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -1016,7 +730,7 @@
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-2.png" alt="User Image"></a>
 														</h2>
 													</td>
-													
+
 													<td>Lorem Ipsum is simply dummy text of</td>
 													<td>
 														$5755
@@ -1033,7 +747,7 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -1049,7 +763,7 @@
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-3.png" alt="User Image"></a>
 														</h2>
 													</td>
-													
+
 													<td>It is a long established fact that a reader</td>
 													<td>
 														$5755
@@ -1066,7 +780,7 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -1082,7 +796,7 @@
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-4.png" alt="User Image"></a>
 														</h2>
 													</td>
-													
+
 													<td>There are many variations of passages of Lorem</td>
 													<td>
 														$2333
@@ -1099,7 +813,7 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -1115,7 +829,7 @@
 															<a href="profile"><img class="me-2" src="../assets_admin/img/company/img-8.png" alt="User Image"></a>
 														</h2>
 													</td>
-													
+
 													<td>Lorem Ipsum is therefore always free</td>
 													<td>
 														$7789
@@ -1132,10 +846,10 @@
 													<td>22-05-2022</td>
 													<td>22-05-2022</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
-												</tr>											
+												</tr>
 											</tbody>
 										</table>
 									</div>
@@ -1147,13 +861,13 @@
 												<tr>
 													<th></th>
 													<th>Logo</th>
-													<th>Title</th>	
-													<th>Budget</th>	
-													<th>Progress</th>	
-													<th>Technology</th>	
-													<th>Company</th>	
-													<th>Start date</th>	
-													<th>Due date</th>	
+													<th>Title</th>
+													<th>Budget</th>
+													<th>Progress</th>
+													<th>Technology</th>
+													<th>Company</th>
+													<th>Start date</th>
+													<th>Due date</th>
 													<th class="text-end">Actions</th>
 												</tr>
 											</thead>
@@ -1163,7 +877,7 @@
 							</div>
 						</div>
 					</div>
-								
+
 			</div>
 			<!-- /Page Wrapper -->
 		</div>
@@ -1188,11 +902,11 @@
 						<div class="form-group">
 							<label>Budget</label>
 							<input type="text" class="form-control" value="$2222">
-						</div>	
+						</div>
 						<div class="form-group">
 							<label>Technology</label>
 							<input type="text" class="form-control" value="Angler">
-						</div>		
+						</div>
 						<div class="form-group">
 							<label>Technology</label>
 							<input type="text" class="form-control" value="AMAZE TECH">
@@ -1208,7 +922,7 @@
 							<div class="cal-icon">
 								<input class="form-control datetimepicker" type="text"  value="20-02-2022">
 							</div>
-						</div>				
+						</div>
 						<div class="mt-4">
 							<button type="submit" class="btn btn-primary btn-block">Submit</button>
 						</div>

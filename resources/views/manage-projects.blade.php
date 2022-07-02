@@ -41,69 +41,6 @@
 								</ul>
 							</nav>
 
-							<!-- project list -->
-							<div class="my-projects-list">
-								<div class="row">
-									<div class="col-lg-10 flex-wrap">
-										<div class="projects-card flex-fill">
-											<div class="card-body">
-												<div class="projects-details align-items-center">
-													<div class="project-info">
-														<span>Dreamguystech</span>
-														<h2>Website Designer Required For Directory Theme</h2>
-														<div class="customer-info">
-															<ul class="list-details">
-																<li>
-																	<div class="slot">
-																		<p>Price type</p>
-																		<h5>Fixed</h5>
-																	</div>
-																</li>
-																<li>
-																	<div class="slot">
-																		<p>Location</p>
-																		<h5><img src="/assets/img/en.png" height="13" alt="Lang"> UK</h5>
-																	</div>
-																</li>
-																<li>
-																	<div class="slot">
-																		<p>Expiry</p>
-																		<h5>4 Days Left</h5>
-																	</div>
-																</li>
-															</ul>
-														</div>
-													</div>
-													<div class="project-hire-info">
-														<div class="content-divider"></div>
-														<div class="projects-amount">
-															<h3>$500.00</h3>
-															<h5>in 12 Days</h5>
-														</div>
-														<div class="content-divider"></div>
-														<div class="projects-action text-center">
-															<a href="view-project-detail" class="projects-btn">View Details </a>
-															<a href="#" class="hired-detail">Hired on 19 JUN 2021</a>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-2 d-flex flex-wrap">
-										<div class="projects-card flex-fill">
-											<div class="card-body p-2">
-												<div class="prj-proposal-count text-center hired">
-													<h3>Hired</h3>
-													<img src="/assets/img/developer/developer-01.jpg" alt="" class="img-fluid">
-													<p class="mb-0">Hannah Finn</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /project list -->
 
                             @foreach ($projects as $project)
 
@@ -114,26 +51,33 @@
 											<div class="card-body">
 												<div class="projects-details align-items-center">
 													<div class="project-info">
-														<span>{{ $project->category->name }}</span>
-														<h2>{{ $project->title }} </h2>
+
+                                                        <span>{{ $project->category->name }}</span>
+
+                                                        <a href="{{ route('employer.project-details',$project->id) }}">
+														    <h2>{{ $project->title }} </h2>
+                                                        </a>
+
 														<div class="customer-info">
 															<ul class="list-details">
 																<li>
 																	<div class="slot">
 																		<p>Price type</p>
-																		<h5>{{ $project->pricing_type->name }}</h5>
+																		<h5>{{ $project->pricing_type ? $project->pricing_type->name : '' }}</h5>
 																	</div>
 																</li>
 																<li>
 																	<div class="slot">
 																		<p>Location</p>
-																		<h5>{{ $project->user->address ? $project->user->address->country.','.$project->user->address->country : '' }}</h5>
+																		<h5>{{ $project->user->address ? $project->user->address->state.','.$project->user->address->country : '' }}</h5>
 																	</div>
 																</li>
 																<li>
 																	<div class="slot">
 																		<p>Expiry</p>
-																		<h5>4 Days Left</h5>
+																		<h5>
+                                                                            {{ \Carbon\Carbon::parse($project->end_date)->format('d,M Y') }}
+                                                                        </h5>
 																	</div>
 																</li>
 															</ul>
@@ -142,28 +86,56 @@
 													<div class="project-hire-info">
 														<div class="content-divider"></div>
 														<div class="projects-amount">
-															<h3>$500.00</h3>
+															<h3>${{ number_format($project->price, 2) }}</h3>
 															<h5>in 12 Days</h5>
 														</div>
 														<div class="content-divider"></div>
 														<div class="projects-action">
-															<a href="project-proposals" class="projects-btn">View Proposals </a>
+
+                                                            @if($project->hired)
+
+                                                            <a href="{{ route('employer.project-details',$project->id) }}" class="projects-btn">View Details </a>
+															<a href="#" class="hired-detail">Hired on {{ $project->updated_at->format('d M, Y') }}</a>
+
+                                                            @else
+
+                                                            <a href="{{ route('employer.project-proposals', $project->id) }}" class="projects-btn">View Proposals </a>
 															<a href="edit-project" class="projects-btn">Edit Jobs</a>
+
+                                                            @endif
 														</div>
 													</div>
+
 												</div>
 											</div>
 										</div>
 									</div>
 									<div class="col-lg-2 d-flex flex-wrap">
-										<div class="projects-card flex-fill">
+
+
+                                        @if($project->hired)
+
+                                        <div class="projects-card flex-fill">
+											<div class="card-body p-2">
+												<div class="prj-proposal-count text-center hired">
+													<h3>Hired</h3>
+													<img src="{{ $project->hired && $project->hired->profile_photo ? asset($project->hired->profile_photo) : '/assets/img/developer/developer-01.jpg' }}" alt="" class="img-fluid">
+													<p class="mb-0">{{ $project->hired ? $project->hired->name : '' }}</p>
+												</div>
+											</div>
+										</div>
+                                        @else
+
+                                        <div class="projects-card flex-fill">
 											<div class="card-body p-2">
 												<div class="prj-proposal-count text-center">
-													<span>5</span>
+													<span>{{ $project->proposals ? $project->proposals->count() : '0' }}</span>
 													<h3>Proposals</h3>
 												</div>
 											</div>
 										</div>
+
+                                        @endif
 									</div>
 								</div>
 							</div>

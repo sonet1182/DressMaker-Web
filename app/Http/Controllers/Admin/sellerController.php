@@ -14,4 +14,13 @@ class sellerController extends Controller
         $users = User::where('role','seller')->get();
         return view('admin.users')->with('users',$users);
     }
+
+    public function verify_user($id)
+    {
+        $user = User::find($id);
+        $user->verify = 1;
+        $user->save();
+
+        return back()->with('status','User Verified Successfully');
+    }
 }

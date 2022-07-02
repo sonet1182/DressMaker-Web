@@ -3,8 +3,10 @@
 use App\Http\Controllers\Admin\buyerController;
 use App\Http\Controllers\Admin\categoryController;
 use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\admin\ProjectController as AdminProjectController;
 use App\Http\Controllers\Admin\sellerController;
 use App\Http\Controllers\Buyer\AccountController as BuyerAccountController;
+use App\Http\Controllers\Buyer\DashboardController;
 use App\Http\Controllers\Buyer\ProjectController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\Seller\AccountController;
@@ -28,6 +30,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/index', function () {
     return view('index');
 })->name('pagee');
+
+
+
+
+
 Route::get('/404-page', function () {
     return view('404-page');
 })->name('404-page');
@@ -112,9 +119,7 @@ Route::get('/freelancer-ongoing-projects', function () {
 Route::get('/freelancer-payment', function () {
     return view('freelancer-payment');
 })->name('freelancer-payment');
-Route::get('/freelancer-portfolio', function () {
-    return view('freelancer-portfolio');
-})->name('freelancer-portfolio');
+
 
 
 
@@ -161,15 +166,11 @@ Route::get('/privacy-policy', function () {
     return view('privacy-policy');
 })->name('privacy-policy');
 
-Route::get('/project-details', function () {
-    return view('project-details');
-})->name('project-details');
+
 Route::get('/project-payment', function () {
     return view('project-payment');
 })->name('project-payment');
-Route::get('/project-proposals', function () {
-    return view('project-proposals');
-})->name('project-proposals');
+
 
 // Route::get('/register', function () {
 //     return view('register');
@@ -272,9 +273,7 @@ Route::Group(['prefix' => 'admin'], function () {
     Route::get('/profile', function () {
         return view('admin.profile');
     })->name('profile');
-    Route::get('/projects', function () {
-        return view('admin.projects');
-    })->name('projects');
+
     Route::get('/projects-fees', function () {
         return view('admin.projects-fees');
     })->name('projects-fees');
@@ -339,6 +338,7 @@ Route::get('/admin', [LoginController::class, 'index'])->name('admin.login');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/home', [HomePageController::class, 'index'])->name('home2');
 Route::get('/', [HomePageController::class, 'index'])->name('home');
 Route::get('/designer', [HomePageController::class, 'designer'])->name('designer');
 Route::get('/project', [HomePageController::class, 'project'])->name('project');
@@ -353,50 +353,75 @@ Route::get('/contact', function () {
 
 
 
-//admin Route
-Route::get('admin/designers', [sellerController::class, 'index']);
-Route::get('admin/buyers', [buyerController::class, 'index']);
+
 
 //Category Managing
-Route::get('admin/categories', [categoryController::class, 'list'])->name('category.list');
+
 Route::post('admin/add_category', [categoryController::class, 'add'])->name('category.add');
 Route::post('admin/update_category/{id}', [categoryController::class, 'update'])->name('category.update');
 
 Route::get('/designer-details/{slug}', [HomePageController::class, 'seller_details'])->name('developer-details');
 Route::get('project-details/{id}', [HomePageController::class, 'project_details'])->name('project-details');
 
-Route::get('/view-project-detail', function () {
+Route::get('/view-project-detail/{id}', function () {
     return view('view-project-detail');
 })->name('view-project-detail');
 
 
 
-//admin  Middleware
-Route::group(['middleware' => ['auth', 'isAdmin'], 'prefix' => 'admin/'], function () {
+//admin  Middleware r0
+Route::group(['middleware' => ['auth', 'isAdmin'], 'prefix' => 'admin/', 'as'=>'admin.'], function () {
     Route::get('dashboard', function () {
         return view('admin.index_admin');
     })->name('index_admin');
+
+    Route::get('categories', [categoryController::class, 'list'])->name('category.list');
+    Route::get('countries', [categoryController::class, 'country_list'])->name('country.list');
+    Route::post('add_countries', [categoryController::class, 'add_country'])->name('country.add');
+    Route::post('update_countries/{id}', [categoryController::class, 'update_country'])->name('country.update');
+
+    Route::get('all_projects', [AdminProjectController::class, 'all_projects'])->name('all_projects');
+
+    //admin Route
+    Route::get('designers', [sellerController::class, 'index'])->name('designer_list');
+    Route::get('buyers', [buyerController::class, 'index'])->name('buyer_list');
+
+
+    Route::get('verify_user/{id}', [sellerController::class, 'verify_user'])->name('verify_user');
 });
 
-//Employer  Middleware
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Employer  Middleware r1
 Route::group(['middleware' => ['auth', 'isBuyer'], 'prefix' => 'employer/', 'as'=>'employer.'], function () {
 
-    Route::get('dashboard', function () {
-        return view('freelancer-dashboard');
-    })->name('designer-dashboard');
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('profile', [BuyerAccountController::class, 'profile'])->name('profile');
 
     Route::get('profile-settings', function () {
         return view('profile-settings');
     })->name('profile-settings');
 
-
     Route::get('user-account-details', [BuyerAccountController::class, 'profile'])->name('profile');
-
-
     Route::get('post-project', [ProjectController::class, 'project_page'])->name('post-project');
     Route::post('post-project', [ProjectController::class, 'add'])->name('add-post-project');
     Route::get('manage-projects', [ProjectController::class, 'index'])->name('manage-projects');
-
+    Route::get('project-details/{id}', [ProjectController::class, 'project_details'])->name('project-details');
+    Route::get('project-proposals/{id}', [ProjectController::class, 'project_proposals'])->name('project-proposals');
+    Route::post('hire_designer/{id}', [ProjectController::class, 'hire_designer'])->name('hire_designer');
     Route::post('profile-update', [BuyerAccountController::class, 'update'])->name('profile-update');
 
     Route::get('favourites', function () {
@@ -422,11 +447,26 @@ Route::group(['middleware' => ['auth', 'isBuyer'], 'prefix' => 'employer/', 'as'
     Route::get('chats', function () {
         return view('chats');
     })->name('chats');
-
 });
 
 
-//seller  Middleware
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//seller  Middleware r2
 Route::group(['middleware' => ['auth', 'isSeller'],  'prefix' => 'designer/', 'as' => 'designer.'], function () {
 
     Route::get('dashboard', function () {
@@ -447,7 +487,9 @@ Route::group(['middleware' => ['auth', 'isSeller'],  'prefix' => 'designer/', 'a
 
     Route::post('profile-update', [AccountController::class, 'update'])->name('profile-update');
     Route::get('projects', [SellerProjectController::class, 'index'])->name('projects');
-
-    Route::get('proposal', [SellerProjectController::class, 'index'])->name('proposals');
-
+    Route::get('proposal', [SellerProjectController::class, 'proposal'])->name('proposals');
+    Route::post('submit_proposal/{id}', [SellerProjectController::class, 'submit_proposal'])->name('submit_proposal');
+    Route::get('designer-project-details/{id}', [HomePageController::class, 'seller_project_details'])->name('project-details');
+    Route::get('freelancer-portfolio', [AccountController::class, 'portfolio'])->name('freelancer-portfolio');
+    Route::post('add_portfolio', [AccountController::class, 'add_portfolio'])->name('add_portfolio');
 });

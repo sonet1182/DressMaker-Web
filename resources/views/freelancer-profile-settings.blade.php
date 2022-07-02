@@ -159,54 +159,16 @@
 														<a href="#" class="btn fund-btn skill-add">Add More</a>
 													</div>
 													<div class="pro-body skill-info">
-														<div class="form-row align-items-center skill-cont">
+														{{-- <div class="form-row align-items-center skill-cont">
 															<div class="form-group col-md-10">
 																<input type="text" class="form-control" value="Front End Developer">
 															</div>
 															<div class="form-group col-md-2">
 																<a href="#" class="btn trash-icon"><i class="far fa-trash-alt"></i></a>
 															</div>
-														</div>
-														<div class="form-row align-items-center skill-cont">
-															<div class="form-group col-md-10">
-																<input type="text" class="form-control" value="Front End Developer">
-															</div>
-															<div class="form-group col-md-2">
-																<a href="#" class="btn trash-icon"><i class="far fa-trash-alt"></i></a>
-															</div>
-														</div>
-														<div class="form-row align-items-center skill-cont">
-															<div class="form-group col-md-10">
-																<input type="text" class="form-control" value="Front End Developer">
-															</div>
-															<div class="form-group col-md-2">
-																<a href="#" class="btn trash-icon"><i class="far fa-trash-alt"></i></a>
-															</div>
-														</div>
-														<div class="form-row align-items-center skill-cont">
-															<div class="form-group col-md-10">
-																<input type="text" class="form-control" value="Front End Developer">
-															</div>
-															<div class="form-group col-md-2">
-																<a href="#" class="btn trash-icon"><i class="far fa-trash-alt"></i></a>
-															</div>
-														</div>
-														<div class="form-row align-items-center skill-cont">
-															<div class="form-group col-md-10">
-																<input type="text" class="form-control" value="Front End Developer">
-															</div>
-															<div class="form-group col-md-2">
-																<a href="#" class="btn trash-icon"><i class="far fa-trash-alt"></i></a>
-															</div>
-														</div>
-														<div class="form-row align-items-center skill-cont">
-															<div class="form-group col-md-10">
-																<input type="text" class="form-control" value="Front End Developer">
-															</div>
-															<div class="form-group col-md-2">
-																<a href="#" class="btn trash-icon"><i class="far fa-trash-alt"></i></a>
-															</div>
-														</div>
+														</div> --}}
+
+
 													</div>
 												</div>
 											</div>

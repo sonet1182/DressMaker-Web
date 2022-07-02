@@ -32,7 +32,7 @@
 												<div class="projects-details align-items-center">
 													<div class="project-info project">
 														<span>{{ $project->category ? $project->category->name : '' }}</span>
-														<h2>W{{ $project->title }}</h2>
+														<h2>{{ $project->title }}</h2>
 														<div class="proposal-client">
 															<h4 class="title-info">Client Price</h4>
 															<div class="d-flex">
@@ -59,7 +59,7 @@
 														</div>
 														<div class="content-divider"></div>
 														<div class="projects-action text-start project">
-															<a href="freelancer-view-project-detail" class="projects-btn project">View Details </a>
+															<a href="{{ route('project-details',$project->id) }}" class="projects-btn project">View Details </a>
 															<p class="hired-detail">Project taken on</p>
 															<p class="hired-date">28 October 2021</p>
 														</div>

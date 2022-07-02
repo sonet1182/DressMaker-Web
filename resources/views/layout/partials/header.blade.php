@@ -183,8 +183,8 @@
 							</a>
 							<div class="dropdown-menu emp">
 								<div class="drop-head">Account Details</div>
-                                <a class="dropdown-item" href="{{ url('employer/dashboard') }}"><i class="fas fa-dashboard"></i>Dashboard</a>
-								<a class="dropdown-item" href="user-account-details"><i class="material-icons">verified_user</i> View profile</a>
+                                <a class="dropdown-item" href="{{ route('employer.dashboard') }}"><i class="fas fa-dashboard"></i>Dashboard</a>
+								<a class="dropdown-item" href="{{ route('employer.profile') }}"><i class="material-icons">verified_user</i> View profile</a>
 								<div class="drop-head">Projects Settings</div>
 								<a class="dropdown-item" href="manage-projects"><i class="material-icons">business_center</i> Projects</a>
 								<a class="dropdown-item" href="favourites"><i class="material-icons">local_play</i> Favourites</a>

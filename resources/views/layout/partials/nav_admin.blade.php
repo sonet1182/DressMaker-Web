@@ -8,10 +8,13 @@
 								<a href="{{ url('admin/index_admin') }}"><i data-feather="home"></i> <span>Dashboard</span></a>
 							</li>
 							<li class="{{ Request::is('admin/categories','admin/sub-category') ? 'active' : '' }}">
-								<a href="{{ route('category.list') }}"><i data-feather="copy"></i> <span>Categories</span></a>
+								<a href="{{ route('admin.category.list') }}"><i data-feather="copy"></i> <span>Categories</span></a>
 							</li>
-							<li class="{{ Request::is('admin/projects') ? 'active' : '' }}">
-								<a href="{{ url('admin/projects') }}"><i data-feather="database"></i> <span>Projects</span></a>
+							<li class="{{ Request::is('admin/countries','admin/sub-category') ? 'active' : '' }}">
+								<a href="{{ route('admin.country.list') }}"><i data-feather="flag"></i> <span>Country</span></a>
+							</li>
+							<li class="{{ Request::is('admin/all_projects') ? 'active' : '' }}">
+								<a href="{{ route('admin.all_projects') }}"><i data-feather="database"></i> <span>Projects</span></a>
 							</li>
 							<li class="{{ Request::is('admin/designers') ? 'active' : '' }}" >
 								<a href="{{ url('admin/designers') }}"><i data-feather="users"></i> <span>Designers</span></a>

@@ -18,12 +18,12 @@
             </li>
             <li class="nav-item">
                 <a href="{{ route('designer.projects') }}" class="nav-link">
-                    <i class="material-icons">business_center</i> Projects
+                    <i class="material-icons">business_center</i> Find Projects
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('designer.proposals') }}" class="nav-link">
-                    <i class="material-icons">business_center</i> Proposals
+                    <i class="material-icons">business_center</i> My Projects
                 </a>
             </li>
             <li class="nav-item">

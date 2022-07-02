@@ -24,8 +24,6 @@ class CreateUsersTable extends Migration
             $table->string('hourly_rate')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('language');
-            $table->text('overview');
             $table->string('role')->nullable();
             $table->rememberToken();
             $table->timestamps();

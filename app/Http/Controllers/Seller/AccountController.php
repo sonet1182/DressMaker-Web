@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Seller;
 
 use App\Http\Controllers\Controller;
+use App\Models\PortFolio;
 use App\Models\SellerInfo;
 use App\Models\SocialLink;
 use App\Models\User;
@@ -125,5 +126,37 @@ class AccountController extends Controller
 
 
         return redirect()->back()->with('status','Profile Updated Successfully!');
+    }
+
+    public function portfolio()
+    {
+        $portfolios = PortFolio::where('seller_id',Auth::user()->id)->latest()->paginate(9);
+        return view('freelancer-portfolio',compact('portfolios'));
+    }
+    public function add_portfolio(Request $req)
+    {
+        $portfolio = new PortFolio();
+        $portfolio->seller_id = Auth::user()->id;
+        $portfolio->title = $req->title;
+        $portfolio->link = $req->link;
+
+        if($req->hasfile('image'))
+        {
+            $destination = $portfolio->image;
+            if(File::exists($destination))
+            {
+                File::delete($destination);
+            }
+            $file = $req->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time(). '.' . $extension;
+            $file->move('uploads/images/user/portfolio/', $filename);
+
+            $portfolio->image = 'uploads/images/user/portfolio/'.$filename;
+        }
+
+        $portfolio->save();
+
+        return back()->with('status','Portfolio Added Successfully!');
     }
 }

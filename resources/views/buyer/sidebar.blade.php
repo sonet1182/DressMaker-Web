@@ -29,12 +29,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="review" class="nav-link">
+                    <a href="/employer/review" class="nav-link">
                         <i class="material-icons">record_voice_over</i> Reviews
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="chats" class="nav-link">
+                    <a href="/employer/chats" class="nav-link">
                         <i class="material-icons">chat</i> Messages
                     </a>
                 </li>

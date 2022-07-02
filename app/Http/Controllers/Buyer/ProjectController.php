@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\PricingType;
 use App\Models\Project;
+use App\Models\ProjectProposal;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,8 +22,26 @@ class ProjectController extends Controller
 
     public function index()
     {
-        $projects = Project::where('created_by',Auth::user()->id)->get();
+        $projects = Project::where('created_by',Auth::user()->id)->latest()->get();
         return view('manage-projects',compact('projects'));
+    }
+
+    public function project_details($id){
+        $project = Project::find($id);
+        return view('view-project-detail',compact('project'));
+    }
+    public function project_proposals($id){
+        $project = Project::find($id);
+        $proposals = ProjectProposal::where('project_id',$id)->paginate(10);
+        return view('project-proposals', compact('project','proposals'));
+    }
+
+    public function hire_designer(Request $req, $id){
+        $project = Project::find($id);
+        $project->hired_user = $req->seller_id;
+        $project->hired_at = Carbon::now()->toDateTimeString();
+        $project->save();
+        return back()->with('status','Designer Hired Successfully');
     }
 
 
@@ -44,8 +64,13 @@ class ProjectController extends Controller
         $project->price = $req->input('price');
         $project->area = $req->input('area');
         $project->start_date = $req->input('start_date');
+        $project->end_date = $req->input('end_date');
         $project->link = $req->input('links');
         $project->description = $req->input('description');
+
+        $project->qualification = $req->input('qualification');
+        $project->experience = $req->input('experience');
+        $project->job_type = $req->input('job_type');
 
         if($req->hasfile('document'))
         {
@@ -60,6 +85,6 @@ class ProjectController extends Controller
         $project->save();
 
 
-        return redirect()->back()->with('status','PProject Added Successfully!');
+        return redirect()->back()->with('status','Project Added Successfully!');
     }
 }

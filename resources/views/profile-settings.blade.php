@@ -11,6 +11,11 @@
 						@include('buyer.sidebar')
 
 						<div class="col-xl-9 col-md-8">
+                            @if (session('status'))
+                    <div class="alert alert-success mt-5" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
 							<div class="pro-pos">
 								<nav class="user-tabs mb-4">
 									<ul class="nav nav-tabs nav-tabs-bottom nav-justified">

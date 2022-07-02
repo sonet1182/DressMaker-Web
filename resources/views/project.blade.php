@@ -38,56 +38,40 @@
 									<h4>Category</h4>
 									<div class="form-group">
 										<select class="form-control select">
-											<option>Select Category</option>
-											<option>Developer</option>
-											<option>UI Developer</option>
-											<option>React Developer</option>
-											<option>.Net Developer</option>
+											<option value="">Select Category</option>
+                                            @foreach ($category as $cat)
+                                                <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+                                            @endforeach
 										</select>
 									</div>
 								</div>
 								<div class="filter-widget">
 									<h4>Location</h4>
 									<div class="form-group">
-										<select class="form-control select">
-											<option>Country, City, Zipcode</option>
-											<option>UK</option>
-											<option>London</option>
+										<select class="form-control select" name="country">
+											<option value="">Select One</option>
+                                            @foreach ($countries as $country)
+                                            <option value="{{ $country->name }}">{{ $country->name }}</option>
+                                            @endforeach
+
+
 										</select>
 									</div>
 								</div>
-								<div class="filter-widget">
-									<h4>Completed Projects</h4>
-									<div class="form-group">
-										<select class="form-control select">
-											<option>Select Projects</option>
-											<option>Node Projects</option>
-											<option>UI Projects</option>
-										</select>
-									</div>
-								</div>
+
 								<div class="filter-widget">
 									<h4>Pricing Type</h4>
 									<div class="form-group">
 										<select class="form-control select">
-											<option>Hourly Rate</option>
-											<option>Full Day Rate</option>
-											<option>Half Day Rate</option>
+											<option value="">Select One</option>
+                                            @foreach ($pricings as $pricing)
+                                            <option value="{{ $pricing->id }}">{{ $pricing->name }}</option>
+                                            @endforeach
 										</select>
 									</div>
 								</div>
-								<div class="filter-widget">
-									<h4>Add Skills</h4>
-									<div class="form-group">
-										<span class="badge badge-pill badge-skill">+ Web Design</span>
-										<span class="badge badge-pill badge-skill">+ UI Design</span>
-										<span class="badge badge-pill badge-skill">+ Node Js</span>
-										<span class="badge badge-pill badge-skill">+ Angular</span>
-										<span class="badge badge-pill badge-skill">+ Wordpress</span>
-										<input type="text" class="form-control">
-									</div>
-								</div>
-								<div class="filter-widget">
+
+								{{-- <div class="filter-widget">
 									<h4>Avalability</h4>
 									<div>
 										<label class="custom_check">
@@ -107,78 +91,8 @@
 											<span class="checkmark"></span>  Full Time
 										</label>
 									</div>
-								</div>
-								<div class="filter-widget">
-									<h4>Experience</h4>
-									<div>
-										<label class="custom_check">
-											<input type="checkbox" name="select_specialist">
-											<span class="checkmark"></span>  0-1 years
-										</label>
-									</div>
-									<div>
-										<label class="custom_check">
-											<input type="checkbox" name="select_exp" checked>
-											<span class="checkmark"></span> 2-5 years
-										</label>
-									</div>
-									<div>
-										<label class="custom_check">
-											<input type="checkbox" name="select_exp">
-											<span class="checkmark"></span>  5-8 years
-										</label>
-									</div>
-									<div>
-										<label class="custom_check">
-											<input type="checkbox" name="select_exp">
-											<span class="checkmark"></span>  9-12 years
-										</label>
-									</div>
-									<div>
-										<label class="custom_check">
-											<input type="checkbox" name="select_exp">
-											<span class="checkmark"></span>  Mastered
-										</label>
-									</div>
-									<div>
-										<label class="custom_check">
-											<input type="checkbox" name="select_exp">
-											<span class="checkmark"></span> Professional
-										</label>
-									</div>
-								</div>
-								<div class="filter-widget">
-									<h4>Hourly Rate</h4>
-									<div id="slider-range"></div>
-									<div class="row slider-labels">
-										<div class="col-xs-12 caption">
-											<span id="slider-range-value1"></span> - <span id="slider-range-value2"></span>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-12">
-										<form>
-											<input type="hidden" name="min-value" value="">
-											<input type="hidden" name="max-value" value="">
-										</form>
-										</div>
-									</div>
-								</div>
-								<div class="filter-widget">
-									<h4>Keywords</h4>
-									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Enter Keywords">
-									</div>
-								</div>
-								<div class="filter-widget">
-									<h4>Currency</h4>
-									<div class="form-group">
-										<select class="form-control select">
-											<option>USD</option>
-											<option>Euro</option>
-										</select>
-									</div>
-								</div>
+								</div> --}}
+
 									<div class="btn-search">
 										<button type="button" class="btn btn-block">Search</button>
 									</div>
@@ -188,98 +102,77 @@
 
 						</div>
 
-						<div class="col-md-12 col-lg-8 col-xl-9">
+						<div class="col-xl-9 col-md-8">
+							<div class="page-title">
+								<h3>All Projects</h3>
+                                <hr>
+							</div>
 
-							<div class="sort-tab">
-								<div class="row align-items-center">
-									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-										<div class="d-flex align-items-center">
-										   <div class="freelance-view">
-											  <h4>Showing 1 - 12 of 455</h4>
-										   </div>
-										</div>
-									 </div>
-									 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-										<div class="d-flex justify-content-sm-end">
-										   <div class="sort-by">
-											  <select class="custom-select">
-												 <option>Relevance</option>
-												 <option>Rating</option>
-												 <option>Popular</option>
-												 <option>Latest</option>
-												 <option>Free</option>
-											  </select>
-										   </div>
+
+							<!-- Proposals list -->
+							<div class="proposals-section">
+
+
+                                @foreach ($projects as $project)
+
+                                <!-- project list -->
+							<div class="my-projects-list">
+								<div class="row">
+									<div class="col-lg-12 flex-wrap">
+										<div class="projects-card flex-fill">
+											<div class="card-body">
+												<div class="projects-details align-items-center">
+													<div class="project-info project">
+														<span>{{ $project->category ? $project->category->name : '' }}</span>
+														<h2>{{ $project->title }}</h2>
+														<div class="proposal-client">
+															<h4 class="title-info">Client Price</h4>
+															<div class="d-flex">
+																<h3 class="client-price me-2">${{ number_format($project->price, 2) }}</h3>
+																<p class="amnt-type">( {{ $project->pricing_type ? $project->pricing_type->name : '' }} )</p>
+															</div>
+														</div>
+													</div>
+													<div class="project-hire-info project">
+														<div class="content-divider"></div>
+														<div class="proposer-info project">
+															<div class="proposer-img">
+																<img
+                                                                src="{{ $project->user->profile_photo ? asset($project->user->profile_photo) : asset('assets/img/img-04.jpg') }}"
+                                                                alt="" class="img-fluid">
+															</div>
+															<div class="proposer-detail">
+																<h4>{{ $project->user ? $project->user->name : '' }}</h4>
+																<ul class="proposal-details">
+																	<li> October 10, 2021</li>
+																	<li><i class="fas fa-star text-primary"></i> 4 Reviews</li>
+																</ul>
+															</div>
+														</div>
+														<div class="content-divider"></div>
+														<div class="projects-action text-start project">
+															<a href="{{ url('project-details/'.$project->id) }}" class="projects-btn project">View Details </a>
+															<p class="hired-detail">Project taken on</p>
+															<p class="hired-date">28 October 2021</p>
+														</div>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
-						   </div>
-
-							<div class="bootstrap-tags text-start pl-0">
-								<span class="badge badge-pill badge-skills">UI/UX Developer <span class="tag-close" data-role="remove"><i class="fas fa-times"></i></span></span>
-								<span class="badge badge-pill badge-skills">USA <span class="tag-close" data-role="remove"><i class="fas fa-times"></i></span></span>
-								<span class="badge badge-pill badge-skills">Hourly <span class="tag-close" data-role="remove"><i class="fas fa-times"></i></span></span>
-								<span class="badge badge-pill badge-skills">0-1 years <span class="tag-close" data-role="remove"><i class="fas fa-times"></i></span></span>
-								<span class="badge badge-pill badge-skills">USD <span class="tag-close" data-role="remove"><i class="fas fa-times"></i></span></span>
 							</div>
+							<!-- /project list -->
 
-							<div class="row">
-
-                                @foreach($projects as $project)
-								<div class="col-md-6 col-lg-12 col-xl-6">
-
-									<div class="freelance-widget widget-author">
-										<div class="freelance-content">
-										<a data-bs-toggle="modal" href="#rating" class="favourite"><i class="fas fa-star"></i></a>
-		                                <div class="author-heading">
-		                                    <div class="profile-img">
-		                                        <a href="#">
-		                                            <img src="/assets/img/company/img-1.png" alt="author">
-		                                        </a>
-		                                    </div>
-		                                    <div class="profile-name">
-		                                        <div class="author-location">Amaze Tech <i class="fas fa-check-circle text-success verified"></i></div>
-		                                    </div>
-											<div class="freelance-info">
-												<h3><a href="#">UI/UX Developer</a></h3>
-												<div class="freelance-location mb-1"><i class="fas fa-clock"></i> Posted Just Now</div>
-												<div class="freelance-location"><i class="fas fa-map-marker-alt me-1"></i>{{ $project->user->address ? $project->user->address->state.','.$project->user->address->country : '' }}</div>
-											</div>
-											<div class="freelance-tags">
-												<a href="javascript:void(0);"><span class="badge badge-pill badge-design">After Effects</span></a>
-												<a href="javascript:void(0);"><span class="badge badge-pill badge-design">Illustrator</span></a>
-												<a href="javascript:void(0);"><span class="badge badge-pill badge-design">HTML</span></a>
-											</div>
-											<div class="freelancers-price">${{ $project->price }}</div>
-		                                </div>
-										<div class="counter-stats">
-		                                        <ul>
-		                                            <li>
-		                                                <h3 class="counter-value">4 Days Left</h3>
-		                                                <h5>Expiry</h5>
-		                                            </li>
-		                                            <li>
-		                                                <h3 class="counter-value">15</h3>
-		                                                <h5>Proposals</h5>
-		                                            </li>
-		                                            <li>
-		                                                <h3 class="counter-value"><span class="jobtype">Full Time</span></h3>
-		                                                <h5>Job Type</h5>
-		                                            </li>
-		                                        </ul>
-		                                    </div>
-		                                </div>
-										<div class="cart-hover">
-											<a href="{{ url('project-details/'.$project->id) }}" class="btn-cart" tabindex="-1">Bid Now</a>
-										</div>
-		                            </div>
-								</div>
                                 @endforeach
 
 
 
-
 							</div>
+							<!-- /Proposals list -->
+
+
+
 						</div>
 					</div>
 				</div>

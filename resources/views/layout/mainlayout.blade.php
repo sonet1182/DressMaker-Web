@@ -23,5 +23,7 @@
 @endif
 @include('layout.partials.footer-scripts')
 
+@yield('script')
+
   </body>
 </html>

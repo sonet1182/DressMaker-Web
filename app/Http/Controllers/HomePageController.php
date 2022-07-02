@@ -3,18 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Country;
+use App\Models\PortFolio;
+use App\Models\PricingType;
 use App\Models\Project;
+use App\Models\ProjectProposal;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomePageController extends Controller
 {
     public function index()
     {
+
         $categories = Category::all();
-        $designers = User::where('role','seller')->get();
-        $employers = User::where('role','buyer')->get();
+        $designers = User::where('role','seller')->latest()->get();
+        $employers = User::where('role','buyer')->latest()->get();
         $projects = Project::all();
+        // return $designers;
 
         return view('index',compact('categories','designers','employers','projects'));
     }
@@ -22,8 +29,10 @@ class HomePageController extends Controller
     public function seller_details($slug)
     {
         $user = User::where('name',$slug)->first();
+        $portfolios = PortFolio::where('seller_id',$user->id)->latest()->get();
+        $hired_number = Project::where('hired_user',$user->id)->count();
 
-        return view('developer-details',compact('user'));
+        return view('developer-details',compact('user','portfolios','hired_number'));
     }
 
     public function designer()
@@ -35,16 +44,35 @@ class HomePageController extends Controller
 
     public function project()
     {
-        $projects = Project::latest()->get();
+        $projects = Project::where('hired_user',null)->latest()->get();
+        $category = Category::all();
+        $countries = Country::all();
+        $pricings = PricingType::all();
 
-        return view('project',compact('projects'));
+        return view('project',compact('projects','category','countries','pricings'));
+    }
+
+    public function seller_project_details($id)
+    {
+        $projects = Project::find($id);
+
+        return view('view-project-detail',compact('projects'));
+
     }
 
     public function project_details($id)
     {
-        $projects = Project::find($id);
+        $project = Project::find($id);
+        $employer = User::find($project->created_by);
+        $total_proposals = ProjectProposal::where('project_id',$id)->get();
+        $proposals = ProjectProposal::where('project_id',$id)->paginate(10);
+        if(Auth::user())
+        $applied = ProjectProposal::where([['seller_id',Auth::user()->id],['project_id',$id]])->first();
+        else
+        $applied = null;
+        $hire_rate = Project::where([['created_by', $project->created_by],['hired_user','<>',null]])->count();
 
-        return view('view-project-detail',compact('project'));
+        return view('project-details',compact('project','employer','total_proposals','proposals','applied','hire_rate'));
     }
 
 

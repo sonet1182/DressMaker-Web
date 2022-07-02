@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSellerInfosTable extends Migration
+class CreateCountriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateSellerInfosTable extends Migration
      */
     public function up()
     {
-        Schema::create('seller_infos', function (Blueprint $table) {
+        Schema::create('countries', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->nullable();
-            $table->string('type')->nullable();
-            $table->text('skills')->nullable();
-            $table->integer('ratings')->default(0);
+            $table->string('name')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateSellerInfosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('seller_infos');
+        Schema::dropIfExists('countries');
     }
 }

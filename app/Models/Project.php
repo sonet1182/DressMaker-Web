@@ -9,7 +9,8 @@ class Project extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+
+
 
     public function category()
     {
@@ -24,6 +25,16 @@ class Project extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'created_by');
+    }
+
+    public function hired()
+    {
+        return $this->belongsTo(User::class, 'hired_user');
+    }
+
+    public function proposals()
+    {
+        return $this->hasMany(ProjectProposal::class, 'project_id');
     }
 
 }

@@ -33,10 +33,10 @@
 											<div class="provider-img"><img src="{{ asset($user->profile_photo) }}" alt="User" height="154"></div>
 											<div class="profile-info">
 												<h2 class="profile-title">{{ $user->name }}</h2>
-												<p class="profile-position">iOS Expert</p>
+												<p class="profile-position">Designer</p>
 												<div><a href="#" class="btn full-btn">Full time</a></div>
 												<ul class="profile-preword">
-													<li><img src="/assets/img/flags/pl.png" alt="" height="16"> {{ $user->address->country }}</li>
+													<li>< {{ $user->address->country }}</li>
 													<li><div class="rating">
 														<span class="average-rating">4.6</span>
 														<i class="fas fa-star filled"></i>
@@ -62,11 +62,11 @@
 								<div class="profile-list">
 									<ul>
 										<li>
-											<span class="cont bg-blue">22</span>
+											<span class="cont bg-blue">00</span>
 											<strong class="proj-title"> Completed Projects</strong>
 										</li>
 										<li>
-											<span class="cont bg-red">5</span>
+											<span class="cont bg-red">00</span>
 											<strong class="proj-title"> Ongoing Projects</strong>
 										</li>
 										<li>
@@ -74,15 +74,15 @@
 											<strong class="proj-title"> Recommended</strong>
 										</li>
 										<li>
-											<span class="cont bg-yellow">12</span>
+											<span class="cont bg-yellow">{{ $hired_number }}</span>
 											<strong class="proj-title"> Rehired</strong>
 										</li>
 										<li>
-											<span class="cont bg-pink">48</span>
+											<span class="cont bg-pink">{{ $hired_number }}</span>
 											<strong class="proj-title"> Clients</strong>
 										</li>
 										<li>
-											<span class="cont bg-navy">5</span>
+											<span class="cont bg-navy">00</span>
 											<strong class="proj-title"> Feedbacks</strong>
 										</li>
 									</ul>
@@ -143,21 +143,7 @@
 								<div class="pro-post widget-box" id="overview">
 									<h3 class="pro-title">Overview</h3>
 									<div class="pro-content">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget vestibulum lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempor aliquam felis, nec condimentum ipsum commodo id. Vivamus sit amet augue nec urna efficitur tincidunt. Vivamus consectetur aliquam lectus commodo viverra. Nunc eu augue nec arcu efficitur faucibus.</p>
-										<div class="mt-4">
-											<h4 class="widget-title">My services include:</h4>
-											<ul class="pro-list">
-												<li>Cross-platform games</li>
-												<li>Game concept and level designing</li>
-												<li>Multiplayer integration</li>
-												<li>Re-skin</li>
-												<li>Ads and in-app purchase (Maximize your Revenue)</li>
-												<li>Game Optimisations</li>
-												<li>2D/3D Animation</li>
-											</ul>
-										</div>
-										<p>Graphic DesigningSocial Network IntegrationVirtual Reality (VR)Augmented Reality (AR)Game con promotional graphics and video app store and Playstore publishing </p>
+										{{ $user->overview }}
 									</div>
 								</div>
 								<!-- /Overview Tab Content -->
@@ -167,126 +153,26 @@
 									<h3 class="pro-title">Portfolio</h3>
 									<div class="pro-content">
 										<div class="row">
-											<div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+
+                                            @foreach ($portfolios as $portfolio)
+                                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
 												<div class="project-widget">
 													<div class="pro-image">
-														<a href="/assets/img/project.jpg" data-fancybox="gallery2">
-															<img class="img-fluid" alt="User Image" src="/assets/img/project.jpg">
+														<a href="{{  asset($portfolio->image) }}" data-fancybox="gallery2">
+															<img class="img-fluid" alt="User Image" src="{{ $portfolio->image ? asset($portfolio->image) : '/assets/img/project.jpg' }}">
 														</a>
 													</div>
 													<div class="pro-detail">
 														<h3 class="pro-name">
-															Project name
+															{{ $portfolio->title }}
 														</h3>
-														<p class="pro-designation">Web design</p>
+
 													</div>
 												</div>
 											</div>
-											<div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-												<div class="project-widget">
-													<div class="pro-image">
-														<a href="/assets/img/project-1.jpg" data-fancybox="gallery2">
-															<img class="img-fluid" alt="User Image" src="/assets/img/project-1.jpg">
-														</a>
-													</div>
-													<div class="pro-detail">
-														<h3 class="pro-name">
-															Project name
-														</h3>
-														<p class="pro-designation">Web design</p>
-													</div>
-												</div>
-											</div>
-											<div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-												<div class="project-widget">
-													<div class="pro-image">
-														<a href="/assets/img/project-2.jpg" data-fancybox="gallery2">
-															<img class="img-fluid" alt="User Image" src="/assets/img/project-2.jpg">
-														</a>
-													</div>
-													<div class="pro-detail">
-														<h3 class="pro-name">
-															Project name
-														</h3>
-														<p class="pro-designation">Web design</p>
-													</div>
-												</div>
-											</div>
-											<div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-												<div class="project-widget">
-													<div class="pro-image">
-														<a href="/assets/img/project-3.jpg" data-fancybox="gallery2">
-															<img class="img-fluid" alt="User Image" src="/assets/img/project-3.jpg">
-														</a>
-													</div>
-													<div class="pro-detail">
-														<h3 class="pro-name">
-															Project name
-														</h3>
-														<p class="pro-designation">Web design</p>
-													</div>
-												</div>
-											</div>
-											<div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-												<div class="project-widget">
-													<div class="pro-image">
-														<a href="/assets/img/project-4.jpg" data-fancybox="gallery2">
-															<img class="img-fluid" alt="User Image" src="/assets/img/project-4.jpg">
-														</a>
-													</div>
-													<div class="pro-detail">
-														<h3 class="pro-name">
-															Project name
-														</h3>
-														<p class="pro-designation">Web design</p>
-													</div>
-												</div>
-											</div>
-											<div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-												<div class="project-widget">
-													<div class="pro-image">
-														<a href="/assets/img/project-5.jpg" data-fancybox="gallery2">
-															<img class="img-fluid" alt="User Image" src="/assets/img/project-5.jpg">
-														</a>
-													</div>
-													<div class="pro-detail">
-														<h3 class="pro-name">
-															Project name
-														</h3>
-														<p class="pro-designation">Web design</p>
-													</div>
-												</div>
-											</div>
-											<div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-												<div class="project-widget">
-													<div class="pro-image">
-														<a href="/assets/img/project-6.jpg" data-fancybox="gallery2">
-															<img class="img-fluid" alt="User Image" src="/assets/img/project-6.jpg">
-														</a>
-													</div>
-													<div class="pro-detail">
-														<h3 class="pro-name">
-															Project name
-														</h3>
-														<p class="pro-designation">Web design</p>
-													</div>
-												</div>
-											</div>
-											<div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-												<div class="project-widget">
-													<div class="pro-image">
-														<a href="/assets/img/project-7.jpg" data-fancybox="gallery2">
-															<img class="img-fluid" alt="User Image" src="/assets/img/project-7.jpg">
-														</a>
-													</div>
-													<div class="pro-detail">
-														<h3 class="pro-name">
-															Project name
-														</h3>
-														<p class="pro-designation">Web design</p>
-													</div>
-												</div>
-											</div>
+                                            @endforeach
+
+
 											<div class="col-md-12 text-center">
 												<a href="project" class="btn more-btn">View more </a>
 											</div>

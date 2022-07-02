@@ -22,16 +22,21 @@
     <!-- Page Content -->
     <div class="content">
         <div class="container">
+            @if (session('status'))
+                    <div class="alert alert-success mt-5" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
             <div class="row">
                 <div class="col-md-12">
                     <div class="select-project mb-4">
                         <form action="{{ route('employer.add-post-project') }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
-                            <div class="title-box widget-box">
+                            <div class="title-box widget-box row">
 
                                 <!-- Project Title -->
-                                <div class="title-content">
+                                <div class="title-content px-1 col-md-12">
                                     <div class="title-detail">
                                         <h3>Project Name</h3>
                                         <div class="form-group mb-0">
@@ -42,7 +47,7 @@
                                 <!-- /Project Title -->
 
                                 <!-- Category Content -->
-                                <div class="title-content">
+                                <div class="title-content px-1 col-md-6">
                                     <div class="title-detail">
                                         <h3>Category Type</h3>
                                         <div class="form-group mb-0">
@@ -57,73 +62,70 @@
                                 </div>
                                 <!-- /Category Content -->
 
-                                <!-- Price Content -->
-                                <div class="title-content">
+                                <div class="title-content col-md-6">
                                     <div class="title-detail">
-                                        <h3>Pricing Type</h3>
-                                        <div class="form-group price-cont mb-0" id="price_type">
-                                            <select name="pricing_type_id" class="form-control select">
+                                        <h3>Job Type</h3>
+                                        <div class="form-group mb-0">
+                                            <select class="form-control select" name="job_type">
+                                                <option value="">Select One</option>
+                                                <option value="Remote">Remote</option>
+                                                <option value="Offline">Offline</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!-- Price Content -->
+                                <div class="title-content px-1 col-md-6">
+                                    <div class="title-detail">
+
+                                        <div class="form-group price-cont mb-0" id="price_type2">
+                                            <h3>Pricing Type</h3>
+                                            <select name="pricing_type" class="form-control select">
                                                 <option value="">Select One</option>
                                                 @foreach ($pricing_types as $type)
                                                     <option value="{{ $type->id }}">{{ $type->name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <div class="form-group mt-3" id="price_id" style="display: none;">
+
+
+                                    </div>
+                                </div>
+                                <!-- /Price Content -->
+
+                                <div class="title-content px-1 col-md-6">
+                                    <div class="title-detail">
+
+
+                                        <div class="form-group" id="price_id2" style="">
+                                            <h3>Price</h3>
                                             <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <button type="button" class="btn btn-white dropdown-toggle"
-                                                        data-bs-toggle="dropdown">$</button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#">Dollars</a>
-                                                        <a class="dropdown-item" href="#">Euro</a>
-                                                        <a class="dropdown-item" href="#">Bitcoin</a>
-                                                    </div>
-                                                </div>
                                                 <input type="text" name="price" class="form-control" placeholder="20.00">
                                             </div>
                                         </div>
 
                                     </div>
                                 </div>
-                                <!-- /Price Content -->
 
-                                <!-- Skills Content -->
-                                <div class="title-content">
-                                    <div class="title-detail">
-                                        <h3>Desired areas of expertise </h3>
-                                        <div class="form-group mb-0">
-                                            <input type="text" name="area" data-role="tagsinput" class="input-tags form-control"
-                                                name="services" value="Web Design" id="services"
-                                                placeholder="UX, UI, App Design, Wireframing, Branding">
-                                            <p class="text-muted mb-0">Enter skills for needed for project</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /Skills Content -->
+
 
                                 <!-- Project Period Content -->
-                                <div class="title-content">
+                                <div class="title-content px-1">
                                     <div class="title-detail">
                                         <h3>Period of Project</h3>
-                                        <div class="form-group mb-0" id="pro_period">
-                                            <div class="radio">
-                                                <label class="custom_radio">
-                                                    <input type="radio" value="period" name="period">
-                                                    <span class="checkmark"></span> Start immediately after the candidate
-                                                    is selected
-                                                </label>
-                                            </div>
-                                            <div class="radio">
-                                                <label class="custom_radio">
-                                                    <input type="radio" value="job" name="period" checked>
-                                                    <span class="checkmark"></span> Job will Start On
-                                                </label>
-                                            </div>
-                                        </div>
+
                                         <div class="row">
                                             <div class="col-md-4">
+                                                From:
                                                 <input type="date" class="form-control" name="start_date"
+                                                            placeholder="Select Date">
+                                            </div>
+                                            <div class="col-md-4">
+                                                To:
+                                                <input type="date" class="form-control" name="end_date"
                                                             placeholder="Select Date">
                                             </div>
                                         </div>
@@ -132,7 +134,7 @@
                                 <!-- /Project Period Content -->
 
                                 <!-- /Add Document -->
-                                <div class="title-content">
+                                <div class="title-content px-1">
                                     <div class="title-detail">
                                         <h3>Add Documents</h3>
                                         <div class="custom-file">
@@ -145,7 +147,7 @@
                                 <!-- /Add Document -->
 
                                 <!-- Add Links -->
-                                <div class="title-content">
+                                {{-- <div class="title-content px-1">
                                     <div class="title-detail">
                                         <h3>Add Links</h3>
                                         <div class="links-info">
@@ -163,11 +165,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <!-- /Add Links -->
 
                                 <!-- Project Title -->
-                                <div class="title-content pb-0">
+                                <div class="title-content px-1 pb-0">
                                     <div class="title-detail">
                                         <h3>Write Description of Projects </h3>
                                         <div class="form-group mb-0">
@@ -177,6 +179,43 @@
                                 </div>
                                 <!-- /Project Title -->
 
+                                <h3 class="text-center my-3">Designer Requirements:</h3>
+                                <hr>
+
+                                <!-- Skills Content -->
+                                <div class="title-content px-">
+                                    <div class="title-detail">
+                                        <h3>Desired areas of expertise </h3>
+                                        <div class="form-group mb-0">
+                                            <input type="text" name="area" data-role="tagsinput" class="input-tags form-control"
+                                                name="services" value="" id="services"
+                                                placeholder="">
+                                            <p class="text-muted mb-0">Enter skills for needed for project</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /Skills Content -->
+
+                                <div class="title-content px-1 col-md-6">
+                                    <div class="title-detail">
+                                        <h3>Qualifications</h3>
+                                        <div class="form-group mb-0">
+                                            <input type="text" name="qualification" class="form-control"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="title-content px-1 col-md-6">
+                                    <div class="title-detail">
+                                        <h3>Experience (Years)</h3>
+                                        <div class="form-group mb-0">
+                                            <input type="number" name="experience" class="form-control"/>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="row">
                                     <div class="col-md-12 text-end">
                                         <div class="btn-item">
@@ -184,6 +223,8 @@
                                         </div>
                                     </div>
                                 </div>
+
+
 
                             </div>
                             <!-- Project Title -->
@@ -199,4 +240,12 @@
 
     </div>
     <!-- /Main Wrapper -->
+
+
+
+
+@endsection
+
+@section('script')
+
 @endsection

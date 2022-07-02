@@ -91,18 +91,24 @@
 													</td>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile"><img class="me-2 rounded-circle" src="../assets_admin/img/profiles/avatar-01.jpg" alt="User Image">
+															<a href="profile">
+                                                                <img class="me-2 rounded-circle" src="{{ $user->profile_photo ? asset($user->profile_photo) : '../assets_admin/img/profiles/avatar-01.jpg' }}" alt="">
 																{{ $user->name }}
 															</a>
 														</h2>
 													</td>
 													<td>{{ $user->email }}</td>
 													<td>
-														<button class="btn table-btn">Designer</button>
+                                                        @if($user->verified == 1)
+                                                            <span class="badge badge-pill badge-success">Verified</span>
+                                                        @else
+														    <span class="badge badge-pill badge-danger">Not Verified</span>
+                                                        @endif
 													</td>
 													<td>{{ $user->created_at->format('d-M-Y') }}</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a>
+														{{-- <a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a> --}}
+														<a href="{{ route('admin.verify_user'.$user->id) }}" class="btn btn-sm btn-success me-2"><i class="fas fa-check"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>

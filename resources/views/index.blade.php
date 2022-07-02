@@ -118,7 +118,7 @@
                     <div class="work-content">
                         <h2>I need a Design <span>Project</span></h2>
                         <p>Get the perfect Developed project for your budget from our creative community.</p>
-                        <a href="project"><i class="fas fa-long-arrow-alt-right long-arrow"></i></a>
+                        <a href="{{ url('/register?user=1') }}"><i class="fas fa-long-arrow-alt-right long-arrow"></i></a>
                     </div>
                 </div>
                 <!-- /Feature Item -->
@@ -127,7 +127,7 @@
                     <div class="work-content">
                         <h2>I want to <span>work</span></h2>
                         <p>Do you want to earn money, find unlimited clients and build your freelance career?</p>
-                        <a href="{{ route('designer') }}"><i class="fas fa-long-arrow-alt-right long-arrow"></i></a>
+                        <a href="{{ url('/register?user=2') }}"><i class="fas fa-long-arrow-alt-right long-arrow"></i></a>
                     </div>
                 </div>
             </div>
@@ -364,7 +364,7 @@
     <!-- /Projects -->
 
     <!-- Subscribe -->
-    <section class="section subscribe">
+    {{-- <section class="section subscribe">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-4">
@@ -384,7 +384,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- End Subscribe -->
 
     <!-- Top Instructor -->
@@ -394,14 +394,14 @@
                 <div class="col-md-7 col-sm-12 col-12 mx-auto">
                     <div class="section-header text-center">
                         <div class="section-line"></div>
-                        <h2 class="header-title">Most Hired Dewsigners</h2>
+                        <h2 class="header-title">Most Hired Designers</h2>
                         <p>Work with talented people at the most affordable price</p>
                     </div>
                 </div>
             </div>
 
-            <div id="Designers-slider" class="owl-carousel owl-theme Designers-slider">
-                @foreach ($designers as $designer)
+            <div id="developers-slider" class="owl-carousel owl-theme developers-slider">
+                @foreach ($designers as $key =>$designer)
                 <div class="freelance-widget">
                     <div class="freelance-content">
                         <a data-toggle="modal" href="#rating" class="favourite"><i class="fas fa-star"></i></a>
@@ -424,14 +424,14 @@
                                 <i class="fas fa-star"></i>
                                 <span class="average-rating">4.7 (32)</span>
                             </div>
-                            <div class="freelance-tags">
+                            {{-- <div class="freelance-tags">
                                 <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Web
                                         Design</span></a>
                                 <a href="javascript:void(0);"><span class="badge badge-pill badge-design">UI
                                         Design</span></a>
                                 <a href="javascript:void(0);"><span class="badge badge-pill badge-design">Node
                                         Js</span></a>
-                            </div>
+                            </div> --}}
                             <div class="freelancers-price">${{ $designer->hourly_rate }} Hourly</div>
                         </div>
                     </div>
@@ -439,12 +439,18 @@
                         <a href="{{ url('designer-details/'.$designer->name) }}" class="btn-cart" tabindex="-1">View Profile</a>
                     </div>
                 </div>
+
+
                 @endforeach
             </div>
+
+
 
         </div>
     </section>
     <!-- End Developer -->
+
+
 
     <!-- Review -->
     <section class="section testimonial-section review">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Country;
 use Illuminate\Http\Request;
 use Laravel\Ui\Presets\React;
 
@@ -73,5 +74,30 @@ class categoryController extends Controller
         $category->update();
 
         return redirect()->back()->with('status','New Category Updated Successfully!');
+    }
+
+    public function country_list()
+    {
+        $countries = Country::all();
+
+        return view('admin.country')->with('countries', $countries);
+    }
+
+    public function add_country(Request $req)
+    {
+        $country = new Country();
+        $country->name = $req->input('name');
+        $country->save();
+
+        return redirect()->back()->with('status','New Category Added Successfully!');
+    }
+
+    public function update_country(Request $req, $id)
+    {
+        $country = Country::find($id);
+        $country->name = $req->input('name');
+        $country->update();
+
+        return redirect()->back()->with('status','Country Updated Successfully!');
     }
 }

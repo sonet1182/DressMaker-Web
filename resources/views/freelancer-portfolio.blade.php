@@ -7,79 +7,18 @@
 			<div class="content">
 				<div class="container-fluid">
 
-					<div class="row">
+					<div class="row" style="margin-top: 60px">
 						<div class="col-xl-3 col-md-4 theiaStickySidebar">
-							<div class="settings-widget">
-								<div class="settings-header d-sm-flex flex-row flex-wrap text-center text-sm-start align-items-center">
-									<a href="{{ route('designer.profile') }}"><img alt="profile image" src="/assets/img/img-04.jpg" class="avatar-lg rounded-circle"></a>
-									<div class="ms-sm-3 ms-md-0 ms-lg-3 mt-2 mt-sm-0 mt-md-2 mt-lg-0">
-										<p class="mb-2">Welcome,</p>
-										<h3 class="mb-0"><a href="{{ route('designer.profile') }}">John Danie S.</a></h3>
-										<p class="mb-0">@johndaniee</p>
-									</div>
-								</div>
-								<div class="settings-menu">
-									<ul>
-										<li class="nav-item">
-											<a href="freelancer-dashboard" class="nav-link">
-												<i class="material-icons">verified_user</i> Dashboard
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="{{ route('designer.projects') }}" class="nav-link">
-												<i class="material-icons">business_center</i> Projects
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="freelancer-favourites" class="nav-link">
-												<i class="material-icons">local_play</i> Favourites
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="freelancer-review" class="nav-link">
-												<i class="material-icons">record_voice_over</i> Reviews
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="freelancer-portfolio" class="nav-link active">
-												<i class="material-icons">pie_chart</i> Portfolio
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="freelancer-chats" class="nav-link">
-												<i class="material-icons">chat</i> Messages
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="freelancer-membership" class="nav-link">
-												<i class="material-icons">person_add</i> Membership
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="freelancer-verify-identity" class="nav-link">
-												<i class="material-icons">person_pin</i> Verify Identity
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="freelancer-withdraw-money" class="nav-link">
-												<i class="material-icons">wifi_tethering</i> Payments
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="{{ route('designer.profile-settings') }}" class="nav-link">
-												<i class="material-icons">settings</i>  Settings
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="{{ route('home') }}" class="nav-link">
-												<i class="material-icons">power_settings_new</i> Logout
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
+							@include('seller.layout.sidenav')
 						</div>
 						<div class="col-xl-9 col-md-8">
+
+                            @if (session('status'))
+                                <div class="alert alert-success mt-5" role="alert">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
+
 							<div class="portfolio-item">
 								<div class="pro-head p-0 pb-4">
 									<h3 class="mb-0">Portfolio</h3>
@@ -87,10 +26,14 @@
 								</div>
 								<div class="pro-content pt-4 pb-4">
 									<div class="row">
+
+                                        @foreach ($portfolios as $portfolio)
+
+
 										<div class="col-sm-6 col-lg-4">
 											<div class="project-widget">
 												<div class="portfolio-img">
-													<img class="img-fluid" alt="User Image" src="/assets/img/project-1.jpg">
+													<img class="img-fluid" alt="User Image" src="{{ $portfolio->image ? asset($portfolio->image) : '/assets/img/project-1.jpg'}}">
 													<div class="portfolio-live">
 													<div class="portfolio-content">
 														<a data-bs-toggle="modal" href="#portfolio-edit" class="port-icon"><i class="fas fa-pen"></i></a>
@@ -99,100 +42,16 @@
 													</div>
 												</div>
 												<div class="portfolio-detail">
-													<h3 class="pro-name">Razor Website Design</h3>
+													<h3 class="pro-name">{{ $portfolio->title }}</h3>
 												</div>
 											</div>
 										</div>
-										<div class="col-sm-6 col-lg-4">
-											<div class="project-widget">
-												<div class="portfolio-img">
-													<img class="img-fluid" alt="User Image" src="/assets/img/project-2.jpg">
-													<div class="portfolio-live">
-													<div class="portfolio-content">
-														<a data-bs-toggle="modal" href="#portfolio-edit" class="port-icon"><i class="fas fa-pen"></i></a>
-														<a href="#" class="port-icon"><i class="fas fa-trash-alt"></i></a>
-													</div>
-													</div>
-												</div>
-												<div class="portfolio-detail">
-													<h3 class="pro-name">Transport Website</h3>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-lg-4">
-											<div class="project-widget">
-												<div class="portfolio-img">
-													<img class="img-fluid" alt="User Image" src="/assets/img/project-3.jpg">
-													<div class="portfolio-live">
-													<div class="portfolio-content">
-														<a data-bs-toggle="modal" href="#portfolio-edit" class="port-icon"><i class="fas fa-pen"></i></a>
-														<a href="#" class="port-icon"><i class="fas fa-trash-alt"></i></a>
-													</div>
-													</div>
-												</div>
-												<div class="portfolio-detail">
-													<h3 class="pro-name">Wordpress Website</h3>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-lg-4">
-											<div class="project-widget">
-												<div class="portfolio-img">
-													<img class="img-fluid" alt="User Image" src="/assets/img/project-4.jpg">
-													<div class="portfolio-live">
-													<div class="portfolio-content">
-														<a data-bs-toggle="modal" href="#portfolio-edit" class="port-icon"><i class="fas fa-pen"></i></a>
-														<a href="#" class="port-icon"><i class="fas fa-trash-alt"></i></a>
-													</div>
-													</div>
-												</div>
-												<div class="portfolio-detail">
-													<h3 class="pro-name">Mobile App</h3>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-lg-4">
-											<div class="project-widget">
-												<div class="portfolio-img">
-													<img class="img-fluid" alt="User Image" src="/assets/img/project-5.jpg">
-													<div class="portfolio-live">
-													<div class="portfolio-content">
-														<a data-bs-toggle="modal" href="#portfolio-edit" class="port-icon"><i class="fas fa-pen"></i></a>
-														<a href="#" class="port-icon"><i class="fas fa-trash-alt"></i></a>
-													</div>
-													</div>
-												</div>
-												<div class="portfolio-detail">
-													<h3 class="pro-name">Healthcare Website</h3>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-lg-4">
-											<div class="project-widget">
-												<div class="portfolio-img">
-													<img class="img-fluid" alt="User Image" src="/assets/img/project-6.jpg">
-													<div class="portfolio-live">
-													<div class="portfolio-content">
-														<a data-bs-toggle="modal" href="#portfolio-edit" class="port-icon"><i class="fas fa-pen"></i></a>
-														<a href="#" class="port-icon"><i class="fas fa-trash-alt"></i></a>
-													</div>
-													</div>
-												</div>
-												<div class="portfolio-detail">
-													<h3 class="pro-name">Injury Website</h3>
-												</div>
-											</div>
-										</div>
+
+                                        @endforeach
+
 									</div>
 									<div class="col-md-12">
-										<ul class="paginations">
-											<li><a href="#"> <i class="fas fa-angle-left"></i> Previous</a></li>
-											<li><a href="#">1</a></li>
-											<li><a href="#" class="active">2</a></li>
-											<li><a href="#">3</a></li>
-											<li><a href="#">4</a></li>
-											<li><a href="#">Next <i class="fas fa-angle-right"></i></a></li>
-										</ul>
+										{{ $portfolios->links() }}
 									</div>
 								</div>
 							</div>
@@ -217,20 +76,21 @@
 						<div class="port-title">
 							<h3>Simple & Best Way To Showcase Your Work</h3>
 						</div>
-						<form action="freelancer-portfolio">
+						<form action="{{ route('designer.add_portfolio') }}" method="post" enctype="multipart/form-data">
+                            @csrf
 							<div class="modal-info">
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
 											<label>Title</label>
-											<input type="text" class="form-control">
+											<input type="text" class="form-control" name="title">
 										</div>
 										<div class="form-group">
 											<label>Link</label>
-											<input type="text" class="form-control">
+											<input type="text" class="form-control" name="link">
 										</div>
 										<label class="br-0 file-upload image-upbtn">
-											upload Files <input type="file">
+											upload Files <input type="file" name="image">
 										</label>
 									</div>
 								</div>
