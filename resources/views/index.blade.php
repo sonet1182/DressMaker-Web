@@ -28,7 +28,7 @@
 
                         </div>
                         <h1>Get the perfect <span class="orange-text">Designers & Projects</span></h1>
-                        <p>With the world's #1 Developers marketplace</p>
+                        <p>With the world's #1 Designers marketplace</p>
                         <form class="form" name="store" id="store" action="project">
                             <div class="form-inner">
                                 <div class="input-group">
@@ -68,8 +68,8 @@
                             <img src="/assets/img/icon/icon-01.png" class="img-fluid" alt="">
                         </div>
                         <div class="feature-content">
-                            <h3>919,207</h3>
-                            <p>freelance Developers</p>
+                            <h3>{{ $designers->count() }}</h3>
+                            <p>Total Designers</p>
                         </div>
                     </div>
                 </div>
@@ -82,8 +82,8 @@
                             <img src="/assets/img/icon/icon-02.png" class="img-fluid" alt="">
                         </div>
                         <div class="feature-content">
-                            <h3>25 - 100+</h3>
-                            <p>Developers per project</p>
+                            <h3>{{ $employers->count() }}</h3>
+                            <p>Total Seller</p>
                         </div>
                     </div>
                 </div>
@@ -96,8 +96,8 @@
                             <img src="/assets/img/icon/icon-03.png" class="img-fluid" alt="">
                         </div>
                         <div class="feature-content">
-                            <h3>388,615</h3>
-                            <p>completed projects</p>
+                            <h3>{{ $projects->count() }}</h3>
+                            <p>Total projects</p>
                         </div>
                     </div>
                 </div>
@@ -168,7 +168,7 @@
     <!--                        </div>-->
     <!--                        <div class="project-content">-->
     <!--                            <h4>20</h4>-->
-    <!--                            <h5>Developers</h5>-->
+    <!--                            <h5>Designers</h5>-->
     <!--                        </div>-->
     <!--                    </div>-->
     <!--                </div>-->
@@ -193,7 +193,7 @@
     <!--                        </div>-->
     <!--                        <div class="project-content">-->
     <!--                            <h4>20</h4>-->
-    <!--                            <h5>Developers</h5>-->
+    <!--                            <h5>Designers</h5>-->
     <!--                        </div>-->
     <!--                    </div>-->
     <!--                </div>-->
@@ -218,7 +218,7 @@
     <!--                        </div>-->
     <!--                        <div class="project-content">-->
     <!--                            <h4>20</h4>-->
-    <!--                            <h5>Developers</h5>-->
+    <!--                            <h5>Designers</h5>-->
     <!--                        </div>-->
     <!--                    </div>-->
     <!--                </div>-->
@@ -243,7 +243,7 @@
     <!--                        </div>-->
     <!--                        <div class="project-content">-->
     <!--                            <h4>20</h4>-->
-    <!--                            <h5>Developers</h5>-->
+    <!--                            <h5>Designers</h5>-->
     <!--                        </div>-->
     <!--                    </div>-->
     <!--                </div>-->
@@ -268,7 +268,7 @@
     <!--                        </div>-->
     <!--                        <div class="project-content">-->
     <!--                            <h4>20</h4>-->
-    <!--                            <h5>Developers</h5>-->
+    <!--                            <h5>Designers</h5>-->
     <!--                        </div>-->
     <!--                    </div>-->
     <!--                </div>-->
@@ -293,7 +293,7 @@
     <!--                        </div>-->
     <!--                        <div class="project-content">-->
     <!--                            <h4>20</h4>-->
-    <!--                            <h5>Developers</h5>-->
+    <!--                            <h5>Designers</h5>-->
     <!--                        </div>-->
     <!--                    </div>-->
     <!--                </div>-->
@@ -318,7 +318,7 @@
     <!--                        </div>-->
     <!--                        <div class="project-content">-->
     <!--                            <h4>20</h4>-->
-    <!--                            <h5>Developers</h5>-->
+    <!--                            <h5>Designers</h5>-->
     <!--                        </div>-->
     <!--                    </div>-->
     <!--                </div>-->
@@ -343,7 +343,7 @@
     <!--                        </div>-->
     <!--                        <div class="project-content">-->
     <!--                            <h4>20</h4>-->
-    <!--                            <h5>Developers</h5>-->
+    <!--                            <h5>Designers</h5>-->
     <!--                        </div>-->
     <!--                    </div>-->
     <!--                </div>-->
@@ -400,7 +400,7 @@
                 </div>
             </div>
 
-            <div id="developers-slider" class="owl-carousel owl-theme developers-slider">
+            <div id="Designers-slider" class="owl-carousel owl-theme Designers-slider">
                 @foreach ($designers as $designer)
                 <div class="freelance-widget">
                     <div class="freelance-content">
@@ -454,7 +454,7 @@
                     <div class="section-header text-center">
                         <div class="section-line"></div>
                         <h2 class="header-title">Top Reviews</h2>
-                        <p>High Performing Developers To Your</p>
+                        <p>High Performing Designers To Your</p>
                     </div>
                 </div>
             </div>
@@ -581,7 +581,7 @@
                     <div class="section-header text-center">
                         <div class="section-line"></div>
                         <h2 class="header-title">Feature Blog</h2>
-                        <p>High Performing Developers To Your</p>
+                        <p>High Performing Designers To Your</p>
                     </div>
                 </div>
             </div>

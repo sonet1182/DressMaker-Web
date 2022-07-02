@@ -31,9 +31,7 @@ Route::get('/index', function () {
 Route::get('/404-page', function () {
     return view('404-page');
 })->name('404-page');
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+
 Route::get('/blank-page', function () {
     return view('blank-page');
 })->name('blank-page');
@@ -321,7 +319,9 @@ Route::Group(['prefix' => 'admin'], function () {
         return view('admin.tax-types');
     })->name('tax-types');
 
-
+    Route::get('/verify-identity', function () {
+        return view('admin.verify-identity');
+    })->name('verify-identity');
     Route::get('/view-estimate', function () {
         return view('admin.view-estimate');
     })->name('view-estimate');
@@ -342,6 +342,14 @@ Route::get('/admin', [LoginController::class, 'index'])->name('admin.login');
 Route::get('/', [HomePageController::class, 'index'])->name('home');
 Route::get('/designer', [HomePageController::class, 'designer'])->name('designer');
 Route::get('/project', [HomePageController::class, 'project'])->name('project');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
 
 
 
@@ -415,10 +423,6 @@ Route::group(['middleware' => ['auth', 'isBuyer'], 'prefix' => 'employer/', 'as'
         return view('chats');
     })->name('chats');
 
-    Route::get('verify-identity', function () {
-        return view('admin.verify-identity');
-    })->name('verify-identity');
-
 });
 
 
@@ -443,5 +447,7 @@ Route::group(['middleware' => ['auth', 'isSeller'],  'prefix' => 'designer/', 'a
 
     Route::post('profile-update', [AccountController::class, 'update'])->name('profile-update');
     Route::get('projects', [SellerProjectController::class, 'index'])->name('projects');
+
+    Route::get('proposal', [SellerProjectController::class, 'index'])->name('proposals');
 
 });

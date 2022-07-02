@@ -12,6 +12,6 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::latest()->get();
-        return view('freelancer-project-proposals',compact('projects'));
+        return view('project_list',compact('projects'));
     }
 }

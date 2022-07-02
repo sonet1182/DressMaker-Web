@@ -22,6 +22,11 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a href="{{ route('designer.proposals') }}" class="nav-link">
+                    <i class="material-icons">business_center</i> Proposals
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="freelancer-favourites" class="nav-link">
                     <i class="material-icons">local_play</i> Favourites
                 </a>

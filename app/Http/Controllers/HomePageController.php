@@ -13,8 +13,10 @@ class HomePageController extends Controller
     {
         $categories = Category::all();
         $designers = User::where('role','seller')->get();
+        $employers = User::where('role','buyer')->get();
+        $projects = Project::all();
 
-        return view('index',compact('categories','designers'));
+        return view('index',compact('categories','designers','employers','projects'));
     }
 
     public function seller_details($slug)

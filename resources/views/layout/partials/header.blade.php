@@ -137,10 +137,10 @@
 								<a href="{{ url('project') }}">Project</a>
 							</li>
 							<li>
-								<a href="#">About Us</a>
+								<a href="{{ url('about') }}">About Us</a>
 							</li>
 							<li>
-								<a href="#">Contact</a>
+								<a href="{{ url('contact') }}">Contact</a>
 							</li>
 						</ul>
 					</div>
