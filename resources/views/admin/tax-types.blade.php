@@ -4,14 +4,14 @@
 	<!-- Page Wrapper -->
 			<div class="page-wrapper">
 				<div class="content container-fluid">
-				
+
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row">
 							<div class="col-sm-6">
 								<h3 class="page-title">Settings</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index_admin">Dashboard</a>
+									<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a>
 									</li>
 									<li class="breadcrumb-item active">Tax Types</li>
 								</ul>
@@ -19,10 +19,10 @@
 						</div>
 					</div>
 					<!-- /Page Header -->
-				
+
 					<div class="row">
 						<div class="col-xl-3 col-md-4">
-						
+
 							<!-- Settings Menu -->
 							<div class="widget settings-menu">
 								<ul>
@@ -49,9 +49,9 @@
 								</ul>
 							</div>
 							<!-- /Settings Menu -->
-							
+
 						</div>
-						
+
 						<div class="col-xl-9 col-md-8">
 							<div class="card card-table">
 								<div class="card-body pt-0">
@@ -83,7 +83,7 @@
 														<span class="badge bg-success-light">Active</span>
 													</td>
 													<td class="text-end">
-														<a href="#" data-bs-toggle="modal" data-bs-target="#edit_tax" class="btn btn-sm btn-white text-success me-2"><i class="far fa-edit me-1"></i> Edit</a> 
+														<a href="#" data-bs-toggle="modal" data-bs-target="#edit_tax" class="btn btn-sm btn-white text-success me-2"><i class="far fa-edit me-1"></i> Edit</a>
 														<a href="#" data-bs-toggle="modal" data-bs-target="#delete_tax" class="btn btn-sm btn-white text-danger"><i class="far fa-trash-alt me-1"></i>Delete</a>
 													</td>
 												</tr>
@@ -94,7 +94,7 @@
 														<span class="badge bg-danger-light">Inactive</span>
 													</td>
 													<td class="text-end">
-														<a href="#" data-bs-toggle="modal" data-bs-target="#edit_tax" class="btn btn-sm btn-white text-success me-2"><i class="far fa-edit me-1"></i> Edit</a> 
+														<a href="#" data-bs-toggle="modal" data-bs-target="#edit_tax" class="btn btn-sm btn-white text-success me-2"><i class="far fa-edit me-1"></i> Edit</a>
 														<a href="#" data-bs-toggle="modal" data-bs-target="#delete_tax" class="btn btn-sm btn-white text-danger"><i class="far fa-trash-alt me-1"></i>Delete</a>
 													</td>
 												</tr>
@@ -105,7 +105,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<!-- Add Tax Modal -->
 					<div id="add_tax" class="modal custom-modal fade" role="dialog">
 						<div class="modal-dialog modal-dialog-centered" role="document">
@@ -140,7 +140,7 @@
 						</div>
 					</div>
 					<!-- /Add Tax Modal -->
-					
+
 					<!-- Edit Tax Modal -->
 					<div id="edit_tax" class="modal custom-modal fade" role="dialog">
 						<div class="modal-dialog modal-dialog-centered" role="document">
@@ -175,7 +175,7 @@
 						</div>
 					</div>
 					<!-- /Edit Tax Modal -->
-					
+
 					<!-- Delete Tax Modal -->
 					<div class="modal custom-modal fade" id="delete_tax" role="dialog">
 						<div class="modal-dialog modal-dialog-centered">
@@ -197,11 +197,11 @@
 						</div>
 					</div>
 					<!-- /Delete Tax Modal -->
-					
+
 				</div>
 			</div>
 			<!-- /Page Wrapper -->
-			
+
 		</div>
 		<!-- /Main Wrapper -->
 @endsection

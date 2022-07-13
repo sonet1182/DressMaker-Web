@@ -12,7 +12,7 @@
     <div class="settings-menu">
         <ul>
             <li class="nav-item">
-                <a href="freelancer-dashboard" class="nav-link">
+                <a href="{{ route('designer.dashboard') }}" class="nav-link">
                     <i class="material-icons">verified_user</i> Dashboard
                 </a>
             </li>
@@ -27,12 +27,12 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="freelancer-favourites" class="nav-link">
+                <a href="{{ route('designer.favourites') }}" class="nav-link">
                     <i class="material-icons">local_play</i> Favourites
                 </a>
             </li>
             <li class="nav-item">
-                <a href="freelancer-review" class="nav-link">
+                <a href="{{ route('designer.review') }}" class="nav-link">
                     <i class="material-icons">record_voice_over</i> Reviews
                 </a>
             </li>
@@ -42,11 +42,11 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="freelancer-chats" class="nav-link">
+                <a href="{{ route('designer.chats') }}" class="nav-link">
                     <i class="material-icons">chat</i> Messages
                 </a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a href="freelancer-membership" class="nav-link">
                     <i class="material-icons">person_add</i> Membership
                 </a>
@@ -55,9 +55,9 @@
                 <a href="freelancer-verify-identity" class="nav-link">
                     <i class="material-icons">person_pin</i> Verify Identity
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
-                <a href="freelancer-withdraw-money" class="nav-link">
+                <a href="{{ route('designer.withdraw_payment') }}" class="nav-link">
                     <i class="material-icons">wifi_tethering</i> Payments
                 </a>
             </li>

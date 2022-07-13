@@ -14,7 +14,7 @@
         <div class="settings-menu">
             <ul>
                 <li class="nav-item">
-                    <a href="dashboard" class="nav-link">
+                    <a href="{{ route('employer.dashboard') }}" class="nav-link">
                         <i class="material-icons">verified_user</i> Dashboard
                     </a>
                 </li>
@@ -53,11 +53,11 @@
                         <i class="material-icons">person_pin</i> Verify Identity
                     </a>
                 </li> --}}
-                {{-- <li class="nav-item">
-                    <a href="deposit-funds" class="nav-link">
+                <li class="nav-item">
+                    <a href="{{ route('employer.deposit-funds') }}" class="nav-link">
                         <i class="material-icons">wifi_tethering</i> Payments
                     </a>
-                </li> --}}
+                </li>
                 <li class="nav-item">
                     <a href="profile-settings" class="nav-link">
                         <i class="material-icons">settings</i> Settings

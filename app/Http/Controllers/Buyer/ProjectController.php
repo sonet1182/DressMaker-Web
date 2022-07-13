@@ -26,6 +26,18 @@ class ProjectController extends Controller
         return view('manage-projects',compact('projects'));
     }
 
+    public function ongoing_projects()
+    {
+        $projects = Project::where([['created_by',Auth::user()->id],['status',1]])->latest()->get();
+        return view('ongoing-projects',compact('projects'));
+    }
+
+    public function completed_projects()
+    {
+        $projects = Project::where([['created_by',Auth::user()->id],['status',9]])->latest()->get();
+        return view('ongoing-projects',compact('projects'));
+    }
+
     public function project_details($id){
         $project = Project::find($id);
         return view('view-project-detail',compact('project'));
@@ -40,6 +52,7 @@ class ProjectController extends Controller
         $project = Project::find($id);
         $project->hired_user = $req->seller_id;
         $project->hired_at = Carbon::now()->toDateTimeString();
+        $project->status = 1;
         $project->save();
         return back()->with('status','Designer Hired Successfully');
     }

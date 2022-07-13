@@ -11,7 +11,7 @@
                     <div class="col">
                         <h3 class="page-title">Countries</h3>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index_admin">Home</a>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a>
                             </li>
                             <li class="breadcrumb-item active">Countries</li>
                         </ul>
@@ -83,6 +83,7 @@
                                             <tr>
                                                 <th>S.No</th>
                                                 <th>Country Name</th>
+                                                <th>Image</th>
                                                 <th class="text-end">Actions</th>
                                             </tr>
                                         </thead>
@@ -94,6 +95,9 @@
                                                         {{ $loop->iteration }}
                                                     </td>
                                                     <td>{{ $country->name }}</td>
+                                                    <td>
+                                                        <image src="{{ asset($country->image) }}" hight="90px" width="90px"/>
+                                                    </td>
                                                     <td class="text-end">
                                                         <a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2"
                                                             data-bs-toggle="modal" data-bs-target="#edit-category{{ $country->id }}"><i
@@ -119,12 +123,17 @@
 
                                                             <!-- Modal body -->
                                                             <div class="modal-body">
-                                                                <form action="{{ route('admin.country.update', $country->id) }}" method="post">
+                                                                <form action="{{ route('admin.country.update', $country->id) }}" method="post" enctype="multipart/form-data">
                                                                     @csrf
                                                                     <div class="form-group">
                                                                         <label>Country Name</label>
                                                                         <input type="text" class="form-control" name="name"
                                                                             value="{{ $country->name }}">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <image src="{{ asset($country->image) }}" hight="90px" width="90px" id="flag{{ $country->id }}"/>
+                                                                        <label>Image</label>
+                                                                        <input type="file" class="form-control" name="image" onchange="document.getElementById('flag{{ $country->id }}').src = window.URL.createObjectURL(this.files[0])">
                                                                     </div>
                                                                     <div class="mt-4">
                                                                         <button type="submit"
@@ -166,12 +175,19 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <form action="{{ route('admin.country.add') }}" method="post">
+                    <form action="{{ route('admin.country.add') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label>Country Name</label>
                             <input type="text" class="form-control" name="name" placeholder="Enter Country Name">
                         </div>
+
+                        <div class="form-group">
+                            <image src="" hight="90px" width="90px" id="flag1"/>
+                            <label>Image</label>
+                            <input type="file" class="form-control" name="image" onchange="document.getElementById('flag1').src = window.URL.createObjectURL(this.files[0])">
+                        </div>
+
                         <div class="mt-4">
                             <button type="submit" class="btn btn-primary btn-block">Submit</button>
                         </div>

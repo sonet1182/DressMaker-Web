@@ -48,7 +48,7 @@
 							<!--		<li class="<?php if($page=="milestones") { echo 'active'; } ?>"><a href="milestones">Milestones</a></li>-->
 							<!--		<li class="<?php if($page=="chats") { echo 'active'; } ?>"><a href="chats">Chats</a></li>-->
 							<!--		<li class="<?php if($page=="review") { echo 'active'; } ?>"><a href="review">Review</a></li>-->
-							<!--		<li class="<?php if($page=="deposit-funds") { echo 'active'; } ?>"><a href="deposit-funds">Payments</a></li>-->
+							<!--		<li class="<?php if($page=="deposit-funds") { echo 'active'; } ?>"><a href="{{ route('employer.deposit-funds') }}">Payments</a></li>-->
 							<!--		<li class="<?php if($page=="verify-identity") { echo 'active'; } ?>"><a href="verify-identity">Verify Identity</a></li>-->
 							<!--		<li class="<?php if($page=="profile-settings") { echo 'active'; } ?>"><a href="profile-settings">Settings</a></li>-->
 							<!--	</ul>-->
@@ -66,12 +66,12 @@
 							<!--		</li>-->
 							<!--		<li class="<?php if($page=="freelancer-dashboard") { echo 'active'; } ?>"><a href="freelancer-dashboard">Dashboard</a></li>-->
 							<!--		<li class="<?php if($page=="freelancer-project-proposals") { echo 'active'; } ?>"><a href="{{ route('designer.projects') }}">Projects</a></li>-->
-							<!--		<li class="<?php if($page=="freelancer-favourites") { echo 'active'; } ?>"><a href="freelancer-favourites">Favourites</a></li>-->
+							<!--		<li class="<?php if($page=="freelancer-favourites") { echo 'active'; } ?>"><a href="{{ route('designer.favourites') }}">Favourites</a></li>-->
 							<!--		<li class="<?php if($page=="freelancer-membership") { echo 'active'; } ?>"><a href="freelancer-membership">Membership</a></li>-->
 							<!--		<li class="<?php if($page=="freelancer-change-password") { echo 'active'; } ?>"><a href="freelancer-change-password">Change Password</a></li>-->
-							<!--		<li class="<?php if($page=="freelancer-chats") { echo 'active'; } ?>"><a href="freelancer-chats">Chats</a></li>-->
-							<!--		<li class="<?php if($page=="freelancer-review") { echo 'active'; } ?>"><a href="freelancer-review">Review</a></li>-->
-							<!--		<li class="<?php if($page=="freelancer-withdraw-money") { echo 'active'; } ?>"><a href="freelancer-withdraw-money">Payments</a></li>-->
+							<!--		<li class="<?php if($page=="freelancer-chats") { echo 'active'; } ?>"><a href="{{ route('designer.chats') }}">Chats</a></li>-->
+							<!--		<li class="<?php if($page=="freelancer-review") { echo 'active'; } ?>"><a href="{{ route('designer.review') }}">Review</a></li>-->
+							<!--		<li class="<?php if($page=="freelancer-withdraw-money") { echo 'active'; } ?>"><a href="{{ route('designer.withdraw_payment') }}">Payments</a></li>-->
 							<!--		<li class="<?php if($page=="freelancer-verify-identity") { echo 'active'; } ?>"><a href="freelancer-verify-identity">Verify Identity</a></li>-->
 							<!--		<li class="<?php if($page=="freelancer-profile-settings") { echo 'active'; } ?>"><a href="{{ route('designer.profile-settings') }}">Settings</a></li>-->
 							<!--	</ul>-->
@@ -90,13 +90,13 @@
 							<!--		</li>-->
 							<!--		<li class="<?php if($page=="freelancer-dashboard") { echo 'active'; } ?>"><a href="freelancer-dashboard">Dashboard</a></li>-->
 							<!--		<li class="<?php if($page=="freelancer-project-proposals") { echo 'active'; } ?>"><a href="{{ route('designer.projects') }}">Projects</a></li>-->
-							<!--		<li class="<?php if($page=="freelancer-favourites") { echo 'active'; } ?>"><a href="freelancer-favourites">Favourites</a></li>-->
+							<!--		<li class="<?php if($page=="freelancer-favourites") { echo 'active'; } ?>"><a href="{{ route('designer.favourites') }}">Favourites</a></li>-->
 							<!--		<li class="<?php if($page=="freelancer-membership") { echo 'active'; } ?>"><a href="freelancer-membership">Membership</a></li>-->
 							<!--		<li class="<?php if($page=="freelancer-change-password") { echo 'active'; } ?>"><a href="freelancer-change-password">Change Password</a></li>-->
-							<!--		<li class="<?php if($page=="freelancer-chats") { echo 'active'; } ?>"><a href="freelancer-chats">Chats</a></li>-->
-							<!--		<li class="<?php if($page=="freelancer-review") { echo 'active'; } ?>"><a href="freelancer-review">Review</a></li>-->
+							<!--		<li class="<?php if($page=="freelancer-chats") { echo 'active'; } ?>"><a href="{{ route('designer.chats') }}">Chats</a></li>-->
+							<!--		<li class="<?php if($page=="freelancer-review") { echo 'active'; } ?>"><a href="{{ route('designer.review') }}">Review</a></li>-->
 							<!--		<li class="<?php if($page=="freelancer-portfolio") { echo 'active'; } ?>"><a href="freelancer-portfolio">Portfolio</a></li>-->
-							<!--		<li class="<?php if($page=="freelancer-withdraw-money") { echo 'active'; } ?>"><a href="freelancer-withdraw-money">Payments</a></li>-->
+							<!--		<li class="<?php if($page=="freelancer-withdraw-money") { echo 'active'; } ?>"><a href="{{ route('designer.withdraw_payment') }}">Payments</a></li>-->
 							<!--		<li class="<?php if($page=="freelancer-verify-identity") { echo 'active'; } ?>"><a href="freelancer-verify-identity">Verify Identity</a></li>-->
 							<!--		<li class="<?php if($page=="freelancer-profile-settings") { echo 'active'; } ?>"><a href="{{ route('designer.profile-settings') }}">Settings</a></li>-->
 							<!--	</ul>-->
@@ -155,7 +155,7 @@
                         @if(Auth::user()->role === 'admin')
 
                         <li class="nav-item main-drop account-item">
-							<a href="{{ url('/admin/index_admin') }}" class=" nav-link">
+							<a href="{{ url('/admin/dashboard') }}" class=" nav-link">
 								<span class="user-img">
 									<img src="{{ Auth::user()->profile_photo ? asset(Auth::user()->profile_photo) : asset('assets/img/img-04.jpg') }}" alt="">
 								</span>
@@ -186,9 +186,9 @@
                                 <a class="dropdown-item" href="{{ route('employer.dashboard') }}"><i class="fas fa-dashboard"></i>Dashboard</a>
 								<a class="dropdown-item" href="{{ route('employer.profile') }}"><i class="material-icons">verified_user</i> View profile</a>
 								<div class="drop-head">Projects Settings</div>
-								<a class="dropdown-item" href="manage-projects"><i class="material-icons">business_center</i> Projects</a>
+								<a class="dropdown-item" href="{{ route('employer.manage-projects')}}"><i class="material-icons">business_center</i> Projects</a>
 								<a class="dropdown-item" href="favourites"><i class="material-icons">local_play</i> Favourites</a>
-								<a class="dropdown-item" href="review"><i class="material-icons">pie_chart</i> Reviews</a>
+								<a class="dropdown-item" href="{{ route('employer.review') }}"><i class="material-icons">pie_chart</i> Reviews</a>
 								<div class="drop-head">Account Details</div>
 								<a class="dropdown-item" href="{{ route('employer.profile-settings')}}"> <i class="material-icons">settings</i> Profile Settings</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -221,10 +221,10 @@
 								<div class="drop-head">Projects Settings</div>
 								<a class="dropdown-item" href="{{ route('designer.projects') }}"><i class="material-icons">business_center</i> Projects</a>
 								<a class="dropdown-item" href="freelancer-bookmarks"><i class="material-icons">local_play</i> Bookmarks</a>
-								<a class="dropdown-item" href="freelancer-review"><i class="material-icons">pie_chart</i> Reviews</a>
+								<a class="dropdown-item" href="{{ route('designer.review') }}"><i class="material-icons">pie_chart</i> Reviews</a>
 								<div class="drop-head">Financial Settings</div>
 								<a class="dropdown-item bal" href="#">Balance <span class="amt">₹0.00 INR</span></a>
-								<a class="dropdown-item" href="freelancer-withdraw-money"><i class="material-icons">wifi_tethering</i> Withdraw funds</a>
+								<a class="dropdown-item" href="{{ route('designer.withdraw_payment') }}"><i class="material-icons">wifi_tethering</i> Withdraw funds</a>
 								<div class="drop-head">Account Details</div>
 								<a class="dropdown-item" href="{{ route('designer.profile-settings') }}"> <i class="material-icons">settings</i> Profile Settings</a>
 								<a class="dropdown-item" href="{{ route('logout') }}"

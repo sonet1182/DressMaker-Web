@@ -4,15 +4,15 @@
 	<!-- Page Wrapper -->
             <div class="page-wrapper">
                 <div class="content container-fluid">
-				
+
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row align-items-center">
 							<div class="col">
 								<h3 class="page-title">Fees</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index_admin">Home</a></li>
-									
+									<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
+
 									<li class="breadcrumb-item active">Fees</li>
 								</ul>
 							</div>
@@ -83,9 +83,9 @@
 												<tr>
 													<td>
 														<a class="text-black" href="projects-fees"> Project Fees</a>
-													</td>													
+													</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -93,9 +93,9 @@
 													<td>
 														<a class="text-black" href="contests-fees">Contest Fees</a>
 													</td>
-													
+
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -103,18 +103,18 @@
 													<td>
 														<a class="text-black" href="contest-entry-fees">Contest Entry Fees</a>
 													</td>
-													
+
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
 												<tr>
 													<td>
 														<a class="text-black" href="bid-fees">Bid Fees</a>
-													</td>													
+													</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -122,10 +122,10 @@
 										</table>
 									</div>
 								</div>
-							</div>			
+							</div>
 						</div>
-						
-					</div>			
+
+					</div>
 				</div>
 				<!-- /Page Wrapper -->
 			</div>
@@ -142,10 +142,10 @@
 					<button type="button" class="close" data-bs-dismiss="modal"><span>&times;</span></button>
 				</div>
 				<!-- /Modal Header -->
-				
+
 				<!-- Modal body -->
 				<div class="modal-body">
-					<form>		     		
+					<form>
 						<div class="form-group">
 							<label>Fee Name</label>
 							<input type="text" class="form-control" placeholder="Enter Fee Name">
@@ -160,7 +160,7 @@
 			</div>
 		</div>
 		<!-- /Category Modal -->
-		
+
 		<!-- Category Modal -->
 		<div class="modal fade custom-modal" id="edit-category">
 			<div class="modal-dialog modal-dialog-centered">
@@ -172,10 +172,10 @@
 						<button type="button" class="close" data-bs-dismiss="modal"><span>&times;</span></button>
 					</div>
 					<!-- /Modal Header -->
-					
+
 					<!-- Modal body -->
 					<div class="modal-body">
-						<form>		     		
+						<form>
 							<div class="form-group">
 								<label>Fee Name</label>
 								<input type="text" class="form-control" value="Project Fees">

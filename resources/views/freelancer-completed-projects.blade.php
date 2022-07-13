@@ -30,12 +30,12 @@
 											</a>
 										</li>
 										<li class="nav-item">
-											<a href="freelancer-favourites" class="nav-link">
+											<a href="{{ route('designer.favourites') }}" class="nav-link">
 												<i class="material-icons">local_play</i> Favourites
 											</a>
 										</li>
 										<li class="nav-item">
-											<a href="freelancer-review" class="nav-link">
+											<a href="{{ route('designer.review') }}" class="nav-link">
 												<i class="material-icons">record_voice_over</i> Reviews
 											</a>
 										</li>
@@ -45,7 +45,7 @@
 											</a>
 										</li>
 										<li class="nav-item">
-											<a href="freelancer-chats" class="nav-link">
+											<a href="{{ route('designer.chats') }}" class="nav-link">
 												<i class="material-icons">chat</i> Messages
 											</a>
 										</li>
@@ -60,7 +60,7 @@
 											</a>
 										</li>
 										<li class="nav-item">
-											<a href="freelancer-withdraw-money" class="nav-link">
+											<a href="{{ route('designer.withdraw_payment') }}" class="nav-link">
 												<i class="material-icons">wifi_tethering</i> Payments
 											</a>
 										</li>
@@ -88,10 +88,10 @@
 										<a class="nav-link" href="{{ route('designer.projects') }}">My Proposals</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="freelancer-ongoing-projects">Ongoing Projects</a>
+										<a class="nav-link" href="{{ route('designer.ongoing_projects') }}">Ongoing Projects</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link active" href="freelancer-completed-projects">Completed Projects</a>
+										<a class="nav-link active" href="{{ route('designer.completed_projects') }}">Completed Projects</a>
 									</li>
 									<li class="nav-item">
 										<a class="nav-link" href="freelancer-cancelled-projects">Cancelled Projects</a>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Buyer;
 use Illuminate\Support\Facades\File;
 use App\Http\Controllers\Controller;
+use App\Models\BuyerFav;
 use App\Models\SocialLink;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -104,5 +105,15 @@ class AccountController extends Controller
 
     public function profile(){
         return view('user-account-details');
+    }
+
+
+    public function set_fav($id){
+        $fav = new BuyerFav();
+        $fav->buyer_id = Auth::user()->id;
+        $fav->seller_id = $id;
+        $fav->save();
+
+        return redirect()->back()->with('status','Designer add to favorite list!');
     }
 }

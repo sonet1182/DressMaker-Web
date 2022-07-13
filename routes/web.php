@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\categoryController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\admin\ProjectController as AdminProjectController;
 use App\Http\Controllers\Admin\sellerController;
+use App\Http\Controllers\Admin\webInfoController;
 use App\Http\Controllers\Buyer\AccountController as BuyerAccountController;
 use App\Http\Controllers\Buyer\DashboardController;
 use App\Http\Controllers\Buyer\ProjectController;
@@ -63,9 +64,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/deposit-funds', function () {
-    return view('deposit-funds');
-})->name('deposit-funds');
+
 
 
 Route::get('/edit-project', function () {
@@ -85,9 +84,7 @@ Route::get('/freelancer-cancelled-projects', function () {
     return view('freelancer-cancelled-projects');
 })->name('freelancer-cancelled-projects');
 
-Route::get('/freelancer-chats', function () {
-    return view('freelancer-chats');
-})->name('freelancer-chats');
+
 Route::get('/freelancer-completed-projects', function () {
     return view('freelancer-completed-projects');
 })->name('freelancer-completed-projects');
@@ -95,9 +92,7 @@ Route::get('/freelancer-completed-projects', function () {
 Route::get('/freelancer-delete-account', function () {
     return view('freelancer-delete-account');
 })->name('freelancer-delete-account');
-Route::get('/freelancer-favourites', function () {
-    return view('freelancer-favourites');
-})->name('freelancer-favourites');
+
 Route::get('/freelancer-files', function () {
     return view('freelancer-files');
 })->name('freelancer-files');
@@ -113,9 +108,7 @@ Route::get('/freelancer-membership', function () {
 Route::get('/freelancer-milestones', function () {
     return view('freelancer-milestones');
 })->name('freelancer-milestones');
-Route::get('/freelancer-ongoing-projects', function () {
-    return view('freelancer-ongoing-projects');
-})->name('freelancer-ongoing-projects');
+
 Route::get('/freelancer-payment', function () {
     return view('freelancer-payment');
 })->name('freelancer-payment');
@@ -123,9 +116,7 @@ Route::get('/freelancer-payment', function () {
 
 
 
-Route::get('/freelancer-review', function () {
-    return view('freelancer-review');
-})->name('freelancer-review');
+
 Route::get('/freelancer-task', function () {
     return view('freelancer-task');
 })->name('freelancer-task');
@@ -135,12 +126,8 @@ Route::get('/freelancer-transaction-history', function () {
 Route::get('/freelancer-verify-identity', function () {
     return view('freelancer-verify-identity');
 })->name('freelancer-verify-identity');
-Route::get('/freelancer-view-project-detail', function () {
-    return view('freelancer-view-project-detail');
-})->name('freelancer-view-project-detail');
-Route::get('/freelancer-withdraw-money', function () {
-    return view('freelancer-withdraw-money');
-})->name('freelancer-withdraw-money');
+
+
 
 // Route::get('/login', function () {
 //     return view('login');
@@ -152,9 +139,7 @@ Route::get('/membership-plans', function () {
 Route::get('/milestones', function () {
     return view('milestones');
 })->name('milestones');
-Route::get('/employer/ongoing-projects', function () {
-    return view('ongoing-projects');
-})->name('ongoing-projects');
+
 Route::get('/employer/pending-projects', function () {
     return view('pending-projects');
 })->name('pending-projects');
@@ -182,9 +167,7 @@ Route::get('/tasks', function () {
 Route::get('/term-condition', function () {
     return view('term-condition');
 })->name('term-condition');
-Route::get('/transaction-history', function () {
-    return view('transaction-history');
-})->name('transaction-history');
+
 
 Route::get('/verify-identity', function () {
     return view('verify-identity');
@@ -199,9 +182,7 @@ Route::get('/view-profile', function () {
 Route::get('/view-proposals', function () {
     return view('view-proposals');
 })->name('view-proposals');
-Route::get('/withdraw-money', function () {
-    return view('withdraw-money');
-})->name('withdraw-money');
+
 
 /*****************ADMIN ROUTES*******************/
 Route::Group(['prefix' => 'admin'], function () {
@@ -293,9 +274,7 @@ Route::Group(['prefix' => 'admin'], function () {
     Route::get('/seo-settings', function () {
         return view('admin.seo-settings');
     })->name('seo-settings');
-    Route::get('/settings', function () {
-        return view('admin.settings');
-    })->name('settings');
+
     Route::get('/skills', function () {
         return view('admin.skills');
     })->name('skills');
@@ -371,9 +350,7 @@ Route::get('/view-project-detail/{id}', function () {
 
 //admin  Middleware r0
 Route::group(['middleware' => ['auth', 'isAdmin'], 'prefix' => 'admin/', 'as'=>'admin.'], function () {
-    Route::get('dashboard', function () {
-        return view('admin.index_admin');
-    })->name('index_admin');
+    Route::get('dashboard', [webInfoController::class, 'dashboard'])->name('dashboard');
 
     Route::get('categories', [categoryController::class, 'list'])->name('category.list');
     Route::get('countries', [categoryController::class, 'country_list'])->name('country.list');
@@ -384,10 +361,19 @@ Route::group(['middleware' => ['auth', 'isAdmin'], 'prefix' => 'admin/', 'as'=>'
 
     //admin Route
     Route::get('designers', [sellerController::class, 'index'])->name('designer_list');
-    Route::get('buyers', [buyerController::class, 'index'])->name('buyer_list');
+    Route::get('employer', [buyerController::class, 'index'])->name('buyer_list');
 
 
     Route::get('verify_user/{id}', [sellerController::class, 'verify_user'])->name('verify_user');
+    Route::get('dis_verify_user/{id}', [sellerController::class, 'dis_verify_user'])->name('dis_verify_user');
+
+    Route::get('/settings', [webInfoController::class, 'index'])->name('settings');
+    Route::post('/update_web_info', [webInfoController::class, 'update_web_info'])->name('update_web_info');
+    Route::post('/update_web_address', [webInfoController::class, 'update_web_address'])->name('update_web_address');
+
+
+
+
 });
 
 
@@ -418,11 +404,19 @@ Route::group(['middleware' => ['auth', 'isBuyer'], 'prefix' => 'employer/', 'as'
     Route::get('user-account-details', [BuyerAccountController::class, 'profile'])->name('profile');
     Route::get('post-project', [ProjectController::class, 'project_page'])->name('post-project');
     Route::post('post-project', [ProjectController::class, 'add'])->name('add-post-project');
+
     Route::get('manage-projects', [ProjectController::class, 'index'])->name('manage-projects');
+    Route::get('ongoing-projects', [ProjectController::class, 'ongoing_projects'])->name('ongoing-projects');
+
+
+
     Route::get('project-details/{id}', [ProjectController::class, 'project_details'])->name('project-details');
     Route::get('project-proposals/{id}', [ProjectController::class, 'project_proposals'])->name('project-proposals');
     Route::post('hire_designer/{id}', [ProjectController::class, 'hire_designer'])->name('hire_designer');
     Route::post('profile-update', [BuyerAccountController::class, 'update'])->name('profile-update');
+
+
+    Route::get('set_fav/{id}', [BuyerAccountController::class, 'set_fav'])->name('set_fav');
 
     Route::get('favourites', function () {
         return view('favourites');
@@ -447,6 +441,18 @@ Route::group(['middleware' => ['auth', 'isBuyer'], 'prefix' => 'employer/', 'as'
     Route::get('chats', function () {
         return view('chats');
     })->name('chats');
+
+    Route::get('deposit-funds', function () {
+        return view('deposit-funds');
+    })->name('deposit-funds');
+
+    Route::get('withdraw-money', function () {
+        return view('withdraw-money');
+    })->name('withdraw-money');
+
+    Route::get('transaction-history', function () {
+        return view('transaction-history');
+    })->name('transaction-history');
 });
 
 
@@ -469,9 +475,7 @@ Route::group(['middleware' => ['auth', 'isBuyer'], 'prefix' => 'employer/', 'as'
 //seller  Middleware r2
 Route::group(['middleware' => ['auth', 'isSeller'],  'prefix' => 'designer/', 'as' => 'designer.'], function () {
 
-    Route::get('dashboard', function () {
-        return view('freelancer-dashboard');
-    })->name('dashboard');
+    Route::get('dashboard', [AccountController::class, 'dashboard'])->name('dashboard');
 
     Route::get('profile', function () {
         return view('freelancer-profile');
@@ -487,9 +491,36 @@ Route::group(['middleware' => ['auth', 'isSeller'],  'prefix' => 'designer/', 'a
 
     Route::post('profile-update', [AccountController::class, 'update'])->name('profile-update');
     Route::get('projects', [SellerProjectController::class, 'index'])->name('projects');
-    Route::get('proposal', [SellerProjectController::class, 'proposal'])->name('proposals');
+
     Route::post('submit_proposal/{id}', [SellerProjectController::class, 'submit_proposal'])->name('submit_proposal');
     Route::get('designer-project-details/{id}', [HomePageController::class, 'seller_project_details'])->name('project-details');
     Route::get('freelancer-portfolio', [AccountController::class, 'portfolio'])->name('freelancer-portfolio');
     Route::post('add_portfolio', [AccountController::class, 'add_portfolio'])->name('add_portfolio');
+
+    Route::get('delete_proposal/{id}', [SellerProjectController::class, 'delete_proposal'])->name('delete_proposal');
+
+    Route::get('proposal', [SellerProjectController::class, 'proposal'])->name('proposals');
+    Route::get('ongoing_projects', [SellerProjectController::class, 'ongoing_projects'])->name('ongoing_projects');
+    Route::get('completed_projects', [SellerProjectController::class, 'completed_projects'])->name('completed_projects');
+    Route::get('cancelled_projects', [SellerProjectController::class, 'cancelled_projects'])->name('cancelled_projects');
+
+
+    Route::get('ongoing_project/{id}', [SellerProjectController::class, 'ongoing_project_details'])->name('ongoing_project_details');
+    Route::get('submit_project/{id}', [SellerProjectController::class, 'submit_project'])->name('submit_project');
+
+    Route::get('withdraw-payment', function () {
+        return view('freelancer-withdraw-money');
+    })->name('withdraw_payment');
+
+    Route::get('chats', function () {
+        return view('freelancer-chats');
+    })->name('chats');
+
+    Route::get('review', [SellerProjectController::class, 'review'])->name('review');
+
+    Route::get('favourites', function () {
+        return view('freelancer-favourites');
+    })->name('favourites');
+
+
 });

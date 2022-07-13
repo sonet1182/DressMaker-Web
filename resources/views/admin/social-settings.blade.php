@@ -9,14 +9,14 @@
 							<div class="col-sm-6">
 								<h3 class="page-title">Settings</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index_admin">Home</a></li>
+									<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
 									<li class="breadcrumb-item"><a href="settings">Settings</a></li>
 									<li class="breadcrumb-item active">Social Settings</li>
 								</ul>
 							</div>
 						</div>
 					</div>
-				
+
 					<div class="row">
 						<div class="col-lg-12">
 
@@ -143,7 +143,7 @@
 									</div>
 								</div>
 							</div>
-							
+
 						</div>
 					</div>
 				</div>

@@ -4,7 +4,7 @@
 	<!-- Page Wrapper -->
             <div class="page-wrapper">
                 <div class="content container-fluid">
-				
+
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row align-items-center">
@@ -25,8 +25,8 @@
 								<div class="col-md-4 d-flex">
 									<div class="card wizard-card flex-fill">
 										<div class="card-body">
-											<p class="text-primary mt-0 mb-2">Users</p>
-											<h5>1682</h5>
+											<p class="text-primary mt-0 mb-2">Designer</p>
+											<h5>{{ number_format($designer) }}</h5>
 											<p><a href="users">view details</a></p>
 											<span class="dash-widget-icon bg-1">
 												<i class="fas fa-users"></i>
@@ -37,10 +37,10 @@
 								<div class="col-md-4 d-flex">
 									<div class="card wizard-card flex-fill">
 										<div class="card-body">
-											<p class="text-primary mt-0 mb-2">Completed Projects</p>
-											<h5>15k</h5>
+											<p class="text-primary mt-0 mb-2">Employer</p>
+											<h5>{{ number_format($employer) }}</h5>
 											<p><a href="projects">view details</a></p>
-											
+
 											<span class="dash-widget-icon bg-1">
 												<i class="fas fa-th-large"></i>
 											</span>
@@ -51,9 +51,9 @@
 									<div class="card wizard-card flex-fill">
 										<div class="card-body">
 											<p class="text-primary mt-0 mb-2">Active Projects</p>
-											<h5>1568</h5>
+											<h5>{{ number_format($project) }}</h5>
 											<p><a href="projects">view details</a></p>
-											
+
 											<span class="dash-widget-icon bg-1">
 												<i class="fas fa-bezier-curve"></i>
 											</span>
@@ -74,7 +74,7 @@
 									</div>
 								</div>
 							</div>
-						</div>	
+						</div>
 						<div class="col-md-4 d-flex">
 							<div class="card w-100">
 								<div class="card-body pt-0">
@@ -116,7 +116,7 @@
 														<td class="text-nowrap">Pixel Inc Ltd</td>
 														<td>$750</td>
 														<td class="text-end">
-															<a href="javascript:void(0);" class="btn btn-sm btn-success me-2"><i class="far fa-edit"></i></a> 
+															<a href="javascript:void(0);" class="btn btn-sm btn-success me-2"><i class="far fa-edit"></i></a>
 															<a href="javascript:void(0);" class="btn btn-sm btn-danger me-2"><i class="far fa-trash-alt"></i></a>
 														</td>
 													</tr>
@@ -134,7 +134,7 @@
 														<td class="text-nowrap">Gerald K Myers</td>
 														<td>$3000</td>
 														<td class="text-end">
-															<a href="javascript:void(0);" class="btn btn-sm btn-success me-2"><i class="far fa-edit"></i></a> 
+															<a href="javascript:void(0);" class="btn btn-sm btn-success me-2"><i class="far fa-edit"></i></a>
 															<a href="javascript:void(0);" class="btn btn-sm btn-danger me-2"><i class="far fa-trash-alt"></i></a>
 														</td>
 													</tr>
@@ -142,7 +142,7 @@
 														<td class="text-nowrap">Marcin Kowalski</td>
 														<td>$895</td>
 														<td class="text-end">
-															<a href="javascript:void(0);" class="btn btn-sm btn-success me-2"><i class="far fa-edit"></i></a> 
+															<a href="javascript:void(0);" class="btn btn-sm btn-success me-2"><i class="far fa-edit"></i></a>
 															<a href="javascript:void(0);" class="btn btn-sm btn-danger me-2"><i class="far fa-trash-alt"></i></a>
 														</td>
 													</tr>
@@ -152,9 +152,9 @@
 									</div>
 								</div>
 							</div>
-						</div>			
+						</div>
 					</div>
-					<div class="row">
+					{{-- <div class="row">
 						<div class="col-lg-12">
 							<div class="card bg-white projects-card">
 								<div class="card-body pt-0">
@@ -186,10 +186,10 @@
 													<thead>
 														<tr>
 															<th></th>
-															<th>Profile</th>	
-															<th>Designation</th>	
-															<th>comments</th>	
-															<th>Stars</th>	
+															<th>Profile</th>
+															<th>Designation</th>
+															<th>comments</th>
+															<th>Stars</th>
 															<th>Category</th>
 															<th class="text-end">Actions</th>
 														</tr>
@@ -227,7 +227,7 @@
 															<td>
 																Angular
 															</td>
-															
+
 															<td class="text-end text-nowrap">
 																<a href="javascript:void(0);" class=" btn btn-approve text-white me-2">Approve</a>
 																<a href="javascript:void(0);" class="btn btn-disable">Enable</a>
@@ -265,7 +265,7 @@
 															<td>
 																Node
 															</td>
-															
+
 															<td class="text-end text-nowrap">
 																<a href="javascript:void(0);" class=" btn btn-approve text-white me-2">Approve</a>
 																<a href="javascript:void(0);" class="btn btn-disable">Enable</a>
@@ -567,7 +567,7 @@
 																<a href="javascript:void(0);" class="btn btn-disable">Enable</a>
 															</td>
 														</tr>
-													
+
 													</tbody>
 												</table>
 											</div>
@@ -579,9 +579,9 @@
 														<tr>
 															<th></th>
 															<th>Profile</th>
-															<th>Designation</th>	
-															<th>comments</th>	
-															<th>Stars</th>	
+															<th>Designation</th>
+															<th>comments</th>
+															<th>Stars</th>
 															<th>Category</th>
 															<th class="text-end">Actions</th>
 														</tr>
@@ -804,7 +804,7 @@
 															<td>
 																Angular
 															</td>
-															
+
 															<td class="text-end text-nowrap">
 																<a href="javascript:void(0);" class=" btn btn-approve text-white me-2">Approve</a>
 																<a href="javascript:void(0);" class="btn btn-disable">Enable</a>
@@ -842,7 +842,7 @@
 															<td>
 																Node
 															</td>
-															
+
 															<td class="text-end text-nowrap">
 																<a href="javascript:void(0);" class=" btn btn-approve text-white me-2">Approve</a>
 																<a href="javascript:void(0);" class="btn btn-disable">Enable</a>
@@ -884,7 +884,7 @@
 																<a href="javascript:void(0);" class=" btn btn-approve text-white me-2">Approve</a>
 																<a href="javascript:void(0);" class="btn btn-disable">Enable</a>
 															</td>
-														</tr>											
+														</tr>
 													</tbody>
 												</table>
 											</div>
@@ -895,10 +895,10 @@
 													<thead>
 														<tr>
 															<th></th>
-															<th>Profile</th>	
-															<th>Designation</th>	
-															<th>comments</th>	
-															<th>Stars</th>	
+															<th>Profile</th>
+															<th>Designation</th>
+															<th>comments</th>
+															<th>Stars</th>
 															<th>Category</th>
 															<th class="text-end">Actions</th>
 														</tr>
@@ -973,7 +973,7 @@
 															<td>
 																Angular
 															</td>
-															
+
 															<td class="text-end text-nowrap">
 																<a href="javascript:void(0);" class=" btn btn-approve text-white me-2">Approve</a>
 																<a href="javascript:void(0);" class="btn btn-disable">Enable</a>
@@ -1011,7 +1011,7 @@
 															<td>
 																Node
 															</td>
-															
+
 															<td class="text-end text-nowrap">
 																<a href="javascript:void(0);" class=" btn btn-approve text-white me-2">Approve</a>
 																<a href="javascript:void(0);" class="btn btn-disable">Enable</a>
@@ -1276,7 +1276,7 @@
 																<a href="javascript:void(0);" class="btn btn-disable">Enable</a>
 															</td>
 														</tr>
-													
+
 													</tbody>
 												</table>
 											</div>
@@ -1288,9 +1288,9 @@
 														<tr>
 															<th></th>
 															<th>Profile</th>
-															<th>Designation</th>	
-															<th>comments</th>	
-															<th>Stars</th>	
+															<th>Designation</th>
+															<th>comments</th>
+															<th>Stars</th>
 															<th>Category</th>
 															<th class="text-end">Actions</th>
 														</tr>
@@ -1303,10 +1303,10 @@
 							</div>
 						</div>
 
-					</div>
+					</div> --}}
 				</div>
 			<!-- /Page Wrapper -->
-		
+
         	</div>
 		<!-- /Main Wrapper -->
 		</div>

@@ -6,10 +6,10 @@
 
 				<!-- Logo -->
 				<div class="header-left">
-					<a href="{{ route('home') }}" class="logo">
+					<a href="{{ route('admin.dashboard') }}" class="logo">
 						<img src="{{ asset("/assets/img/logo.png") }}" alt="Logo">
 					</a>
-					<a href="{{ route('home') }}" class="logo logo-small">
+					<a href="{{ route('admin.dashboard') }}" class="logo logo-small">
 						<img src="{{ asset("/assets/img/logo.png") }}" alt="Logo" width="30" height="30">
 					</a>
 					<!-- Sidebar Toggle -->
@@ -37,6 +37,13 @@
 
 				<!-- Header Menu -->
 				<ul class="nav user-menu">
+
+                    <li class="nav-item dropdown">
+						<a href="{{ url('/') }}" class="nav-link">
+							<i class="feather-home"></i>
+						</a>
+
+					</li>
 
 					<!-- Notifications -->
 					<li class="nav-item dropdown">
@@ -134,8 +141,8 @@
 							</span>
 						</a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item" href="profile"><i data-feather="user" class="me-1"></i> Profile</a>
-							<a class="dropdown-item" href="settings"><i data-feather="settings" class="me-1"></i> Settings</a>
+							{{-- <a class="dropdown-item" href="profile"><i data-feather="user" class="me-1"></i> Profile</a> --}}
+							<a class="dropdown-item" href="{{ route('admin.settings') }}"><i data-feather="settings" class="me-1"></i> Settings</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

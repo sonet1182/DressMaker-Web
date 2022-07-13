@@ -28,7 +28,7 @@
 										<div class="dash-widget">
 											<div class="dash-info">
 												<div class="dash-widget-info">Ongoing Projects</div>
-												<div class="dash-widget-count">5</div>
+												<div class="dash-widget-count">{{ $total_ongoing_project_number }}</div>
 											</div>
 											<div class="dash-widget-more">
 												<a href="ongoing-projects" class="d-flex">View Details <i class="fas fa-arrow-right ms-auto"></i></a>
@@ -104,7 +104,7 @@
 								<!-- /Chart Content -->
 
 								<!-- Past Earnings -->
-								<div class="row">
+								{{-- <div class="row">
 									<div class="col-md-12">
 										<div class="card card-table">
 											<div class="card-header">
@@ -183,10 +183,10 @@
 											</div>
 										</div>
 									</div>
-								</div>
+								</div> --}}
 								<!-- /Past Earnings -->
 
-								<div class="row">
+								{{-- <div class="row">
 									<!-- Plan  Details-->
 									<div class="col-xl-6 d-flex">
 										<div class="card flex-fill">
@@ -242,7 +242,7 @@
 														<h5 class="card-title">Notifications</h5>
 													</div>
 													<div class="col-auto">
-														<a href="freelancer-ongoing-projects" class="btn-right btn btn-sm fund-btn">
+														<a href="{{ route('designer.ongoing_projects') }}" class="btn-right btn btn-sm fund-btn">
 															View All
 														</a>
 													</div>
@@ -273,7 +273,7 @@
 										</div>
 									</div>
 									<!-- /Notifications -->
-								</div>
+								</div> --}}
 
 							</div>
 						</div>

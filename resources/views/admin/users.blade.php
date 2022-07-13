@@ -11,18 +11,18 @@
 							<div class="col">
 								<h3 class="page-title">Designers</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index_admin">Home</a></li>
+									<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
 
 									<li class="breadcrumb-item active">Designers</li>
 								</ul>
 							</div>
 							<div class="col-auto">
-								<a href="#" class="btn add-button me-2" data-bs-toggle="modal" data-bs-target="#add-category">
+								{{-- <a href="#" class="btn add-button me-2" data-bs-toggle="modal" data-bs-target="#add-category">
 									<i class="fas fa-plus"></i>
 								</a>
 								<a class="btn filter-btn" href="javascript:void(0);" id="filter_search">
 									<i class="fas fa-filter"></i>
-								</a>
+								</a> --}}
 							</div>
 						</div>
 					</div>
@@ -73,8 +73,8 @@
 													<th></th>
 													<th>Image</th>
 													<th>Email</th>
-													<th>Expertise</th>
-													<th>Joined date</th>
+													<th>Status</th>
+													<th>Joined At</th>
 													<th class="text-end">Actions</th>
 												</tr>
 											</thead>
@@ -99,18 +99,29 @@
 													</td>
 													<td>{{ $user->email }}</td>
 													<td>
-                                                        @if($user->verified == 1)
-                                                            <span class="badge badge-pill badge-success">Verified</span>
+                                                        @if($user->verify == 1)
+                                                        <a  class="badge badge-pill badge-success">Verified</a>
                                                         @else
-														    <span class="badge badge-pill badge-danger">Not Verified</span>
+                                                        <a  class="badge badge-pill badge-danger">Not Verified</a>
                                                         @endif
-													</td>
-													<td>{{ $user->created_at->format('d-M-Y') }}</td>
-													<td class="text-end">
-														{{-- <a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a> --}}
-														<a href="{{ route('admin.verify_user'.$user->id) }}" class="btn btn-sm btn-success me-2"><i class="fas fa-check"></i></a>
-														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
-													</td>
+                                                    </td>
+                                                    <td>
+                                                        {{ $user->created_at->format('h:i A | d,M Y') }}
+                                                    </td>
+
+                                                    <td class="text-end">
+
+                                                        @if($user->verify == 1)
+                                                        <a href="{{ url('/admin/dis_verify_user/'.$user->id) }}" class="btn btn-sm btn-danger me-2"><i
+                                                            class="fas fa-times"></i> Reject</a>
+                                                        @else
+                                                        <a href="{{ url('/admin/verify_user/'.$user->id) }}" class="btn btn-sm btn-success me-2"><i
+                                                            class="fas fa-check"></i> Verify</a>
+                                                        @endif
+                                                        {{-- <a href="javascript:void(0);" class="btn btn-sm btn-danger"
+                                                            data-bs-toggle="modal" data-bs-target="#delete_category"><i
+                                                                class="far fa-trash-alt"></i></a> --}}
+                                                    </td>
 												</tr>
 
                                                 @endforeach

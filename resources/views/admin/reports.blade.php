@@ -4,14 +4,14 @@
 	<!-- Page Wrapper -->
             <div class="page-wrapper">
                 <div class="content container-fluid">
-				
+
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row align-items-center">
 							<div class="col-lg-6">
 								<h3 class="page-title">Reports</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index_admin">Home</a></li>
+									<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
 									<li class="breadcrumb-item active">Reports</li>
 								</ul>
 							</div>
@@ -73,12 +73,12 @@
 													<th></th>
 													<th>ID</th>
 													<th>Clinet</th>
-													<th>Type</th>	
-													<th>Invoice No</th>	
-													<th>Transaction Fee</th>	
-													<th>Amount</th>	
-													<th>Status</th>	
-													<th>Date</th>	
+													<th>Type</th>
+													<th>Invoice No</th>
+													<th>Transaction Fee</th>
+													<th>Amount</th>
+													<th>Status</th>
+													<th>Date</th>
 													<th class="text-end">Actions</th>
 												</tr>
 											</thead>
@@ -98,7 +98,7 @@
 													</td>
 													<td>
 														<p class="white-space mb-0">Bank Transfer, Payment Transaction
-															ID - 643351646848	</p>		
+															ID - 643351646848	</p>
 													</td>
 													<td>
 														<a href="view-invoice">INV 0001</a>
@@ -112,7 +112,7 @@
 													</td>
 													<td>2022-05-07 06:56:22</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -131,7 +131,7 @@
 													</td>
 													<td>
 														<p class="white-space mb-0">Bank Transfer, Payment Transaction
-															ID - 643351646848	</p>		
+															ID - 643351646848	</p>
 													</td>
 													<td>
 														<a href="view-invoice">INV 0002</a>
@@ -145,7 +145,7 @@
 													</td>
 													<td>2022-05-07 04:23:22</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -164,7 +164,7 @@
 													</td>
 													<td>
 														<p class="white-space mb-0">Bank Transfer, Payment Transaction
-															ID - 1521541123	</p>		
+															ID - 1521541123	</p>
 													</td>
 													<td>
 														<a href="view-invoice">INV 0003</a>
@@ -178,7 +178,7 @@
 													</td>
 													<td>2022-05-07 05:23:12</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -197,7 +197,7 @@
 													</td>
 													<td>
 														<p class="white-space mb-0">Bank Transfer, Payment Transaction
-															ID - 83233521241	</p>		
+															ID - 83233521241	</p>
 													</td>
 													<td>
 														<a href="view-invoice">INV 0004</a>
@@ -211,7 +211,7 @@
 													</td>
 													<td>2022-05-07 04:20:15</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -230,7 +230,7 @@
 													</td>
 													<td>
 														<p class="white-space mb-0">Bank Transfer, Payment Transaction
-															ID - 747573521241	</p>		
+															ID - 747573521241	</p>
 													</td>
 													<td>
 														<a href="view-invoice">INV 0005</a>
@@ -244,7 +244,7 @@
 													</td>
 													<td>2022-05-07 04:21:15</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -263,7 +263,7 @@
 													</td>
 													<td>
 														<p class="white-space mb-0">Bank Transfer, Payment Transaction
-															ID - 747573521241	</p>		
+															ID - 747573521241	</p>
 													</td>
 													<td>
 														<a href="view-invoice">INV 0006</a>
@@ -277,7 +277,7 @@
 													</td>
 													<td>2022-05-07 04:21:15</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -296,7 +296,7 @@
 													</td>
 													<td>
 														<p class="white-space mb-0">Bank Transfer, Payment Transaction
-															ID - 64343848697060	</p>		
+															ID - 64343848697060	</p>
 													</td>
 													<td>
 														<a href="view-invoice">INV 0007</a>
@@ -310,7 +310,7 @@
 													</td>
 													<td>2022-05-07 04:21:15</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -329,7 +329,7 @@
 													</td>
 													<td>
 														<p class="white-space mb-0">Bank Transfer, Payment Transaction
-															ID - 756756858690	</p>		
+															ID - 756756858690	</p>
 													</td>
 													<td>
 														<a href="view-invoice">INV 0008</a>
@@ -343,7 +343,7 @@
 													</td>
 													<td>2022-05-07 04:21:15</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -362,7 +362,7 @@
 													</td>
 													<td>
 														<p class="white-space mb-0">Bank Transfer, Payment Transaction
-															ID - 76767678234	</p>		
+															ID - 76767678234	</p>
 													</td>
 													<td>
 														<a href="view-invoice">INV 0009</a>
@@ -376,7 +376,7 @@
 													</td>
 													<td>2022-05-07 04:21:15</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -395,7 +395,7 @@
 													</td>
 													<td>
 														<p class="white-space mb-0">Bank Transfer, Payment Transaction
-															ID - 747573533468	</p>		
+															ID - 747573533468	</p>
 													</td>
 													<td>
 														<a href="view-invoice">INV 0010</a>
@@ -409,18 +409,18 @@
 													</td>
 													<td>2022-05-07 04:21:15</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#add-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
-												</tr>											
+												</tr>
 											</tbody>
 										</table>
 									</div>
 								</div>
-							</div>			
+							</div>
 						</div>
-						
-					</div>			
+
+					</div>
 				</div>
 				<!-- /Page Wrapper -->
 			</div>

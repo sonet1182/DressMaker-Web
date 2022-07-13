@@ -15,4 +15,9 @@ class ProjectProposal extends Model
     {
         return $this->belongsTo(User::class, 'seller_id');
     }
+
+    public function project()
+    {
+        return $this->belongsTo(Project::class, 'project_id');
+    }
 }

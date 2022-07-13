@@ -4,16 +4,16 @@
 	<!-- Page Wrapper -->
             <div class="page-wrapper">
                 <div class="content container-fluid">
-				
+
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row align-items-center">
 							<div class="col">
 								<h3 class="page-title">Permission</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index_admin">Home</a></li>
+									<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
 									<li class="breadcrumb-item"><a href="roles">Roles</a></li>
-									
+
 									<li class="breadcrumb-item active">Payments</li>
 								</ul>
 							</div>
@@ -41,7 +41,7 @@
 										<button type="submit" class="btn btn-primary btn-block">Submit</button>
 									</form>
 								</div>
-							</div>			
+							</div>
 						</div>
 						<div class="col-lg-8">
 							<div class="card">
@@ -530,11 +530,11 @@
 												</div>
 											</div>
 										</div>
-										
+
 									</div>
 								</div>
-							</div>			
-						
+							</div>
+
 						</div>
 					</div>
 				</div>

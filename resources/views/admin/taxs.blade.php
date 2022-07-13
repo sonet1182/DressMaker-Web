@@ -4,14 +4,14 @@
 	<!-- Page Wrapper -->
             <div class="page-wrapper">
                 <div class="content container-fluid">
-				
+
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row align-items-center">
 							<div class="col">
 								<h3 class="page-title">Taxes</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index_admin">Home</a></li>
+									<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
 									<li class="breadcrumb-item active">Taxes</li>
 								</ul>
 							</div>
@@ -75,7 +75,7 @@
 											<thead>
 												<tr>
 													<th>Name</th>
-													<th>Percentage (%)</th>	
+													<th>Percentage (%)</th>
 													<th class="text-end">Actions</th>
 												</tr>
 											</thead>
@@ -86,7 +86,7 @@
 													</td>
 													<td>1 %</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -96,47 +96,47 @@
 													</td>
 													<td>1% / 5%</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
-												</tr>												
+												</tr>
 												<tr>
 													<td>
-														Sales Tax 
+														Sales Tax
 													</td>
 													<td>1% </td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
-												</tr>												
+												</tr>
 												<tr>
 													<td>
 														State Government Tax
 													</td>
 													<td>2.5% </td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
-												</tr>												
+												</tr>
 												<tr>
 													<td>
 														Central Government Tax
 													</td>
 													<td>2.5% </td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
-												</tr>											
+												</tr>
 												<tr>
 													<td>
 														Professional Tax
 													</td>
 													<td>2.5% </td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -144,16 +144,16 @@
 										</table>
 									</div>
 								</div>
-							</div>			
+							</div>
 						</div>
-						
-					</div>			
+
+					</div>
 				</div>
 				<!-- /Page Wrapper -->
 			</div>
         </div>
 		<!-- /Main Wrapper -->
-		
+
 		<!-- The Modal -->
 		<div class="modal fade custom-modal" id="add-category">
 		  <div class="modal-dialog modal-dialog-centered">
@@ -185,7 +185,7 @@
 		    </div>
 		  </div>
 		</div>
-		
+
 		<!-- Edit Modal -->
 		<div class="modal fade custom-modal" id="edit-category">
 			<div class="modal-dialog modal-dialog-centered">
@@ -197,10 +197,10 @@
 						<button type="button" class="close" data-bs-dismiss="modal"><span>&times;</span></button>
 					</div>
 					<!-- /Modal Header -->
-					
+
 					<!-- Modal body -->
 					<div class="modal-body">
-						<form>		     		
+						<form>
 							<div class="form-group">
 								<label>Name</label>
 								<input type="text" class="form-control" value="Tax Collected at Source (TCS)">

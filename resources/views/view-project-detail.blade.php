@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row" style="margin-top: 60px">
 
-                @include('buyer.sidebar')
+                @include('seller.layout.sidenav')
 
                 <!-- sidebar -->
                 <!--<div class="col-xl-3 col-md-4 theiaStickySidebar">-->
@@ -62,7 +62,7 @@
                 <!--					</a>-->
                 <!--				</li>-->
                 <!--				<li class="nav-item">-->
-                <!--					<a href="deposit-funds" class="nav-link">-->
+                <!--					<a href="{{ route('employer.deposit-funds') }}" class="nav-link">-->
                 <!--						<i class="material-icons">wifi_tethering</i> Payments-->
                 <!--					</a>-->
                 <!--				</li>-->
@@ -168,6 +168,9 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                @if($project->hired)
+
                                 <div class="col-lg-2 d-flex flex-wrap">
                                     <div class="projects-card flex-fill">
                                         <div class="card-body">
@@ -180,6 +183,10 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                @endif
+
+
                             </div>
                         </div>
                         <!-- /project list -->

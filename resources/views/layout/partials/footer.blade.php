@@ -19,23 +19,26 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-2">
+							<div class="col-lg-3">
 								<div class="footer-widget footer-menu">
 									<h2 class="footer-title">Useful Links</h2>
 									<ul>
 										<li><a href="about">About Us</a></li>
 										<li><a href="blog-list">Blog</a></li>
-										<li><a href="/login">Login</a></li>
+                                        @guest
+                                        <li><a href="/login">Login</a></li>
 										<li><a href="/register">Register</a></li>
+                                        @endguest
+
 										<li><a href="forgot-password">Forgot Password</a></li>
 									</ul>
 								</div>
 							</div>
-							<div class="col-lg-2">
+							<div class="col-lg-3">
 								<div class="footer-widget footer-menu">
 									<h2 class="footer-title">Help & Support</h2>
 									<ul>
-										<li><a href="chats">Chat</a></li>
+										{{-- <li><a href="chats">Chat</a></li> --}}
 										<li><a href="faq">Faq</a></li>
 										<li><a href="review">Reviews</a></li>
 										<li><a href="privacy-policy">Privacy Policy</a></li>
@@ -43,7 +46,7 @@
 									</ul>
 								</div>
 							</div>
-							<div class="col-lg-2">
+							<div class="col-lg-3">
 								<div class="footer-widget footer-menu">
 									<h2 class="footer-title">Other Links</h2>
 									<ul>
@@ -55,7 +58,7 @@
 									</ul>
 								</div>
 							</div>
-							<div class="col-lg-3">
+							{{-- <div class="col-lg-3">
 								<div class="footer-widget footer-menu">
 									<h2 class="footer-title">Mobile Application</h2>
 									<p>Download our App and get the latest Breaking News Alerts and latest headlines and daily articles near you.</p>
@@ -68,7 +71,7 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> --}}
 						</div>
 					</div>
 				</div>

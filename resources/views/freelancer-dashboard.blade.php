@@ -17,22 +17,22 @@
 									<div class="col-md-6 col-lg-4">
 										<div class="dash-widget">
 											<div class="dash-info">
-												<div class="dash-widget-info">Completed Jobs</div>
-												<div class="dash-widget-count">0</div>
+												<div class="dash-widget-info">Hired Tsks</div>
+												<div class="dash-widget-count">{{ $hired->count() }}</div>
 											</div>
 											<div class="dash-widget-more">
-												<a href="freelancer-completed-projects" class="d-flex">View Details <i class="fas fa-arrow-right ms-auto"></i></a>
+												<a href="{{ route('designer.completed_projects') }}" class="d-flex">View Details <i class="fas fa-arrow-right ms-auto"></i></a>
 											</div>
 										</div>
 									</div>
 									<div class="col-md-6 col-lg-4">
 										<div class="dash-widget">
 											<div class="dash-info">
-												<div class="dash-widget-info">Task Completed</div>
-												<div class="dash-widget-count">5</div>
+												<div class="dash-widget-info">Completed Tasks</div>
+												<div class="dash-widget-count">{{ $completed->count() }}</div>
 											</div>
 											<div class="dash-widget-more">
-												<a href="freelancer-completed-projects" class="d-flex">View Details <i class="fas fa-arrow-right ms-auto"></i></a>
+												<a href="{{ route('designer.completed_projects') }}" class="d-flex">View Details <i class="fas fa-arrow-right ms-auto"></i></a>
 											</div>
 										</div>
 									</div>
@@ -40,10 +40,10 @@
 										<div class="dash-widget">
 											<div class="dash-info">
 												<div class="dash-widget-info">Reviews</div>
-												<div class="dash-widget-count">25</div>
+												<div class="dash-widget-count">{{ $reviews }}</div>
 											</div>
 											<div class="dash-widget-more">
-												<a href="freelancer-review" class="d-flex">View Details <i class="fas fa-arrow-right ms-auto"></i></a>
+												<a href="{{ route('designer.review') }}" class="d-flex">View Details <i class="fas fa-arrow-right ms-auto"></i></a>
 											</div>
 										</div>
 									</div>
@@ -86,7 +86,7 @@
 								</div>
 								<!-- /Chart Content -->
 
-								<div class="row">
+								{{-- <div class="row">
 									<!-- Plan  Details-->
 									<div class="col-xl-6 d-flex">
 										<div class="card flex-fill">
@@ -131,7 +131,7 @@
 										<div class="card flex-fill">
 											<div class="pro-head">
 												<h2>Ongoing Projects</h2>
-												<a href="freelancer-ongoing-projects" class="btn fund-btn">View All</a>
+												<a href="{{ route('designer.ongoing_projects') }}" class="btn fund-btn">View All</a>
 											</div>
 											<div class="pro-body p-0">
 												<div class="on-project">
@@ -234,10 +234,10 @@
 										</div>
 									</div>
 									<!-- /Ongoing Projects -->
-								</div>
+								</div> --}}
 
 								<!-- Past Earnings -->
-								<div class="row">
+								{{-- <div class="row">
 									<div class="col-md-12">
 										<div class="card mb-4">
 											<div class="pro-head">
@@ -312,7 +312,7 @@
 											</div>
 										</div>
 									</div>
-								</div>
+								</div> --}}
 								<!-- /Past Earnings -->
 
 							</div>

@@ -21,6 +21,15 @@ class sellerController extends Controller
         $user->verify = 1;
         $user->save();
 
-        return back()->with('status','User Verified Successfully');
+        return back()->with('status','User Status Updated Successfully');
+    }
+
+    public function dis_verify_user($id)
+    {
+        $user = User::find($id);
+        $user->verify = 0;
+        $user->save();
+
+        return back()->with('status','User Status Updated Successfully');
     }
 }

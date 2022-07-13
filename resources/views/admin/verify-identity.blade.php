@@ -4,14 +4,14 @@
 	<!-- Page Wrapper -->
             <div class="page-wrapper">
                 <div class="content container-fluid">
-				
+
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row align-items-center">
 							<div class="col">
 								<h3 class="page-title">Verify Identity Details</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index_admin">Home</a></li>
+									<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
 									<li class="breadcrumb-item active">Verify Identity Details</li>
 								</ul>
 							</div>
@@ -44,9 +44,9 @@
 																<tr>
 																	<th>No</th>
 																	<th>Name</th>
-																	<th>Contact Number</th>	
-																	<th>CNIC / Passport / NIN / SSN</th>	
-																	<th>Document</th>	
+																	<th>Contact Number</th>
+																	<th>CNIC / Passport / NIN / SSN</th>
+																	<th>Document</th>
 																	<th>Address</th>
 																	<th>Action</th>
 																</tr>
@@ -67,7 +67,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>	
+																</tr>
 																<tr>
 																	<td>2</td>
 																	<td>Angeline S Cutshaw</td>
@@ -83,7 +83,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>		
+																</tr>
 																<tr>
 																	<td>3</td>
 																	<td>Robert J Sullivan</td>
@@ -99,7 +99,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>		
+																</tr>
 																<tr>
 																	<td>4</td>
 																	<td>Crystal Kemper</td>
@@ -115,7 +115,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>			
+																</tr>
 																<tr>
 																	<td>5</td>
 																	<td>Andrew Glover</td>
@@ -131,7 +131,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>			
+																</tr>
 																<tr>
 																	<td>6</td>
 																	<td>Jacqueline Daye</td>
@@ -147,7 +147,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>			
+																</tr>
 																<tr>
 																	<td>7</td>
 																	<td>Tony Ingle</td>
@@ -163,7 +163,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>				
+																</tr>
 																<tr>
 																	<td>8</td>
 																	<td>Albert Boone</td>
@@ -179,7 +179,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>				
+																</tr>
 																<tr>
 																	<td>9</td>
 																	<td>Kathleen Kaiser</td>
@@ -195,7 +195,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>				
+																</tr>
 																<tr>
 																	<td>10</td>
 																	<td>Mickey Bernier</td>
@@ -211,7 +211,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>																		
+																</tr>
 															</tbody>
 														</table>
 													</div>
@@ -227,9 +227,9 @@
 																<tr>
 																	<th>No</th>
 																	<th>Name</th>
-																	<th>Contact Number</th>	
-																	<th>CNIC / Passport / NIN / SSN</th>	
-																	<th>Document</th>	
+																	<th>Contact Number</th>
+																	<th>CNIC / Passport / NIN / SSN</th>
+																	<th>Document</th>
 																	<th>Address</th>
 																	<th>Action</th>
 																</tr>
@@ -250,7 +250,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>	
+																</tr>
 																<tr>
 																	<td>2</td>
 																	<td>Cutshaw Emiley</td>
@@ -266,7 +266,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>		
+																</tr>
 																<tr>
 																	<td>3</td>
 																	<td>Nick John</td>
@@ -282,7 +282,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>			
+																</tr>
 																<tr>
 																	<td>4</td>
 																	<td>Floyd Lewis</td>
@@ -298,7 +298,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>		
+																</tr>
 																<tr>
 																	<td>5</td>
 																	<td>Santra Leodhapher</td>
@@ -314,7 +314,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>			
+																</tr>
 																<tr>
 																	<td>6</td>
 																	<td>James Douglas</td>
@@ -330,7 +330,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>			
+																</tr>
 																<tr>
 																	<td>7</td>
 																	<td>John Smith</td>
@@ -346,7 +346,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>			
+																</tr>
 																<tr>
 																	<td>8</td>
 																	<td>Robert Leodhapher</td>
@@ -362,7 +362,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>				
+																</tr>
 																<tr>
 																	<td>9</td>
 																	<td>Will Smith</td>
@@ -378,7 +378,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>				
+																</tr>
 																<tr>
 																	<td>10</td>
 																	<td>Reboah Daniel</td>
@@ -394,7 +394,7 @@
 																		<a href="#" class="btn btn-success btn-disable">Approve</a>
 																		<a href="#" class="btn btn-disable">Reject</a>
 																	</td>
-																</tr>																	
+																</tr>
 															</tbody>
 														</table>
 													</div>
@@ -403,8 +403,8 @@
 										</div>
 									</div>
 								</div>
-							</div>		
-						</div>			
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

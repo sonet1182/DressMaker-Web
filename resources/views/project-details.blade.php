@@ -144,7 +144,7 @@
                         <div class="pro-post widget-box">
                             <h3 class="pro-title">Description</h3>
                             <div class="pro-content">
-                                {{ $project->description }}
+                                {!! $project->description !!}
                             </div>
                         </div>
                         <!-- /Senior Animator  -->

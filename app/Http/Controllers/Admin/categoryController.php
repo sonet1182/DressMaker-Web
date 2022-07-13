@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Country;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Laravel\Ui\Presets\React;
 
@@ -87,6 +88,22 @@ class categoryController extends Controller
     {
         $country = new Country();
         $country->name = $req->input('name');
+
+        if($req->hasfile('image'))
+        {
+            $destination = $country->photo;
+            if(File::exists($destination))
+            {
+                File::delete($destination);
+            }
+            $file = $req->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time(). '.' . $extension;
+            $file->move('uploads/images/country/', $filename);
+
+            $country->image = 'uploads/images/country/'.$filename;
+        }
+
         $country->save();
 
         return redirect()->back()->with('status','New Category Added Successfully!');
@@ -96,6 +113,23 @@ class categoryController extends Controller
     {
         $country = Country::find($id);
         $country->name = $req->input('name');
+
+        if($req->hasfile('image'))
+        {
+            $destination = $country->photo;
+            if(File::exists($destination))
+            {
+                File::delete($destination);
+            }
+            $file = $req->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time(). '.' . $extension;
+            $file->move('uploads/images/country/', $filename);
+
+            $country->image = 'uploads/images/country/'.$filename;
+        }
+
+
         $country->update();
 
         return redirect()->back()->with('status','Country Updated Successfully!');

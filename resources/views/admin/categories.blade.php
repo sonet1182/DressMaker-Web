@@ -11,7 +11,7 @@
                     <div class="col">
                         <h3 class="page-title">Categories</h3>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index_admin">Home</a>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a>
                             </li>
                             <li class="breadcrumb-item active">Categories</li>
                         </ul>

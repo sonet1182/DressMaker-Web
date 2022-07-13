@@ -159,14 +159,23 @@
 														<a href="#" class="btn fund-btn skill-add">Add More</a>
 													</div>
 													<div class="pro-body skill-info">
-														{{-- <div class="form-row align-items-center skill-cont">
-															<div class="form-group col-md-10">
-																<input type="text" class="form-control" value="Front End Developer">
-															</div>
-															<div class="form-group col-md-2">
-																<a href="#" class="btn trash-icon"><i class="far fa-trash-alt"></i></a>
-															</div>
-														</div> --}}
+
+                                                        @if(Auth::user()->seller && Auth::user()->seller->skills)
+
+                                                            @foreach (json_decode(Auth::user()->seller->skills) as $skill)
+
+                                                            <div class="form-row align-items-center skill-cont">
+                                                                <div class="form-group col-md-10">
+                                                                    <input type="text" name="skills[]" class="form-control" value="{{ $skill }}">
+                                                                </div>
+                                                                <div class="form-group col-md-2">
+                                                                    <a href="#" class="btn trash-icon"><i class="far fa-trash-alt"></i></a>
+                                                                </div>
+                                                            </div>
+
+                                                            @endforeach
+
+                                                        @endif
 
 
 													</div>
@@ -180,48 +189,23 @@
 														<a href="#" class="btn fund-btn add-award">Add More</a>
 													</div>
 													<div class="pro-body  award-info">
-														<div class="form-row align-items-center award-cont">
-															<div class="form-group col-md-2">
-																<img alt="profile image" src="/assets/img/img.jpg" class="avatar-medium">
-															</div>
-															<div class="form-group col-md-5">
-																<input type="text" class="form-control" value="Best Game Designer">
-															</div>
-															<div class="form-group col-md-3">
-																<input type="text" class="form-control datetimepicker" value="05/10/2020">
-															</div>
-															<div class="form-group col-md-2">
-																<a href="#" class="btn trash-icon"><i class="far fa-trash-alt"></i></a>
-															</div>
-														</div>
-														<div class="form-row align-items-center award-cont">
-															<div class="form-group col-md-2">
-																<img alt="profile image" src="/assets/img/img.jpg" class="avatar-medium">
-															</div>
-															<div class="form-group col-md-5">
-																<input type="text" class="form-control" value="Best Game Designer">
-															</div>
-															<div class="form-group col-md-3">
-																<input type="text" class="form-control datetimepicker" value="05/10/2020">
-															</div>
-															<div class="form-group col-md-2">
-																<a href="#" class="btn trash-icon"><i class="far fa-trash-alt"></i></a>
-															</div>
-														</div>
-														<div class="form-row align-items-center award-cont">
-															<div class="form-group col-md-2">
-																<img alt="profile image" src="/assets/img/img.jpg" class="avatar-medium">
-															</div>
-															<div class="form-group col-md-5">
-																<input type="text" class="form-control" value="Best Game Designer">
-															</div>
-															<div class="form-group col-md-3">
-																<input type="text" class="form-control datetimepicker" value="05/10/2020">
-															</div>
-															<div class="form-group col-md-2">
-																<a href="#" class="btn trash-icon"><i class="far fa-trash-alt"></i></a>
-															</div>
-														</div>
+
+                                                        @if(Auth::user()->seller && Auth::user()->seller->awards)
+
+                                                            @foreach (json_decode(Auth::user()->seller->awards) as $award)
+                                                            <div class="form-row align-items-center award-cont">
+                                                                <div class="form-group col-md-10">
+                                                                    <input type="text" name="awards[]" class="form-control" value="{{ $award }}">
+                                                                </div>
+
+                                                                <div class="form-group col-md-2">
+                                                                    <a href="#" class="btn trash-icon"><i class="far fa-trash-alt"></i></a>
+                                                                </div>
+                                                            </div>
+                                                            @endforeach
+
+                                                        @endif
+
 													</div>
 												</div>
 
@@ -231,45 +215,28 @@
 														<a href="#" class="btn fund-btn add-lang">Add More</a>
 													</div>
 													<div class="pro-body  lang-info">
-														<div class="form-row align-items-center lang-cont">
-															<div class="form-group col-md-7">
-																<input type="text" class="form-control" value="English">
-															</div>
-															<div class="form-group col-md-3">
-																<input type="text" class="form-control" value="100">
-															</div>
-															<div class="form-group col-md-2">
-																<a href="#" class="btn trash-icon"><i class="far fa-trash-alt"></i></a>
-															</div>
-														</div>
-														<div class="form-row align-items-center lang-cont">
-															<div class="form-group col-md-7">
-																<input type="text" class="form-control" value="Russian">
-															</div>
-															<div class="form-group col-md-3">
-																<input type="text" class="form-control" value="90">
-															</div>
-															<div class="form-group col-md-2">
-																<a href="#" class="btn trash-icon"><i class="far fa-trash-alt"></i></a>
-															</div>
-														</div>
-														<div class="form-row align-items-center lang-cont">
-															<div class="form-group col-md-7">
-																<input type="text" class="form-control" value="Germany">
-															</div>
-															<div class="form-group col-md-3">
-																<input type="text" class="form-control" value="90">
-															</div>
-															<div class="form-group col-md-2">
-																<a href="#" class="btn trash-icon"><i class="far fa-trash-alt"></i></a>
-															</div>
-														</div>
+
+                                                        @if(Auth::user()->seller && Auth::user()->seller->languages)
+
+                                                            @foreach (json_decode(Auth::user()->seller->languages) as $language)
+                                                                <div class="form-row align-items-center lang-cont">
+                                                                    <div class="form-group col-md-7">
+                                                                        <input type="text" name="languages[]" class="form-control" value="{{ $language }}">
+                                                                    </div>
+                                                                    <div class="form-group col-md-2">
+                                                                        <a href="#" class="btn trash-icon"><i class="far fa-trash-alt"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
+
+                                                        @endif
+
 													</div>
 												</div>
 											</div>
 										</div>
 
-										<div class="card">
+										{{-- <div class="card">
 											<div class="pro-head">
 												<h3 class="pro-title without-border mb-0">Experience</h3>
 												<a href="#" class="btn fund-btn add-exp">Add More</a>
@@ -302,6 +269,22 @@
 														<div class="form-group col-md-12">
 															<label>Summary</label>
 															<textarea class="form-control" rows="5"></textarea>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div> --}}
+
+                                        <div class="card">
+											<div class="pro-head">
+												<h3 class="pro-title without-border mb-0">Experience</h3>
+											</div>
+											<div class="pro-body">
+												<div class="exp-info">
+													<div class="row exp-cont">
+														<div class="form-group col-md-6">
+															<label>Years of Experience:</label>
+															<input type="number" name="experience" value="{{ Auth::user()->seller->experience ?? '' }}" class="form-control">
 														</div>
 													</div>
 												</div>

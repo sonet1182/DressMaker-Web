@@ -5,12 +5,19 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row" style="margin-top: 60px">
+
+                @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
                 <div class="col-xl-3 col-md-4 theiaStickySidebar">
                     @include('seller.layout.sidenav')
                 </div>
                 <div class="col-xl-9 col-md-8">
                     <div class="page-title">
-                        <h3>Proposals</h3>
+                        <h3>Manage Projects</h3>
                     </div>
                     <nav class="user-tabs mb-4">
                         <ul class="nav nav-tabs nav-tabs-bottom nav-justified">
@@ -18,13 +25,13 @@
                                 <a class="nav-link active" href="{{ route('designer.projects') }}">My Proposals</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="freelancer-ongoing-projects">Ongoing Projects</a>
+                                <a class="nav-link" href="{{ route('designer.ongoing_projects') }}">Ongoing Projects</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="freelancer-completed-projects">Completed Projects</a>
+                                <a class="nav-link" href="{{ route('designer.completed_projects') }}">Completed Projects</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="freelancer-cancelled-projects">Cancelled Projects</a>
+                                <a class="nav-link" href="{{ route('designer.cancelled_projects') }}">Cancelled Projects</a>
                             </li>
                         </ul>
                     </nav>
@@ -51,12 +58,12 @@
                                                 </div>
                                                 <div class="proposal-client">
                                                     <h4 class="title-info">Client Price</h4>
-                                                    <h2 class="client-price">${{ number_format($project->price, 2) }}</h2>
+                                                    <h2 class="client-price">${{ $project->project ? number_format($project->project->price, 2) : '' }}</h2>
                                                     {{-- <span class="price-type">( {{ $project->pricing_type ? $project->pricing_type->name : '' }} )</span> --}}
                                                 </div>
                                                 <div class="proposal-type">
                                                     <h4 class="title-info">Job Type</h4>
-                                                    <h3>{{ $project->pricing_type ? $project->pricing_type->name : '' }}</h3>
+                                                    <h3>{{ $project->project->pricing_type->name }}</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -64,16 +71,16 @@
                                             <div class="content-divider-1"></div>
                                             <div class="projects-amount">
                                                 <p>Your Price</p>
-                                                <h3>$500.00</h3>
+                                                <h3>${{ number_format($project->budget, 2) }}</h3>
 
                                             </div>
                                             <div class="content-divider-1"></div>
                                             <div class="projects-action text-center">
-                                                <a data-bs-toggle="modal" href="#file" class="projects-btn">Edit Proposals
-                                                </a>
-                                                <a href="freelancer-view-project-detail.html" class="projects-btn">View
+
+                                                <a href="{{ route('designer.project-details',$project->project_id) }}" class="projects-btn">View
                                                     Project</a>
-                                                <a href="#" class="proposal-delete">Delete Proposal</a>
+                                                <a  href="{{ route('designer.delete_proposal',$project->id) }}"" class="btn btn-outline-danger">Delete Proposals
+                                                    </a>
                                             </div>
                                         </div>
                                     </div>

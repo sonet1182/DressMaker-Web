@@ -62,7 +62,7 @@
 											</a>
 										</li>
 										<li class="nav-item">
-											<a href="deposit-funds" class="nav-link">
+											<a href="{{ route('employer.deposit-funds') }}" class="nav-link">
 												<i class="material-icons">wifi_tethering</i> Payments
 											</a>
 										</li>

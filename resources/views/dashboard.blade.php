@@ -62,7 +62,7 @@
 											</a>
 										</li>
 										<li class="nav-item">
-											<a href="deposit-funds" class="nav-link">
+											<a href="{{ route('employer.deposit-funds') }}" class="nav-link">
 												<i class="material-icons">wifi_tethering</i> Payments
 											</a>
 										</li>
@@ -314,7 +314,7 @@
 														<h5 class="card-title">Notifications</h5>
 													</div>
 													<div class="col-auto">
-														<a href="freelancer-ongoing-projects" class="btn-right btn btn-sm fund-btn">
+														<a href="{{ route('designer.ongoing_projects') }}" class="btn-right btn btn-sm fund-btn">
 															View All
 														</a>
 													</div>

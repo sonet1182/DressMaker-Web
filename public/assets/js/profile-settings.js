@@ -138,16 +138,8 @@ Version      : 1.0
     $(".add-award").on('click', function () {
 
 		var awardcontent = '<div class="form-row align-items-center award-cont">' +
-			'<div class="form-group col-md-2">' +
-				'<label class="award-upload image-upbtn">' +
-				'<i class="fas fa-plus"></i> <input type="file">' +
-				'</label>' +
-			'</div>' +
-			'<div class="form-group col-md-5">' +
-				'<input type="text" class="form-control">' +
-			'</div>' +
-			'<div class="form-group col-md-3">' +
-				'<input type="text" class="form-control datetimepicker">' +
+			'<div class="form-group col-md-10">' +
+				'<input type="text" class="form-control" name="awards[]">' +
 			'</div>' +
 			'<div class="form-group col-md-2"><a href="#" class="btn trash-icon"><i class="far fa-trash-alt"></i></a></div>' +
 		'</div>';
@@ -166,11 +158,8 @@ Version      : 1.0
     $(".add-lang").on('click', function () {
 
 		var langcontent = '<div class="form-row align-items-center lang-cont">' +
-			'<div class="form-group col-md-7">' +
-				'<input type="text" class="form-control">' +
-			'</div>' +
-			'<div class="form-group col-md-3">' +
-				'<input type="text" class="form-control">' +
+			'<div class="form-group col-md-10">' +
+				'<input type="text" name="languages[]" class="form-control">' +
 			'</div>' +
 			'<div class="form-group col-md-2"><a href="#" class="btn trash-icon"><i class="far fa-trash-alt"></i></a></div>' +
 		'</div>';
@@ -190,7 +179,7 @@ Version      : 1.0
 
 		var skillcontent = '<div class="form-row align-items-center skill-cont">' +
 			'<div class="form-group col-md-10">' +
-				'<input type="text" name="seller_skill" class="form-control">' +
+				'<input type="text" name="skills[]" class="form-control">' +
 			'</div>' +
 			'<div class="form-group col-md-2"><a href="#" class="btn trash-icon"><i class="far fa-trash-alt"></i></a></div>' +
 		'</div>';

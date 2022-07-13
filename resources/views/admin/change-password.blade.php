@@ -9,17 +9,17 @@
 							<div class="col-sm-6">
 								<h3 class="page-title">Settings</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index_admin">Dashboard</a>
+									<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a>
 									</li>
 									<li class="breadcrumb-item active">Change Password</li>
 								</ul>
 							</div>
 						</div>
 					</div>
-				
+
 					<div class="row">
 						<div class="col-xl-3 col-md-4">
-						
+
 							<!-- Settings Menu -->
 							<div class="widget settings-menu">
 								<ul>
@@ -46,9 +46,9 @@
 								</ul>
 							</div>
 							<!-- /Settings Menu -->
-							
+
 						</div>
-						
+
 						<div class="col-xl-9 col-md-8">
 
 							<div class="card">
@@ -96,7 +96,7 @@
 										</div>
 									</form>
 									<!-- /Form -->
-									
+
 								</div>
 							</div>
 						</div>

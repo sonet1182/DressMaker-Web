@@ -4,14 +4,14 @@
 	<!-- Page Wrapper -->
             <div class="page-wrapper">
                 <div class="content container-fluid">
-				
+
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row align-items-center">
 							<div class="col">
 								<h3 class="page-title">Bid Fees</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index_admin">Home</a></li>
+									<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
 									<li class="breadcrumb-item"><a href="fees">Fees</a></li>
 									<li class="breadcrumb-item active">Bid Fees</li>
 								</ul>
@@ -75,8 +75,8 @@
 											<thead>
 												<tr>
 													<th>Name</th>
-													<th>Info</th>	
-													<th>Value</th>	
+													<th>Info</th>
+													<th>Value</th>
 													<th class="text-end">Actions</th>
 												</tr>
 											</thead>
@@ -88,13 +88,13 @@
 													<td class="white-space">Freelancers are able to bid for free up to their monthly allocation of bids provided by their membership package. Optional upgrades to promote a bid will incur additional costs.</td>
 													<td>FREE</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
 												<tr>
 													<td>
-														Sponsored bid 	
+														Sponsored bid
 													</td>
 													<td class="white-space">Sponsoring your bid is a way to get noticed immediately by Employers. Use it to move your bid to the top of the bid list by paying a sponsorship amount. Sponsored bids are ranked in the bid list by highest amount paid then by reputation.</td>
 													<td>0.75% of bid amount(minimum $5.00USD, maximum$20.00 USD)</td>
@@ -105,7 +105,7 @@
 												</tr>
 												<tr>
 													<td>
-													Highlight Bid 	
+													Highlight Bid
 													</td>
 													<td class="white-space">Highlight your bid to visually stand out to the Employer from other bidders.</td>
 													<td>$50.00
@@ -118,15 +118,15 @@
 										</table>
 									</div>
 								</div>
-							</div>			
+							</div>
 						</div>
-						
-					</div>			
+
+					</div>
 				</div>
 				<!-- /Page Wrapper -->
 			</div>
         </div>
-		<!-- /Main Wrapper -->	
+		<!-- /Main Wrapper -->
 		<!-- The Modal -->
 		<div class="modal fade custom-modal" id="add-category">
 			<div class="modal-dialog modal-dialog-centered">
@@ -163,7 +163,7 @@
 			</div>
 		</div>
 		<!-- /The Modal -->
-		
+
 		<!-- The Modal -->
 		<div class="modal fade custom-modal" id="edit-category">
 			<div class="modal-dialog modal-dialog-centered">

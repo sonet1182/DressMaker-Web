@@ -36,7 +36,7 @@
 												<p class="profile-position">Designer</p>
 												<div><a href="#" class="btn full-btn">Full time</a></div>
 												<ul class="profile-preword">
-													<li>< {{ $user->address->country }}</li>
+													<li>{{ $user->address->country }}</li>
 													<li><div class="rating">
 														<span class="average-rating">4.6</span>
 														<i class="fas fa-star filled"></i>
@@ -173,9 +173,9 @@
                                             @endforeach
 
 
-											<div class="col-md-12 text-center">
+											{{-- <div class="col-md-12 text-center">
 												<a href="project" class="btn more-btn">View more </a>
-											</div>
+											</div> --}}
 										</div>
 									</div>
 								</div>
@@ -183,62 +183,41 @@
 
 								<!-- Experience Tab Content -->
 								<div class="pro-post project-widget widget-box" id="experience">
-									<h3 class="pro-title">Experience</h3>
-									<div class="pro-content">
-										<div class="widget-list mb-0">
-											<ul class="clearfix">
-												<li>
-													<h4>Logo Designer</h4>
-													<h5>Techline  July 9, 2018 - March 18, 2021</h5>
-													<p>I am a professional graphic designer. I have more than 10-years of experience in graphics design. If you are looking for any graphic related work, contact me, I'll glad to help you.</p>
-												</li>
-												<li>
-													<h4>Logo Designer</h4>
-													<h5>Techline  July 9, 2018 - March 18, 2021</h5>
-													<p>I am a professional graphic designer. I have more than 10-years of experience in graphics design. If you are looking for any graphic related work, contact me, I'll glad to help you.</p>
-												</li>
-												<li>
-													<h4>Logo Designer</h4>
-													<h5>Techline  July 9, 2018 - March 18, 2021</h5>
-													<p>I am a professional graphic designer. I have more than 10-years of experience in graphics design. If you are looking for any graphic related work, contact me, I'll glad to help you.</p>
-												</li>
-											</ul>
+									<h3 class="pro-title">Awards</h3>
+
+                                    <div class="pro-content">
+										<div class="tags">
+
+                                            @if($user->seller && $user->seller->awards)
+
+                                                    @foreach (json_decode($user->seller->awards) as $award)
+                                                        <span class="badge badge-pill badge-skills">{{ $award }}</span>
+                                                    @endforeach
+
+                                                @endif
 										</div>
 									</div>
 								</div>
+
+
 								<!-- /Experience Tab Content -->
 
-								<!-- Educational Tab Content -->
-								<div class="pro-post project-widget widget-box" id="education">
-									<h3 class="pro-title">Educational Details</h3>
-									<div class="pro-content">
-										<div class="widget-list mb-0">
-											<ul class="clearfix">
-												<li>
-													<h4>Bachelor of Science in Game Programming & Development</h4>
-													<h5>Hampshire University  January 12, 2015 - January 19, 2019</h5>
-													<p>Graphic Designing artworks through making plans and utilizing the helpful analysis of companions, educators, and bosses to improve those plans. Careful discipline brings about promising results, and the capacity to acknowledge and gain from analysis from peers and even the purchaser everywhere is pivotal for accomplishment in this field.</p>
-												</li>
-												<li>
-													<h4>Master in Gaming STudi Design</h4>
-													<h5>Techline  July 9, 2018 - March 18, 2021</h5>
-													<p>I am a professional graphic designer. I have more than 10-years of experience in graphics design. If you are looking for any graphic related work, contact me, I'll glad to help you.</p>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								<!-- /Educational Tab Content -->
+
+
+
 
 								<!-- Technical Tab Content -->
 								<div class="pro-post project-widget widget-box" id="skill">
 									<h3 class="pro-title">Technical Skills</h3>
 									<div class="pro-content">
 										<div class="tags">
-										<span class="badge badge-pill badge-skills">+ Web Design</span>
-										<span class="badge badge-pill badge-skills">+ UI Design</span>
-										<span class="badge badge-pill badge-skills">+ Node Js</span>
-										<span class="badge badge-pill badge-skills">+ Javascript</span>
+                                            @if($user->seller && $user->seller->skills)
+
+                                            @foreach (json_decode($user->seller->skills) as $skill)
+                                                <span class="badge badge-pill badge-skills">{{ $skill }}</span>
+                                            @endforeach
+
+                                        @endif
 										</div>
 									</div>
 								</div>
@@ -249,14 +228,17 @@
 									<div class="widget-title-box clearfix">
 										<h3 class="pro-title mb-0">Feedbacks</h3>
 									</div>
-									<div class="about-author">
+
+                                    @foreach ($reviews as $review)
+
+                                    <div class="about-author">
 										<div class="about-author-img">
 											<div class="author-img-wrap">
-												<img class="img-fluid" alt="" src="/assets/img/img-03.jpg">
+												<img class="img-fluid" alt="" src="{{ $review->sender ? asset($review->sender->profile_photo) : '/assets/img/img-03.jpg' }}">
 											</div>
 										</div>
 										<div class="author-details">
-											<a href="#" class="blog-author-name">Logo Designer</a>
+											<a href="#" class="blog-author-name">{{ $review->sender ? $review->sender->name : '' }}</a>
 											<div class="rating">
 												<span class="average-rating">4.6</span>
 												<i class="fas fa-star filled"></i>
@@ -265,28 +247,15 @@
 												<i class="fas fa-star filled"></i>
 												<i class="fas fa-star"></i>
 											</div>
-											<p class="mb-0">I am a professional graphic designer. I have more than 10-years of experience in graphics design. If you are looking for any graphic related work, contact me, I'll glad to help you.</p>
+											<p class="mb-0">
+                                                {{ $review->review }}
+                                            </p>
 										</div>
 									</div>
-									<div class="about-author">
-										<div class="about-author-img">
-											<div class="author-img-wrap">
-												<img class="img-fluid" alt="" src="/assets/img/img-02.jpg">
-											</div>
-										</div>
-										<div class="author-details">
-											<a href="#" class="blog-author-name">Web Designer</a>
-											<div class="rating">
-												<span class="average-rating">4.6</span>
-												<i class="fas fa-star filled"></i>
-												<i class="fas fa-star filled"></i>
-												<i class="fas fa-star filled"></i>
-												<i class="fas fa-star filled"></i>
-												<i class="fas fa-star"></i>
-											</div>
-											<p class="mb-0">I am a professional Web designer. I have more than 8-years of experience in Web design. If you are looking for any Web related work, contact me, I'll glad to help you.</p>
-										</div>
-									</div>
+
+                                    @endforeach
+
+
 								</div>
 								<!-- /Feedback Tab Content -->
 
@@ -297,33 +266,32 @@
 						<div class="col-lg-4 col-md-12 sidebar-right theiaStickySidebar">
 
 							<!-- Follow Widget -->
-							<div class="pro-post widget-box follow-widget">
+							{{-- <div class="pro-post widget-box follow-widget">
 								<a href="#" class="btn follow-btn">+ Follow</a>
 								<ul class="follow-posts pro-post">
 									<li><p>Following</p><h6>49</h6></li>
 									<li><p>Followers</p><h6>422</h6></li>
 								</ul>
-							</div>
+							</div> --}}
 							<!-- /Follow Widget -->
 
 							<!-- Language Widget -->
 							<div class="pro-post widget-box language-widget">
 								<h4 class="pro-title mb-0">Language Skills</h4>
 								<ul class="latest-posts pro-content">
-									<li><p>English</p>
+
+                                    @if($user->seller && $user->seller->languages)
+
+                                    @foreach (json_decode($user->seller->languages) as $language)
+									<li><p>{{ $language }}</p>
 										<div class="progress progress-md mb-0">
 											<div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
 										</div>
 									</li>
-									<li><p>Russian</p>
-										<div class="progress progress-md mb-0">
-											<div class="progress-bar bg-success" role="progressbar" style="width: 65%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-										</div></li>
-									<li><p>German</p>
-										<div class="progress progress-md mb-0">
-											<div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-										</div>
-									</li>
+                                    @endforeach
+
+                                    @endif
+
 								</ul>
 							</div>
 							<!-- /Language Widget -->
@@ -332,9 +300,9 @@
 							<div class="pro-post widget-box about-widget">
 								<h4 class="pro-title mb-0">About Me</h4>
 								<ul class="latest-posts pro-content">
-									<li><p>Gender</p><h6>Male</h6></li>
-									<li><p>Experience</p><h6>5 Years</h6></li>
-									<li><p>Location</p><h6>Istanbul/Turkey</h6></li>
+									<li><p>Gender</p><h6>{{ $user->gender }}</h6></li>
+									<li><p>Experience</p><h6>{{ $user->seller->experience ?? '' }} Years</h6></li>
+									<li><p>Location</p><h6>{{ $user->address ? $user->address->country : '' }}</h6></li>
 								</ul>
 							</div>
 							<!-- /About Widget -->
@@ -345,30 +313,17 @@
 									<h4 class="pro-title">Social Links</h4>
 								</div>
 									<ul class="latest-posts pro-content mb-3">
-										<li><a href="#">http://www.facebook.com/john...</a></li>
-										<li><a href="#">http://www.Twitter.com/john...</a></li>
-										<li><a href="#">Http://www.googleplus.com/john... </a></li>
-										<li><a href="#"> Http://www.behance.com/john...</a></li>
-										<li><a href="#"> Http://www.pinterest.com/john...</a></li>
+										<li><a href="{{ $user->links->facebook ?? '' }}">{{ $user->links->facebook ?? '' }}</a></li>
+										<li><a href="{{ $user->links->dribble ?? '' }}">{{ $user->links->dribble ?? '' }}</a></li>
+										<li><a href="{{ $user->links->twitter ?? '' }}">{{ $user->links->twitter ?? '' }}</a></li>
+										<li><a href="{{ $user->links->linkedin ?? '' }}">{{ $user->links->linkedin ?? '' }}</a></li>
+										<li><a href="{{ $user->links->behance ?? '' }}">{{ $user->links->behance ?? '' }}</a></li>
+										<li><a href="{{ $user->links->instagram ?? '' }}">{{ $user->links->instagram ?? '' }}</a></li>
 									</ul>
 							</div>
 							<!-- /Categories -->
 
-							<!-- LInk Widget -->
-							<div class="pro-post widget-box post-widget">
-								<h3 class="pro-title">Profile Link</h3>
-								<div class="pro-content">
-									<div class="form-group profile-group mb-0">
-									<div class="input-group">
-										<input type="text" class="form-control" value="https://www.DressMaker.com/developer/daren/12454687">
-										<div class="input-group-append">
-											<button class="btn btn-success sub-btn" type="submit"><i class="fa fa-clone"></i></button>
-										</div>
-									</div>
-									</div>
-								</div>
-							</div>
-							<!-- /Link Widget -->
+
 
 							<!-- Share Widget -->
 							<div class="pro-post widget-box post-widget">

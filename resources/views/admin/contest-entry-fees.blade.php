@@ -4,16 +4,16 @@
 	<!-- Page Wrapper -->
             <div class="page-wrapper">
                 <div class="content container-fluid">
-				
+
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row align-items-center">
 							<div class="col">
 								<h3 class="page-title">Contest Entry Fees</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index_admin">Home</a></li>
+									<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
 									<li class="breadcrumb-item"><a href="fees">Fees</a></li>
-									
+
 									<li class="breadcrumb-item active">Contest Entry Fees</li>
 								</ul>
 							</div>
@@ -76,38 +76,38 @@
 											<thead>
 												<tr>
 													<th>Name</th>
-													<th>Value</th>	
+													<th>Value</th>
 													<th class="text-end">Actions</th>
 												</tr>
 											</thead>
 											<tbody>
 												<tr>
 													<td>
-														Submit an Entry	
+														Submit an Entry
 													</td>
 													<td>FREE</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
 												<tr>
 													<td>
-														Sealed Entry		
+														Sealed Entry
 													</td>
 													<td>$30.00</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
 												<tr>
 													<td>
-													Highlight Entry	
+													Highlight Entry
 													</td>
 													<td>$30.00</td>
 													<td class="text-end">
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -115,10 +115,10 @@
 										</table>
 									</div>
 								</div>
-							</div>			
+							</div>
 						</div>
-					
-					</div>			
+
+					</div>
 				</div>
 				<!-- /Page Wrapper -->
 			</div>
@@ -138,7 +138,7 @@
 				<!-- Modal body -->
 				<div class="modal-body">
 					<form>
-		     		
+
 						<div class="form-group">
 							<label>Name</label>
 							<input type="text" class="form-control" placeholder="Enter Fee Name">
@@ -156,7 +156,7 @@
 			</div>
 		</div>
 		<!-- /Add Modal -->
-		
+
 		<!-- Edit Modal -->
 		<div class="modal fade custom-modal" id="edit-category">
 			<div class="modal-dialog modal-dialog-centered">
@@ -171,7 +171,7 @@
 				<!-- Modal body -->
 				<div class="modal-body">
 					<form>
-		     		
+
 						<div class="form-group">
 							<label>Name</label>
 							<input type="text" class="form-control" value="Highlight Entry">

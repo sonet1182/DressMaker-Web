@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Seller;
 
 use App\Http\Controllers\Controller;
 use App\Models\PortFolio;
+use App\Models\Project;
+use App\Models\Review;
 use App\Models\SellerInfo;
 use App\Models\SocialLink;
 use App\Models\User;
@@ -11,8 +13,7 @@ use App\Models\UserAddress;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
-
+use PhpParser\JsonDecoder;
 
 class AccountController extends Controller
 {
@@ -20,7 +21,6 @@ class AccountController extends Controller
     //update
     public function update(Request $req)
     {
-        // return $req->all();
 
         $user = User::find(Auth::user()->id);
 
@@ -34,6 +34,7 @@ class AccountController extends Controller
         $user->hourly_rate = $req->input('hourly_rate');
         $user->language = $req->input('language');
         $user->overview = $req->input('overview');
+
 
 
         if($req->hasfile('profile_photo'))
@@ -79,6 +80,9 @@ class AccountController extends Controller
         $seller->user_id = Auth::user()->id;
         $seller->type = $req->input('type');
         $seller->skills = $req->input('skills');
+        $seller->awards = $req->input('awards');
+        $seller->languages = $req->input('languages');
+        $seller->experience = $req->input('experience');
 
 
         $seller->save();
@@ -128,11 +132,23 @@ class AccountController extends Controller
         return redirect()->back()->with('status','Profile Updated Successfully!');
     }
 
+    public function dashboard()
+    {
+        $hired = Project::where('hired_user',Auth::user()->id)->get();
+        $completed = Project::where([['hired_user',Auth::user()->id],['status',5]])->latest()->get();
+        $reviews = Review::where([['receiver_id',Auth::user()->id]])->count();
+
+        return view('freelancer-dashboard', compact('hired','completed','reviews'));
+    }
+
+
     public function portfolio()
     {
         $portfolios = PortFolio::where('seller_id',Auth::user()->id)->latest()->paginate(9);
         return view('freelancer-portfolio',compact('portfolios'));
     }
+
+
     public function add_portfolio(Request $req)
     {
         $portfolio = new PortFolio();

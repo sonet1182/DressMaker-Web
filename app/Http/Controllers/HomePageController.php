@@ -8,6 +8,7 @@ use App\Models\PortFolio;
 use App\Models\PricingType;
 use App\Models\Project;
 use App\Models\ProjectProposal;
+use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,10 +21,12 @@ class HomePageController extends Controller
         $categories = Category::all();
         $designers = User::where('role','seller')->latest()->get();
         $employers = User::where('role','buyer')->latest()->get();
+        $pricing_types = PricingType::all();
         $projects = Project::all();
+        $countries = Country::all();
         // return $designers;
 
-        return view('index',compact('categories','designers','employers','projects'));
+        return view('index',compact('categories','designers','employers','projects','pricing_types','countries'));
     }
 
     public function seller_details($slug)
@@ -31,8 +34,9 @@ class HomePageController extends Controller
         $user = User::where('name',$slug)->first();
         $portfolios = PortFolio::where('seller_id',$user->id)->latest()->get();
         $hired_number = Project::where('hired_user',$user->id)->count();
+        $reviews = Review::where('receiver_id',$user->id)->get();
 
-        return view('developer-details',compact('user','portfolios','hired_number'));
+        return view('developer-details',compact('user','portfolios','hired_number','reviews'));
     }
 
     public function designer()
@@ -54,9 +58,9 @@ class HomePageController extends Controller
 
     public function seller_project_details($id)
     {
-        $projects = Project::find($id);
+        $project = Project::find($id);
 
-        return view('view-project-detail',compact('projects'));
+        return view('view-project-detail',compact('project'));
 
     }
 

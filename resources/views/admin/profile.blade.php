@@ -4,21 +4,21 @@
 	<!-- Page Wrapper -->
 			<div class="page-wrapper">
 				<div class="content container-fluid">
-						
+
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
 								<h3 class="page-title">Profile</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index_admin">Dashboard</a></li>
+									<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
 									<li class="breadcrumb-item active">Profile</li>
 								</ul>
 							</div>
 						</div>
 					</div>
 					<!-- /Page Header -->
-	   
+
 					<div class="profile-cover">
 						<div class="profile-cover-wrap">
 							<img class="profile-cover-img" src="../assets_admin/img/profiles/avatar-07.jpg" alt="Profile Cover">
@@ -51,20 +51,20 @@
 								<i class="far fa-building"></i> <span>Versatile Workforce</span>
 							</li>
 							<li class="list-inline-item">
-								<i class="fas fa-map-marker-alt"></i> 359 Plains, PA 18705 
+								<i class="fas fa-map-marker-alt"></i> 359 Plains, PA 18705
 							</li>
 							<li class="list-inline-item">
 								<i class="far fa-calendar-alt"></i> <span>Joined March 2022</span>
 							</li>
 						</ul>
 					</div>
-	
+
 					<div class="row">
 						<div class="col-lg-4">
 							<div class="card">
 								<div class="card-body pt-0">
 									<div class="card-header mb-4">
-										<h5 class="card-title">Complete your profile</h5> 
+										<h5 class="card-title">Complete your profile</h5>
 									</div>
 									<div class="d-flex justify-content-between align-items-center">
 										<div class="progress progress-md flex-grow-1">
@@ -79,7 +79,7 @@
 								<div class="card-body pt-0">
 									<div class="card-header mb-4">
 										<h5 class="card-title d-flex justify-content-between">
-											<span>Profile</span> 
+											<span>Profile</span>
 											<a class="btn btn-sm btn-white" href="settings">Edit</a>
 										</h5>
 									</div>
@@ -107,7 +107,7 @@
 										</li>
 										<li>
 											359 Coal Road<br>
-											Plains, PA 18705 
+											Plains, PA 18705
 										</li>
 									</ul>
 								</div>
@@ -152,10 +152,10 @@
 						</div>
 					</div>
 				</div>
-				
+
 			</div>
 			<!-- /Page Wrapper -->
-			
+
 		</div>
 		<!-- /Main Wrapper -->
 @endsection

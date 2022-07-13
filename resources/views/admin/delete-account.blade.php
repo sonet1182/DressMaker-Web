@@ -4,23 +4,23 @@
 	<!-- Page Wrapper -->
 			<div class="page-wrapper">
 				<div class="content container-fluid">
-				
+
 					<div class="page-header">
 						<div class="row">
 							<div class="col-sm-6">
 								<h3 class="page-title">Settings</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index_admin">Dashboard</a>
+									<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a>
 									</li>
 									<li class="breadcrumb-item active">Delete Account</li>
 								</ul>
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="row">
 						<div class="col-xl-3 col-md-4">
-						
+
 							<!-- Settings Menu -->
 							<div class="widget settings-menu">
 								<ul>
@@ -47,16 +47,16 @@
 								</ul>
 							</div>
 							<!-- /Settings Menu -->
-							
+
 						</div>
-						
+
 						<div class="col-xl-9 col-md-8">
 							<div class="card">
 								<div class="card-body pt-0">
 									<div class="card-header mb-4">
 										<h5 class="card-title">Delete your account</h5>
 									</div>
-								
+
 									<!-- Form -->
 									<form>
 										<p class="card-text">When you delete your account, you lose access to Kanakku account services, and we permanently delete your personal data.</p>
@@ -74,7 +74,7 @@
 										</div>
 									</form>
 									<!-- /Form -->
-									
+
 								</div>
 							</div>
 						</div>
@@ -82,7 +82,7 @@
 				</div>
 			</div>
 			<!-- /Page Wrapper -->
-			
+
 		</div>
 		<!-- /Main Wrapper -->
 @endsection

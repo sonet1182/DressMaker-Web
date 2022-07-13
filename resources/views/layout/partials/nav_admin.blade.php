@@ -4,8 +4,8 @@
 					<div id="sidebar-menu" class="sidebar-menu">
 						<ul>
 							<li class="menu-title"><span>Main</span></li>
-							<li class="{{ Request::is('admin/index_admin') ? 'active' : '' }}">
-								<a href="{{ url('admin/index_admin') }}"><i data-feather="home"></i> <span>Dashboard</span></a>
+							<li class="{{ Request::is('admin/dashboard') ? 'active' : '' }}">
+								<a href="{{ route('admin.dashboard') }}"><i data-feather="home"></i> <span>Dashboard</span></a>
 							</li>
 							<li class="{{ Request::is('admin/categories','admin/sub-category') ? 'active' : '' }}">
 								<a href="{{ route('admin.category.list') }}"><i data-feather="copy"></i> <span>Categories</span></a>
@@ -20,7 +20,7 @@
 								<a href="{{ url('admin/designers') }}"><i data-feather="users"></i> <span>Designers</span></a>
 							</li>
 							<li class="{{ Request::is('admin/buyers') ? 'active' : '' }}">
-								<a href="{{ url('admin/buyers') }}"><i data-feather="user-check"></i> <span>Buyers</span></a>
+								<a href="{{ route('admin.buyer_list') }}"><i data-feather="user-check"></i> <span>Employers</span></a>
 							</li>
 							<li class="{{ Request::is('admin/reports') ? 'active' : '' }}">
 								<a href="{{ url('admin/reports') }}"><i data-feather="pie-chart"></i> <span>Reports</span></a>
@@ -28,7 +28,7 @@
 							<li class="{{ Request::is('admin/bid-fees','admin/contest-entry-fees','admin/contests-fees','admin/fees','admin/projects-fees') ? 'active' : '' }}">
 								<a href="{{ url('admin/fees') }}"><i data-feather="package"></i> <span>Fees</span></a>
 							</li>
-							<li class="{{ Request::is('admin/taxs') ? 'active' : '' }}">
+							{{-- <li class="{{ Request::is('admin/taxs') ? 'active' : '' }}">
 								<a href="{{ url('admin/taxs') }}"><i data-feather="file-text"></i> <span>Taxs</span></a>
 							</li>
 							<li class="{{ Request::is('admin/roles','admin/roles-permission') ? 'active' : '' }}">
@@ -39,7 +39,7 @@
 							</li>
 							<li class="{{ Request::is('admin/verify-identity') ? 'active' : '' }}">
 								<a  href="{{ url('admin/verify-identity') }}"><i data-feather="user-check"></i> <span>Verify Identity</span></a>
-							</li>
+							</li> --}}
 							<li class="{{ Request::is('admin/change-password','admin/delete-account','admin/email-settings','admin/localization-details','admin/others-settings','admin/payment-settings','admin/seo-settings','admin/settings','admin/social-links','admin/social-settings','admin/tax-types') ? 'active' : '' }}">
 								<a href="{{ url('admin/settings') }}"><i data-feather="settings"></i> <span>Settings</span></a>
 							</li>

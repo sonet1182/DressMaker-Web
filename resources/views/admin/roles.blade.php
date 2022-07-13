@@ -4,15 +4,15 @@
 	<!-- Page Wrapper -->
             <div class="page-wrapper">
                 <div class="content container-fluid">
-				
+
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row align-items-center">
 							<div class="col">
 								<h3 class="page-title">Roles & Permission</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index_admin">Home</a></li>
-									
+									<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
+
 									<li class="breadcrumb-item active">Roles</li>
 								</ul>
 							</div>
@@ -85,7 +85,7 @@
 													</td>
 													<td class="text-end">
 														<a href="roles-permission" class="btn btn-sm bg-pink me-2"><i class="fas fa-user-shield"></i></a>
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -93,10 +93,10 @@
 													<td>
 														Client
 													</td>
-													
+
 													<td class="text-end">
 														<a href="roles-permission" class="btn btn-sm bg-pink me-2"><i class="fas fa-user-shield"></i></a>
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -106,7 +106,7 @@
 													</td>
 													<td class="text-end">
 														<a href="roles-permission" class="btn btn-sm bg-pink me-2"><i class="fas fa-user-shield"></i></a>
-														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a> 
+														<a href="javascript:void(0);" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#edit-category"><i class="far fa-edit"></i></a>
 														<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_category"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
@@ -114,10 +114,10 @@
 										</table>
 									</div>
 								</div>
-							</div>			
+							</div>
 						</div>
-						
-					</div>			
+
+					</div>
 				</div>
 				<!-- /Page Wrapper -->
 			</div>
@@ -134,14 +134,14 @@
 						<button type="button" class="close" data-bs-dismiss="modal"><span>&times;</span></button>
 					</div>
 					<!-- /Modal Header -->
-					
+
 					<!-- Modal body -->
 					<div class="modal-body">
-						<form>		     		
+						<form>
 							<div class="form-group">
 								<label>Role Name</label>
 								<input type="text" class="form-control" placeholder="Enter Role Name">
-							</div>					
+							</div>
 							<div class="mt-4">
 								<button type="submit" class="btn btn-primary btn-block">Submit</button>
 							</div>
@@ -152,7 +152,7 @@
 			</div>
 		</div>
 		<!-- /Add Modal -->
-		
+
 		<!-- Edit Modal -->
 		<div class="modal fade custom-modal" id="edit-category">
 			<div class="modal-dialog modal-dialog-centered">
@@ -164,14 +164,14 @@
 						<button type="button" class="close" data-bs-dismiss="modal"><span>&times;</span></button>
 					</div>
 					<!-- /Modal Header -->
-					
+
 					<!-- Modal body -->
 					<div class="modal-body">
-						<form>		     		
+						<form>
 							<div class="form-group">
 								<label>Role Name</label>
 								<input type="text" class="form-control" value="Admin">
-							</div>					
+							</div>
 							<div class="mt-4">
 								<button type="submit" class="btn btn-primary btn-block">Submit</button>
 							</div>

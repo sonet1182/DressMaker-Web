@@ -9,14 +9,14 @@
 							<div class="col-sm-6">
 								<h3 class="page-title">Settings</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index_admin">Home</a></li>
+									<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
 									<li class="breadcrumb-item"><a href="settings">Settings</a></li>
 									<li class="breadcrumb-item active">Localization</li>
 								</ul>
 							</div>
 						</div>
 					</div>
-				
+
 					<div class="row">
 						<div class="col-lg-12">
 
@@ -64,7 +64,7 @@
 														<label>Time Zone</label>
 														<select class="select form-control">
 															<option selected="selected">(UTC +5:30) Antarctica/Palmer</option>
-															<option>(UTC+05:30) India</option> 
+															<option>(UTC+05:30) India</option>
 														</select>
 													</div>
 													<div class="form-group">
@@ -84,18 +84,18 @@
 														<select class="select form-control">
 															<option selected="selected">12 Hours</option>
 															<option>24 Hours</option>
-															<option>36 Hours</option>  
+															<option>36 Hours</option>
 															<option>48 Hours</option>
-															<option>60 Hours</option> 
+															<option>60 Hours</option>
 														</select>
 													</div>
 													<div class="form-group">
 														<label>Currency Symbol</label>
 														<select class="select form-control">
 															<option selected="selected">$</option>
-															<option>₹</option>  
+															<option>₹</option>
 															<option>£</option>
-															<option>€</option> 
+															<option>€</option>
 														</select>
 													</div>
 													<div class="form-group mb-0">
@@ -109,7 +109,7 @@
 									</div>
 								</div>
 							</div>
-							
+
 						</div>
 					</div>
 				</div>
